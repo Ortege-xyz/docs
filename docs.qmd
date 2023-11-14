@@ -1,0 +1,37 @@
+---
+title: "Welcome to Ortege"
+---
+
+Ortege excels in delivering unparalleled insights into blockchain ecosystems. Our tools empower you to unlock more possibilities, completely free of charge.
+
+# Getting Started
+
+## 🔥 Ortege Insight Hub:
+Dive into blockchain data analysis, craft engaging visualizations, and instantly share your findings through interactive dashboards.
+Ideal for: in-depth data mining, narrative-driven analysis, and advanced dashboard creation.
+
+## 🌐 Ortege GTP:
+A revolutionary chatbot that provides insights into both on-chain and off-chain data, leveraging advanced AI to deliver quick, accurate answers and analytics.
+Ideal for: real-time data inquiries, streamlined blockchain analytics, and accessible insights for both technical and non-technical users.
+
+## 🌟 Ortege API:
+Bypass traditional applications and directly integrate queries into your development or data science workflow.
+Ideal for: custom analytics applications, developing trading algorithms, or leveraging Ortege data within R or Python for advanced data science projects.
+
+## 💎 Ortege Data Access (via DataStream):
+Need the full spectrum of Ortege's database integrated into your system? Consider it done. 
+Ideal for: teams dependent on blockchain data for operations, user insights, or enhancing applications with web3 integrations.
+
+# Important Things to Know
+All our data can be queried using SQL, utilizing the dialect for seamless access.
+
+Our data architectures are and tailored for effortless navigation and efficient querying, and are . We regularly refine our data structures for maximum efficiency.
+
+Data latency varies across different tables, generally lagging by either 1 hour or 1 day at the most. Check the latest latency updates on 
+
+What blockchains and projects does Ortege cover?
+If it's on the blockchain, we have it covered.
+
+Our data encompasses fundamental tables (blocks, events, transactions) for all chains, plus 'simplified' tables (like swaps, prices, etc.) and project-specific tables curated by the Ortege community.
+
+Visit our for an up-to-date list of supported blockchains. Missing the chain you need? We're constantly adding new ones, but feel free to make a request at any time.
