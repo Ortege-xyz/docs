@@ -6,3 +6,5 @@ format:
     html-math-method: katex
     css: styles.css
 ---
+
+We will use [Shiny charts](https://shiny.posit.co/) and our Gold layer datasets in order to write Research reports.
