@@ -1,0 +1,24 @@
+---
+title: "Welcome to Ortege"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+    css: styles.css
+---
+
+Ortege excels in delivering unparalleled insights into blockchain ecosystems. Our tools empower you to unlock more possibilities, completely free of charge.
+
+# Our product offerings
+
+## 🔥 Ortege Insight Hub:
+Dive into blockchain data analysis, craft engaging visualizations, and instantly share your findings through interactive dashboards.
+
+## 🌐 Ortege GPT:
+A revolutionary chatbot that provides insights into both on-chain and off-chain data, leveraging advanced AI to deliver quick, accurate answers and analytics. 
+
+## 🌟 Ortege Lakehouse:
+Our data lakehouse to integrate into our curated partners allowing them to leverage our ML pipelines and datasets. 
+
+# Quick start
+Please read the [quick start section](quick_start.qmd).

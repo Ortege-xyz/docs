@@ -1,0 +1,23 @@
+---
+title: "Quick Start"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+    css: styles.css
+---
+
+One of our goals at Ortege is to abstract away as much complexity as possible from our users. As such we would prefer users asking our chat agents most queries to ensure they're getting highly focused answers saving our users time.
+
+However we still need to generate the content in order for our chat agent's to be able to be up to date with the latest information on the Ortege data platform. 
+
+So all our documentation will be available through this site. We will classify our data as:
+* [Product documentation](product.qmd)
+* [Data documentation](data.qmd)
+* [Research articles](research.qmd)
+
+This documentation is open source and community generated. 
+
+Our documentation is written in [Quarto](https://quarto.org/){.external target="blank"} and will be stored in a [Milvus](https://milvus.io/){.external target="blank"} vector database which will periodically update our early stage chat bots.
+
+Our first set of bots will be deployed on [Hugging Face Spaces](https://huggingface.co/spaces){.external target="blank"}.
