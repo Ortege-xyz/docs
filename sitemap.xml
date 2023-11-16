@@ -2,38 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://Ortege-xyz.github.io/docs/data.html</loc>
-    <lastmod>2023-11-16T10:02:18.847Z</lastmod>
+    <lastmod>2023-11-16T10:33:14.465Z</lastmod>
   </url>
   <url>
-    <loc>https://Ortege-xyz.github.io/docs/index.html</loc>
-    <lastmod>2023-11-16T10:02:18.314Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Ortege-xyz.github.io/docs/lakehouse.html</loc>
-    <lastmod>2023-11-16T10:02:16.082Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Ortege-xyz.github.io/docs/quick_start.html</loc>
-    <lastmod>2023-11-16T10:02:15.562Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Ortege-xyz.github.io/docs/research.html</loc>
-    <lastmod>2023-11-16T10:02:15.019Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Ortege-xyz.github.io/docs/studio.html</loc>
-    <lastmod>2023-11-16T10:02:15.287Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Ortege-xyz.github.io/docs/contributing.html</loc>
-    <lastmod>2023-11-16T10:02:15.824Z</lastmod>
+    <loc>https://Ortege-xyz.github.io/docs/testnet_partner.html</loc>
+    <lastmod>2023-11-16T10:33:13.933Z</lastmod>
   </url>
   <url>
     <loc>https://Ortege-xyz.github.io/docs/articles/template.html</loc>
-    <lastmod>2023-11-16T10:02:18.047Z</lastmod>
+    <lastmod>2023-11-16T10:33:13.369Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Ortege-xyz.github.io/docs/contributing.html</loc>
+    <lastmod>2023-11-16T10:33:10.927Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Ortege-xyz.github.io/docs/submit_form.html</loc>
+    <lastmod>2023-11-16T10:33:10.384Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Ortege-xyz.github.io/docs/research.html</loc>
+    <lastmod>2023-11-16T10:33:09.864Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Ortege-xyz.github.io/docs/studio.html</loc>
+    <lastmod>2023-11-16T10:33:10.123Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Ortege-xyz.github.io/docs/quick_start.html</loc>
+    <lastmod>2023-11-16T10:33:10.668Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Ortege-xyz.github.io/docs/lakehouse.html</loc>
+    <lastmod>2023-11-16T10:33:11.184Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Ortege-xyz.github.io/docs/index.html</loc>
+    <lastmod>2023-11-16T10:33:13.640Z</lastmod>
   </url>
   <url>
     <loc>https://Ortege-xyz.github.io/docs/ortegegpt.html</loc>
-    <lastmod>2023-11-16T10:02:18.572Z</lastmod>
+    <lastmod>2023-11-16T10:33:14.194Z</lastmod>
   </url>
 </urlset>

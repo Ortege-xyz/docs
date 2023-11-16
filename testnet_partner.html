@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>docs - Research Articles</title>
+<title>docs - Testnet Partner</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -39,6 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/forms/forms.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -61,7 +62,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+
 </head>
 
 <body class="nav-fixed">
@@ -94,11 +95,11 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">OrtegeGPT</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./research.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./research.html" rel="" target="">
  <span class="menu-text">Research Articles</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./testnet_partner.html" rel="" target="">
+    <a class="nav-link active" href="./testnet_partner.html" rel="" target="" aria-current="page">
  <span class="menu-text">Testnet Partner</span></a>
   </li>  
 </ul>
@@ -120,7 +121,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Research Articles</h1>
+<h1 class="title">Testnet Partner</h1>
 </div>
 
 
@@ -135,10 +136,76 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>We will use <a href="https://shiny.posit.co/">Shiny charts</a> and our Gold layer datasets in order to write Research reports.</p>
-<p>The Research reports will be updated daily with fresh data. This means we provide what internally we call, realtime Messari Research articles. We grew frustrated with the high cost of solutions such as Messari and their point in time reports. We believe there is a better way to serve the crypto community: * Open access to market research * Presented in a visual style that encourages data storytelling * Research reports that update with live data</p>
-<p>Anyone can release a research article and submit a PR in our Github. If the research article is accepted, it will deployed to our production documentation site and we will promote your article on our socials.</p>
-<p>Please see <a href="./contributing.html">the contributing guide</a> to learn more about how to submit your own research report.</p>
+<p></p><div id="form-div" class="form-wrapper">
+ <form id="form" action="javascript:submit()">
+<br><p>This is a form spacer</p>
+<div class="form-group">
+<label for="textid" class="form-label mt-4">A text field (1)</label>
+  <input type="text" id="textid" name="Text1" class="form-control" required="">
+</div>
+<div class="form-group">
+<label for="textid2" class="form-label mt-4">Another text field (2)</label>
+  <input type="text" id="textid2" name="Text2" class="form-control">
+</div>
+<br><p>This is a form spacer</p>
+<hr>
+<div class="form-group">
+<fieldset class="form-group">
+<p class="form-label">My Radio Button</p>
+<div class="form-check">
+  <input type="radio" id="radio11" name="Radio" value="1" class="form-check-input" autocomplete="off" checked="">
+  <label for="radio11" class="form-check-label">&nbsp;Good</label>
+</div>
+<div class="form-check">
+  <input type="radio" id="radio12" name="Radio" value="0" class="form-check-input" autocomplete="off" checked="">
+  <label for="radio12" class="form-check-label">&nbsp;Bad</label>
+</div>
+</fieldset>
+</div>
+<div class="form-group">
+<fieldset class="form-group">
+<p class="form-label">My Checkbox</p>
+<div class="form-check">
+  <input type="checkbox" id="checkbox11" name="Checkbox" value="hi" class="form-check-input" autocomplete="off">
+  <label for="checkbox11" class="form-check-label">&nbsp;High</label>
+</div>
+<div class="form-check">
+  <input type="checkbox" id="checkbox12" name="Checkbox" value="lo" class="form-check-input" autocomplete="off">
+  <label for="checkbox12" class="form-check-label">&nbsp;Low</label>
+</div>
+<div class="form-check">
+  <input type="checkbox" id="checkbox13" name="Checkbox" value="mid" class="form-check-input" autocomplete="off">
+  <label for="checkbox13" class="form-check-label">&nbsp;Mid</label>
+</div>
+</fieldset>
+</div>
+<div class="form-group">
+<label for="selector1" class="form-label mt-4">My Selector</label>
+<select id="selector1" size="3" multiple="" class="form-select">
+  <option value="1">Option 1</option>
+  <option value="2">Option 2</option>
+  <option value="3">Option 3</option>
+  <option value="4">Option 4</option>
+</select>
+</div>
+<div class="form-group">
+<label for="textarea1">Enter lots of text</label>
+<textarea name="BigText" id="textarea1" rows="..&quot;30&quot;" cols="30" class="form-control"></textarea>
+</div>
+<div class="form-group">
+<label for="email1" class="form-label mt-4">Enter your email</label>
+<input type="email" id="email1" name="" class="form-control">
+</div>
+<div class="form-group">
+<label for="file1" class="form-label mt-4">Upload a file</label>
+<input type="file" id="file1" name="FileUpload" class="form-control">
+</div>
+<br>
+<div class="form-group">
+  <input type="submit" value="Submit" class="btn btn-primary">
+</div>
+</form></div>
+<p></p>
 
 
 
