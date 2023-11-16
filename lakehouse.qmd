@@ -7,10 +7,6 @@ format:
     css: styles.css
 ---
 
-We host our lakehouse on Azure Storage. So we do incur costs for it. We want to make our Lakehouse available to all, but we also have to be conscious of costs. 
+We host our lakehouse on Azure Storage. So we do incur costs for it. We want to make our Lakehouse available to all, and at present is currently available through [Ortege Studio](studio.qmd).
 
-We don't want to be in a situation whereby someone performs a DDOS on us and then we end up with a huge bill to pay. 
-
-As such we will be requiring users that want to access our Lakehouse to register for an API Key. From there we will release an SDK to access the Lakehouse. 
-
-We estimate this API to be out Q2 of 2024. But in startups, things can change rapidly. 
+Please read our [Data Ontology](data.qmd) in order to acquaint yourself with how the data is structured throughout all Ortege products. 

@@ -1,10 +1,12 @@
 project:
-  title: "docs"
+  title: "Ortege"
   type: website
   output-dir: docs
+
 format:
   html:
     theme: lumen
+
 website:
   navbar:
     background: primary
@@ -12,7 +14,15 @@ website:
     left:
       - text: "Home"
         file: index.qmd
-      - studio.qmd 
-      - ortegegpt.qmd
-      - research.qmd
-      - testnet_partner.qmd
+      - text: "Products"
+        menu:
+          - text: "Ortege Studio"
+            file: studio.qmd
+          - text: "OrtegeGPT"
+            file: ortegegpt.qmd
+          - text: "Ortege Lakehouse"
+            file: lakehouse.qmd
+      - text: "Research"
+        file: research.qmd
+      - text: "Testnet Partner"
+        file: testnet_partner.qmd
