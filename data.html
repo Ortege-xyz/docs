@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>docs - Data documentation</title>
+<title>docs - Data Topology</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -87,11 +87,19 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./data.html" rel="" target="" aria-current="page">
- <span class="menu-text">Data documentation</span></a>
+ <span class="menu-text">Data Topology</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./studio.html" rel="" target="">
- <span class="menu-text">Ortege Studio documenation</span></a>
+ <span class="menu-text">Ortege Studio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./ortegegpt.html" rel="" target="">
+ <span class="menu-text">OrtegeGPT</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./research.html" rel="" target="">
+ <span class="menu-text">Research Articles</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
@@ -110,15 +118,6 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#chains-supported" id="toc-chains-supported" class="nav-link active" data-scroll-target="#chains-supported">Chains supported</a></li>
-  <li><a href="#data-structure" id="toc-data-structure" class="nav-link" data-scroll-target="#data-structure">Data structure</a>
-  <ul class="collapse">
-  <li><a href="#organisation" id="toc-organisation" class="nav-link" data-scroll-target="#organisation">Organisation</a>
-  <ul class="collapse">
-  <li><a href="#bronze" id="toc-bronze" class="nav-link" data-scroll-target="#bronze">Bronze</a></li>
-  <li><a href="#silver" id="toc-silver" class="nav-link" data-scroll-target="#silver">Silver</a></li>
-  <li><a href="#gold" id="toc-gold" class="nav-link" data-scroll-target="#gold">Gold</a></li>
-  </ul></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -127,7 +126,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data documentation</h1>
+<h1 class="title">Data Topology</h1>
 </div>
 
 
@@ -142,50 +141,19 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>If you’re looking to be heavily involved in Ortege, then this will be one of the most important areas to understand.</p>
+<p>Our data is deployed as <a href="https://docs.delta.io/latest/quick-start.html">Delta Lake tables</a> and adhere to the following naming conventions.</p>
+<ul>
+<li>All databases/schemas will be named <code>db_*blockchain*</code> so for example, <code>db_eth</code> or <code>db_bitcoin</code></li>
+<li>All entities in the database will be either tables (denoted by <code>tbl_</code>), views (denoted by <code>vw_</code>) or a materialized view (denoted by <code>mvw_</code>)</li>
+<li>Those entities will then be following the environment the data is related to. Either one of dev, test or prod. As example, a table of blocks would be called <code>tbl_prod_blocks</code></li>
+<li>We’d also like to include what layer the data is part of. We follow a <a href="https://learn.microsoft.com/en-us/azure/databricks/lakehouse/medallion">Medallian Architecture</a>. So we want to denote either br for bronze, sl for silver or gld for gold. This means our block table now becomes <code>tbl_prod_br_blocks</code></li>
+</ul>
 <section id="chains-supported" class="level1">
 <h1>Chains supported</h1>
-<p>Currently we support Ethereum and Avalanche. If you’d like us to support a new chain, please reach out to christos@ortege.io</p>
-</section>
-<section id="data-structure" class="level1">
-<h1>Data structure</h1>
-<p>We classify data as structured, unstructured or semi structured.</p>
-<p>We then further break down data into it’s source. Namely on chain and off chain data.</p>
-<p>On chain data is data that is occuring on that blockchain, things like trading statistics and block production.</p>
-<p>Off chain data is any data that doesn’t occur on chain. Data sources like Twitter and Centralized Exchange pricing datapoints are off chain data even if they deal with blockchains.</p>
-<section id="organisation" class="level2">
-<h2 class="anchored" data-anchor-id="organisation">Organisation</h2>
-<p>We break our data down into 3 layers: * Bronze - Raw structured and unstructured data * Silver - Cleaned up to be more human readable. Still very broad * Gold - Very specific datasets</p>
-<section id="bronze" class="level3">
-<h3 class="anchored" data-anchor-id="bronze">Bronze</h3>
-<section id="tables" class="level4">
-<h4 class="anchored" data-anchor-id="tables">Tables</h4>
-<p>Our tables follow the following format: <code>tbl + environment + layer + entity</code></p>
-<p>We have the following tables on all EVM chains in the bronze layer: * tbl_prod_br_blocks * tbl_prod_br_contracts * tbl_prod_br_logs * tbl_prod_br_receipts * tbl_prod_br_transactions</p>
-</section>
-<section id="views" class="level4">
-<h4 class="anchored" data-anchor-id="views">Views</h4>
-<ul>
-<li>vw_prod_br_addresses</li>
-</ul>
-</section>
-</section>
-<section id="silver" class="level3">
-<h3 class="anchored" data-anchor-id="silver">Silver</h3>
-</section>
-<section id="gold" class="level3">
-<h3 class="anchored" data-anchor-id="gold">Gold</h3>
-<p>Currently we are only focusing on research datasets in the Gold layer. These datasets will be materialized views and be updated every 5 minutes. They will be used to power our <a href="./research.html">Research Articles</a>.</p>
-<section id="views-1" class="level4">
-<h4 class="anchored" data-anchor-id="views-1">Views</h4>
-<p>Our views follow the following format: <code>vw + environment + layer + research + blockchain</code></p>
-<ul>
-<li>vw_prod_gld_research_btc</li>
-</ul>
+<p>We are planning on going live on 31st January with the bronze layer for the following chains: * Bitcoin * Ethereum * Avalanche</p>
 
 
-</section>
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
