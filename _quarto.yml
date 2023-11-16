@@ -15,7 +15,7 @@ nav:
     href: research.qmd
 format:
   html:
-    theme: united
+    theme: lumen
 website:
   navbar:
     background: primary
