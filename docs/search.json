@@ -7,6 +7,83 @@
     "text": "If you’re looking to be heavily involved in Ortege, then this will be one of the most important areas to understand.\nOur data is deployed as Delta Lake tables and adhere to the following naming conventions.\n\nAll databases/schemas will be named db_*blockchain* so for example, db_eth or db_bitcoin\nAll entities in the database will be either tables (denoted by tbl_), views (denoted by vw_) or a materialized view (denoted by mvw_)\nThose entities will then be following the environment the data is related to. Either one of dev, test or prod. As example, a table of blocks would be called tbl_prod_blocks\nWe’d also like to include what layer the data is part of. We follow a Medallian Architecture. So we want to denote either br for bronze, sl for silver or gld for gold. This means our block table now becomes tbl_prod_br_blocks\n\n\nChains supported\nWe are planning on going live on 31st January with the bronze layer for the following chains: * Bitcoin * Ethereum * Avalanche"
   },
   {
+    "objectID": "testnet_partner.html",
+    "href": "testnet_partner.html",
+    "title": "Testnet Partner",
+    "section": "",
+    "text": "This page demonstrates how to use the form shortcode. A form consists of a set of YAML keys and a shortcode.\nInsert the shortcode where you want the form to appear. The form is wrapped in a div which you can use to style the form, using CSS. The default form style uses whatever theme you have chosen from the Bootswatch themes supported by Quarto.\nIf you use a custom theme, you will likely need to provide CSS for the form element classes, if you don’t like the default."
+  },
+  {
+    "objectID": "testnet_partner.html#form-fields",
+    "href": "testnet_partner.html#form-fields",
+    "title": "Testnet Partner",
+    "section": "Form Fields",
+    "text": "Form Fields\nThe fields element is a list of fields, as outlined below. All inputs are strings, unless mentioned:\n\n\n\n\n\n\n\n\nKey\nDescription\nRequired?\n\n\n\n\nname\nThe name for the field\nYes\n\n\ntype\nThe input type: see list below\nYes\n\n\nid\nThe id for the input\nYes\n\n\nlabel\nThe label to display for the input\nYes\n\n\nvalues\nA list of values for multiple inputs\nradio, checkbox, select\n\n\nwidth\ninteger: Width of input\nNo\n\n\nheight\ninteger: Height of input\nNo\n\n\nrequired\nboolean: Require a response1\nNo\n\n\nmultiple\nboolean: Allow multiple values\nNo\n\n\nsize\ninteger: Number of inputs to display\nNo\n\n\n\nThe currently supported input type-s are:\n\n\n\n\n\n\n\n\n\nType\nDescription\nRequireable?\nMultiple valued\n\n\n\n\ntext\nSingle-line text input\nYes\nNo\n\n\ntextarea\nA large, multi-line text input\nNo\nNo\n\n\ncheckbox\nA series of checkboxes\nYes2\nYes\n\n\nradio\nSeries of radio options\nYes3\nNo\n\n\nselect\nDropdown selection, styled by CSS\nYes\nNo\n\n\nemail\nEmail-only text input\nNo\nNo\n\n\nfile\nFile-submission button\nNo\nNo"
+  },
+  {
+    "objectID": "testnet_partner.html#form-field-values",
+    "href": "testnet_partner.html#form-field-values",
+    "title": "Testnet Partner",
+    "section": "Form Field Values",
+    "text": "Form Field Values\nThe values for multi-line inputs are specified as\nform:\n  ...\n  fields:\n  - ...:\n    values:\n    - text: Radio 1\n      value: 1\n\ntext is the label text for the option to be displayed\nvalue is the value selecting the option will select"
+  },
+  {
+    "objectID": "testnet_partner.html#non-field-form-entries",
+    "href": "testnet_partner.html#non-field-form-entries",
+    "title": "Testnet Partner",
+    "section": "Non-field Form Entries",
+    "text": "Non-field Form Entries\nYou can also add arbitrary text using the text field:\nform:\n  ...\n  fields:\n  - text: \"Some  text\"\n  - text: ---\nUsing --- will insert a horizontal rule in the form."
+  },
+  {
+    "objectID": "testnet_partner.html#footnotes",
+    "href": "testnet_partner.html#footnotes",
+    "title": "Testnet Partner",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nOnly works for certain types of fields↩︎\n*poorly↩︎\n*poorly↩︎"
+  },
+  {
+    "objectID": "articles/template.html",
+    "href": "articles/template.html",
+    "title": "Contributing a Research article",
+    "section": "",
+    "text": "Inserting data from Ortege Lakehouse\nThe great thing about Quarto is that you can embed code. That means you’ll be able to embed code directly into your Ortege Researh article and when the article gets accepted, the code will be executed and the results of the code displayed in your research article.\nLet’s unpack that by adding a bar char of Bitcoin Hash power over the past month.\n\n# Need to add a working example here"
+  },
+  {
+    "objectID": "contributing.html",
+    "href": "contributing.html",
+    "title": "Contributing a Research article",
+    "section": "",
+    "text": "Contributing a research article through Ortege is a great way for budding crypto research analysts and more general data analysts to showcase their skills to the broader community and gain some exposure.\nIn this article, we’ll walk you through how simple it is to create a research article. We’ll walk through an example of creating a Bitcoin research article.\nFirst navigate to articles folder in this repository and make a copy of the template."
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research Articles",
+    "section": "",
+    "text": "We will use Shiny charts and our Gold layer datasets in order to write Research reports.\nThe Research reports will be updated daily with fresh data. This means we provide what internally we call, realtime Messari Research articles. We grew frustrated with the high cost of solutions such as Messari and their point in time reports. We believe there is a better way to serve the crypto community: * Open access to market research * Presented in a visual style that encourages data storytelling * Research reports that update with live data\nAnyone can release a research article and submit a PR in our Github. If the research article is accepted, it will deployed to our production documentation site and we will promote your article on our socials.\nPlease see the contributing guide to learn more about how to submit your own research report."
+  },
+  {
+    "objectID": "studio.html",
+    "href": "studio.html",
+    "title": "Ortege Studio",
+    "section": "",
+    "text": "Ortege Studio can be located at https://app.ortege.xyz\nCurrently it is a closed beta. If you’d like to gain access please email christos@ortege.io"
+  },
+  {
+    "objectID": "quick_start.html",
+    "href": "quick_start.html",
+    "title": "Quick Start",
+    "section": "",
+    "text": "One of our goals at Ortege is to abstract away as much complexity as possible from our users. As such we would prefer users asking our chat agents most queries to ensure they’re getting highly focused answers saving our users time.\nHowever we still need to generate the content in order for our chat agent’s to be able to be up to date with the latest information on the Ortege data platform.\nSo all our documentation will be available through this site. However we’d encourage you to rather use OrtegeGPT for a better experience in finding the information you require.\nElse our documentation is divided into: * Ortege Studio * Data Topology * Research articles\nThis documentation is open source and community generated. Please submit a PR if you see anything wrong.\nOur documentation is written in Quarto and will be stored in a Milvus vector database which will periodically update our early stage chat bots."
+  },
+  {
+    "objectID": "lakehouse.html",
+    "href": "lakehouse.html",
+    "title": "Ortege Lakehouse",
+    "section": "",
+    "text": "We host our lakehouse on Azure Storage. So we do incur costs for it. We want to make our Lakehouse available to all, but we also have to be conscious of costs.\nWe don’t want to be in a situation whereby someone performs a DDOS on us and then we end up with a huge bill to pay.\nAs such we will be requiring users that want to access our Lakehouse to register for an API Key. From there we will release an SDK to access the Lakehouse.\nWe estimate this API to be out Q2 of 2024. But in startups, things can change rapidly."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome to Ortege",
@@ -40,48 +117,6 @@
     "title": "Welcome to Ortege",
     "section": "🌟 Ortege Lakehouse",
     "text": "🌟 Ortege Lakehouse\nIntroducing Ortege Lakehouse - our open data lakehouse. Accessible to everyone, it allows for both accessing and contributing data."
-  },
-  {
-    "objectID": "lakehouse.html",
-    "href": "lakehouse.html",
-    "title": "Ortege Lakehouse",
-    "section": "",
-    "text": "We host our lakehouse on Azure Storage. So we do incur costs for it. We want to make our Lakehouse available to all, but we also have to be conscious of costs.\nWe don’t want to be in a situation whereby someone performs a DDOS on us and then we end up with a huge bill to pay.\nAs such we will be requiring users that want to access our Lakehouse to register for an API Key. From there we will release an SDK to access the Lakehouse.\nWe estimate this API to be out Q2 of 2024. But in startups, things can change rapidly."
-  },
-  {
-    "objectID": "quick_start.html",
-    "href": "quick_start.html",
-    "title": "Quick Start",
-    "section": "",
-    "text": "One of our goals at Ortege is to abstract away as much complexity as possible from our users. As such we would prefer users asking our chat agents most queries to ensure they’re getting highly focused answers saving our users time.\nHowever we still need to generate the content in order for our chat agent’s to be able to be up to date with the latest information on the Ortege data platform.\nSo all our documentation will be available through this site. However we’d encourage you to rather use OrtegeGPT for a better experience in finding the information you require.\nElse our documentation is divided into: * Ortege Studio * Data Topology * Research articles\nThis documentation is open source and community generated. Please submit a PR if you see anything wrong.\nOur documentation is written in Quarto and will be stored in a Milvus vector database which will periodically update our early stage chat bots."
-  },
-  {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research Articles",
-    "section": "",
-    "text": "We will use Shiny charts and our Gold layer datasets in order to write Research reports.\nThe Research reports will be updated daily with fresh data. This means we provide what internally we call, realtime Messari Research articles. We grew frustrated with the high cost of solutions such as Messari and their point in time reports. We believe there is a better way to serve the crypto community: * Open access to market research * Presented in a visual style that encourages data storytelling * Research reports that update with live data\nAnyone can release a research article and submit a PR in our Github. If the research article is accepted, it will deployed to our production documentation site and we will promote your article on our socials.\nPlease see the contributing guide to learn more about how to submit your own research report."
-  },
-  {
-    "objectID": "studio.html",
-    "href": "studio.html",
-    "title": "Ortege Studio",
-    "section": "",
-    "text": "Ortege Studio can be located at https://app.ortege.xyz\nCurrently it is a closed beta. If you’d like to gain access please email christos@ortege.io"
-  },
-  {
-    "objectID": "contributing.html",
-    "href": "contributing.html",
-    "title": "Contributing a Research article",
-    "section": "",
-    "text": "Contributing a research article through Ortege is a great way for budding crypto research analysts and more general data analysts to showcase their skills to the broader community and gain some exposure.\nIn this article, we’ll walk you through how simple it is to create a research article. We’ll walk through an example of creating a Bitcoin research article.\nFirst navigate to articles folder in this repository and make a copy of the template."
-  },
-  {
-    "objectID": "articles/template.html",
-    "href": "articles/template.html",
-    "title": "Contributing a Research article",
-    "section": "",
-    "text": "Inserting data from Ortege Lakehouse\nThe great thing about Quarto is that you can embed code. That means you’ll be able to embed code directly into your Ortege Researh article and when the article gets accepted, the code will be executed and the results of the code displayed in your research article.\nLet’s unpack that by adding a bar char of Bitcoin Hash power over the past month.\n\n# Need to add a working example here"
   },
   {
     "objectID": "ortegegpt.html",
