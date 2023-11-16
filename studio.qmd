@@ -1,5 +1,5 @@
 ---
-title: "Product documenation"
+title: "Ortege Studio documenation"
 format:
   html:
     toc: true

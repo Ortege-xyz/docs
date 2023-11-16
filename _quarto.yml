@@ -7,6 +7,21 @@ nav:
     href: index.qmd
   - title: "Quick Start"
     href: quick_start.qmd
+  - title: "Data"
+    href: data.qmd
+  - title: "Ortege Studio"
+    href: studio.qmd
+  - title: "Research Articles"
+    href: research.qmd
 format:
   html:
-    theme: [tufte]
+    theme: united
+website:
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Home"
+        file: index.qmd
+      - data.qmd
+      - studio.qmd 
