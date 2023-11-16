@@ -2,3 +2,11 @@ project:
   title: "docs"
   type: website
   output-dir: docs
+nav:
+  - title: "Home"
+    href: index.qmd
+  - title: "Quick Start"
+    href: quick_start.qmd
+format:
+  html:
+    theme: [tufte]
