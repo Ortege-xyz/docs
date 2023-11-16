@@ -21,6 +21,27 @@
     "text": "The aim of this report is to create a realtime alternative to Messari’s State of Bitcoin report"
   },
   {
+    "objectID": "articles/btc.html#financial-performance",
+    "href": "articles/btc.html#financial-performance",
+    "title": "Contributing a Research article",
+    "section": "Financial Performance",
+    "text": "Financial Performance\n\nPrice\nMarket capitalization\nDominance"
+  },
+  {
+    "objectID": "articles/btc.html#network-performance",
+    "href": "articles/btc.html#network-performance",
+    "title": "Contributing a Research article",
+    "section": "Network performance",
+    "text": "Network performance\n\nFunded addresses\nAverage daily active addresses\nAverage daily transactoin count\nTotal value settled\nAverage daily transaction fees"
+  },
+  {
+    "objectID": "articles/btc.html#network-security",
+    "href": "articles/btc.html#network-security",
+    "title": "Contributing a Research article",
+    "section": "Network security",
+    "text": "Network security\n\nAverage daily miner revenue\nAverage hash rate"
+  },
+  {
     "objectID": "lakehouse.html",
     "href": "lakehouse.html",
     "title": "Ortege Lakehouse",
@@ -103,26 +124,5 @@
     "title": "OrtegeGPT",
     "section": "",
     "text": "OrtegeGPT is the primary way we’d like our users to discover Ortege. All our documentation in this site is deployed into our own Large Language Model, or LLM. We then deploy this as a chat agent that our users can utilise in order to discover Ortege and it’s suite of products.\nOur first chat agent is called Asimov and is in active development at the moment.\nWhile he is not deployed at present, he should be up and running in the next few weeks and deployed via Hugging Face Spaces."
-  },
-  {
-    "objectID": "articles/btc.html#financial-performance",
-    "href": "articles/btc.html#financial-performance",
-    "title": "Contributing a Research article",
-    "section": "Financial Performance",
-    "text": "Financial Performance\n\nPrice\nMarket capitalization\nDominance"
-  },
-  {
-    "objectID": "articles/btc.html#network-performance",
-    "href": "articles/btc.html#network-performance",
-    "title": "Contributing a Research article",
-    "section": "Network performance",
-    "text": "Network performance\n\nFunded addresses\nAverage daily active addresses\nAverage daily transactoin count\nTotal value settled\nAverage daily transaction fees"
-  },
-  {
-    "objectID": "articles/btc.html#network-security",
-    "href": "articles/btc.html#network-security",
-    "title": "Contributing a Research article",
-    "section": "Network security",
-    "text": "Network security\n\nAverage daily miner revenue\nAverage hash rate"
   }
 ]
