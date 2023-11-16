@@ -1,45 +1,45 @@
 [
   {
-    "objectID": "welcome.html",
-    "href": "welcome.html",
+    "objectID": "third_party_projects.html",
+    "href": "third_party_projects.html",
+    "title": "docs",
+    "section": "",
+    "text": "This page tracks external software projects that supplement Ortege and add to its ecosystem.\nTo add a project, open a pull request against the this repository. Add an entry to this quarto file.\nNote that all project and product names should follow trademark guidelines."
+  },
+  {
+    "objectID": "quick_start.html",
+    "href": "quick_start.html",
+    "title": "Quick Start",
+    "section": "",
+    "text": "One of our goals at Ortege is to abstract away as much complexity as possible from our users. As such we would prefer users asking our chat agents most queries to ensure they’re getting highly focused answers saving our users time.\nHowever we still need to generate the content in order for our chat agent’s to be able to be up to date with the latest information on the Ortege data platform.\nSo all our documentation will be available through this site. We will classify our data as: * Product documentation * Data documentation * Research articles\nThis documentation is open source and community generated.\nOur documentation is written in Quarto and will be stored in a Milvus vector database which will periodically update our early stage chat bots.\nOur first set of bots will be deployed on Hugging Face Spaces."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
     "title": "Welcome to Ortege",
     "section": "",
     "text": "Ortege excels in delivering unparalleled insights into blockchain ecosystems. Our tools empower you to unlock more possibilities, completely free of charge."
   },
   {
-    "objectID": "welcome.html#ortege-insight-hub",
-    "href": "welcome.html#ortege-insight-hub",
+    "objectID": "index.html#ortege-insight-hub",
+    "href": "index.html#ortege-insight-hub",
     "title": "Welcome to Ortege",
     "section": "🔥 Ortege Insight Hub:",
     "text": "🔥 Ortege Insight Hub:\nDive into blockchain data analysis, craft engaging visualizations, and instantly share your findings through interactive dashboards."
   },
   {
-    "objectID": "welcome.html#ortege-gpt",
-    "href": "welcome.html#ortege-gpt",
+    "objectID": "index.html#ortege-gpt",
+    "href": "index.html#ortege-gpt",
     "title": "Welcome to Ortege",
     "section": "🌐 Ortege GPT:",
     "text": "🌐 Ortege GPT:\nA revolutionary chatbot that provides insights into both on-chain and off-chain data, leveraging advanced AI to deliver quick, accurate answers and analytics."
   },
   {
-    "objectID": "welcome.html#ortege-lakehouse",
-    "href": "welcome.html#ortege-lakehouse",
+    "objectID": "index.html#ortege-lakehouse",
+    "href": "index.html#ortege-lakehouse",
     "title": "Welcome to Ortege",
     "section": "🌟 Ortege Lakehouse:",
     "text": "🌟 Ortege Lakehouse:\nOur data lakehouse to integrate into our curated partners allowing them to leverage our ML pipelines and datasets."
-  },
-  {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research Articles",
-    "section": "",
-    "text": "We will use Shiny charts and our Gold layer datasets in order to write Research reports."
-  },
-  {
-    "objectID": "product.html",
-    "href": "product.html",
-    "title": "Product documenation",
-    "section": "",
-    "text": "Our front end can be located at https://app.ortege.xyz\nCurrently it is a closed beta. If you’d like to gain access please email christos@ortege.io"
   },
   {
     "objectID": "contributing.html",
@@ -63,17 +63,17 @@
     "text": "Organisation\nWe break our data down into 3 layers: * Bronze - Raw structured and unstructured data * Silver - Cleaned up to be more human readable. Still very broad * Gold - Very specific datasets\n\nBronze\n\nTables\nOur tables follow the following format: tbl + environment + layer + entity\nWe have the following tables on all EVM chains in the bronze layer: * tbl_prod_br_blocks * tbl_prod_br_contracts * tbl_prod_br_logs * tbl_prod_br_receipts * tbl_prod_br_transactions\n\n\nViews\n\nvw_prod_br_addresses\n\n\n\n\nSilver\n\n\nGold\nCurrently we are only focusing on research datasets in the Gold layer. These datasets will be materialized views and be updated every 5 minutes. They will be used to power our Research Articles.\n\nViews\nOur views follow the following format: vw + environment + layer + research + blockchain\n\nvw_prod_gld_research_btc"
   },
   {
-    "objectID": "quick_start.html",
-    "href": "quick_start.html",
-    "title": "Quick Start",
+    "objectID": "product.html",
+    "href": "product.html",
+    "title": "Product documenation",
     "section": "",
-    "text": "One of our goals at Ortege is to abstract away as much complexity as possible from our users. As such we would prefer users asking our chat agents most queries to ensure they’re getting highly focused answers saving our users time.\nHowever we still need to generate the content in order for our chat agent’s to be able to be up to date with the latest information on the Ortege data platform.\nSo all our documentation will be available through this site. We will classify our data as: * Product documentation * Data documentation * Research articles\nThis documentation is open source and community generated.\nOur documentation is written in Quarto and will be stored in a Milvus vector database which will periodically update our early stage chat bots.\nOur first set of bots will be deployed on Hugging Face Spaces."
+    "text": "Our front end can be located at https://app.ortege.xyz\nCurrently it is a closed beta. If you’d like to gain access please email christos@ortege.io"
   },
   {
-    "objectID": "third_party_projects.html",
-    "href": "third_party_projects.html",
-    "title": "docs",
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research Articles",
     "section": "",
-    "text": "This page tracks external software projects that supplement Ortege and add to its ecosystem.\nTo add a project, open a pull request against the this repository. Add an entry to this quarto file.\nNote that all project and product names should follow trademark guidelines."
+    "text": "We will use Shiny charts and our Gold layer datasets in order to write Research reports."
   }
 ]

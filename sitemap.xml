@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://Ortege-xyz.github.io/docs/welcome.html</loc>
-    <lastmod>2023-11-16T04:36:34.362Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Ortege-xyz.github.io/docs/research.html</loc>
-    <lastmod>2023-11-16T04:36:33.528Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Ortege-xyz.github.io/docs/product.html</loc>
-    <lastmod>2023-11-16T04:36:32.735Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Ortege-xyz.github.io/docs/contributing.html</loc>
-    <lastmod>2023-11-16T04:36:31.684Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Ortege-xyz.github.io/docs/data.html</loc>
-    <lastmod>2023-11-16T04:36:32.222Z</lastmod>
+    <loc>https://Ortege-xyz.github.io/docs/third_party_projects.html</loc>
+    <lastmod>2023-11-16T04:47:20.084Z</lastmod>
   </url>
   <url>
     <loc>https://Ortege-xyz.github.io/docs/quick_start.html</loc>
-    <lastmod>2023-11-16T04:36:33.173Z</lastmod>
+    <lastmod>2023-11-16T04:47:18.930Z</lastmod>
   </url>
   <url>
-    <loc>https://Ortege-xyz.github.io/docs/third_party_projects.html</loc>
-    <lastmod>2023-11-16T04:36:33.920Z</lastmod>
+    <loc>https://Ortege-xyz.github.io/docs/index.html</loc>
+    <lastmod>2023-11-16T04:47:17.752Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Ortege-xyz.github.io/docs/contributing.html</loc>
+    <lastmod>2023-11-16T04:47:16.630Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Ortege-xyz.github.io/docs/data.html</loc>
+    <lastmod>2023-11-16T04:47:17.164Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Ortege-xyz.github.io/docs/product.html</loc>
+    <lastmod>2023-11-16T04:47:18.345Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Ortege-xyz.github.io/docs/research.html</loc>
+    <lastmod>2023-11-16T04:47:19.497Z</lastmod>
   </url>
 </urlset>
