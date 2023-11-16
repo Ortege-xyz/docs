@@ -9,16 +9,19 @@ format:
 
 Ortege excels in delivering unparalleled insights into blockchain ecosystems. Our tools empower you to unlock more possibilities, completely free of charge.
 
-# Our product offerings
+# Our Product Offerings
 
-## 🔥 Ortege Studio:
-Dive into blockchain data analysis, craft engaging visualizations, and instantly share your findings through interactive dashboards.
+## 🔥 Ortege Studio
+[Ortege Studio](studio.qmd) allows you to dive into blockchain data analysis, craft engaging visualizations, and share your findings through interactive dashboards.
 
-## 🌐 Ortege GPT:
-A revolutionary chatbot that provides insights into both on-chain and off-chain data, leveraging advanced AI to deliver quick, accurate answers and analytics. 
+## 🌐 OrtegeGPT
+Explore the future of AI-assisted data analysis with [OrtegeGPT](ortegegpt.qmd). This revolutionary chatbot provides insights into both on-chain and off-chain data, leveraging advanced AI for quick, accurate answers and analytics.
 
-## 🌟 Ortege Lakehouse:
-Our data lakehouse. Open to all to access and contribute to. 
+## Ortege Research
+Delve into the world of crypto with our comprehensive [Ortege Research](research.qmd) articles. Freely accessible to all, we cover more chains and dApps than any other competitor.
 
-# Quick start
-Please read the [quick start section](quick_start.qmd) to get up to speed with our approach to documentation.
+## 🌟 Ortege Lakehouse
+Introducing [Ortege Lakehouse](lakehouse.qmd) - our open data lakehouse. Accessible to everyone, it allows for both accessing and contributing data.
+
+# Quick Start
+To familiarize yourself with our documentation approach, please read the [Quick Start section](quick_start.qmd).

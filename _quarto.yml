@@ -23,7 +23,6 @@ website:
     left:
       - text: "Home"
         file: index.qmd
-      - data.qmd
       - studio.qmd 
       - ortegegpt.qmd
       - research.qmd
