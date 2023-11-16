@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Quick Start</title>
+<title>docs - Welcome to Ortege</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,16 +23,41 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="quick_start_files/libs/clipboard/clipboard.min.js"></script>
-<script src="quick_start_files/libs/quarto-html/quarto.js"></script>
-<script src="quick_start_files/libs/quarto-html/popper.min.js"></script>
-<script src="quick_start_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="quick_start_files/libs/quarto-html/anchor.min.js"></script>
-<link href="quick_start_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="quick_start_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="quick_start_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="quick_start_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="quick_start_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -40,15 +65,32 @@ ul.task-list li input[type="checkbox"] {
 
 <body>
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  
-</div>
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#our-product-offerings" id="toc-our-product-offerings" class="nav-link active" data-scroll-target="#our-product-offerings">Our product offerings</a>
+  <ul class="collapse">
+  <li><a href="#ortege-insight-hub" id="toc-ortege-insight-hub" class="nav-link" data-scroll-target="#ortege-insight-hub">🔥 Ortege Insight Hub:</a></li>
+  <li><a href="#ortege-gpt" id="toc-ortege-gpt" class="nav-link" data-scroll-target="#ortege-gpt">🌐 Ortege GPT:</a></li>
+  <li><a href="#ortege-lakehouse" id="toc-ortege-lakehouse" class="nav-link" data-scroll-target="#ortege-lakehouse">🌟 Ortege Lakehouse:</a></li>
+  </ul></li>
+  <li><a href="#quick-start" id="toc-quick-start" class="nav-link" data-scroll-target="#quick-start">Quick start</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Quick Start</h1>
+<h1 class="title">Welcome to Ortege</h1>
 </div>
 
 
@@ -63,15 +105,30 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>One of our goals at Ortege is to abstract away as much complexity as possible from our users. As such we would prefer users asking our chat agents most queries to ensure they’re getting highly focused answers saving our users time.</p>
-<p>However we still need to generate the content in order for our chat agent’s to be able to be up to date with the latest information on the Ortege data platform.</p>
-<p>So all our documentation will be available through this site. We will classify our data as: * <a href="product.qmd">Product documentation</a> * Data documentation * Research articles</p>
-<p>This documentation is open source and community generated.</p>
-<p>Our documentation is written in <a href="https://quarto.org/" class="external" target="blank">Quarto</a> and will be stored in a <a href="https://milvus.io/" class="external" target="blank">Milvus</a> vector database which will periodically update our early stage chat bots.</p>
-<p>Our first set of bots will be deployed on <a href="https://huggingface.co/spaces" class="external" target="blank">Hugging Face Spaces</a>.</p>
+<p>Ortege excels in delivering unparalleled insights into blockchain ecosystems. Our tools empower you to unlock more possibilities, completely free of charge.</p>
+<section id="our-product-offerings" class="level1">
+<h1>Our product offerings</h1>
+<section id="ortege-insight-hub" class="level2">
+<h2 class="anchored" data-anchor-id="ortege-insight-hub">🔥 Ortege Insight Hub:</h2>
+<p>Dive into blockchain data analysis, craft engaging visualizations, and instantly share your findings through interactive dashboards.</p>
+</section>
+<section id="ortege-gpt" class="level2">
+<h2 class="anchored" data-anchor-id="ortege-gpt">🌐 Ortege GPT:</h2>
+<p>A revolutionary chatbot that provides insights into both on-chain and off-chain data, leveraging advanced AI to deliver quick, accurate answers and analytics.</p>
+</section>
+<section id="ortege-lakehouse" class="level2">
+<h2 class="anchored" data-anchor-id="ortege-lakehouse">🌟 Ortege Lakehouse:</h2>
+<p>Our data lakehouse to integrate into our curated partners allowing them to leverage our ML pipelines and datasets.</p>
+</section>
+</section>
+<section id="quick-start" class="level1">
+<h1>Quick start</h1>
+<p>Please read the <a href="./quick_start.html">quick start section</a>.</p>
 
-</main>
-<!-- /main column -->
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
