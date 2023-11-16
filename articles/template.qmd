@@ -12,6 +12,8 @@ The great thing about Quarto is that you can embed code. That means you'll be ab
 
 Let's unpack that by adding a bar char of Bitcoin Hash power over the past month.
 
-```{python}
-# Need to add a working example here
-```
+# Missing Datasets
+If your research report needs data that isn't in our lakehouse, you have a few options in order to get the data into our lakehouse.
+1. Send us the Parquet files of the dataset
+2. Create a `pipeline` by submitting a PR to Ortege's open source [ETL codebase](https://github.com/Ortege-xyz/etl)
+3. Reach out to the team to discuss a joint effort
