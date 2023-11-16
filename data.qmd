@@ -1,52 +1,22 @@
 ---
-title: "Data documentation"
+title: "Data Topology"
 format:
   html:
     toc: true
     html-math-method: katex
     css: styles.css
 ---
+If you're looking to be heavily involved in Ortege, then this will be one of the most important areas to understand.
+
+Our data is deployed as [Delta Lake tables](https://docs.delta.io/latest/quick-start.html) and adhere to the following naming conventions. 
+
+* All databases/schemas will be named `db_*blockchain*` so for example, `db_eth` or `db_bitcoin`
+* All entities in the database will be either tables (denoted by `tbl_`), views (denoted by `vw_`) or a materialized view (denoted by `mvw_`)
+* Those entities will then be following the environment the data is related to. Either one of dev, test or prod. As example, a table of blocks would be called `tbl_prod_blocks`
+* We'd also like to include what layer the data is part of. We follow a [Medallian Architecture](https://learn.microsoft.com/en-us/azure/databricks/lakehouse/medallion). So we want to denote either br for bronze, sl for silver or gld for gold. This means our block table now becomes `tbl_prod_br_blocks`
 
 # Chains supported
-Currently we support Ethereum and Avalanche. If you'd like us to support a new chain, please reach out to christos@ortege.io
-
-# Data structure
-We classify data as structured, unstructured or semi structured.
-
-We then further break down data into it's source. Namely on chain and off chain data.
-
-On chain data is data that is occuring on that blockchain, things like trading statistics and block production. 
-
-Off chain data is any data that doesn't occur on chain. Data sources like Twitter and Centralized Exchange pricing datapoints are off chain data even if they deal with blockchains. 
-
-## Organisation
-We break our data down into 3 layers:
-* Bronze - Raw structured and unstructured data
-* Silver - Cleaned up to be more human readable. Still very broad
-* Gold - Very specific datasets
-
-### Bronze
-#### Tables
-Our tables follow the following format:
-`tbl + environment + layer + entity`
-
-We have the following tables on all EVM chains in the bronze layer:
-* tbl_prod_br_blocks
-* tbl_prod_br_contracts
-* tbl_prod_br_logs
-* tbl_prod_br_receipts
-* tbl_prod_br_transactions
-
-#### Views
-* vw_prod_br_addresses
-
-### Silver
-
-### Gold
-Currently we are only focusing on research datasets in the Gold layer. These datasets will be materialized views and be updated every 5 minutes. They will be used to power our [Research Articles](research.qmd).
-
-#### Views
-Our views follow the following format:
-`vw + environment + layer + research + blockchain`
-
-* vw_prod_gld_research_btc
+We are planning on going live on 31st January with the bronze layer for the following chains:
+* Bitcoin
+* Ethereum
+* Avalanche

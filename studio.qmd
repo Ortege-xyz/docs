@@ -1,5 +1,5 @@
 ---
-title: "Ortege Studio documenation"
+title: "Ortege Studio"
 format:
   html:
     toc: true
@@ -7,6 +7,6 @@ format:
     css: styles.css
 ---
 
-Our front end can be located at https://app.ortege.xyz 
+Ortege Studio can be located at https://app.ortege.xyz 
 
 Currently it is a closed beta. If you'd like to gain access please email christos@ortege.io 

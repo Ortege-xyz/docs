@@ -8,3 +8,12 @@ format:
 ---
 
 We will use [Shiny charts](https://shiny.posit.co/) and our Gold layer datasets in order to write Research reports.
+
+The Research reports will be updated daily with fresh data. This means we provide what internally we call, realtime Messari Research articles. We grew frustrated with the high cost of solutions such as Messari and their point in time reports. We believe there is a better way to serve the crypto community:
+* Open access to market research
+* Presented in a visual style that encourages data storytelling
+* Research reports that update with live data
+
+Anyone can release a research article and submit a PR in our Github. If the research article is accepted, it will deployed to our production documentation site and we will promote your article on our socials. 
+
+Please see [the contributing guide](contributing.qmd) to learn more about how to submit your own research report. 

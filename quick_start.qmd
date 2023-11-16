@@ -11,13 +11,13 @@ One of our goals at Ortege is to abstract away as much complexity as possible fr
 
 However we still need to generate the content in order for our chat agent's to be able to be up to date with the latest information on the Ortege data platform. 
 
-So all our documentation will be available through this site. We will classify our data as:
-* [Product documentation](product.qmd)
-* [Data documentation](data.qmd)
+So all our documentation will be available through this site. However we'd encourage you to rather use [OrtegeGPT](ortege.qmd) for a better experience in finding the information you require. 
+
+Else our documentation is divided into:
+* [Ortege Studio](studio.qmd)
+* [Data Topology](data.qmd)
 * [Research articles](research.qmd)
 
-This documentation is open source and community generated. 
+This documentation is open source and community generated. Please submit a PR if you see anything wrong. 
 
 Our documentation is written in [Quarto](https://quarto.org/){.external target="blank"} and will be stored in a [Milvus](https://milvus.io/){.external target="blank"} vector database which will periodically update our early stage chat bots.
-
-Our first set of bots will be deployed on [Hugging Face Spaces](https://huggingface.co/spaces){.external target="blank"}.

@@ -1,0 +1,17 @@
+---
+title: "Contributing a Research article"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+    css: styles.css
+---
+
+# Inserting data from Ortege Lakehouse
+The great thing about Quarto is that you can embed code. That means you'll be able to embed code directly into your Ortege Researh article and when the article gets accepted, the code will be executed and the results of the code displayed in your research article.
+
+Let's unpack that by adding a bar char of Bitcoin Hash power over the past month.
+
+```{python}
+# Need to add a working example here
+```

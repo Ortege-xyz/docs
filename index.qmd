@@ -11,14 +11,14 @@ Ortege excels in delivering unparalleled insights into blockchain ecosystems. Ou
 
 # Our product offerings
 
-## 🔥 Ortege Insight Hub:
+## 🔥 Ortege Studio:
 Dive into blockchain data analysis, craft engaging visualizations, and instantly share your findings through interactive dashboards.
 
 ## 🌐 Ortege GPT:
 A revolutionary chatbot that provides insights into both on-chain and off-chain data, leveraging advanced AI to deliver quick, accurate answers and analytics. 
 
 ## 🌟 Ortege Lakehouse:
-Our data lakehouse to integrate into our curated partners allowing them to leverage our ML pipelines and datasets. 
+Our data lakehouse. Open to all to access and contribute to. 
 
 # Quick start
-Please read the [quick start section](quick_start.qmd).
+Please read the [quick start section](quick_start.qmd) to get up to speed with our approach to documentation.

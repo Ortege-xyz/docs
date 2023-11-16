@@ -1,5 +1,0 @@
-This page tracks external software projects that supplement Ortege and add to its ecosystem.
-
-To add a project, open a pull request against the this repository. Add an entry to this quarto file. 
-
-Note that all project and product names should follow trademark guidelines.
