@@ -15,6 +15,9 @@ The Research reports will be updated daily with fresh data. This means we provid
 # Current Reports
 * [State of Bitcoin](articles/btc.qmd)
 
+# Technologies used 
+We use Streamlit in order to host our charts and visualizations.
+
 # Contributing
 Anyone can release a research article and submit a PR in our Github. If the research article is accepted, it will deployed to our production documentation site and we will promote your article on our socials. 
 

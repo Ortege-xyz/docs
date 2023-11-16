@@ -39,7 +39,9 @@ The aim of this report is to create a realtime alternative to [Messari's State o
 * Average daily miner revenue
 * Average hash rate
 
+# Addresses
 ![Addresses](../images/addresses.webp)
+
 ![btc_halving](../images/btc_halving.webp)
 ![btc_performance](../images/btc_performance.webp)
 ![calendar](../images/calendar.webp)
