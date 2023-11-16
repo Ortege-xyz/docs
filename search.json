@@ -17,36 +17,43 @@
     "objectID": "index.html#ortege-studio",
     "href": "index.html#ortege-studio",
     "title": "Welcome to Ortege",
-    "section": "🔥 Ortege Studio:",
-    "text": "🔥 Ortege Studio:\nDive into blockchain data analysis, craft engaging visualizations, and instantly share your findings through interactive dashboards."
+    "section": "🔥 Ortege Studio",
+    "text": "🔥 Ortege Studio\nOrtege Studio allows you to dive into blockchain data analysis, craft engaging visualizations, and share your findings through interactive dashboards."
   },
   {
-    "objectID": "index.html#ortege-gpt",
-    "href": "index.html#ortege-gpt",
+    "objectID": "index.html#ortegegpt",
+    "href": "index.html#ortegegpt",
     "title": "Welcome to Ortege",
-    "section": "🌐 Ortege GPT:",
-    "text": "🌐 Ortege GPT:\nA revolutionary chatbot that provides insights into both on-chain and off-chain data, leveraging advanced AI to deliver quick, accurate answers and analytics."
+    "section": "🌐 OrtegeGPT",
+    "text": "🌐 OrtegeGPT\nExplore the future of AI-assisted data analysis with OrtegeGPT. This revolutionary chatbot provides insights into both on-chain and off-chain data, leveraging advanced AI for quick, accurate answers and analytics."
+  },
+  {
+    "objectID": "index.html#ortege-research",
+    "href": "index.html#ortege-research",
+    "title": "Welcome to Ortege",
+    "section": "Ortege Research",
+    "text": "Ortege Research\nDelve into the world of crypto with our comprehensive Ortege Research articles. Freely accessible to all, we cover more chains and dApps than any other competitor."
   },
   {
     "objectID": "index.html#ortege-lakehouse",
     "href": "index.html#ortege-lakehouse",
     "title": "Welcome to Ortege",
-    "section": "🌟 Ortege Lakehouse:",
-    "text": "🌟 Ortege Lakehouse:\nOur data lakehouse. Open to all to access and contribute to."
+    "section": "🌟 Ortege Lakehouse",
+    "text": "🌟 Ortege Lakehouse\nIntroducing Ortege Lakehouse - our open data lakehouse. Accessible to everyone, it allows for both accessing and contributing data."
   },
   {
-    "objectID": "contributing.html",
-    "href": "contributing.html",
-    "title": "Contributing a Research article",
+    "objectID": "lakehouse.html",
+    "href": "lakehouse.html",
+    "title": "Ortege Lakehouse",
     "section": "",
-    "text": "Contributing a research article through Ortege is a great way for budding crypto research analysts and more general data analysts to showcase their skills to the broader community and gain some exposure.\nIn this article, we’ll walk you through how simple it is to create a research article. We’ll walk through an example of creating a Bitcoin research article.\nFirst navigate to articles folder in this repository and make a copy of the template."
+    "text": "We host our lakehouse on Azure Storage. So we do incur costs for it. We want to make our Lakehouse available to all, but we also have to be conscious of costs.\nWe don’t want to be in a situation whereby someone performs a DDOS on us and then we end up with a huge bill to pay.\nAs such we will be requiring users that want to access our Lakehouse to register for an API Key. From there we will release an SDK to access the Lakehouse.\nWe estimate this API to be out Q2 of 2024. But in startups, things can change rapidly."
   },
   {
-    "objectID": "studio.html",
-    "href": "studio.html",
-    "title": "Ortege Studio",
+    "objectID": "quick_start.html",
+    "href": "quick_start.html",
+    "title": "Quick Start",
     "section": "",
-    "text": "Ortege Studio can be located at https://app.ortege.xyz\nCurrently it is a closed beta. If you’d like to gain access please email christos@ortege.io"
+    "text": "One of our goals at Ortege is to abstract away as much complexity as possible from our users. As such we would prefer users asking our chat agents most queries to ensure they’re getting highly focused answers saving our users time.\nHowever we still need to generate the content in order for our chat agent’s to be able to be up to date with the latest information on the Ortege data platform.\nSo all our documentation will be available through this site. However we’d encourage you to rather use OrtegeGPT for a better experience in finding the information you require.\nElse our documentation is divided into: * Ortege Studio * Data Topology * Research articles\nThis documentation is open source and community generated. Please submit a PR if you see anything wrong.\nOur documentation is written in Quarto and will be stored in a Milvus vector database which will periodically update our early stage chat bots."
   },
   {
     "objectID": "research.html",
@@ -56,11 +63,18 @@
     "text": "We will use Shiny charts and our Gold layer datasets in order to write Research reports.\nThe Research reports will be updated daily with fresh data. This means we provide what internally we call, realtime Messari Research articles. We grew frustrated with the high cost of solutions such as Messari and their point in time reports. We believe there is a better way to serve the crypto community: * Open access to market research * Presented in a visual style that encourages data storytelling * Research reports that update with live data\nAnyone can release a research article and submit a PR in our Github. If the research article is accepted, it will deployed to our production documentation site and we will promote your article on our socials.\nPlease see the contributing guide to learn more about how to submit your own research report."
   },
   {
-    "objectID": "quick_start.html",
-    "href": "quick_start.html",
-    "title": "Quick Start",
+    "objectID": "studio.html",
+    "href": "studio.html",
+    "title": "Ortege Studio",
     "section": "",
-    "text": "One of our goals at Ortege is to abstract away as much complexity as possible from our users. As such we would prefer users asking our chat agents most queries to ensure they’re getting highly focused answers saving our users time.\nHowever we still need to generate the content in order for our chat agent’s to be able to be up to date with the latest information on the Ortege data platform.\nSo all our documentation will be available through this site. However we’d encourage you to rather use OrtegeGPT for a better experience in finding the information you require.\nElse our documentation is divided into: * Ortege Studio * Data Topology * Research articles\nThis documentation is open source and community generated. Please submit a PR if you see anything wrong.\nOur documentation is written in Quarto and will be stored in a Milvus vector database which will periodically update our early stage chat bots."
+    "text": "Ortege Studio can be located at https://app.ortege.xyz\nCurrently it is a closed beta. If you’d like to gain access please email christos@ortege.io"
+  },
+  {
+    "objectID": "contributing.html",
+    "href": "contributing.html",
+    "title": "Contributing a Research article",
+    "section": "",
+    "text": "Contributing a research article through Ortege is a great way for budding crypto research analysts and more general data analysts to showcase their skills to the broader community and gain some exposure.\nIn this article, we’ll walk you through how simple it is to create a research article. We’ll walk through an example of creating a Bitcoin research article.\nFirst navigate to articles folder in this repository and make a copy of the template."
   },
   {
     "objectID": "articles/template.html",
