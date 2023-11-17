@@ -129,6 +129,11 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#chains-supported" id="toc-chains-supported" class="nav-link active" data-scroll-target="#chains-supported">Chains supported</a></li>
+  <li><a href="#data-ontology" id="toc-data-ontology" class="nav-link" data-scroll-target="#data-ontology">Data Ontology</a>
+  <ul class="collapse">
+  <li><a href="#blockchains" id="toc-blockchains" class="nav-link" data-scroll-target="#blockchains">Blockchains</a></li>
+  <li><a href="#account-types" id="toc-account-types" class="nav-link" data-scroll-target="#account-types">Account Types</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -163,8 +168,292 @@ ul.task-list li input[type="checkbox"] {
 <section id="chains-supported" class="level1">
 <h1>Chains supported</h1>
 <p>We are planning on going live on 31st January with the bronze layer for the following chains: * Bitcoin * Ethereum * Avalanche</p>
+</section>
+<section id="data-ontology" class="level1">
+<h1>Data Ontology</h1>
+<section id="blockchains" class="level2">
+<h2 class="anchored" data-anchor-id="blockchains">Blockchains</h2>
+<p><strong>TODO</strong> Add some data here explaining the different classifications of Blockchains. Link to some Jon Charbaneu stuff.</p>
+</section>
+<section id="account-types" class="level2">
+<h2 class="anchored" data-anchor-id="account-types">Account Types</h2>
+<p>An important distinction between blockchains is their ledger model. This indicates how the underlying blockchain ledger records information about token transfers and balances. The two major classifcations are: * <a href="https://www.horizen.io/academy/utxo-vs-account-model/">UTXO</a> * <a href="https://docs.alchemy.com/docs/utxo-vs-account-models">Accounts based model</a></p>
+<p>In our Data Ontology we classify Blockchains as below:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Blockchain</th>
+<th>Account Type</th>
+<th>VM Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bitcoin</td>
+<td>UTXO</td>
+<td>dumb</td>
+</tr>
+<tr class="even">
+<td>Ethereum</td>
+<td>Accounts</td>
+<td>evm</td>
+</tr>
+<tr class="odd">
+<td>BNB</td>
+<td>Accounts</td>
+<td>evm</td>
+</tr>
+<tr class="even">
+<td>XRP</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Solana</td>
+<td>Accounts</td>
+<td>svm</td>
+</tr>
+<tr class="even">
+<td>Cardano</td>
+<td>UTXO</td>
+<td>unsure</td>
+</tr>
+<tr class="odd">
+<td>Dogecoin</td>
+<td>UTXO</td>
+<td>dumb</td>
+</tr>
+<tr class="even">
+<td>Tron</td>
+<td>Accounts</td>
+<td>evm</td>
+</tr>
+<tr class="odd">
+<td>Polygon</td>
+<td>Accounts</td>
+<td>evm</td>
+</tr>
+<tr class="even">
+<td>Avalanche</td>
+<td>Accounts</td>
+<td>evm</td>
+</tr>
+<tr class="odd">
+<td>Polkadot</td>
+<td>Accounts</td>
+<td>substrate</td>
+</tr>
+<tr class="even">
+<td>Litecoin</td>
+<td>UTXO</td>
+<td>dumb</td>
+</tr>
+<tr class="odd">
+<td>Toncoin</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Bitcoin Cash</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Stellar</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Monero</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Cosmos Hub</td>
+<td>Accounts</td>
+<td>cosmos</td>
+</tr>
+<tr class="even">
+<td>Ethereum Classic</td>
+<td>Accounts</td>
+<td>evm</td>
+</tr>
+<tr class="odd">
+<td>Kaspa</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Cronos</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Filecoin</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Hedera</td>
+<td>Accounts</td>
+<td>pseudo_evm</td>
+</tr>
+<tr class="odd">
+<td>Aptos</td>
+<td>Accounts</td>
+<td>move</td>
+</tr>
+<tr class="even">
+<td>Internet Computer</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>THORChain</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>NEAR</td>
+<td>Accounts</td>
+<td>rustvm</td>
+</tr>
+<tr class="odd">
+<td>Optimism</td>
+<td>Accounts</td>
+<td>evm</td>
+</tr>
+<tr class="even">
+<td>VeChain</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Mantle</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Quant</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Immutable</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Arbitrum</td>
+<td>Accounts</td>
+<td>evm</td>
+</tr>
+<tr class="odd">
+<td>Injective</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>MultiversX</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Render</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Algorand</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Fantom</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Flow</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Bitcoin SV</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Theta</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Stacks</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Celestia</td>
+<td>Accounts</td>
+<td>cosmos</td>
+</tr>
+<tr class="odd">
+<td>EOS</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Tezos</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Kava</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>XDC Network</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>dYdX</td>
+<td>Accounts</td>
+<td>cosmos</td>
+</tr>
+<tr class="even">
+<td>Mina</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Klaytn</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>IOTA</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Sui</td>
+<td>Accounts</td>
+<td>move</td>
+</tr>
+<tr class="even">
+<td>Radix</td>
+<td>Accounts</td>
+<td>rustvm</td>
+</tr>
+</tbody>
+</table>
+<p><strong>TODO</strong> Replace this table with a live dataset from <a href="./lakehouse.html">Ortege Lakehouse</a></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

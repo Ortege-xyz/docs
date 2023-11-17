@@ -1,59 +1,10 @@
 [
   {
-    "objectID": "data.html",
-    "href": "data.html",
-    "title": "Data Topology",
-    "section": "",
-    "text": "If you’re looking to be heavily involved in Ortege, then this will be one of the most important areas to understand.\nOur data is deployed as Delta Lake tables and adhere to the following naming conventions.\n\nAll databases/schemas will be named db_*blockchain* so for example, db_eth or db_bitcoin\nAll entities in the database will be either tables (denoted by tbl_), views (denoted by vw_) or a materialized view (denoted by mvw_)\nThose entities will then be following the environment the data is related to. Either one of dev, test or prod. As example, a table of blocks would be called tbl_prod_blocks\nWe’d also like to include what layer the data is part of. We follow a Medallian Architecture. So we want to denote either br for bronze, sl for silver or gld for gold. This means our block table now becomes tbl_prod_br_blocks\n\n\nChains supported\nWe are planning on going live on 31st January with the bronze layer for the following chains: * Bitcoin * Ethereum * Avalanche"
-  },
-  {
     "objectID": "testnet_partner.html",
     "href": "testnet_partner.html",
     "title": "Testnet Partner",
     "section": "",
     "text": "This is a form spacer\n\nA text field (1)\n  \n\n\nAnother text field (2)\n  \n\nThis is a form spacer\n\n\n\nMy Radio Button\n\n  \n   Good\n\n\n  \n   Bad\n\n\n\n\n\nMy Checkbox\n\n  \n   High\n\n\n  \n   Low\n\n\n  \n   Mid\n\n\n\n\nMy Selector\n\n  Option 1\n  Option 2\n  Option 3\n  Option 4\n\n\n\nEnter lots of text\n\n\n\nEnter your email\n\n\n\nUpload a file"
-  },
-  {
-    "objectID": "articles/btc.html",
-    "href": "articles/btc.html",
-    "title": "Contributing a Research article",
-    "section": "",
-    "text": "The aim of this report is to create a realtime alternative to Messari’s State of Bitcoin report"
-  },
-  {
-    "objectID": "articles/btc.html#financial-performance",
-    "href": "articles/btc.html#financial-performance",
-    "title": "Contributing a Research article",
-    "section": "Financial Performance",
-    "text": "Financial Performance\n\nPrice\nMarket capitalization\nDominance"
-  },
-  {
-    "objectID": "articles/btc.html#network-performance",
-    "href": "articles/btc.html#network-performance",
-    "title": "Contributing a Research article",
-    "section": "Network performance",
-    "text": "Network performance\n\nFunded addresses\nAverage daily active addresses\nAverage daily transactoin count\nTotal value settled\nAverage daily transaction fees"
-  },
-  {
-    "objectID": "articles/btc.html#network-security",
-    "href": "articles/btc.html#network-security",
-    "title": "Contributing a Research article",
-    "section": "Network security",
-    "text": "Network security\n\nAverage daily miner revenue\nAverage hash rate"
-  },
-  {
-    "objectID": "lakehouse.html",
-    "href": "lakehouse.html",
-    "title": "Ortege Lakehouse",
-    "section": "",
-    "text": "We host our lakehouse on Azure Storage. So we do incur costs for it. We want to make our Lakehouse available to all, and at present is currently available through Ortege Studio.\nPlease read our Data Ontology in order to acquaint yourself with how the data is structured throughout all Ortege products."
-  },
-  {
-    "objectID": "quick_start.html",
-    "href": "quick_start.html",
-    "title": "Quick Start",
-    "section": "",
-    "text": "One of our goals at Ortege is to abstract away as much complexity as possible from our users. As such we would prefer users asking our chat agents most queries to ensure they’re getting highly focused answers saving our users time.\nHowever we still need to generate the content in order for our chat agent’s to be able to be up to date with the latest information on the Ortege data platform.\nSo all our documentation will be available through this site. However we’d encourage you to rather use OrtegeGPT for a better experience in finding the information you require.\nElse our documentation is divided into: * Ortege Studio * Data Topology * Research articles\nThis documentation is open source and community generated. Please submit a PR if you see anything wrong.\nOur documentation is written in Quarto and will be stored in a Milvus vector database which will periodically update our early stage chat bots."
   },
   {
     "objectID": "studio.html",
@@ -63,18 +14,39 @@
     "text": "Ortege Studio can be located at https://app.ortege.xyz\nCurrently it is a closed beta. If you’d like to gain access please email christos@ortege.io"
   },
   {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research Articles",
+    "objectID": "quick_start.html",
+    "href": "quick_start.html",
+    "title": "Quick Start",
     "section": "",
-    "text": "The Research reports will be updated daily with fresh data. This means we provide what internally we call, realtime Research articles. We grew frustrated with the high cost of solutions such as Messari and their point in time reports. We believe there is a better way to serve the crypto community: * Open access to market research * Presented in a visual style that encourages data storytelling * Research reports that update with live data\n\nCurrent Reports\n\nState of Bitcoin\n\n\n\nContributing\nAnyone can release a research article and submit a PR in our Github. If the research article is accepted, it will deployed to our production documentation site and we will promote your article on our socials.\nPlease see the contributing guide to learn more about how to submit your own research report."
+    "text": "One of our goals at Ortege is to abstract away as much complexity as possible from our users. As such we would prefer users asking our chat agents most queries to ensure they’re getting highly focused answers saving our users time.\nHowever we still need to generate the content in order for our chat agent’s to be able to be up to date with the latest information on the Ortege data platform.\nSo all our documentation will be available through this site. However we’d encourage you to rather use OrtegeGPT for a better experience in finding the information you require.\nElse our documentation is divided into: * Ortege Studio * Data Topology * Research articles\nThis documentation is open source and community generated. Please submit a PR if you see anything wrong.\nOur documentation is written in Quarto and will be stored in a Milvus vector database which will periodically update our early stage chat bots."
   },
   {
-    "objectID": "contributing.html",
-    "href": "contributing.html",
-    "title": "Contributing a Research article",
+    "objectID": "lakehouse.html",
+    "href": "lakehouse.html",
+    "title": "Ortege Lakehouse",
     "section": "",
-    "text": "Contributing a research article through Ortege is a great way for budding crypto research analysts and more general data analysts to showcase their skills to the broader community and gain some exposure.\nIn this article, we’ll walk you through how simple it is to create a research article. We’ll walk through an example of creating a Bitcoin research article.\nFirst navigate to articles folder in this repository and make a copy of the template."
+    "text": "We host our lakehouse on Azure Storage. So we do incur costs for it. We want to make our Lakehouse available to all, and at present is currently available through Ortege Studio.\nPlease read our Data Ontology in order to acquaint yourself with how the data is structured throughout all Ortege products."
+  },
+  {
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "Data Topology",
+    "section": "",
+    "text": "If you’re looking to be heavily involved in Ortege, then this will be one of the most important areas to understand.\nOur data is deployed as Delta Lake tables and adhere to the following naming conventions."
+  },
+  {
+    "objectID": "data.html#blockchains",
+    "href": "data.html#blockchains",
+    "title": "Data Topology",
+    "section": "Blockchains",
+    "text": "Blockchains\nTODO Add some data here explaining the different classifications of Blockchains. Link to some Jon Charbaneu stuff."
+  },
+  {
+    "objectID": "data.html#account-types",
+    "href": "data.html#account-types",
+    "title": "Data Topology",
+    "section": "Account Types",
+    "text": "Account Types\nAn important distinction between blockchains is their ledger model. This indicates how the underlying blockchain ledger records information about token transfers and balances. The two major classifcations are: * UTXO * Accounts based model\nIn our Data Ontology we classify Blockchains as below:\n\n\n\nBlockchain\nAccount Type\nVM Type\n\n\n\n\nBitcoin\nUTXO\ndumb\n\n\nEthereum\nAccounts\nevm\n\n\nBNB\nAccounts\nevm\n\n\nXRP\n\n\n\n\nSolana\nAccounts\nsvm\n\n\nCardano\nUTXO\nunsure\n\n\nDogecoin\nUTXO\ndumb\n\n\nTron\nAccounts\nevm\n\n\nPolygon\nAccounts\nevm\n\n\nAvalanche\nAccounts\nevm\n\n\nPolkadot\nAccounts\nsubstrate\n\n\nLitecoin\nUTXO\ndumb\n\n\nToncoin\n\n\n\n\nBitcoin Cash\n\n\n\n\nStellar\n\n\n\n\nMonero\n\n\n\n\nCosmos Hub\nAccounts\ncosmos\n\n\nEthereum Classic\nAccounts\nevm\n\n\nKaspa\n\n\n\n\nCronos\n\n\n\n\nFilecoin\n\n\n\n\nHedera\nAccounts\npseudo_evm\n\n\nAptos\nAccounts\nmove\n\n\nInternet Computer\n\n\n\n\nTHORChain\n\n\n\n\nNEAR\nAccounts\nrustvm\n\n\nOptimism\nAccounts\nevm\n\n\nVeChain\n\n\n\n\nMantle\n\n\n\n\nQuant\n\n\n\n\nImmutable\n\n\n\n\nArbitrum\nAccounts\nevm\n\n\nInjective\n\n\n\n\nMultiversX\n\n\n\n\nRender\n\n\n\n\nAlgorand\n\n\n\n\nFantom\n\n\n\n\nFlow\n\n\n\n\nBitcoin SV\n\n\n\n\nTheta\n\n\n\n\nStacks\n\n\n\n\nCelestia\nAccounts\ncosmos\n\n\nEOS\n\n\n\n\nTezos\n\n\n\n\nKava\n\n\n\n\nXDC Network\n\n\n\n\ndYdX\nAccounts\ncosmos\n\n\nMina\n\n\n\n\nKlaytn\n\n\n\n\nIOTA\n\n\n\n\nSui\nAccounts\nmove\n\n\nRadix\nAccounts\nrustvm\n\n\n\nTODO Replace this table with a live dataset from Ortege Lakehouse"
   },
   {
     "objectID": "articles/template.html",
@@ -82,6 +54,41 @@
     "title": "Contributing a Research article",
     "section": "",
     "text": "Inserting data from Ortege Lakehouse\nThe great thing about Quarto is that you can embed code. That means you’ll be able to embed code directly into your Ortege Researh article and when the article gets accepted, the code will be executed and the results of the code displayed in your research article.\nLet’s unpack that by adding a bar char of Bitcoin Hash power over the past month.\n\n\nMissing Datasets\nIf your research report needs data that isn’t in our lakehouse, you have a few options in order to get the data into our lakehouse. 1. Send us the Parquet files of the dataset 2. Create a pipeline by submitting a PR to Ortege’s open source ETL codebase 3. Reach out to the team to discuss a joint effort"
+  },
+  {
+    "objectID": "articles/btc/btc.html",
+    "href": "articles/btc/btc.html",
+    "title": "Contributing a Research article",
+    "section": "",
+    "text": "The aim of this report is to create a realtime alternative to Messari’s State of Bitcoin report"
+  },
+  {
+    "objectID": "articles/btc/btc.html#financial-performance",
+    "href": "articles/btc/btc.html#financial-performance",
+    "title": "Contributing a Research article",
+    "section": "Financial Performance",
+    "text": "Financial Performance\n\nPrice\nMarket capitalization\nDominance"
+  },
+  {
+    "objectID": "articles/btc/btc.html#network-performance",
+    "href": "articles/btc/btc.html#network-performance",
+    "title": "Contributing a Research article",
+    "section": "Network performance",
+    "text": "Network performance\n\nFunded addresses\nAverage daily active addresses\nAverage daily transactoin count\nTotal value settled\nAverage daily transaction fees"
+  },
+  {
+    "objectID": "articles/btc/btc.html#network-security",
+    "href": "articles/btc/btc.html#network-security",
+    "title": "Contributing a Research article",
+    "section": "Network security",
+    "text": "Network security\n\nAverage daily miner revenue\nAverage hash rate"
+  },
+  {
+    "objectID": "contributing.html",
+    "href": "contributing.html",
+    "title": "Contributing a Research article",
+    "section": "",
+    "text": "Contributing a research article through Ortege is a great way for budding crypto research analysts and more general data analysts to showcase their skills to the broader community and gain some exposure.\nIn this article, we’ll walk you through how simple it is to create a research article. We’ll walk through an example of creating a Bitcoin research article.\nFirst navigate to articles folder in this repository and make a copy of the template."
   },
   {
     "objectID": "index.html",
@@ -124,5 +131,12 @@
     "title": "OrtegeGPT",
     "section": "",
     "text": "OrtegeGPT is the primary way we’d like our users to discover Ortege. All our documentation in this site is deployed into our own Large Language Model, or LLM. We then deploy this as a chat agent that our users can utilise in order to discover Ortege and it’s suite of products.\nOur first chat agent is called Asimov and is in active development at the moment.\nWhile he is not deployed at present, he should be up and running in the next few weeks and deployed via Hugging Face Spaces."
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research Articles",
+    "section": "",
+    "text": "The Research reports will be updated daily with fresh data. This means we provide what internally we call, realtime Research articles. We grew frustrated with the high cost of solutions such as Messari and their point in time reports. We believe there is a better way to serve the crypto community: * Open access to market research * Presented in a visual style that encourages data storytelling * Research reports that update with live data\n\nCurrent Reports\n\nState of Bitcoin\n\n\n\nTechnologies used\nWe use Streamlit in order to host our charts and visualizations.\n\n\nContributing\nAnyone can release a research article and submit a PR in our Github. If the research article is accepted, it will deployed to our production documentation site and we will promote your article on our socials.\nPlease see the contributing guide to learn more about how to submit your own research report."
   }
 ]

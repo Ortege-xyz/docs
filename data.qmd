@@ -20,3 +20,71 @@ We are planning on going live on 31st January with the bronze layer for the foll
 * Bitcoin
 * Ethereum
 * Avalanche
+
+# Data Ontology
+## Blockchains
+**TODO** Add some data here explaining the different classifications of Blockchains. Link to some Jon Charbaneu stuff.
+
+## Account Types
+An important distinction between blockchains is their ledger model. This indicates how the underlying blockchain ledger records information about token transfers and balances. The two major classifcations are:
+* [UTXO](https://www.horizen.io/academy/utxo-vs-account-model/)
+* [Accounts based model](https://docs.alchemy.com/docs/utxo-vs-account-models)
+
+In our Data Ontology we classify Blockchains as below:
+
+| Blockchain          | Account Type | VM Type     |
+|---------------------|--------------|-------------|
+| Bitcoin             | UTXO         | dumb        |
+| Ethereum            | Accounts     | evm         |
+| BNB                 | Accounts     | evm         |
+| XRP                 |              |             |
+| Solana              | Accounts     | svm         |
+| Cardano             | UTXO         | unsure      |
+| Dogecoin            | UTXO         | dumb        |
+| Tron                | Accounts     | evm         |
+| Polygon             | Accounts     | evm         |
+| Avalanche           | Accounts     | evm         |
+| Polkadot            | Accounts     | substrate   |
+| Litecoin            | UTXO         | dumb        |
+| Toncoin             |              |             |
+| Bitcoin Cash        |              |             |
+| Stellar             |              |             |
+| Monero              |              |             |
+| Cosmos Hub          | Accounts     | cosmos      |
+| Ethereum Classic    | Accounts     | evm         |
+| Kaspa               |              |             |
+| Cronos              |              |             |
+| Filecoin            |              |             |
+| Hedera              | Accounts     | pseudo_evm  |
+| Aptos               | Accounts     | move        |
+| Internet Computer   |              |             |
+| THORChain           |              |             |
+| NEAR                | Accounts     | rustvm      |
+| Optimism            | Accounts     | evm         |
+| VeChain             |              |             |
+| Mantle              |              |             |
+| Quant               |              |             |
+| Immutable           |              |             |
+| Arbitrum            | Accounts     | evm         |
+| Injective           |              |             |
+| MultiversX          |              |             |
+| Render              |              |             |
+| Algorand            |              |             |
+| Fantom              |              |             |
+| Flow                |              |             |
+| Bitcoin SV          |              |             |
+| Theta               |              |             |
+| Stacks              |              |             |
+| Celestia            | Accounts     | cosmos      |
+| EOS                 |              |             |
+| Tezos               |              |             |
+| Kava                |              |             |
+| XDC Network         |              |             |
+| dYdX                | Accounts     | cosmos      |
+| Mina                |              |             |
+| Klaytn              |              |             |
+| IOTA                |              |             |
+| Sui                 | Accounts     | move        |
+| Radix               | Accounts     | rustvm      |
+
+**TODO** Replace this table with a live dataset from [Ortege Lakehouse](lakehouse.qmd)
