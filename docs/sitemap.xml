@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://Ortege-xyz.github.io/docs/testnet_partner.html</loc>
-    <lastmod>2023-11-17T00:19:31.733Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Ortege-xyz.github.io/docs/studio.html</loc>
-    <lastmod>2023-11-17T00:19:30.240Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Ortege-xyz.github.io/docs/quick_start.html</loc>
-    <lastmod>2023-11-17T00:19:28.752Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Ortege-xyz.github.io/docs/lakehouse.html</loc>
-    <lastmod>2023-11-17T00:19:27.233Z</lastmod>
-  </url>
-  <url>
     <loc>https://Ortege-xyz.github.io/docs/data.html</loc>
-    <lastmod>2023-11-17T00:19:25.782Z</lastmod>
+    <lastmod>2023-11-18T00:42:56.668Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Ortege-xyz.github.io/docs/testnet_partner.html</loc>
+    <lastmod>2023-11-18T00:42:55.984Z</lastmod>
   </url>
   <url>
     <loc>https://Ortege-xyz.github.io/docs/articles/template.html</loc>
-    <lastmod>2023-11-17T00:19:23.890Z</lastmod>
+    <lastmod>2023-11-18T00:42:55.422Z</lastmod>
   </url>
   <url>
-    <loc>https://Ortege-xyz.github.io/docs/articles/btc/btc.html</loc>
-    <lastmod>2023-11-17T00:19:22.984Z</lastmod>
+    <loc>https://Ortege-xyz.github.io/docs/lakehouse.html</loc>
+    <lastmod>2023-11-18T00:42:54.868Z</lastmod>
   </url>
   <url>
-    <loc>https://Ortege-xyz.github.io/docs/contributing.html</loc>
-    <lastmod>2023-11-17T00:19:24.698Z</lastmod>
+    <loc>https://Ortege-xyz.github.io/docs/quick_start.html</loc>
+    <lastmod>2023-11-18T00:42:54.344Z</lastmod>
   </url>
   <url>
-    <loc>https://Ortege-xyz.github.io/docs/index.html</loc>
-    <lastmod>2023-11-17T00:19:26.542Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Ortege-xyz.github.io/docs/ortegegpt.html</loc>
-    <lastmod>2023-11-17T00:19:27.995Z</lastmod>
+    <loc>https://Ortege-xyz.github.io/docs/studio.html</loc>
+    <lastmod>2023-11-18T00:42:53.823Z</lastmod>
   </url>
   <url>
     <loc>https://Ortege-xyz.github.io/docs/research.html</loc>
-    <lastmod>2023-11-17T00:19:29.514Z</lastmod>
+    <lastmod>2023-11-18T00:42:53.574Z</lastmod>
   </url>
   <url>
     <loc>https://Ortege-xyz.github.io/docs/submit_form.html</loc>
-    <lastmod>2023-11-17T00:19:30.949Z</lastmod>
+    <lastmod>2023-11-18T00:42:54.069Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Ortege-xyz.github.io/docs/contributing.html</loc>
+    <lastmod>2023-11-18T00:42:54.610Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Ortege-xyz.github.io/docs/articles/btc/btc.html</loc>
+    <lastmod>2023-11-18T00:42:55.166Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Ortege-xyz.github.io/docs/index.html</loc>
+    <lastmod>2023-11-18T00:42:55.695Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Ortege-xyz.github.io/docs/ortegegpt.html</loc>
+    <lastmod>2023-11-18T00:42:56.236Z</lastmod>
   </url>
 </urlset>
