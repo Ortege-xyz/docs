@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Ortege - Data Topology</title>
+<title>Ortege - Data Ontology</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,6 +59,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -133,6 +136,9 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#blockchains" id="toc-blockchains" class="nav-link" data-scroll-target="#blockchains">Blockchains</a></li>
   <li><a href="#account-types" id="toc-account-types" class="nav-link" data-scroll-target="#account-types">Account Types</a></li>
+  <li><a href="#blocks" id="toc-blocks" class="nav-link" data-scroll-target="#blocks">Blocks</a></li>
+  <li><a href="#transactions" id="toc-transactions" class="nav-link" data-scroll-target="#transactions">Transactions</a></li>
+  <li><a href="#smart-contracts" id="toc-smart-contracts" class="nav-link" data-scroll-target="#smart-contracts">Smart contracts</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -142,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Topology</h1>
+<h1 class="title">Data Ontology</h1>
 </div>
 
 
@@ -451,6 +457,133 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <p><strong>TODO</strong> Replace this table with a live dataset from <a href="./lakehouse.html">Ortege Lakehouse</a></p>
+</section>
+<section id="blocks" class="level2">
+<h2 class="anchored" data-anchor-id="blocks">Blocks</h2>
+<p>Lifecycle of a block</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    A[Block gets produced] --&gt; B[Ortege Streaming checks blockchain type]
+    B --&gt;|EVM| C1[Redpanda producer for EVM]
+    B --&gt;|UTXO_Dumb| C2[Redpanda producer for UTXO_Dumb]
+    B --&gt;|Substrate| C3[Redpanda producer for Substrate]
+    B --&gt;|SVM| C4[Redpanda producer for SVM]
+
+    C1 --&gt;|br_evm_&lt;name&gt;_produce_block| D1[Consumer adds to Delta Lake]
+    C2 --&gt;|br_utxo_dumb_&lt;name&gt;_produce_block| D2[Consumer adds to Delta Lake]
+    C3 --&gt;|br_substrate_&lt;name&gt;_produce_block| D3[Consumer adds to Delta Lake]
+    C4 --&gt;|br_svm_&lt;name&gt;_produce_block| D4[Consumer adds to Delta Lake]
+
+    D1 --&gt;|br_evm_&lt;name&gt;_block_added| E1[Query token price and miner earnings]
+    D2 --&gt;|br_utxo_dumb_&lt;name&gt;_block_added| E2[Query token price and miner earnings]
+    D3 --&gt;|br_substrate_&lt;name&gt;_block_added| E3[Query token price and miner earnings]
+    D4 --&gt;|br_svm_&lt;name&gt;_block_added| E4[Query token price and miner earnings]
+
+    E1 --&gt; H1[Convert timestamp to date-time]
+    E2 --&gt; H2[Convert timestamp to date-time]
+    E3 --&gt; H3[Convert timestamp to date-time]
+    E4 --&gt; H4[Convert timestamp to date-time]
+
+    H1 --&gt; F1[Update Silver Layer with EVM data]
+    H2 --&gt; F2[Update Silver Layer with UTXO_Dumb data]
+    H3 --&gt; F3[Update Silver Layer with Substrate data]
+    H4 --&gt; F4[Update Silver Layer with SVM data]
+
+    E2 --&gt;|If PoW| G2[Populate Hashrate for UTXO_Dumb]
+    G2 --&gt; F2
+</pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="transactions" class="level2">
+<h2 class="anchored" data-anchor-id="transactions">Transactions</h2>
+<p>Lifecycle of a transaction</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+
+<pre class="mermaid mermaid-js">flowchart TD
+    A[Transaction gets produced] --&gt; B[Ortege streaming checks blockchain type]
+    B --&gt;|EVM| C1[RedPanda topic for EVM]
+    B --&gt;|UTXO_Dumb| C2[RedPanda topic for UTXO_Dumb]
+    B --&gt;|Substrate| C3[RedPanda topic for Substrate]
+    B --&gt;|SVM| C4[RedPanda topic for SVM]
+
+    C1 --&gt; D[Consumer writes to Bronze layer]
+    C2 --&gt; D
+    C3 --&gt; D
+    C4 --&gt; D
+
+    D --&gt; E[Check if addresses are categorized in Silver layer]
+    E --&gt;|If not| F[Classify address as 'account' or 'smart contract']
+    E --&gt; G[Check if address transacted before on this chain]
+    G --&gt;|If not| H[Tag as 'new_address_on_chain' with date]
+
+    H --&gt; I[Check address on related chains]
+    I --&gt;|If active on other chains| J[Tag as 'multichain address']
+
+    J --&gt; K[Check for labels from Etherscan]
+    K --&gt;|If no labels| L[Query Etherscan and add labels to Silver layer]
+
+    L --&gt; M[Check how the wallet was funded]
+    M --&gt;|Funded from CEX| N[Tag as 'funded_from_CEX']
+    M --&gt;|Funded from known account/contract| O[Tag as 'funded_from_known_source']
+    M --&gt;|Funded from unknown source| P[Tag as 'funded_from_unknown_source']
+
+    P --&gt; Q[Check token balances in Silver layer]
+    Q --&gt; R[Push balances data to Gold layer in 'address_balances' table]
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="smart-contracts" class="level2">
+<h2 class="anchored" data-anchor-id="smart-contracts">Smart contracts</h2>
+<p>Lifecycle of a smart contract</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+
+<pre class="mermaid mermaid-js">flowchart TD
+    A[Contract gets produced] --&gt; B[Send to Ortege streaming service]
+    B --&gt; C[Produced as a RedPanda topic]
+    C --&gt; D[Pushed to Bronze layer as a Delta table]
+
+    D --&gt; E[Determine contract type]
+    E --&gt;|Token Contract| F1[Process Token Contract]
+    E --&gt;|NFT Contract| F2[Process NFT Contract]
+    E --&gt;|Interchain Token| F3[Update Cross Chain table in Silver layer]
+    E --&gt;|Basket Token| F4[Update Balances in Silver layer]
+    E --&gt;|Vault Token| F5[Update Vault details in Silver layer]
+    E --&gt;|Unidentified Token| F6[Check Etherscan for ABI]
+
+    F6 --&gt;|ABI found| G1[Upload ABI to Silver layer]
+    F6 --&gt;|ABI not found| G2[Decompile Contract and upload ABI]
+    
+    G1 --&gt; H[Scan Token for Vulnerabilities]
+    G2 --&gt; H
+    F1 --&gt; H
+    F2 --&gt; H
+    F3 --&gt; H
+    F4 --&gt; H
+    F5 --&gt; H
+
+    H --&gt;|Vulnerabilities found| I[Produce Event to RedPanda]
+
+</pre>
+</div>
+</div>
+</div>
+</div>
 
 
 </section>
