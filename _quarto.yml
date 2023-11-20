@@ -22,7 +22,6 @@ website:
             file: ortegegpt.qmd
           - text: "Ortege Lakehouse"
             file: lakehouse.qmd
-      - text: "Research"
-        file: research.qmd
-      - text: "Testnet Partner"
-        file: testnet_partner.qmd
+          - text: "Ortege Research"
+            file: research.qmd
+      
