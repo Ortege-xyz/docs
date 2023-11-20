@@ -1,33 +1,5 @@
 [
   {
-    "objectID": "articles/btc/btc.html",
-    "href": "articles/btc/btc.html",
-    "title": "Contributing a Research article",
-    "section": "",
-    "text": "tESTING The aim of this report is to create a realtime alternative to Messari’s State of Bitcoin report"
-  },
-  {
-    "objectID": "articles/btc/btc.html#financial-performance",
-    "href": "articles/btc/btc.html#financial-performance",
-    "title": "Contributing a Research article",
-    "section": "Financial Performance",
-    "text": "Financial Performance\n\nPrice\nMarket capitalization\nDominance"
-  },
-  {
-    "objectID": "articles/btc/btc.html#network-performance",
-    "href": "articles/btc/btc.html#network-performance",
-    "title": "Contributing a Research article",
-    "section": "Network performance",
-    "text": "Network performance\n\nFunded addresses\nAverage daily active addresses\nAverage daily transactoin count\nTotal value settled\nAverage daily transaction fees"
-  },
-  {
-    "objectID": "articles/btc/btc.html#network-security",
-    "href": "articles/btc/btc.html#network-security",
-    "title": "Contributing a Research article",
-    "section": "Network security",
-    "text": "Network security\n\nAverage daily miner revenue\nAverage hash rate"
-  },
-  {
     "objectID": "testnet_partner.html",
     "href": "testnet_partner.html",
     "title": "Testnet Partner",
@@ -54,20 +26,6 @@
     "title": "Ortege Lakehouse",
     "section": "",
     "text": "We host our lakehouse on Azure Storage. So we do incur costs for it. We want to make our Lakehouse available to all, and at present is currently available through Ortege Studio.\nPlease read our Data Ontology in order to acquaint yourself with how the data is structured throughout all Ortege products."
-  },
-  {
-    "objectID": "contributing.html",
-    "href": "contributing.html",
-    "title": "Contributing a Research article",
-    "section": "",
-    "text": "Contributing a research article through Ortege is a great way for budding crypto research analysts and more general data analysts to showcase their skills to the broader community and gain some exposure.\nIn this article, we’ll walk you through how simple it is to create a research article. We’ll walk through an example of creating a Bitcoin research article.\nFirst navigate to articles folder in this repository and make a copy of the template."
-  },
-  {
-    "objectID": "articles/template.html",
-    "href": "articles/template.html",
-    "title": "Contributing a Research article",
-    "section": "",
-    "text": "Inserting data from Ortege Lakehouse\nThe great thing about Quarto is that you can embed code. That means you’ll be able to embed code directly into your Ortege Researh article and when the article gets accepted, the code will be executed and the results of the code displayed in your research article.\nLet’s unpack that by adding a bar char of Bitcoin Hash power over the past month.\n\n\nMissing Datasets\nIf your research report needs data that isn’t in our lakehouse, you have a few options in order to get the data into our lakehouse. 1. Send us the Parquet files of the dataset 2. Create a pipeline by submitting a PR to Ortege’s open source ETL codebase 3. Reach out to the team to discuss a joint effort"
   },
   {
     "objectID": "data.html",
@@ -110,6 +68,83 @@
     "title": "Data Ontology",
     "section": "Smart contracts",
     "text": "Smart contracts\nLifecycle of a smart contract\n\n\n\n\n\nflowchart TD\n    A[Contract gets produced] --&gt; B[Send to Ortege streaming service]\n    B --&gt; C[Produced as a RedPanda topic]\n    C --&gt; D[Pushed to Bronze layer as a Delta table]\n\n    D --&gt; E[Determine contract type]\n    E --&gt;|Token Contract| F1[Process Token Contract]\n    E --&gt;|NFT Contract| F2[Process NFT Contract]\n    E --&gt;|Interchain Token| F3[Update Cross Chain table in Silver layer]\n    E --&gt;|Basket Token| F4[Update Balances in Silver layer]\n    E --&gt;|Vault Token| F5[Update Vault details in Silver layer]\n    E --&gt;|Unidentified Token| F6[Check Etherscan for ABI]\n\n    F6 --&gt;|ABI found| G1[Upload ABI to Silver layer]\n    F6 --&gt;|ABI not found| G2[Decompile Contract and upload ABI]\n    \n    G1 --&gt; H[Scan Token for Vulnerabilities]\n    G2 --&gt; H\n    F1 --&gt; H\n    F2 --&gt; H\n    F3 --&gt; H\n    F4 --&gt; H\n    F5 --&gt; H\n\n    H --&gt;|Vulnerabilities found| I[Produce Event to RedPanda]"
+  },
+  {
+    "objectID": "articles/template.html",
+    "href": "articles/template.html",
+    "title": "Contributing a Research article",
+    "section": "",
+    "text": "Inserting data from Ortege Lakehouse\nThe great thing about Quarto is that you can embed code. That means you’ll be able to embed code directly into your Ortege Researh article and when the article gets accepted, the code will be executed and the results of the code displayed in your research article.\nLet’s unpack that by adding a bar char of Bitcoin Hash power over the past month.\n\n\nMissing Datasets\nIf your research report needs data that isn’t in our lakehouse, you have a few options in order to get the data into our lakehouse. 1. Send us the Parquet files of the dataset 2. Create a pipeline by submitting a PR to Ortege’s open source ETL codebase 3. Reach out to the team to discuss a joint effort"
+  },
+  {
+    "objectID": "articles/btc/btc.html",
+    "href": "articles/btc/btc.html",
+    "title": "Contributing a Research article",
+    "section": "",
+    "text": "tESTING The aim of this report is to create a realtime alternative to Messari’s State of Bitcoin report"
+  },
+  {
+    "objectID": "articles/btc/btc.html#financial-performance",
+    "href": "articles/btc/btc.html#financial-performance",
+    "title": "Contributing a Research article",
+    "section": "Financial Performance",
+    "text": "Financial Performance\n\nPrice\nMarket capitalization\nDominance"
+  },
+  {
+    "objectID": "articles/btc/btc.html#network-performance",
+    "href": "articles/btc/btc.html#network-performance",
+    "title": "Contributing a Research article",
+    "section": "Network performance",
+    "text": "Network performance\n\nFunded addresses\nAverage daily active addresses\nAverage daily transactoin count\nTotal value settled\nAverage daily transaction fees"
+  },
+  {
+    "objectID": "articles/btc/btc.html#network-security",
+    "href": "articles/btc/btc.html#network-security",
+    "title": "Contributing a Research article",
+    "section": "Network security",
+    "text": "Network security\n\nAverage daily miner revenue\nAverage hash rate"
+  },
+  {
+    "objectID": "contributing.html",
+    "href": "contributing.html",
+    "title": "Contributing a Research article",
+    "section": "",
+    "text": "Contributing a research article through Ortege is a great way for budding crypto research analysts and more general data analysts to showcase their skills to the broader community and gain some exposure.\nIn this article, we’ll walk you through how simple it is to create a research article. We’ll walk through an example of creating a Bitcoin research article.\nFirst navigate to articles folder in this repository and make a copy of the template."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to Ortege",
+    "section": "",
+    "text": "Ortege excels in delivering unparalleled insights into blockchain ecosystems. Our tools empower you to unlock more possibilities, completely free of charge."
+  },
+  {
+    "objectID": "index.html#ortege-studio",
+    "href": "index.html#ortege-studio",
+    "title": "Welcome to Ortege",
+    "section": "🔥 Ortege Studio",
+    "text": "🔥 Ortege Studio\nOrtege Studio allows you to dive into blockchain data analysis, craft engaging visualizations, and share your findings through interactive dashboards."
+  },
+  {
+    "objectID": "index.html#ortegegpt",
+    "href": "index.html#ortegegpt",
+    "title": "Welcome to Ortege",
+    "section": "🌐 OrtegeGPT",
+    "text": "🌐 OrtegeGPT\nExplore the future of AI-assisted data analysis with OrtegeGPT. This revolutionary chatbot provides insights into both on-chain and off-chain data, leveraging advanced AI for quick, accurate answers and analytics."
+  },
+  {
+    "objectID": "index.html#ortege-research",
+    "href": "index.html#ortege-research",
+    "title": "Welcome to Ortege",
+    "section": "Ortege Research",
+    "text": "Ortege Research\nDelve into the world of crypto with our comprehensive Ortege Research articles. Freely accessible to all, we cover more chains and dApps than any other competitor."
+  },
+  {
+    "objectID": "index.html#ortege-lakehouse",
+    "href": "index.html#ortege-lakehouse",
+    "title": "Welcome to Ortege",
+    "section": "🌟 Ortege Lakehouse",
+    "text": "🌟 Ortege Lakehouse\nIntroducing Ortege Lakehouse - our open data lakehouse. Accessible to everyone, it allows for both accessing and contributing data."
   },
   {
     "objectID": "ortegegpt.html",
