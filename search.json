@@ -1,33 +1,5 @@
 [
   {
-    "objectID": "testnet_partner.html",
-    "href": "testnet_partner.html",
-    "title": "Testnet Partner",
-    "section": "",
-    "text": "Testing new workflow\n\nA text field (1)\n  \n\n\nAnother text field (2)\n  \n\nThis is a form spacer\n\n\n\nMy Radio Button\n\n  \n   Good\n\n\n  \n   Bad\n\n\n\n\n\nMy Checkbox\n\n  \n   High\n\n\n  \n   Low\n\n\n  \n   Mid\n\n\n\n\nMy Selector\n\n  Option 1\n  Option 2\n  Option 3\n  Option 4\n\n\n\nEnter lots of text\n\n\n\nEnter your email\n\n\n\nUpload a file"
-  },
-  {
-    "objectID": "studio.html",
-    "href": "studio.html",
-    "title": "Ortege Studio",
-    "section": "",
-    "text": "Ortege Studio can be located at https://app.ortege.xyz\nCurrently it is a closed beta. If you’d like to gain access please email christos@ortege.io"
-  },
-  {
-    "objectID": "quick_start.html",
-    "href": "quick_start.html",
-    "title": "Quick Start",
-    "section": "",
-    "text": "One of our goals at Ortege is to abstract away as much complexity as possible from our users. As such we would prefer users asking our chat agents most queries to ensure they’re getting highly focused answers saving our users time.\nHowever we still need to generate the content in order for our chat agent’s to be able to be up to date with the latest information on the Ortege data platform.\nSo all our documentation will be available through this site. However we’d encourage you to rather use OrtegeGPT for a better experience in finding the information you require.\nElse our documentation is divided into: * Ortege Studio * Data Topology * Research articles\nThis documentation is open source and community generated. Please submit a PR if you see anything wrong.\nOur documentation is written in Quarto and will be stored in a Milvus vector database which will periodically update our early stage chat bots."
-  },
-  {
-    "objectID": "lakehouse.html",
-    "href": "lakehouse.html",
-    "title": "Ortege Lakehouse",
-    "section": "",
-    "text": "We host our lakehouse on Azure Storage. So we do incur costs for it. We want to make our Lakehouse available to all, and at present is currently available through Ortege Studio.\nPlease read our Data Ontology in order to acquaint yourself with how the data is structured throughout all Ortege products."
-  },
-  {
     "objectID": "data.html",
     "href": "data.html",
     "title": "Data Ontology",
@@ -70,46 +42,18 @@
     "text": "Smart contracts\nLifecycle of a smart contract\n\n\n\n\n\nflowchart TD\n    A[Contract gets produced] --&gt; B[Send to Ortege streaming service]\n    B --&gt; C[Produced as a RedPanda topic]\n    C --&gt; D[Pushed to Bronze layer as a Delta table]\n\n    D --&gt; E[Determine contract type]\n    E --&gt;|Token Contract| F1[Process Token Contract]\n    E --&gt;|NFT Contract| F2[Process NFT Contract]\n    E --&gt;|Interchain Token| F3[Update Cross Chain table in Silver layer]\n    E --&gt;|Basket Token| F4[Update Balances in Silver layer]\n    E --&gt;|Vault Token| F5[Update Vault details in Silver layer]\n    E --&gt;|Unidentified Token| F6[Check Etherscan for ABI]\n\n    F6 --&gt;|ABI found| G1[Upload ABI to Silver layer]\n    F6 --&gt;|ABI not found| G2[Decompile Contract and upload ABI]\n    \n    G1 --&gt; H[Scan Token for Vulnerabilities]\n    G2 --&gt; H\n    F1 --&gt; H\n    F2 --&gt; H\n    F3 --&gt; H\n    F4 --&gt; H\n    F5 --&gt; H\n\n    H --&gt;|Vulnerabilities found| I[Produce Event to RedPanda]"
   },
   {
-    "objectID": "articles/template.html",
-    "href": "articles/template.html",
-    "title": "Contributing a Research article",
+    "objectID": "testnet_partner.html",
+    "href": "testnet_partner.html",
+    "title": "Testnet Partner",
     "section": "",
-    "text": "Inserting data from Ortege Lakehouse\nThe great thing about Quarto is that you can embed code. That means you’ll be able to embed code directly into your Ortege Researh article and when the article gets accepted, the code will be executed and the results of the code displayed in your research article.\nLet’s unpack that by adding a bar char of Bitcoin Hash power over the past month.\n\n\nMissing Datasets\nIf your research report needs data that isn’t in our lakehouse, you have a few options in order to get the data into our lakehouse. 1. Send us the Parquet files of the dataset 2. Create a pipeline by submitting a PR to Ortege’s open source ETL codebase 3. Reach out to the team to discuss a joint effort"
+    "text": "Testing new workflow\n\nA text field (1)\n  \n\n\nAnother text field (2)\n  \n\nThis is a form spacer\n\n\n\nMy Radio Button\n\n  \n   Good\n\n\n  \n   Bad\n\n\n\n\n\nMy Checkbox\n\n  \n   High\n\n\n  \n   Low\n\n\n  \n   Mid\n\n\n\n\nMy Selector\n\n  Option 1\n  Option 2\n  Option 3\n  Option 4\n\n\n\nEnter lots of text\n\n\n\nEnter your email\n\n\n\nUpload a file"
   },
   {
-    "objectID": "articles/btc/btc.html",
-    "href": "articles/btc/btc.html",
-    "title": "Contributing a Research article",
+    "objectID": "quick_start.html",
+    "href": "quick_start.html",
+    "title": "Quick Start",
     "section": "",
-    "text": "tESTING The aim of this report is to create a realtime alternative to Messari’s State of Bitcoin report"
-  },
-  {
-    "objectID": "articles/btc/btc.html#financial-performance",
-    "href": "articles/btc/btc.html#financial-performance",
-    "title": "Contributing a Research article",
-    "section": "Financial Performance",
-    "text": "Financial Performance\n\nPrice\nMarket capitalization\nDominance"
-  },
-  {
-    "objectID": "articles/btc/btc.html#network-performance",
-    "href": "articles/btc/btc.html#network-performance",
-    "title": "Contributing a Research article",
-    "section": "Network performance",
-    "text": "Network performance\n\nFunded addresses\nAverage daily active addresses\nAverage daily transactoin count\nTotal value settled\nAverage daily transaction fees"
-  },
-  {
-    "objectID": "articles/btc/btc.html#network-security",
-    "href": "articles/btc/btc.html#network-security",
-    "title": "Contributing a Research article",
-    "section": "Network security",
-    "text": "Network security\n\nAverage daily miner revenue\nAverage hash rate"
-  },
-  {
-    "objectID": "contributing.html",
-    "href": "contributing.html",
-    "title": "Contributing a Research article",
-    "section": "",
-    "text": "Contributing a research article through Ortege is a great way for budding crypto research analysts and more general data analysts to showcase their skills to the broader community and gain some exposure.\nIn this article, we’ll walk you through how simple it is to create a research article. We’ll walk through an example of creating a Bitcoin research article.\nFirst navigate to articles folder in this repository and make a copy of the template."
+    "text": "One of our goals at Ortege is to abstract away as much complexity as possible from our users. As such we would prefer users asking our chat agents most queries to ensure they’re getting highly focused answers saving our users time.\nHowever we still need to generate the content in order for our chat agent’s to be able to be up to date with the latest information on the Ortege data platform.\nSo all our documentation will be available through this site. However we’d encourage you to rather use OrtegeGPT for a better experience in finding the information you require.\nElse our documentation is divided into: * Ortege Studio * Data Topology * Research articles\nThis documentation is open source and community generated. Please submit a PR if you see anything wrong.\nOur documentation is written in Quarto and will be stored in a Milvus vector database which will periodically update our early stage chat bots."
   },
   {
     "objectID": "index.html",
@@ -147,11 +91,67 @@
     "text": "🌟 Ortege Lakehouse\nIntroducing Ortege Lakehouse - our open data lakehouse. Accessible to everyone, it allows for both accessing and contributing data."
   },
   {
+    "objectID": "articles/btc/btc.html",
+    "href": "articles/btc/btc.html",
+    "title": "Contributing a Research article",
+    "section": "",
+    "text": "tESTING The aim of this report is to create a realtime alternative to Messari’s State of Bitcoin report"
+  },
+  {
+    "objectID": "articles/btc/btc.html#financial-performance",
+    "href": "articles/btc/btc.html#financial-performance",
+    "title": "Contributing a Research article",
+    "section": "Financial Performance",
+    "text": "Financial Performance\n\nPrice\nMarket capitalization\nDominance"
+  },
+  {
+    "objectID": "articles/btc/btc.html#network-performance",
+    "href": "articles/btc/btc.html#network-performance",
+    "title": "Contributing a Research article",
+    "section": "Network performance",
+    "text": "Network performance\n\nFunded addresses\nAverage daily active addresses\nAverage daily transactoin count\nTotal value settled\nAverage daily transaction fees"
+  },
+  {
+    "objectID": "articles/btc/btc.html#network-security",
+    "href": "articles/btc/btc.html#network-security",
+    "title": "Contributing a Research article",
+    "section": "Network security",
+    "text": "Network security\n\nAverage daily miner revenue\nAverage hash rate"
+  },
+  {
+    "objectID": "articles/template.html",
+    "href": "articles/template.html",
+    "title": "Contributing a Research article",
+    "section": "",
+    "text": "Inserting data from Ortege Lakehouse\nThe great thing about Quarto is that you can embed code. That means you’ll be able to embed code directly into your Ortege Researh article and when the article gets accepted, the code will be executed and the results of the code displayed in your research article.\nLet’s unpack that by adding a bar char of Bitcoin Hash power over the past month.\n\n\nMissing Datasets\nIf your research report needs data that isn’t in our lakehouse, you have a few options in order to get the data into our lakehouse. 1. Send us the Parquet files of the dataset 2. Create a pipeline by submitting a PR to Ortege’s open source ETL codebase 3. Reach out to the team to discuss a joint effort"
+  },
+  {
+    "objectID": "lakehouse.html",
+    "href": "lakehouse.html",
+    "title": "Ortege Lakehouse",
+    "section": "",
+    "text": "We host our lakehouse on Azure Storage. So we do incur costs for it. We want to make our Lakehouse available to all, and at present is currently available through Ortege Studio.\nPlease read our Data Ontology in order to acquaint yourself with how the data is structured throughout all Ortege products."
+  },
+  {
+    "objectID": "studio.html",
+    "href": "studio.html",
+    "title": "Ortege Studio",
+    "section": "",
+    "text": "Ortege Studio can be located at https://app.ortege.xyz\nCurrently it is a closed beta. If you’d like to gain access please email christos@ortege.io"
+  },
+  {
     "objectID": "ortegegpt.html",
     "href": "ortegegpt.html",
     "title": "OrtegeGPT",
     "section": "",
     "text": "OrtegeGPT is the primary way we’d like our users to discover Ortege. All our documentation in this site is deployed into our own Large Language Model, or LLM. We then deploy this as a chat agent that our users can utilise in order to discover Ortege and it’s suite of products.\nOur first chat agent is called Asimov and is in active development at the moment.\nWhile he is not deployed at present, he should be up and running in the next few weeks and deployed via Hugging Face Spaces."
+  },
+  {
+    "objectID": "contributing.html",
+    "href": "contributing.html",
+    "title": "Contributing a Research article",
+    "section": "",
+    "text": "Contributing a research article through Ortege is a great way for budding crypto research analysts and more general data analysts to showcase their skills to the broader community and gain some exposure.\nIn this article, we’ll walk you through how simple it is to create a research article. We’ll walk through an example of creating a Bitcoin research article.\nFirst navigate to articles folder in this repository and make a copy of the template."
   },
   {
     "objectID": "research.html",

@@ -1,1 +1,1 @@
-Sitemap: https://Ortege-xyz.github.io/docs/sitemap.xml
+Sitemap: https://github.com/Ortege-xyz/docs/sitemap.xml
