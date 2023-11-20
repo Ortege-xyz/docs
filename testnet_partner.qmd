@@ -11,7 +11,7 @@ form:
   submit: "Submit"
   action: "javascript:submit()"
   fields:
-  - text: "This is a form spacer"
+  - text: "Testing new workflow"
   - name: Text1
     type: text
     id: textid
