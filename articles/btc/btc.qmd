@@ -11,8 +11,8 @@ tESTING
 The aim of this report is to create a realtime alternative to [Messari's State of Bitcoin report](https://messari.io/report/state-of-bitcoin-q4-2022)
 
 # Key Insights:
-* BTC volume on centralized exchanges
-* BTC total exchange balance
+* BTC volume on centralized exchanges - wE NEED Binance
+* BTC total exchange balance - 
 * BTC correlation to equities and commoddities. This can be supplemented by some ML charts
 * BTC volatility
 * BTC active addresses
@@ -41,30 +41,30 @@ The aim of this report is to create a realtime alternative to [Messari's State o
 * Average hash rate
 
 # Addresses
-![Addresses](../images/addresses.webp)
+![Addresses](./images/addresses.webp)
 
-![btc_halving](../images/btc_halving.webp)
+![btc_halving](./images/btc_halving.webp)
 ![btc_performance](../images/btc_performance.webp)
-![calendar](../images/calendar.webp)
-![cex](../images/cex.webp)
-![correlations](../images/correlations.webp)
-![hashprice](../images/hashprice.webp)
-![hashrate](../images/hashrate.webp)
-![hashrate01](../images/hashrate01.webp)
-![index](../images/index.webp)
-![laundering](../images/laundering.webp)
-![lightning](../images/lightning.webp)
-![miner_revenue](../images/miner_revenue.webp)
-![miner_selloff](../images/miner_selloff.webp)
-![mining_sustain](../images/mining_sustain.webp)
-![price](../images/price.webp)
-![puell](../images/puell.webp)
-![reserve](../images/reserve.webp)
-![supply](../images/supply.webp)
-![tx](../images/tx.webp)
-![txfees](../images/txfees.webp)
-![volatility](../images/volatility.webp)
-![volatility01](../images/volatility01.webp)
+![calendar](./images/calendar.webp)
+![cex](./images/cex.webp)
+![correlations](./images/correlations.webp)
+![hashprice](./images/hashprice.webp)
+![hashrate](./images/hashrate.webp)
+![hashrate01](./images/hashrate01.webp)
+![index](./images/index.webp)
+![laundering](./images/laundering.webp)
+![lightning](./images/lightning.webp)
+![miner_revenue](./images/miner_revenue.webp)
+![miner_selloff](./images/miner_selloff.webp)
+![mining_sustain](./images/mining_sustain.webp)
+![price](./images/price.webp)
+![puell](./images/puell.webp)
+![reserve](./images/reserve.webp)
+![supply](./images/supply.webp)
+![tx](./images/tx.webp)
+![txfees](./images/txfees.webp)
+![volatility](./images/volatility.webp)
+![volatility01](./images/volatility01.webp)
 
 
 # Missing Datasets

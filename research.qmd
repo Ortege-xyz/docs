@@ -13,7 +13,7 @@ The Research reports will be updated daily with fresh data. This means we provid
 * Research reports that update with live data
 
 # Current Reports
-* [State of Bitcoin](articles/btc.qmd)
+* [State of Bitcoin](articles/btc/btc.qmd)
 
 # Technologies used 
 We use Streamlit in order to host our charts and visualizations.
