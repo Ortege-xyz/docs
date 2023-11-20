@@ -33,7 +33,11 @@ jobs:
           git fetch
           git checkout gh-pages
           git pull origin gh-pages
-          echo "docs.ortege.ai" > CNAME
-          git add CNAME
-          git commit -m "Create CNMAE"
-          git push origin gh-pages
+          if [ ! -f CNAME ]; then
+            echo "docs.ortege.ai" > CNAME
+            git add CNAME
+            git commit -m "Create CNAME"
+            git push origin gh-pages
+          else
+            echo "CNAME file already exists."
+          fi
