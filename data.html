@@ -59,9 +59,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -128,13 +125,10 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#chains-supported" id="toc-chains-supported" class="nav-link active" data-scroll-target="#chains-supported">Chains supported</a></li>
-  <li><a href="#data-ontology" id="toc-data-ontology" class="nav-link" data-scroll-target="#data-ontology">Data Ontology</a>
+  <li><a href="#bitcoin" id="toc-bitcoin" class="nav-link" data-scroll-target="#bitcoin">Bitcoin</a>
   <ul class="collapse">
-  <li><a href="#blockchains" id="toc-blockchains" class="nav-link" data-scroll-target="#blockchains">Blockchains</a></li>
-  <li><a href="#account-types" id="toc-account-types" class="nav-link" data-scroll-target="#account-types">Account Types</a></li>
   <li><a href="#blocks" id="toc-blocks" class="nav-link" data-scroll-target="#blocks">Blocks</a></li>
   <li><a href="#transactions" id="toc-transactions" class="nav-link" data-scroll-target="#transactions">Transactions</a></li>
-  <li><a href="#smart-contracts" id="toc-smart-contracts" class="nav-link" data-scroll-target="#smart-contracts">Smart contracts</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -159,427 +153,138 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>If you’re looking to be heavily involved in Ortege, then this will be one of the most important areas to understand.</p>
-<p>Our data is deployed as <a href="https://docs.delta.io/latest/quick-start.html">Delta Lake tables</a> and adhere to the following naming conventions.</p>
-<ul>
-<li>All databases/schemas will be named <code>db_*blockchain*</code> so for example, <code>db_eth</code> or <code>db_bitcoin</code></li>
-<li>All entities in the database will be either tables (denoted by <code>tbl_</code>), views (denoted by <code>vw_</code>) or a materialized view (denoted by <code>mvw_</code>)</li>
-<li>Those entities will then be following the environment the data is related to. Either one of dev, test or prod. As example, a table of blocks would be called <code>tbl_prod_blocks</code></li>
-<li>We’d also like to include what layer the data is part of. We follow a <a href="https://learn.microsoft.com/en-us/azure/databricks/lakehouse/medallion">Medallian Architecture</a>. So we want to denote either br for bronze, sl for silver or gld for gold. This means our block table now becomes <code>tbl_prod_br_blocks</code></li>
-</ul>
 <section id="chains-supported" class="level1">
 <h1>Chains supported</h1>
-<p>We are planning on going live on 31st January with the bronze layer for the following chains: * Bitcoin * Ethereum * Avalanche</p>
+<p>Initially we will go live with:</p>
+<ul>
+<li><p>Bitcoin</p></li>
+<li><p>Avalanche</p></li>
+<li><p>Stacks</p></li>
+</ul>
+<p>Following by</p>
+<ul>
+<li><p>Soroban (Stellar)</p></li>
+<li><p>Movement Labs</p></li>
+</ul>
 </section>
-<section id="data-ontology" class="level1">
-<h1>Data Ontology</h1>
-<section id="blockchains" class="level2">
-<h2 class="anchored" data-anchor-id="blockchains">Blockchains</h2>
-<p><strong>TODO</strong> Add some data here explaining the different classifications of Blockchains. Link to some Jon Charbaneu stuff.</p>
-</section>
-<section id="account-types" class="level2">
-<h2 class="anchored" data-anchor-id="account-types">Account Types</h2>
-<p>An important distinction between blockchains is their ledger model. This indicates how the underlying blockchain ledger records information about token transfers and balances. The two major classifcations are: * <a href="https://www.horizen.io/academy/utxo-vs-account-model/">UTXO</a> * <a href="https://docs.alchemy.com/docs/utxo-vs-account-models">Accounts based model</a></p>
-<p>In our Data Ontology we classify Blockchains as below:</p>
+<section id="bitcoin" class="level1">
+<h1>Bitcoin</h1>
+<p>Bitcoin data follows a UTXO model. We expose two raw tables:</p>
+<ol type="1">
+<li>Blocks</li>
+<li>Transactions</li>
+</ol>
+<section id="blocks" class="level2">
+<h2 class="anchored" data-anchor-id="blocks">Blocks</h2>
 <table class="table">
 <thead>
 <tr class="header">
-<th>Blockchain</th>
-<th>Account Type</th>
-<th>VM Type</th>
+<th>Column name</th>
+<th>Column type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Bitcoin</td>
-<td>UTXO</td>
-<td>dumb</td>
+<td>bits</td>
+<td>varchar</td>
+<td>The difficulty threshold specified in block header</td>
 </tr>
 <tr class="even">
-<td>Ethereum</td>
-<td>Accounts</td>
-<td>evm</td>
+<td>chainwork</td>
+<td></td>
+<td>The expected number of hashes required to produce the current chain</td>
 </tr>
 <tr class="odd">
-<td>BNB</td>
-<td>Accounts</td>
-<td>evm</td>
+<td>coinbase</td>
+<td>varchar</td>
+<td>The data specified in the coinbase transaction of the block</td>
 </tr>
 <tr class="even">
-<td>XRP</td>
-<td></td>
-<td></td>
+<td>hash</td>
+<td>varchar</td>
+<td>The block hash</td>
 </tr>
 <tr class="odd">
-<td>Solana</td>
-<td>Accounts</td>
-<td>svm</td>
+<td>merkle_root</td>
+<td>varchar</td>
+<td>The root node of a Merkle tree, where leaves are transaction hashes</td>
 </tr>
 <tr class="even">
-<td>Cardano</td>
-<td>UTXO</td>
-<td>unsure</td>
+<td>previous_block_hash</td>
+<td></td>
+<td>The hash of the previous block</td>
 </tr>
 <tr class="odd">
-<td>Dogecoin</td>
-<td>UTXO</td>
-<td>dumb</td>
+<td>date</td>
+<td></td>
+<td>The block date</td>
 </tr>
 <tr class="even">
-<td>Tron</td>
-<td>Accounts</td>
-<td>evm</td>
+<td>difficulty</td>
+<td></td>
+<td>The estimated amount of work done to find this block relative to the estimated amount of work done to find block 0</td>
 </tr>
 <tr class="odd">
-<td>Polygon</td>
-<td>Accounts</td>
-<td>evm</td>
+<td>height</td>
+<td>bigint</td>
+<td>The block number</td>
 </tr>
 <tr class="even">
-<td>Avalanche</td>
-<td>Accounts</td>
-<td>evm</td>
+<td>mint_reward</td>
+<td></td>
+<td>The output paid out to the miner for minting the block</td>
 </tr>
 <tr class="odd">
-<td>Polkadot</td>
-<td>Accounts</td>
-<td>substrate</td>
+<td>nonce</td>
+<td>varchar</td>
+<td>The number of transactions made by the sender prior to this one</td>
 </tr>
 <tr class="even">
-<td>Litecoin</td>
-<td>UTXO</td>
-<td>dumb</td>
+<td>size</td>
+<td>bigint</td>
+<td>The size of the block</td>
 </tr>
 <tr class="odd">
-<td>Toncoin</td>
-<td></td>
-<td></td>
+<td>stripped_size</td>
+<td>bigint</td>
+<td>The size of the block excluding witness data</td>
 </tr>
 <tr class="even">
-<td>Bitcoin Cash</td>
+<td>time</td>
 <td></td>
-<td></td>
+<td>The block time</td>
 </tr>
 <tr class="odd">
-<td>Stellar</td>
+<td>total_fees</td>
 <td></td>
-<td></td>
+<td>The fees paid out to the miner from transaction users. Each transaction’s fee is what’s left of output after input is subtracted from it.</td>
 </tr>
 <tr class="even">
-<td>Monero</td>
+<td>total_reward</td>
 <td></td>
-<td></td>
+<td>The static reward given to the miner. It is the sum of the outputs in the coinbase transaction (the first transaction).</td>
 </tr>
 <tr class="odd">
-<td>Cosmos Hub</td>
-<td>Accounts</td>
-<td>cosmos</td>
+<td>transaction_count</td>
+<td>bigint</td>
+<td>The number of transactions in the block</td>
 </tr>
 <tr class="even">
-<td>Ethereum Classic</td>
-<td>Accounts</td>
-<td>evm</td>
-</tr>
-<tr class="odd">
-<td>Kaspa</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Cronos</td>
-<td></td>
+<td>version</td>
+<td>bigint</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>Filecoin</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Hedera</td>
-<td>Accounts</td>
-<td>pseudo_evm</td>
-</tr>
-<tr class="odd">
-<td>Aptos</td>
-<td>Accounts</td>
-<td>move</td>
-</tr>
-<tr class="even">
-<td>Internet Computer</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>THORChain</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>NEAR</td>
-<td>Accounts</td>
-<td>rustvm</td>
-</tr>
-<tr class="odd">
-<td>Optimism</td>
-<td>Accounts</td>
-<td>evm</td>
-</tr>
-<tr class="even">
-<td>VeChain</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Mantle</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Quant</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Immutable</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Arbitrum</td>
-<td>Accounts</td>
-<td>evm</td>
-</tr>
-<tr class="odd">
-<td>Injective</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>MultiversX</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Render</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Algorand</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Fantom</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Flow</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Bitcoin SV</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Theta</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Stacks</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Celestia</td>
-<td>Accounts</td>
-<td>cosmos</td>
-</tr>
-<tr class="odd">
-<td>EOS</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Tezos</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Kava</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>XDC Network</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>dYdX</td>
-<td>Accounts</td>
-<td>cosmos</td>
-</tr>
-<tr class="even">
-<td>Mina</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Klaytn</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>IOTA</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Sui</td>
-<td>Accounts</td>
-<td>move</td>
-</tr>
-<tr class="even">
-<td>Radix</td>
-<td>Accounts</td>
-<td>rustvm</td>
+<td>weight</td>
+<td>bigint</td>
+<td>The block weight as defined in <a href="https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki">BIP 141</a></td>
 </tr>
 </tbody>
 </table>
-<p><strong>TODO</strong> Replace this table with a live dataset from <a href="./lakehouse.html">Ortege Lakehouse</a></p>
-</section>
-<section id="blocks" class="level2">
-<h2 class="anchored" data-anchor-id="blocks">Blocks</h2>
-<p>Lifecycle of a block</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<div>
-<pre class="mermaid mermaid-js">flowchart TD
-    A[Block gets produced] --&gt; B[Ortege Streaming checks blockchain type]
-    B --&gt;|EVM| C1[Redpanda producer for EVM]
-    B --&gt;|UTXO_Dumb| C2[Redpanda producer for UTXO_Dumb]
-    B --&gt;|Substrate| C3[Redpanda producer for Substrate]
-    B --&gt;|SVM| C4[Redpanda producer for SVM]
-
-    C1 --&gt;|br_evm_&lt;name&gt;_produce_block| D1[Consumer adds to Delta Lake]
-    C2 --&gt;|br_utxo_dumb_&lt;name&gt;_produce_block| D2[Consumer adds to Delta Lake]
-    C3 --&gt;|br_substrate_&lt;name&gt;_produce_block| D3[Consumer adds to Delta Lake]
-    C4 --&gt;|br_svm_&lt;name&gt;_produce_block| D4[Consumer adds to Delta Lake]
-
-    D1 --&gt;|br_evm_&lt;name&gt;_block_added| E1[Query token price and miner earnings]
-    D2 --&gt;|br_utxo_dumb_&lt;name&gt;_block_added| E2[Query token price and miner earnings]
-    D3 --&gt;|br_substrate_&lt;name&gt;_block_added| E3[Query token price and miner earnings]
-    D4 --&gt;|br_svm_&lt;name&gt;_block_added| E4[Query token price and miner earnings]
-
-    E1 --&gt; H1[Convert timestamp to date-time]
-    E2 --&gt; H2[Convert timestamp to date-time]
-    E3 --&gt; H3[Convert timestamp to date-time]
-    E4 --&gt; H4[Convert timestamp to date-time]
-
-    H1 --&gt; F1[Update Silver Layer with EVM data]
-    H2 --&gt; F2[Update Silver Layer with UTXO_Dumb data]
-    H3 --&gt; F3[Update Silver Layer with Substrate data]
-    H4 --&gt; F4[Update Silver Layer with SVM data]
-
-    E2 --&gt;|If PoW| G2[Populate Hashrate for UTXO_Dumb]
-    G2 --&gt; F2
-</pre>
-</div>
-</div>
-</div>
-</div>
 </section>
 <section id="transactions" class="level2">
 <h2 class="anchored" data-anchor-id="transactions">Transactions</h2>
-<p>Lifecycle of a transaction</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<div>
-
-<pre class="mermaid mermaid-js">flowchart TD
-    A[Transaction gets produced] --&gt; B[Ortege streaming checks blockchain type]
-    B --&gt;|EVM| C1[RedPanda topic for EVM]
-    B --&gt;|UTXO_Dumb| C2[RedPanda topic for UTXO_Dumb]
-    B --&gt;|Substrate| C3[RedPanda topic for Substrate]
-    B --&gt;|SVM| C4[RedPanda topic for SVM]
-
-    C1 --&gt; D[Consumer writes to Bronze layer]
-    C2 --&gt; D
-    C3 --&gt; D
-    C4 --&gt; D
-
-    D --&gt; E[Check if addresses are categorized in Silver layer]
-    E --&gt;|If not| F[Classify address as 'account' or 'smart contract']
-    E --&gt; G[Check if address transacted before on this chain]
-    G --&gt;|If not| H[Tag as 'new_address_on_chain' with date]
-
-    H --&gt; I[Check address on related chains]
-    I --&gt;|If active on other chains| J[Tag as 'multichain address']
-
-    J --&gt; K[Check for labels from Etherscan]
-    K --&gt;|If no labels| L[Query Etherscan and add labels to Silver layer]
-
-    L --&gt; M[Check how the wallet was funded]
-    M --&gt;|Funded from CEX| N[Tag as 'funded_from_CEX']
-    M --&gt;|Funded from known account/contract| O[Tag as 'funded_from_known_source']
-    M --&gt;|Funded from unknown source| P[Tag as 'funded_from_unknown_source']
-
-    P --&gt; Q[Check token balances in Silver layer]
-    Q --&gt; R[Push balances data to Gold layer in 'address_balances' table]
-
-</pre>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="smart-contracts" class="level2">
-<h2 class="anchored" data-anchor-id="smart-contracts">Smart contracts</h2>
-<p>Lifecycle of a smart contract</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<div>
-
-<pre class="mermaid mermaid-js">flowchart TD
-    A[Contract gets produced] --&gt; B[Send to Ortege streaming service]
-    B --&gt; C[Produced as a RedPanda topic]
-    C --&gt; D[Pushed to Bronze layer as a Delta table]
-
-    D --&gt; E[Determine contract type]
-    E --&gt;|Token Contract| F1[Process Token Contract]
-    E --&gt;|NFT Contract| F2[Process NFT Contract]
-    E --&gt;|Interchain Token| F3[Update Cross Chain table in Silver layer]
-    E --&gt;|Basket Token| F4[Update Balances in Silver layer]
-    E --&gt;|Vault Token| F5[Update Vault details in Silver layer]
-    E --&gt;|Unidentified Token| F6[Check Etherscan for ABI]
-
-    F6 --&gt;|ABI found| G1[Upload ABI to Silver layer]
-    F6 --&gt;|ABI not found| G2[Decompile Contract and upload ABI]
-    
-    G1 --&gt; H[Scan Token for Vulnerabilities]
-    G2 --&gt; H
-    F1 --&gt; H
-    F2 --&gt; H
-    F3 --&gt; H
-    F4 --&gt; H
-    F5 --&gt; H
-
-    H --&gt;|Vulnerabilities found| I[Produce Event to RedPanda]
-
-</pre>
-</div>
-</div>
-</div>
-</div>
 
 
 </section>

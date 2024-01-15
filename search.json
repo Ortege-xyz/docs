@@ -81,42 +81,21 @@
     "href": "data.html",
     "title": "Data Ontology",
     "section": "",
-    "text": "If you’re looking to be heavily involved in Ortege, then this will be one of the most important areas to understand.\nOur data is deployed as Delta Lake tables and adhere to the following naming conventions."
-  },
-  {
-    "objectID": "data.html#blockchains",
-    "href": "data.html#blockchains",
-    "title": "Data Ontology",
-    "section": "Blockchains",
-    "text": "Blockchains\nTODO Add some data here explaining the different classifications of Blockchains. Link to some Jon Charbaneu stuff."
-  },
-  {
-    "objectID": "data.html#account-types",
-    "href": "data.html#account-types",
-    "title": "Data Ontology",
-    "section": "Account Types",
-    "text": "Account Types\nAn important distinction between blockchains is their ledger model. This indicates how the underlying blockchain ledger records information about token transfers and balances. The two major classifcations are: * UTXO * Accounts based model\nIn our Data Ontology we classify Blockchains as below:\n\n\n\nBlockchain\nAccount Type\nVM Type\n\n\n\n\nBitcoin\nUTXO\ndumb\n\n\nEthereum\nAccounts\nevm\n\n\nBNB\nAccounts\nevm\n\n\nXRP\n\n\n\n\nSolana\nAccounts\nsvm\n\n\nCardano\nUTXO\nunsure\n\n\nDogecoin\nUTXO\ndumb\n\n\nTron\nAccounts\nevm\n\n\nPolygon\nAccounts\nevm\n\n\nAvalanche\nAccounts\nevm\n\n\nPolkadot\nAccounts\nsubstrate\n\n\nLitecoin\nUTXO\ndumb\n\n\nToncoin\n\n\n\n\nBitcoin Cash\n\n\n\n\nStellar\n\n\n\n\nMonero\n\n\n\n\nCosmos Hub\nAccounts\ncosmos\n\n\nEthereum Classic\nAccounts\nevm\n\n\nKaspa\n\n\n\n\nCronos\n\n\n\n\nFilecoin\n\n\n\n\nHedera\nAccounts\npseudo_evm\n\n\nAptos\nAccounts\nmove\n\n\nInternet Computer\n\n\n\n\nTHORChain\n\n\n\n\nNEAR\nAccounts\nrustvm\n\n\nOptimism\nAccounts\nevm\n\n\nVeChain\n\n\n\n\nMantle\n\n\n\n\nQuant\n\n\n\n\nImmutable\n\n\n\n\nArbitrum\nAccounts\nevm\n\n\nInjective\n\n\n\n\nMultiversX\n\n\n\n\nRender\n\n\n\n\nAlgorand\n\n\n\n\nFantom\n\n\n\n\nFlow\n\n\n\n\nBitcoin SV\n\n\n\n\nTheta\n\n\n\n\nStacks\n\n\n\n\nCelestia\nAccounts\ncosmos\n\n\nEOS\n\n\n\n\nTezos\n\n\n\n\nKava\n\n\n\n\nXDC Network\n\n\n\n\ndYdX\nAccounts\ncosmos\n\n\nMina\n\n\n\n\nKlaytn\n\n\n\n\nIOTA\n\n\n\n\nSui\nAccounts\nmove\n\n\nRadix\nAccounts\nrustvm\n\n\n\nTODO Replace this table with a live dataset from Ortege Lakehouse"
+    "text": "Initially we will go live with:\n\nBitcoin\nAvalanche\nStacks\n\nFollowing by\n\nSoroban (Stellar)\nMovement Labs"
   },
   {
     "objectID": "data.html#blocks",
     "href": "data.html#blocks",
     "title": "Data Ontology",
     "section": "Blocks",
-    "text": "Blocks\nLifecycle of a block\n\n\n\n\nflowchart TD\n    A[Block gets produced] --&gt; B[Ortege Streaming checks blockchain type]\n    B --&gt;|EVM| C1[Redpanda producer for EVM]\n    B --&gt;|UTXO_Dumb| C2[Redpanda producer for UTXO_Dumb]\n    B --&gt;|Substrate| C3[Redpanda producer for Substrate]\n    B --&gt;|SVM| C4[Redpanda producer for SVM]\n\n    C1 --&gt;|br_evm_&lt;name&gt;_produce_block| D1[Consumer adds to Delta Lake]\n    C2 --&gt;|br_utxo_dumb_&lt;name&gt;_produce_block| D2[Consumer adds to Delta Lake]\n    C3 --&gt;|br_substrate_&lt;name&gt;_produce_block| D3[Consumer adds to Delta Lake]\n    C4 --&gt;|br_svm_&lt;name&gt;_produce_block| D4[Consumer adds to Delta Lake]\n\n    D1 --&gt;|br_evm_&lt;name&gt;_block_added| E1[Query token price and miner earnings]\n    D2 --&gt;|br_utxo_dumb_&lt;name&gt;_block_added| E2[Query token price and miner earnings]\n    D3 --&gt;|br_substrate_&lt;name&gt;_block_added| E3[Query token price and miner earnings]\n    D4 --&gt;|br_svm_&lt;name&gt;_block_added| E4[Query token price and miner earnings]\n\n    E1 --&gt; H1[Convert timestamp to date-time]\n    E2 --&gt; H2[Convert timestamp to date-time]\n    E3 --&gt; H3[Convert timestamp to date-time]\n    E4 --&gt; H4[Convert timestamp to date-time]\n\n    H1 --&gt; F1[Update Silver Layer with EVM data]\n    H2 --&gt; F2[Update Silver Layer with UTXO_Dumb data]\n    H3 --&gt; F3[Update Silver Layer with Substrate data]\n    H4 --&gt; F4[Update Silver Layer with SVM data]\n\n    E2 --&gt;|If PoW| G2[Populate Hashrate for UTXO_Dumb]\n    G2 --&gt; F2"
+    "text": "Blocks\n\n\n\nColumn name\nColumn type\nDescription\n\n\n\n\nbits\nvarchar\nThe difficulty threshold specified in block header\n\n\nchainwork\n\nThe expected number of hashes required to produce the current chain\n\n\ncoinbase\nvarchar\nThe data specified in the coinbase transaction of the block\n\n\nhash\nvarchar\nThe block hash\n\n\nmerkle_root\nvarchar\nThe root node of a Merkle tree, where leaves are transaction hashes\n\n\nprevious_block_hash\n\nThe hash of the previous block\n\n\ndate\n\nThe block date\n\n\ndifficulty\n\nThe estimated amount of work done to find this block relative to the estimated amount of work done to find block 0\n\n\nheight\nbigint\nThe block number\n\n\nmint_reward\n\nThe output paid out to the miner for minting the block\n\n\nnonce\nvarchar\nThe number of transactions made by the sender prior to this one\n\n\nsize\nbigint\nThe size of the block\n\n\nstripped_size\nbigint\nThe size of the block excluding witness data\n\n\ntime\n\nThe block time\n\n\ntotal_fees\n\nThe fees paid out to the miner from transaction users. Each transaction’s fee is what’s left of output after input is subtracted from it.\n\n\ntotal_reward\n\nThe static reward given to the miner. It is the sum of the outputs in the coinbase transaction (the first transaction).\n\n\ntransaction_count\nbigint\nThe number of transactions in the block\n\n\nversion\nbigint\n\n\n\nweight\nbigint\nThe block weight as defined in BIP 141"
   },
   {
     "objectID": "data.html#transactions",
     "href": "data.html#transactions",
     "title": "Data Ontology",
     "section": "Transactions",
-    "text": "Transactions\nLifecycle of a transaction\n\n\n\n\n\nflowchart TD\n    A[Transaction gets produced] --&gt; B[Ortege streaming checks blockchain type]\n    B --&gt;|EVM| C1[RedPanda topic for EVM]\n    B --&gt;|UTXO_Dumb| C2[RedPanda topic for UTXO_Dumb]\n    B --&gt;|Substrate| C3[RedPanda topic for Substrate]\n    B --&gt;|SVM| C4[RedPanda topic for SVM]\n\n    C1 --&gt; D[Consumer writes to Bronze layer]\n    C2 --&gt; D\n    C3 --&gt; D\n    C4 --&gt; D\n\n    D --&gt; E[Check if addresses are categorized in Silver layer]\n    E --&gt;|If not| F[Classify address as 'account' or 'smart contract']\n    E --&gt; G[Check if address transacted before on this chain]\n    G --&gt;|If not| H[Tag as 'new_address_on_chain' with date]\n\n    H --&gt; I[Check address on related chains]\n    I --&gt;|If active on other chains| J[Tag as 'multichain address']\n\n    J --&gt; K[Check for labels from Etherscan]\n    K --&gt;|If no labels| L[Query Etherscan and add labels to Silver layer]\n\n    L --&gt; M[Check how the wallet was funded]\n    M --&gt;|Funded from CEX| N[Tag as 'funded_from_CEX']\n    M --&gt;|Funded from known account/contract| O[Tag as 'funded_from_known_source']\n    M --&gt;|Funded from unknown source| P[Tag as 'funded_from_unknown_source']\n\n    P --&gt; Q[Check token balances in Silver layer]\n    Q --&gt; R[Push balances data to Gold layer in 'address_balances' table]"
-  },
-  {
-    "objectID": "data.html#smart-contracts",
-    "href": "data.html#smart-contracts",
-    "title": "Data Ontology",
-    "section": "Smart contracts",
-    "text": "Smart contracts\nLifecycle of a smart contract\n\n\n\n\n\nflowchart TD\n    A[Contract gets produced] --&gt; B[Send to Ortege streaming service]\n    B --&gt; C[Produced as a RedPanda topic]\n    C --&gt; D[Pushed to Bronze layer as a Delta table]\n\n    D --&gt; E[Determine contract type]\n    E --&gt;|Token Contract| F1[Process Token Contract]\n    E --&gt;|NFT Contract| F2[Process NFT Contract]\n    E --&gt;|Interchain Token| F3[Update Cross Chain table in Silver layer]\n    E --&gt;|Basket Token| F4[Update Balances in Silver layer]\n    E --&gt;|Vault Token| F5[Update Vault details in Silver layer]\n    E --&gt;|Unidentified Token| F6[Check Etherscan for ABI]\n\n    F6 --&gt;|ABI found| G1[Upload ABI to Silver layer]\n    F6 --&gt;|ABI not found| G2[Decompile Contract and upload ABI]\n    \n    G1 --&gt; H[Scan Token for Vulnerabilities]\n    G2 --&gt; H\n    F1 --&gt; H\n    F2 --&gt; H\n    F3 --&gt; H\n    F4 --&gt; H\n    F5 --&gt; H\n\n    H --&gt;|Vulnerabilities found| I[Produce Event to RedPanda]"
+    "text": "Transactions"
   },
   {
     "objectID": "studio.html",
