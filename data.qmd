@@ -6,189 +6,52 @@ format:
     html-math-method: katex
     css: styles.css
 ---
-If you're looking to be heavily involved in Ortege, then this will be one of the most important areas to understand.
-
-Our data is deployed as [Delta Lake tables](https://docs.delta.io/latest/quick-start.html) and adhere to the following naming conventions. 
-
-* All databases/schemas will be named `db_*blockchain*` so for example, `db_eth` or `db_bitcoin`
-* All entities in the database will be either tables (denoted by `tbl_`), views (denoted by `vw_`) or a materialized view (denoted by `mvw_`)
-* Those entities will then be following the environment the data is related to. Either one of dev, test or prod. As example, a table of blocks would be called `tbl_prod_blocks`
-* We'd also like to include what layer the data is part of. We follow a [Medallian Architecture](https://learn.microsoft.com/en-us/azure/databricks/lakehouse/medallion). So we want to denote either br for bronze, sl for silver or gld for gold. This means our block table now becomes `tbl_prod_br_blocks`
 
 # Chains supported
-We are planning on going live on 31st January with the bronze layer for the following chains:
-* Bitcoin
-* Ethereum
-* Avalanche
 
-# Data Ontology
-## Blockchains
-**TODO** Add some data here explaining the different classifications of Blockchains. Link to some Jon Charbaneu stuff.
+Initially we will go live with:
 
-## Account Types
-An important distinction between blockchains is their ledger model. This indicates how the underlying blockchain ledger records information about token transfers and balances. The two major classifcations are:
-* [UTXO](https://www.horizen.io/academy/utxo-vs-account-model/)
-* [Accounts based model](https://docs.alchemy.com/docs/utxo-vs-account-models)
+-   Bitcoin
 
-In our Data Ontology we classify Blockchains as below:
+-   Avalanche
 
-| Blockchain          | Account Type | VM Type     |
-|---------------------|--------------|-------------|
-| Bitcoin             | UTXO         | dumb        |
-| Ethereum            | Accounts     | evm         |
-| BNB                 | Accounts     | evm         |
-| XRP                 |              |             |
-| Solana              | Accounts     | svm         |
-| Cardano             | UTXO         | unsure      |
-| Dogecoin            | UTXO         | dumb        |
-| Tron                | Accounts     | evm         |
-| Polygon             | Accounts     | evm         |
-| Avalanche           | Accounts     | evm         |
-| Polkadot            | Accounts     | substrate   |
-| Litecoin            | UTXO         | dumb        |
-| Toncoin             |              |             |
-| Bitcoin Cash        |              |             |
-| Stellar             |              |             |
-| Monero              |              |             |
-| Cosmos Hub          | Accounts     | cosmos      |
-| Ethereum Classic    | Accounts     | evm         |
-| Kaspa               |              |             |
-| Cronos              |              |             |
-| Filecoin            |              |             |
-| Hedera              | Accounts     | pseudo_evm  |
-| Aptos               | Accounts     | move        |
-| Internet Computer   |              |             |
-| THORChain           |              |             |
-| NEAR                | Accounts     | rustvm      |
-| Optimism            | Accounts     | evm         |
-| VeChain             |              |             |
-| Mantle              |              |             |
-| Quant               |              |             |
-| Immutable           |              |             |
-| Arbitrum            | Accounts     | evm         |
-| Injective           |              |             |
-| MultiversX          |              |             |
-| Render              |              |             |
-| Algorand            |              |             |
-| Fantom              |              |             |
-| Flow                |              |             |
-| Bitcoin SV          |              |             |
-| Theta               |              |             |
-| Stacks              |              |             |
-| Celestia            | Accounts     | cosmos      |
-| EOS                 |              |             |
-| Tezos               |              |             |
-| Kava                |              |             |
-| XDC Network         |              |             |
-| dYdX                | Accounts     | cosmos      |
-| Mina                |              |             |
-| Klaytn              |              |             |
-| IOTA                |              |             |
-| Sui                 | Accounts     | move        |
-| Radix               | Accounts     | rustvm      |
+-   Stacks
 
-**TODO** Replace this table with a live dataset from [Ortege Lakehouse](lakehouse.qmd)
+Following by
+
+-   Soroban (Stellar)
+
+-   Movement Labs
+
+# Bitcoin
+
+Bitcoin data follows a UTXO model. We expose two raw tables:
+
+1.  Blocks
+2.  Transactions
 
 ## Blocks
-Lifecycle of a block
-```{mermaid}
-flowchart TD
-    A[Block gets produced] --> B[Ortege Streaming checks blockchain type]
-    B -->|EVM| C1[Redpanda producer for EVM]
-    B -->|UTXO_Dumb| C2[Redpanda producer for UTXO_Dumb]
-    B -->|Substrate| C3[Redpanda producer for Substrate]
-    B -->|SVM| C4[Redpanda producer for SVM]
 
-    C1 -->|br_evm_<name>_produce_block| D1[Consumer adds to Delta Lake]
-    C2 -->|br_utxo_dumb_<name>_produce_block| D2[Consumer adds to Delta Lake]
-    C3 -->|br_substrate_<name>_produce_block| D3[Consumer adds to Delta Lake]
-    C4 -->|br_svm_<name>_produce_block| D4[Consumer adds to Delta Lake]
-
-    D1 -->|br_evm_<name>_block_added| E1[Query token price and miner earnings]
-    D2 -->|br_utxo_dumb_<name>_block_added| E2[Query token price and miner earnings]
-    D3 -->|br_substrate_<name>_block_added| E3[Query token price and miner earnings]
-    D4 -->|br_svm_<name>_block_added| E4[Query token price and miner earnings]
-
-    E1 --> H1[Convert timestamp to date-time]
-    E2 --> H2[Convert timestamp to date-time]
-    E3 --> H3[Convert timestamp to date-time]
-    E4 --> H4[Convert timestamp to date-time]
-
-    H1 --> F1[Update Silver Layer with EVM data]
-    H2 --> F2[Update Silver Layer with UTXO_Dumb data]
-    H3 --> F3[Update Silver Layer with Substrate data]
-    H4 --> F4[Update Silver Layer with SVM data]
-
-    E2 -->|If PoW| G2[Populate Hashrate for UTXO_Dumb]
-    G2 --> F2
-```
+| Column name         | Column type | Description                                                                                                                               |
+|---------------------|-------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| bits                | varchar     | The difficulty threshold specified in block header                                                                                        |
+| chainwork           |             | The expected number of hashes required to produce the current chain                                                                       |
+| coinbase            | varchar     | The data specified in the coinbase transaction of the block                                                                               |
+| hash                | varchar     | The block hash                                                                                                                            |
+| merkle_root         | varchar     | The root node of a Merkle tree, where leaves are transaction hashes                                                                       |
+| previous_block_hash |             | The hash of the previous block                                                                                                            |
+| date                |             | The block date                                                                                                                            |
+| difficulty          |             | The estimated amount of work done to find this block relative to the estimated amount of work done to find block 0                        |
+| height              | bigint      | The block number                                                                                                                          |
+| mint_reward         |             | The output paid out to the miner for minting the block                                                                                    |
+| nonce               | varchar     | The number of transactions made by the sender prior to this one                                                                           |
+| size                | bigint      | The size of the block                                                                                                                     |
+| stripped_size       | bigint      | The size of the block excluding witness data                                                                                              |
+| time                |             | The block time                                                                                                                            |
+| total_fees          |             | The fees paid out to the miner from transaction users. Each transaction's fee is what's left of output after input is subtracted from it. |
+| total_reward        |             | The static reward given to the miner. It is the sum of the outputs in the coinbase transaction (the first transaction).                   |
+| transaction_count   | bigint      | The number of transactions in the block                                                                                                   |
+| version             | bigint      |                                                                                                                                           |
+| weight              | bigint      | The block weight as defined in [BIP 141](https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki)                                  |
 
 ## Transactions
-Lifecycle of a transaction
-
-```{mermaid}
-flowchart TD
-    A[Transaction gets produced] --> B[Ortege streaming checks blockchain type]
-    B -->|EVM| C1[RedPanda topic for EVM]
-    B -->|UTXO_Dumb| C2[RedPanda topic for UTXO_Dumb]
-    B -->|Substrate| C3[RedPanda topic for Substrate]
-    B -->|SVM| C4[RedPanda topic for SVM]
-
-    C1 --> D[Consumer writes to Bronze layer]
-    C2 --> D
-    C3 --> D
-    C4 --> D
-
-    D --> E[Check if addresses are categorized in Silver layer]
-    E -->|If not| F[Classify address as 'account' or 'smart contract']
-    E --> G[Check if address transacted before on this chain]
-    G -->|If not| H[Tag as 'new_address_on_chain' with date]
-
-    H --> I[Check address on related chains]
-    I -->|If active on other chains| J[Tag as 'multichain address']
-
-    J --> K[Check for labels from Etherscan]
-    K -->|If no labels| L[Query Etherscan and add labels to Silver layer]
-
-    L --> M[Check how the wallet was funded]
-    M -->|Funded from CEX| N[Tag as 'funded_from_CEX']
-    M -->|Funded from known account/contract| O[Tag as 'funded_from_known_source']
-    M -->|Funded from unknown source| P[Tag as 'funded_from_unknown_source']
-
-    P --> Q[Check token balances in Silver layer]
-    Q --> R[Push balances data to Gold layer in 'address_balances' table]
-
-```
-
-## Smart contracts
-
-Lifecycle of a smart contract
-
-```{mermaid}
-flowchart TD
-    A[Contract gets produced] --> B[Send to Ortege streaming service]
-    B --> C[Produced as a RedPanda topic]
-    C --> D[Pushed to Bronze layer as a Delta table]
-
-    D --> E[Determine contract type]
-    E -->|Token Contract| F1[Process Token Contract]
-    E -->|NFT Contract| F2[Process NFT Contract]
-    E -->|Interchain Token| F3[Update Cross Chain table in Silver layer]
-    E -->|Basket Token| F4[Update Balances in Silver layer]
-    E -->|Vault Token| F5[Update Vault details in Silver layer]
-    E -->|Unidentified Token| F6[Check Etherscan for ABI]
-
-    F6 -->|ABI found| G1[Upload ABI to Silver layer]
-    F6 -->|ABI not found| G2[Decompile Contract and upload ABI]
-    
-    G1 --> H[Scan Token for Vulnerabilities]
-    G2 --> H
-    F1 --> H
-    F2 --> H
-    F3 --> H
-    F4 --> H
-    F5 --> H
-
-    H -->|Vulnerabilities found| I[Produce Event to RedPanda]
-
-```
