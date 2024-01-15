@@ -7,17 +7,71 @@ format:
     css: styles.css
 ---
 
-One of our goals at Ortege is to abstract away as much complexity as possible from our users. As such we would prefer users asking our chat agents most queries to ensure they're getting highly focused answers saving our users time.
+# Introduction
 
-However we still need to generate the content in order for our chat agent's to be able to be up to date with the latest information on the Ortege data platform. 
+Welcome to Ortege Studio, your premier destination for insightful data analytics and AI-driven exploration in the realm of blockchain data. This guide is crafted to help you swiftly navigate through Ortege Studio's robust features, ensuring an efficient and productive start.
 
-So all our documentation will be available through this site. However we'd encourage you to rather use [OrtegeGPT](ortege.qmd) for a better experience in finding the information you require. 
+This guide will walk you through creating a simple Bitcoin visualization.
 
-Else our documentation is divided into:
-* [Ortege Studio](studio.qmd)
-* [Data Topology](data.qmd)
-* [Research articles](research.qmd)
+## Accessing Ortege Studio
 
-This documentation is open source and community generated. Please submit a PR if you see anything wrong. 
+Begin your journey by accessing Ortege Studio through our dedicated [web portal](https://app.ortege.xyz). Ensure you have your login credentials ready, which you would have received upon your successful registration.
 
-Our documentation is written in [Quarto](https://quarto.org/){.external target="blank"} and will be stored in a [Milvus](https://milvus.io/){.external target="blank"} vector database which will periodically update our early stage chat bots.
+**Please note** Currently user logins for Ortege Studio are restricted to whitelisted users.
+
+# Delving into Data
+
+## Querying Bitcoin
+
+Ortege Studio seamlessly integrates with a variety of blockchain data sources. To connect, navigate to the 'SQL Lab' section.
+
+![](images/SQLLab.png)
+
+## Data Exploration
+
+Please connect to:
+
+-   Database = "Ortege Lakehouse Test"
+
+-   Schema = "bitcoin"
+
+Now please run the following SQL Query:
+
+``` sql
+SELECT 
+    tx.block_number - tx.block_number % 1000 AS block_number,
+    ox.script_pub_key.type,
+    COUNT(*) AS output_count
+FROM 
+    bitcoin.transactions tx
+CROSS JOIN 
+    UNNEST(tx.output) AS ox
+WHERE 
+    tx.is_coinbase
+GROUP BY 
+    1, 2
+ORDER BY 
+    1;
+```
+
+This query looks at transactions on Bitcoin whereby miners are rewarded for mining blocks and is categorized according to the output type of the transaction.
+
+**Please note:** A coinbase transaction has to do with a type of transaction that appears in every new block of a blockchain and is not to be confused with the Coinbase Centralized Exchange. [Please see here for more information.](https://cointelegraph.com/explained/what-is-a-coinbase-transaction)
+
+## Visualization
+
+Transform your data into compelling visual stories. Select from a range of visualization tools within Ortege Studio to depict your data in the most impactful way.
+
+# Sharing Insights
+
+## Collaborate and Share
+
+Collaboration is key in data analytics. Ortege Studio facilitates sharing your findings with team members. Utilize our sharing features to collaborate effectively, enhancing the collective understanding of blockchain data.
+
+## Exporting Results
+
+For external presentations or reports, easily export your visualizations and data insights from Ortege Studio in various formats.
+
+# Conclusion
+
+Ortege Studio is more than just an analytics platform; it's a gateway to unlocking the vast potential of blockchain data. This quick start guide is just the beginning. Dive in and explore the myriad of features at your disposal. Happy analyzing!
