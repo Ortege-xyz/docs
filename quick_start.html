@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -120,7 +154,28 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#accessing-ortege-studio" id="toc-accessing-ortege-studio" class="nav-link" data-scroll-target="#accessing-ortege-studio">Accessing Ortege Studio</a></li>
+  </ul></li>
+  <li><a href="#delving-into-data" id="toc-delving-into-data" class="nav-link" data-scroll-target="#delving-into-data">Delving into Data</a>
+  <ul class="collapse">
+  <li><a href="#querying-bitcoin" id="toc-querying-bitcoin" class="nav-link" data-scroll-target="#querying-bitcoin">Querying Bitcoin</a></li>
+  <li><a href="#data-exploration" id="toc-data-exploration" class="nav-link" data-scroll-target="#data-exploration">Data Exploration</a></li>
+  <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization">Visualization</a></li>
+  </ul></li>
+  <li><a href="#sharing-insights" id="toc-sharing-insights" class="nav-link" data-scroll-target="#sharing-insights">Sharing Insights</a>
+  <ul class="collapse">
+  <li><a href="#collaborate-and-share" id="toc-collaborate-and-share" class="nav-link" data-scroll-target="#collaborate-and-share">Collaborate and Share</a></li>
+  <li><a href="#exporting-results" id="toc-exporting-results" class="nav-link" data-scroll-target="#exporting-results">Exporting Results</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -142,14 +197,70 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>One of our goals at Ortege is to abstract away as much complexity as possible from our users. As such we would prefer users asking our chat agents most queries to ensure they’re getting highly focused answers saving our users time.</p>
-<p>However we still need to generate the content in order for our chat agent’s to be able to be up to date with the latest information on the Ortege data platform.</p>
-<p>So all our documentation will be available through this site. However we’d encourage you to rather use <a href="ortege.qmd">OrtegeGPT</a> for a better experience in finding the information you require.</p>
-<p>Else our documentation is divided into: * <a href="./studio.html">Ortege Studio</a> * <a href="./data.html">Data Topology</a> * <a href="./research.html">Research articles</a></p>
-<p>This documentation is open source and community generated. Please submit a PR if you see anything wrong.</p>
-<p>Our documentation is written in <a href="https://quarto.org/" class="external" target="blank">Quarto</a> and will be stored in a <a href="https://milvus.io/" class="external" target="blank">Milvus</a> vector database which will periodically update our early stage chat bots.</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Welcome to Ortege Studio, your premier destination for insightful data analytics and AI-driven exploration in the realm of blockchain data. This guide is crafted to help you swiftly navigate through Ortege Studio’s robust features, ensuring an efficient and productive start.</p>
+<p>This guide will walk you through creating a simple Bitcoin visualization.</p>
+<section id="accessing-ortege-studio" class="level2">
+<h2 class="anchored" data-anchor-id="accessing-ortege-studio">Accessing Ortege Studio</h2>
+<p>Begin your journey by accessing Ortege Studio through our dedicated <a href="https://app.ortege.xyz">web portal</a>. Ensure you have your login credentials ready, which you would have received upon your successful registration.</p>
+<p><strong>Please note</strong> Currently user logins for Ortege Studio are restricted to whitelisted users.</p>
+</section>
+</section>
+<section id="delving-into-data" class="level1">
+<h1>Delving into Data</h1>
+<section id="querying-bitcoin" class="level2">
+<h2 class="anchored" data-anchor-id="querying-bitcoin">Querying Bitcoin</h2>
+<p>Ortege Studio seamlessly integrates with a variety of blockchain data sources. To connect, navigate to the ‘SQL Lab’ section.</p>
+<p><img src="images/SQLLab.png" class="img-fluid"></p>
+</section>
+<section id="data-exploration" class="level2">
+<h2 class="anchored" data-anchor-id="data-exploration">Data Exploration</h2>
+<p>Please connect to:</p>
+<ul>
+<li><p>Database = “Ortege Lakehouse Test”</p></li>
+<li><p>Schema = “bitcoin”</p></li>
+</ul>
+<p>Now please run the following SQL Query:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    tx.block_number <span class="op">-</span> tx.block_number % <span class="dv">1000</span> <span class="kw">AS</span> block_number,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    ox.script_pub_key.<span class="kw">type</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> output_count</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    bitcoin.transactions tx</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="kw">CROSS</span> <span class="kw">JOIN</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    UNNEST(tx.output) <span class="kw">AS</span> ox</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    tx.is_coinbase</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>, <span class="dv">2</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This query looks at transactions on Bitcoin whereby miners are rewarded for mining blocks and is categorized according to the output type of the transaction.</p>
+<p><strong>Please note:</strong> A coinbase transaction has to do with a type of transaction that appears in every new block of a blockchain and is not to be confused with the Coinbase Centralized Exchange. <a href="https://cointelegraph.com/explained/what-is-a-coinbase-transaction">Please see here for more information.</a></p>
+</section>
+<section id="visualization" class="level2">
+<h2 class="anchored" data-anchor-id="visualization">Visualization</h2>
+<p>Transform your data into compelling visual stories. Select from a range of visualization tools within Ortege Studio to depict your data in the most impactful way.</p>
+</section>
+</section>
+<section id="sharing-insights" class="level1">
+<h1>Sharing Insights</h1>
+<section id="collaborate-and-share" class="level2">
+<h2 class="anchored" data-anchor-id="collaborate-and-share">Collaborate and Share</h2>
+<p>Collaboration is key in data analytics. Ortege Studio facilitates sharing your findings with team members. Utilize our sharing features to collaborate effectively, enhancing the collective understanding of blockchain data.</p>
+</section>
+<section id="exporting-results" class="level2">
+<h2 class="anchored" data-anchor-id="exporting-results">Exporting Results</h2>
+<p>For external presentations or reports, easily export your visualizations and data insights from Ortege Studio in various formats.</p>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>Ortege Studio is more than just an analytics platform; it’s a gateway to unlocking the vast potential of blockchain data. This quick start guide is just the beginning. Dive in and explore the myriad of features at your disposal. Happy analyzing!</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
