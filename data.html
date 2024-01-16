@@ -141,7 +141,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#receipts" id="toc-receipts" class="nav-link" data-scroll-target="#receipts">Receipts</a></li>
   <li><a href="#logs" id="toc-logs" class="nav-link" data-scroll-target="#logs">Logs</a></li>
   </ul></li>
-  <li><a href="#stacks" id="toc-stacks" class="nav-link" data-scroll-target="#stacks">Stacks</a></li>
+  <li><a href="#stacks" id="toc-stacks" class="nav-link" data-scroll-target="#stacks">Stacks</a>
+  <ul class="collapse">
+  <li><a href="#blocks-2" id="toc-blocks-2" class="nav-link" data-scroll-target="#blocks-2">Blocks</a></li>
+  <li><a href="#transactions-2" id="toc-transactions-2" class="nav-link" data-scroll-target="#transactions-2">Transactions</a></li>
+  <li><a href="#contracts" id="toc-contracts" class="nav-link" data-scroll-target="#contracts">Contracts</a></li>
+  </ul></li>
   <li><a href="#soroban-stellar" id="toc-soroban-stellar" class="nav-link" data-scroll-target="#soroban-stellar">Soroban (Stellar)</a></li>
   <li><a href="#move-based-chains" id="toc-move-based-chains" class="nav-link" data-scroll-target="#move-based-chains">Move based chains</a>
   <ul class="collapse">
@@ -899,12 +904,326 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="stacks" class="level1">
 <h1>Stacks</h1>
+<section id="blocks-2" class="level2">
+<h2 class="anchored" data-anchor-id="blocks-2">Blocks</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Column name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>canonical</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>height</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>hash</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>index_block_hash</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>parent_block_hash</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>parent_index_block_hash</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>burn_block_time</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>burn_block_time_iso</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>burn_block_hash</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>burn_block_height</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>miner_txid</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>tx_count</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>execution_cost_read_count</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>execution_cost_read_length</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>execution_cost_runtime</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>execution_cost_write_count</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>execution_cost_write_length</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="transactions-2" class="level2">
+<h2 class="anchored" data-anchor-id="transactions-2">Transactions</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Column name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>tx_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>nonce</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>fee_rate</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>sender_address</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>sponsored</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>post_condition_mode</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>post_conditions</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>anchor_mode</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>in_unanchored</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>block_hash</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>parent_block_hash</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>block_height</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>burn_block_time</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>burn_block_time_iso</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>canonical</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>tx_index</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>tx_status</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>tx_result</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>microblock_hash</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>microblock_sequence</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>microblock_canonical</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>event_count</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>events</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>execution_cost_read_count</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>execution_cost_read_length</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>execution_cost_runtime</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>execution_cost_write_count</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>execution_cost_write_length</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>tx_type</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>contract_call</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="contracts" class="level2">
+<h2 class="anchored" data-anchor-id="contracts">Contracts</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Column name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>tx_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>canonical</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>contract_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>block_height</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>clarity_version</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>source_code</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>abi</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 <section id="soroban-stellar" class="level1">
 <h1>Soroban (Stellar)</h1>
+<p><strong>Coming soon</strong></p>
 </section>
 <section id="move-based-chains" class="level1">
 <h1>Move based chains</h1>
+<p><strong>Coming soon</strong></p>
 <section id="aptos-derived" class="level2">
 <h2 class="anchored" data-anchor-id="aptos-derived">Aptos derived</h2>
 </section>
