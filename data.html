@@ -128,8 +128,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#bitcoin" id="toc-bitcoin" class="nav-link" data-scroll-target="#bitcoin">Bitcoin</a>
   <ul class="collapse">
   <li><a href="#blocks" id="toc-blocks" class="nav-link" data-scroll-target="#blocks">Blocks</a></li>
-  <li><a href="#transactions" id="toc-transactions" class="nav-link" data-scroll-target="#transactions">Transactions</a></li>
+  <li><a href="#transactions" id="toc-transactions" class="nav-link" data-scroll-target="#transactions">Transactions</a>
+  <ul class="collapse">
+  <li><a href="#inputs" id="toc-inputs" class="nav-link" data-scroll-target="#inputs">Inputs</a></li>
+  <li><a href="#outputs" id="toc-outputs" class="nav-link" data-scroll-target="#outputs">Outputs</a></li>
   </ul></li>
+  </ul></li>
+  <li><a href="#avalanche" id="toc-avalanche" class="nav-link" data-scroll-target="#avalanche">Avalanche</a></li>
   </ul>
 </nav>
     </div>
@@ -285,9 +290,333 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="transactions" class="level2">
 <h2 class="anchored" data-anchor-id="transactions">Transactions</h2>
-
-
+<table class="table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 3%">
+<col style="width: 87%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>block_time</td>
+<td></td>
+<td>The block time</td>
+</tr>
+<tr class="even">
+<td>block_date</td>
+<td></td>
+<td>The block date</td>
+</tr>
+<tr class="odd">
+<td>block_height</td>
+<td></td>
+<td>The block number</td>
+</tr>
+<tr class="even">
+<td>block_hash</td>
+<td></td>
+<td>The hash of the block that contains this transaction</td>
+</tr>
+<tr class="odd">
+<td>index</td>
+<td></td>
+<td>The number of the transaction in the block.</td>
+</tr>
+<tr class="even">
+<td>id</td>
+<td></td>
+<td>The id (hash) of this transaction</td>
+</tr>
+<tr class="odd">
+<td>input_value</td>
+<td></td>
+<td>Total value of inputs in the transaction</td>
+</tr>
+<tr class="even">
+<td>output_value</td>
+<td></td>
+<td>Total value of outputs in the transaction</td>
+</tr>
+<tr class="odd">
+<td>fee</td>
+<td></td>
+<td>The transaction fee paid to the miner. = output_value - input_value</td>
+</tr>
+<tr class="even">
+<td>input_count</td>
+<td></td>
+<td>The number of inputs in the transaction</td>
+</tr>
+<tr class="odd">
+<td>output_count</td>
+<td></td>
+<td>The number of outputs in the transaction</td>
+</tr>
+<tr class="even">
+<td>size</td>
+<td></td>
+<td>The size of this transaction in bytes</td>
+</tr>
+<tr class="odd">
+<td>virtual_size</td>
+<td></td>
+<td>The virtual transaction size (differs from size for witness transactions)</td>
+</tr>
+<tr class="even">
+<td>is_coinbase</td>
+<td></td>
+<td>The transaction is a coinbase transaction, which is the first transaction in a block</td>
+</tr>
+<tr class="odd">
+<td>coinbase</td>
+<td></td>
+<td>If the transaction is a coinbase transaction, contains the coinbase data. Otherwise, null.</td>
+</tr>
+<tr class="even">
+<td>inputs</td>
+<td></td>
+<td>Transaction inputs</td>
+</tr>
+<tr class="odd">
+<td>outputs</td>
+<td></td>
+<td>Transaction outputs. See outputs table.</td>
+</tr>
+<tr class="even">
+<td>lock_time</td>
+<td></td>
+<td>Earliest time that miners can include the transaction in their hashing of the Merkle root to attach it in the latest block of the blockchain</td>
+</tr>
+<tr class="odd">
+<td>hex</td>
+<td></td>
+<td>The transaction encoded as hexadecimal</td>
+</tr>
+</tbody>
+</table>
+<section id="inputs" class="level3">
+<h3 class="anchored" data-anchor-id="inputs">Inputs</h3>
+<table class="table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 10%">
+<col style="width: 71%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Data type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>value</td>
+<td></td>
+<td>The number of Satoshis attached to this output</td>
+</tr>
+<tr class="even">
+<td>height</td>
+<td></td>
+<td>The height of the output</td>
+</tr>
+<tr class="odd">
+<td>tx_id</td>
+<td></td>
+<td>The transaction id of the output that is here used as input</td>
+</tr>
+<tr class="even">
+<td>output_number</td>
+<td></td>
+<td>The number (index) of the output in transaction&nbsp;<code>tx_id</code>’s outputs</td>
+</tr>
+<tr class="odd">
+<td>coinbase</td>
+<td></td>
+<td>The data specified in this transaction, if it was a coinbase transaction</td>
+</tr>
+<tr class="even">
+<td>sequence</td>
+<td></td>
+<td>Sequence number</td>
+</tr>
+<tr class="odd">
+<td>witness_data</td>
+<td></td>
+<td>Array of hex encoded witness data</td>
+</tr>
+<tr class="even">
+<td>script_signature</td>
+<td></td>
+<td>The script signature</td>
+</tr>
+<tr class="odd">
+<td>script_pub_key</td>
+<td></td>
+<td>The script public key</td>
+</tr>
+</tbody>
+</table>
+<section id="script-signature" class="level4">
+<h4 class="anchored" data-anchor-id="script-signature">Script signature</h4>
+<table class="table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 13%">
+<col style="width: 78%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Data type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>hex</td>
+<td></td>
+<td>The transaction’s script operations, in hex</td>
+</tr>
+<tr class="even">
+<td>asm</td>
+<td></td>
+<td>The transaction’s script operations, in symbolic representation</td>
+</tr>
+</tbody>
+</table>
 </section>
+<section id="script-public-key" class="level4">
+<h4 class="anchored" data-anchor-id="script-public-key">Script public key</h4>
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 12%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Data type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>asm</td>
+<td></td>
+<td>The transaction’s script operations, in symbolic representation</td>
+</tr>
+<tr class="even">
+<td>desc</td>
+<td></td>
+<td>The transaction’s script operations, in symbolic representation</td>
+</tr>
+<tr class="odd">
+<td>address</td>
+<td></td>
+<td>The transaction’s script operations, in symbolic representation</td>
+</tr>
+<tr class="even">
+<td>hex</td>
+<td></td>
+<td>The transaction’s script operations, in hex</td>
+</tr>
+<tr class="odd">
+<td>type</td>
+<td></td>
+<td>The address type of the output</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="outputs" class="level3">
+<h3 class="anchored" data-anchor-id="outputs">Outputs</h3>
+<table class="table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 7%">
+<col style="width: 80%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Data type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>index</td>
+<td></td>
+<td>0-indexed number of an output within a transaction used by a later transaction to refer to that specific output</td>
+</tr>
+<tr class="even">
+<td>value</td>
+<td></td>
+<td>The number of Satoshis attached to this output</td>
+</tr>
+<tr class="odd">
+<td>script_pub_key</td>
+<td></td>
+<td>The public key</td>
+</tr>
+</tbody>
+</table>
+<section id="script-public-key-1" class="level4">
+<h4 class="anchored" data-anchor-id="script-public-key-1">Script public key</h4>
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 12%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Data type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>asm</td>
+<td></td>
+<td>The transaction’s script operations, in symbolic representation</td>
+</tr>
+<tr class="even">
+<td>hex</td>
+<td></td>
+<td>The transaction’s script operations, in hex</td>
+</tr>
+<tr class="odd">
+<td>address</td>
+<td></td>
+<td>The address the BTC came from</td>
+</tr>
+<tr class="even">
+<td>type</td>
+<td></td>
+<td>The address type of the output</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+</section>
+<section id="avalanche" class="level1">
+<h1>Avalanche</h1>
+
+
 </section>
 
 </main> <!-- /main -->
