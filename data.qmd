@@ -55,3 +55,75 @@ Bitcoin data follows a UTXO model. We expose two raw tables:
 | weight              | bigint      | The block weight as defined in [BIP 141](https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki)                                  |
 
 ## Transactions
+
+| Column name  | Type | Description                                                                                                                                  |
+|--------------|------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| block_time   |      | The block time                                                                                                                               |
+| block_date   |      | The block date                                                                                                                               |
+| block_height |      | The block number                                                                                                                             |
+| block_hash   |      | The hash of the block that contains this transaction                                                                                         |
+| index        |      | The number of the transaction in the block.                                                                                                  |
+| id           |      | The id (hash) of this transaction                                                                                                            |
+| input_value  |      | Total value of inputs in the transaction                                                                                                     |
+| output_value |      | Total value of outputs in the transaction                                                                                                    |
+| fee          |      | The transaction fee paid to the miner. = output_value - input_value                                                                          |
+| input_count  |      | The number of inputs in the transaction                                                                                                      |
+| output_count |      | The number of outputs in the transaction                                                                                                     |
+| size         |      | The size of this transaction in bytes                                                                                                        |
+| virtual_size |      | The virtual transaction size (differs from size for witness transactions)                                                                    |
+| is_coinbase  |      | The transaction is a coinbase transaction, which is the first transaction in a block                                                         |
+| coinbase     |      | If the transaction is a coinbase transaction, contains the coinbase data. Otherwise, null.                                                   |
+| inputs       |      | Transaction inputs                                                                                                                           |
+| outputs      |      | Transaction outputs. See outputs table.                                                                                                      |
+| lock_time    |      | Earliest time that miners can include the transaction in their hashing of the Merkle root to attach it in the latest block of the blockchain |
+| hex          |      | The transaction encoded as hexadecimal                                                                                                       |
+
+### Inputs
+
+| Field            | Data type | Description                                                              |
+|------------------|-----------|--------------------------------------------------------------------------|
+| value            |           | The number of Satoshis attached to this output                           |
+| height           |           | The height of the output                                                 |
+| tx_id            |           | The transaction id of the output that is here used as input              |
+| output_number    |           | The number (index) of the output in transaction `tx_id`'s outputs        |
+| coinbase         |           | The data specified in this transaction, if it was a coinbase transaction |
+| sequence         |           | Sequence number                                                          |
+| witness_data     |           | Array of hex encoded witness data                                        |
+| script_signature |           | The script signature                                                     |
+| script_pub_key   |           | The script public key                                                    |
+
+#### Script signature
+
+| Field | Data type | Description                                                     |
+|-------|-----------|-----------------------------------------------------------------|
+| hex   |           | The transaction's script operations, in hex                     |
+| asm   |           | The transaction's script operations, in symbolic representation |
+
+#### Script public key
+
+| Field   | Data type | Description                                                     |
+|---------|-----------|-----------------------------------------------------------------|
+| asm     |           | The transaction's script operations, in symbolic representation |
+| desc    |           | The transaction's script operations, in symbolic representation |
+| address |           | The transaction's script operations, in symbolic representation |
+| hex     |           | The transaction's script operations, in hex                     |
+| type    |           | The address type of the output                                  |
+
+### Outputs
+
+| Field          | Data type | Description                                                                                                     |
+|----------------|-----------|-----------------------------------------------------------------------------------------------------------------|
+| index          |           | 0-indexed number of an output within a transaction used by a later transaction to refer to that specific output |
+| value          |           | The number of Satoshis attached to this output                                                                  |
+| script_pub_key |           | The public key                                                                                                  |
+
+#### Script public key
+
+| Field   | Data type | Description                                                     |
+|---------|-----------|-----------------------------------------------------------------|
+| asm     |           | The transaction's script operations, in symbolic representation |
+| hex     |           | The transaction's script operations, in hex                     |
+| address |           | The address the BTC came from                                   |
+| type    |           | The address type of the output                                  |
+
+# Avalanche
