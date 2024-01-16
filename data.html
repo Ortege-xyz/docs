@@ -134,7 +134,20 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#outputs" id="toc-outputs" class="nav-link" data-scroll-target="#outputs">Outputs</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#avalanche" id="toc-avalanche" class="nav-link" data-scroll-target="#avalanche">Avalanche</a></li>
+  <li><a href="#avalanche" id="toc-avalanche" class="nav-link" data-scroll-target="#avalanche">Avalanche</a>
+  <ul class="collapse">
+  <li><a href="#blocks-1" id="toc-blocks-1" class="nav-link" data-scroll-target="#blocks-1">Blocks</a></li>
+  <li><a href="#transactions-1" id="toc-transactions-1" class="nav-link" data-scroll-target="#transactions-1">Transactions</a></li>
+  <li><a href="#receipts" id="toc-receipts" class="nav-link" data-scroll-target="#receipts">Receipts</a></li>
+  <li><a href="#logs" id="toc-logs" class="nav-link" data-scroll-target="#logs">Logs</a></li>
+  </ul></li>
+  <li><a href="#stacks" id="toc-stacks" class="nav-link" data-scroll-target="#stacks">Stacks</a></li>
+  <li><a href="#soroban-stellar" id="toc-soroban-stellar" class="nav-link" data-scroll-target="#soroban-stellar">Soroban (Stellar)</a></li>
+  <li><a href="#move-based-chains" id="toc-move-based-chains" class="nav-link" data-scroll-target="#move-based-chains">Move based chains</a>
+  <ul class="collapse">
+  <li><a href="#aptos-derived" id="toc-aptos-derived" class="nav-link" data-scroll-target="#aptos-derived">Aptos derived</a></li>
+  <li><a href="#sui-derived" id="toc-sui-derived" class="nav-link" data-scroll-target="#sui-derived">Sui derived</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -166,10 +179,10 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Avalanche</p></li>
 <li><p>Stacks</p></li>
 </ul>
-<p>Following by</p>
+<p>Followed by</p>
 <ul>
 <li><p>Soroban (Stellar)</p></li>
-<li><p>Movement Labs</p></li>
+<li><p>Movement Labs (Move based chains)</p></li>
 </ul>
 </section>
 <section id="bitcoin" class="level1">
@@ -615,8 +628,291 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="avalanche" class="level1">
 <h1>Avalanche</h1>
+<section id="blocks-1" class="level2">
+<h2 class="anchored" data-anchor-id="blocks-1">Blocks</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Column name</th>
+<th>Data type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>base_fee_per_gas</td>
+<td>bigint</td>
+<td>This block’s base fee (introduced by&nbsp;<a href="https://eips.ethereum.org/EIPS/eip-1559">EIP1559</a>)</td>
+</tr>
+<tr class="even">
+<td>difficulty</td>
+<td>bigint</td>
+<td>The effort required to mine the block</td>
+</tr>
+<tr class="odd">
+<td>extra_data</td>
+<td>varchar</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>gas_limit</td>
+<td>bigint</td>
+<td>The gas limit of the current block</td>
+</tr>
+<tr class="odd">
+<td>gas_used</td>
+<td>bigint</td>
+<td>The gas used in this block</td>
+</tr>
+<tr class="even">
+<td>hash</td>
+<td>varchar</td>
+<td>A unique identifier for that block</td>
+</tr>
+<tr class="odd">
+<td>logs_bloom</td>
+<td>varchar</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>miner</td>
+<td>varchar</td>
+<td>The address of the miner</td>
+</tr>
+<tr class="odd">
+<td>nonce</td>
+<td>varchar</td>
+<td>The block nonce is used to demonstrate the proof of work during mining</td>
+</tr>
+<tr class="even">
+<td>number</td>
+<td>bigint</td>
+<td>The length of the blockchain in blocks</td>
+</tr>
+<tr class="odd">
+<td>parent_hash</td>
+<td>varchar</td>
+<td>The unique identifier for the prior block</td>
+</tr>
+<tr class="even">
+<td>receipts_root</td>
+<td>varchar</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>sha3_uncles</td>
+<td>varchar</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>size</td>
+<td>bigint</td>
+<td>This block’s size in bytes (limited by gas limit)</td>
+</tr>
+<tr class="odd">
+<td>state_root</td>
+<td>varchar</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>timestamp</td>
+<td>bigint</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>total_difficulty</td>
+<td>bigint</td>
+<td>Total difficulty of the chain until this block</td>
+</tr>
+<tr class="even">
+<td>transactions_root</td>
+<td>varchar</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>transactions_count</td>
+<td>bigint</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="transactions-1" class="level2">
+<h2 class="anchored" data-anchor-id="transactions-1">Transactions</h2>
+<p>Transactions are cryptographically signed instructions from accounts. An account will initiate a transaction to update the state of the Ethereum network. Transactions will always originate from externally owned accounts, a smart contract can not initiate a transaction.</p>
+<p>Transactions need to be broadcast to the whole network. Any node can broadcast a request for a transaction to be executed on the EVM; after this happens, a miner will execute the transaction and propagate the resulting state change to the rest of the network.</p>
+<p>Read more in the official Ethereum documentation <a href="https://ethereum.org/en/developers/docs/transactions">here</a>.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Data type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>block_hash</td>
+<td>varchar</td>
+<td>A unique identifier for that block</td>
+</tr>
+<tr class="even">
+<td>block_number</td>
+<td>bigint</td>
+<td>The length of the blockchain in blocks</td>
+</tr>
+<tr class="odd">
+<td>block_timestamp</td>
+<td>bigint</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>from_address</td>
+<td>varchar</td>
+<td>Address of the sender</td>
+</tr>
+<tr class="odd">
+<td>gas</td>
+<td>bigint</td>
+<td>The gas consumed by the transaction in&nbsp;<code>wei</code></td>
+</tr>
+<tr class="even">
+<td>gas_price</td>
+<td>bigint</td>
+<td>The gas price in&nbsp;<code>wei</code></td>
+</tr>
+<tr class="odd">
+<td>hash</td>
+<td>varchar</td>
+<td>A unique identifier for that block</td>
+</tr>
+<tr class="even">
+<td>input</td>
+<td>varchar</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>max_fee_per_gas</td>
+<td>bigint</td>
+<td>The maximum fee per gas the transaction sender is willing to pay total (introduced by&nbsp;<a href="https://eips.ethereum.org/EIPS/eip-1559">EIP1559</a>)</td>
+</tr>
+<tr class="even">
+<td>max_priority_fee_per_gas</td>
+<td>bigint</td>
+<td>Maximum fee per gas the transaction sender is willing to give to miners to incentivize them to include their transaction (introduced by&nbsp;<a href="https://eips.ethereum.org/EIPS/eip-1559">EIP1559</a>)</td>
+</tr>
+<tr class="odd">
+<td>nonce</td>
+<td>varchar</td>
+<td>The transaction nonce, unique to that wallet</td>
+</tr>
+<tr class="even">
+<td>to_address</td>
+<td>varchar</td>
+<td>Address of the receiver.&nbsp;<code>null</code>&nbsp;when its a contract creation transaction</td>
+</tr>
+<tr class="odd">
+<td>transaction_index</td>
+<td>bigint</td>
+<td>The transactions index position in the block</td>
+</tr>
+<tr class="even">
+<td>transaction_type</td>
+<td>bigint</td>
+<td>The type of the transaction:&nbsp;<code>Legacy</code>,&nbsp;<code>AccessList</code>, or&nbsp;<code>DynamicFee</code></td>
+</tr>
+<tr class="odd">
+<td>value</td>
+<td>bigint</td>
+<td>The amount of&nbsp;<code>[chain_gas_token]</code>&nbsp;sent in this transaction in&nbsp;<code>wei</code>. Note that ERC20 tokens do not show up here</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="receipts" class="level2">
+<h2 class="anchored" data-anchor-id="receipts">Receipts</h2>
+<p><strong>Coming soon</strong></p>
+</section>
+<section id="logs" class="level2">
+<h2 class="anchored" data-anchor-id="logs">Logs</h2>
+<p>Event Logs tables store all logs data that gets generated by smart contracts.</p>
+<p>This can be useful for querying contracts that are not yet decoded or are not able to be decoded since the code of the smart contract is not public.</p>
+<p>Logs are an elegant way to store tiny amounts of data on EVM blockchains for a small amount of gas. Specifically, event logs are useful to let other people know something has happened without them having to query contracts individually.</p>
+<p>For more on this topic read <a href="https://medium.com/mycrypto/understanding-event-logs-on-the-ethereum-blockchain-f4ae7ba50378">this article</a>.</p>
+<table class="table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 7%">
+<col style="width: 78%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column name</th>
+<th>Data type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>address</td>
+<td>varchar</td>
+<td>The address of the contract that emitted the log</td>
+</tr>
+<tr class="even">
+<td>block_hash</td>
+<td>varchar</td>
+<td>A unique identifier for that block</td>
+</tr>
+<tr class="odd">
+<td>block_number</td>
+<td>bigint</td>
+<td>The length of the blockchain in blocks</td>
+</tr>
+<tr class="even">
+<td>data</td>
+<td>varchar</td>
+<td>Unindexed data containing further information on the event</td>
+</tr>
+<tr class="odd">
+<td>log_index</td>
+<td>bigint</td>
+<td>This logs index position in the block (cumulative amount of logs ordered by execution)</td>
+</tr>
+<tr class="even">
+<td>topics</td>
+<td>varchar</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>transaction_hash</td>
+<td>varchar</td>
+<td>The transaction hash of the transaction that produced this log</td>
+</tr>
+<tr class="even">
+<td>transaction_index</td>
+<td>bigint</td>
+<td>The index position of the transaction in this block (cumulative amount of transactions ordered by execution)</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="stacks" class="level1">
+<h1>Stacks</h1>
+</section>
+<section id="soroban-stellar" class="level1">
+<h1>Soroban (Stellar)</h1>
+</section>
+<section id="move-based-chains" class="level1">
+<h1>Move based chains</h1>
+<section id="aptos-derived" class="level2">
+<h2 class="anchored" data-anchor-id="aptos-derived">Aptos derived</h2>
+</section>
+<section id="sui-derived" class="level2">
+<h2 class="anchored" data-anchor-id="sui-derived">Sui derived</h2>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
