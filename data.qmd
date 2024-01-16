@@ -205,9 +205,82 @@ For more on this topic read [this article](https://medium.com/mycrypto/understan
 
 # Stacks
 
+## Blocks
+
+| Column name                 | Type | Description |
+|-----------------------------|------|-------------|
+| canonical                   |      |             |
+| height                      |      |             |
+| hash                        |      |             |
+| index_block_hash            |      |             |
+| parent_block_hash           |      |             |
+| parent_index_block_hash     |      |             |
+| burn_block_time             |      |             |
+| burn_block_time_iso         |      |             |
+| burn_block_hash             |      |             |
+| burn_block_height           |      |             |
+| miner_txid                  |      |             |
+| tx_count                    |      |             |
+| execution_cost_read_count   |      |             |
+| execution_cost_read_length  |      |             |
+| execution_cost_runtime      |      |             |
+| execution_cost_write_count  |      |             |
+| execution_cost_write_length |      |             |
+
+## Transactions
+
+| Column name                 | Type  | Description |
+|-----------------------------|-------|-------------|
+| tx_id                       |       |             |
+| nonce                       |       |             |
+| fee_rate                    |       |             |
+| sender_address              |       |             |
+| sponsored                   |       |             |
+| post_condition_mode         |       |             |
+| post_conditions             |       |             |
+| anchor_mode                 |       |             |
+| in_unanchored               |       |             |
+| block_hash                  |       |             |
+| parent_block_hash           |       |             |
+| block_height                |       |             |
+| burn_block_time             |       |             |
+| burn_block_time_iso         |       |             |
+| canonical                   |       |             |
+| tx_index                    |       |             |
+| tx_status                   |       |             |
+| tx_result                   |       |             |
+| microblock_hash             |       |             |
+| microblock_sequence         |       |             |
+| microblock_canonical        |       |             |
+| event_count                 |       |             |
+| events                      |       |             |
+| execution_cost_read_count   |       |             |
+| execution_cost_read_length  |       |             |
+| execution_cost_runtime      |       |             |
+| execution_cost_write_count  |       |             |
+| execution_cost_write_length |       |             |
+| tx_type                     |       |             |
+| contract_call               |       |             |
+
+## Contracts
+
+| Column name     | Type | Description |
+|-----------------|------|-------------|
+| tx_id           |      |             |
+| canonical       |      |             |
+| contract_id     |      |             |
+| block_height    |      |             |
+| clarity_version |      |             |
+| source_code     |      |             |
+| abi             |      |             |
+
 # Soroban (Stellar)
 
+**Coming soon**
+
 # Move based chains
+
+**Coming soon**
 
 ## Aptos derived
 
