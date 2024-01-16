@@ -1,0 +1,55 @@
+# Datasets
+
+Datasets in Ortege Studio are foundational elements that represent the structured data you work with. They are usually tables or views from connected databases. Understanding the Datasets feature is key to effectively utilizing Ortege Studio for your data analysis and visualization needs.
+
+### **Accessing Datasets**
+
+**Screenshot needed: Accessing Datasets from the Ortege Studio menu**
+
+-   **Navigation:** You can access the Datasets feature from the main Ortege Studio menu, typically found under the “Data” section.
+
+-   **Datasets Page:** This page lists all available datasets, showing their names, database connections, and other relevant details.
+
+### **Dataset Overview**
+
+**Screenshot needed: Overview of a Dataset**
+
+-   **Metadata:** Each dataset listing provides metadata, such as the database it belongs to, the schema, and when it was last updated.
+
+-   **Actions:** From here, you can perform actions like editing dataset properties, deleting datasets, or exploring the dataset through visualizations.
+
+### **Editing a Dataset**
+
+**Screenshot needed: Dataset editing interface**
+
+-   **Editing Interface:** By selecting a dataset, you enter the editing interface. This area allows you to modify various aspects of the dataset.
+
+-   **Changing Metadata:** You can change the dataset's descriptive information, like its verbose name, description, and more.
+
+### **Columns and Metrics**
+
+**Screenshot needed: Columns and Metrics section of a dataset**
+
+-   **Columns Tab:** This tab shows all the columns of your dataset, including their type and source. You can edit column details, like renaming them, changing data types, or adding calculated columns.
+
+-   **Metrics Tab:** Here, you can define and manage custom metrics that are specific to the dataset, like aggregations or formulas.
+
+### **Dataset Usage**
+
+**Screenshot needed: Visualization using a selected dataset**
+
+-   **Visualization:** Datasets can be directly used to create various visualizations and dashboards.
+
+-   **SQL Lab Integration:** Datasets also integrate seamlessly with SQL Lab, allowing for advanced querying and exploration.
+
+### **Security and Permissions**
+
+**Screenshot needed: Dataset’s security settings**
+
+-   **Access Control:** Ortege Studio enables fine-grained access control on datasets, allowing you to control who can view or edit them.
+
+-   **Row-Level Security:** You can also set up row-level security to ensure users only see data they are permitted to view.
+
+### **Conclusion**
+
+The Datasets feature in Ortege Studio is a versatile and crucial component of the platform. It allows for the organized management and utilization of your data within Ortege Studio, facilitating everything from simple explorations to complex visualizations and analyses.

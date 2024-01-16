@@ -7,6 +7,14 @@ format:
     css: styles.css
 ---
 
-Ortege Studio can be located at https://app.ortege.xyz 
+Ortege Studio is based on Apache Superset.
 
-Currently it is a closed beta. If you'd like to gain access please email christos@ortege.io 
+Apache Superset is an open-source, enterprise-ready Business Intelligence (BI) web application. It was originally created by Airbnb and later donated to the Apache Software Foundation. Superset is designed to be highly intuitive and accessible, enabling users to quickly and easily explore, visualize, and share data insights.
+
+-   [SQL Lab](studio/sqllab.qmd) - this is where you can write SQL queries to explore blockchain data.
+
+-   [Datasets](studio/datasets.qmd) - This is where you'll save your datasets to be used for Visualizations
+
+-   [Charts](studio/charts.qmd) - Charts make your data come to life.
+
+-   [Dashboards](studio/dashboards.qmd) - Dashboards are a collection of charts you can share with the world.

@@ -1,0 +1,63 @@
+# Dashboards
+
+Dashboards in Ortege Studio are powerful tools for combining various charts and visualizations into a single, interactive, and dynamic view. They provide a holistic view of your data, allowing for efficient monitoring and insightful decision-making.
+
+### **Accessing Dashboards**
+
+**Screenshot needed: Accessing Dashboards from the Ortege Studio menu**
+
+-   **Navigation:** You can find Dashboards in the main Ortege Studio menu, often under a section labeled “Dashboards.”
+
+-   **Dashboard Page:** This page displays all the available dashboards, with details like the dashboard name, owner, and last modified date.
+
+### **Creating a New Dashboard**
+
+**Screenshot needed: Creating a new dashboard interface**
+
+-   **Starting a New Dashboard:** To create a new dashboard, click on the “+” or “New” button.
+
+-   **Naming the Dashboard:** Assign a name and optionally a description to your new dashboard for easy identification.
+
+### **Adding Charts to Dashboard**
+
+**Screenshot needed: Adding charts to a dashboard**
+
+-   **Chart Selection:** In the dashboard edit mode, you can add charts that you’ve previously created in the Charts section.
+
+-   **Positioning and Resizing:** Drag and drop the charts into your desired position on the dashboard. You can also resize them for optimal layout and visibility.
+
+### **Customizing the Dashboard**
+
+**Screenshot needed: Customizing the dashboard layout and settings**
+
+-   **Layout Customization:** You can customize the layout of the dashboard, organizing charts and components in a way that best tells your data story.
+
+-   **Filter Options:** Add interactive filters to the dashboard that allow users to dynamically change the data displayed across multiple charts.
+
+### **Interacting with Dashboards**
+
+**Screenshot needed: Interacting with a live dashboard**
+
+-   **Data Interaction:** Users can interact with the data in various ways, like hovering over charts to see detailed information or clicking on elements to drill down.
+
+-   **Filtering:** Apply filters to refine the data displayed on the entire dashboard or specific charts.
+
+### **Sharing and Exporting**
+
+**Screenshot needed: Sharing and exporting options for a dashboard**
+
+-   **Sharing Dashboards:** Dashboards can be shared with others through direct links or by providing access within Superset.
+
+-   **Exporting:** Dashboards can also be exported for external use, either as images or in other formats, depending on Ortege Studio’s configuration.
+
+### **Security and Permissions**
+
+**Screenshot needed: Dashboard’s security settings**
+
+-   **Access Control:** You can control who has access to view or edit the dashboard, ensuring data security and integrity.
+
+-   **Row-Level Security:** If set up, row-level security will apply to all the charts in the dashboard, ensuring users only see the data they are authorized to view.
+
+### **Conclusion**
+
+Dashboards in Ortege Studio are an essential feature for synthesizing complex data into comprehensible and actionable insights. They offer a platform to narrate a data story, combining different visual elements into a cohesive and interactive experience.

@@ -1,0 +1,59 @@
+# Charts
+
+The Charts feature in Ortege Studio is a powerful tool for creating and managing a wide range of data visualizations. From simple line charts to complex geospatial visualizations, Charts enable users to turn data into insightful and interactive visual representations.
+
+### **Accessing Charts**
+
+**Screenshot needed: Accessing Charts from the Studio menu**
+
+-   **Navigation:** Charts can be accessed from the main Ortege Studio menu, typically under the “Charts” section.
+
+-   **Charts Page:** This page lists all the created charts, showing details like the chart name, type, and the dataset it’s based on.
+
+### **Creating a New Chart**
+
+**Screenshot needed: Creating a new chart interface**
+
+-   **Chart Creation:** To create a new chart, click on the “+” or “New” button.
+
+-   **Choosing a Dataset:** First, select the dataset you want to visualize.
+
+-   **Selecting Chart Type:** Ortege Studio offers a variety of chart types. Choose one that best suits the data and the insights you wish to convey.
+
+### **Chart Customization**
+
+**Screenshot needed: Chart customization interface**
+
+-   **Customization Panel:** Once you’ve selected the chart type, you'll be taken to the customization panel. Here, you can define and tweak various aspects of your chart.
+
+-   **Setting Metrics and Dimensions:** Choose the metrics and dimensions from your dataset that you want to visualize.
+
+-   **Chart Options:** Adjust settings such as filters, sorting, and chart-specific options to fine-tune your visualization.
+
+### **Visualizing the Data**
+
+**Screenshot needed: Finished chart visualization**
+
+-   **Previewing the Chart:** As you customize your chart, you can preview it in real-time. This feature helps in iteratively building your visualization.
+
+-   **Interactivity:** Many chart types in Ortege Studio are interactive, allowing users to hover over elements to see more details or click to drill down further.
+
+### **Saving and Sharing Charts**
+
+**Screenshot needed: Saving and sharing options for a chart**
+
+-   **Saving the Chart:** Once satisfied with the visualization, you can save the chart, giving it a descriptive name and, if necessary, adding it to a dashboard.
+
+-   **Sharing:** Ortege Studio allows you to share charts with others, either through direct links or by adding them to shared dashboards.
+
+### **Advanced Features**
+
+**Screenshot needed: Advanced features in chart creation, like SQL editing**
+
+-   **SQL Editing:** For advanced users, Ortege Studio allows editing the underlying SQL of a chart, providing more control over the data and its presentation.
+
+-   **Custom Visualization Plugins:** Users can extend Ortege Studio’s visualization capabilities by adding custom chart plugins.
+
+### **Conclusion**
+
+The Charts feature in Ortege Studio is a cornerstone of its data visualization capabilities. It offers a broad spectrum of options to represent data graphically, catering to both novice users and data experts. With its intuitive interface and wide range of customization options, Charts empower users to transform data into actionable insights.

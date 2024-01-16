@@ -1,0 +1,53 @@
+# SQL Lab
+
+SQL Lab is a feature-rich SQL editor within Ortege Studio designed for crafting and running complex queries. The interface is user-friendly and supports a variety of functions to enhance your data exploration experience. Let’s take a detailed tour of its interface.
+
+### **SQL Editor**
+
+**Screenshot needed: SQL Editor interface**
+
+The SQL Editor is the heart of SQL Lab. It's where you write, edit, and run your SQL queries.
+
+-   **Query Tab:** Located at the top, each tab represents a separate SQL query, allowing you to work on multiple queries simultaneously.
+
+-   **SQL Editor Pane:** This is the large text area where you write your SQL code. It features syntax highlighting and auto-completion to assist with writing queries efficiently.
+
+-   **Run Button:** Click this button to execute the query written in the active tab.
+
+### **Results Pane**
+
+**Screenshot needed: Results pane showing query results**
+
+Below the SQL Editor, you’ll find the Results Pane.
+
+-   **Data View:** Once a query is run, the results are displayed here in a tabular format.
+
+-   **Row Limit:** The interface allows you to specify the number of rows to display, which is useful for large result sets.
+
+-   **CSV Export:** You can export the result of your query directly to a CSV file from this pane.
+
+### **Data Preview**
+
+**Screenshot needed: Data preview of a selected table**
+
+-   **Data Source Selector:** To the left of the SQL Editor, you'll find the Data Source Selector. Here, you can choose the database and schema you wish to query.
+
+-   **Table Selector and Preview:** Once a table is selected, a preview of the table's data is displayed, along with column names and data types. This is particularly helpful for understanding the structure of your data before writing a query.
+
+### **Query History**
+
+**Screenshot needed: Query history section**
+
+-   **Accessing History:** The Query History section, accessible from the bottom left of the interface, keeps a log of all executed queries.
+
+-   **Details and Actions:** Each entry in the history shows the query, the time of execution, and its status. You can also rerun or copy queries from this history.
+
+### **Additional Features**
+
+-   **Save Query:** You can save queries for future use. This option is located next to the Run button.
+
+-   **Schema Browser:** The Schema Browser, adjacent to the Data Source Selector, lists all tables in the selected schema and provides information about table columns, indexes, and partitions.
+
+### **Conclusion**
+
+The SQL Lab interface in Ortege Studio is designed to be intuitive yet powerful, catering to both beginners and experienced SQL users. The seamless integration of query writing, data preview, and result analysis within a single interface makes SQL Lab an efficient tool for data exploration and analysis.
