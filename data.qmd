@@ -17,11 +17,11 @@ Initially we will go live with:
 
 -   Stacks
 
-Following by
+Followed by
 
 -   Soroban (Stellar)
 
--   Movement Labs
+-   Movement Labs (Move based chains)
 
 # Bitcoin
 
@@ -127,3 +127,88 @@ Bitcoin data follows a UTXO model. We expose two raw tables:
 | type    |           | The address type of the output                                  |
 
 # Avalanche
+
+## Blocks
+
+| Column name        | Data type | Description                                                                              |
+|--------------------|-----------|------------------------------------------------------------------------------------------|
+| base_fee_per_gas   | bigint    | This block's base fee (introduced by [EIP1559](https://eips.ethereum.org/EIPS/eip-1559)) |
+| difficulty         | bigint    | The effort required to mine the block                                                    |
+| extra_data         | varchar   |                                                                                          |
+| gas_limit          | bigint    | The gas limit of the current block                                                       |
+| gas_used           | bigint    | The gas used in this block                                                               |
+| hash               | varchar   | A unique identifier for that block                                                       |
+| logs_bloom         | varchar   |                                                                                          |
+| miner              | varchar   | The address of the miner                                                                 |
+| nonce              | varchar   | The block nonce is used to demonstrate the proof of work during mining                   |
+| number             | bigint    | The length of the blockchain in blocks                                                   |
+| parent_hash        | varchar   | The unique identifier for the prior block                                                |
+| receipts_root      | varchar   |                                                                                          |
+| sha3_uncles        | varchar   |                                                                                          |
+| size               | bigint    | This block's size in bytes (limited by gas limit)                                        |
+| state_root         | varchar   |                                                                                          |
+| timestamp          | bigint    |                                                                                          |
+| total_difficulty   | bigint    | Total difficulty of the chain until this block                                           |
+| transactions_root  | varchar   |                                                                                          |
+| transactions_count | bigint    |                                                                                          |
+
+## Transactions
+
+Transactions are cryptographically signed instructions from accounts. An account will initiate a transaction to update the state of the Ethereum network. Transactions will always originate from externally owned accounts, a smart contract can not initiate a transaction.
+
+Transactions need to be broadcast to the whole network. Any node can broadcast a request for a transaction to be executed on the EVM; after this happens, a miner will execute the transaction and propagate the resulting state change to the rest of the network.
+
+Read more in the official Ethereum documentation [here](https://ethereum.org/en/developers/docs/transactions).
+
+| Column                   | Data type | Description                                                                                                                                                                                 |
+|--------------------------|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| block_hash               | varchar   | A unique identifier for that block                                                                                                                                                          |
+| block_number             | bigint    | The length of the blockchain in blocks                                                                                                                                                      |
+| block_timestamp          | bigint    |                                                                                                                                                                                             |
+| from_address             | varchar   | Address of the sender                                                                                                                                                                       |
+| gas                      | bigint    | The gas consumed by the transaction in `wei`                                                                                                                                                |
+| gas_price                | bigint    | The gas price in `wei`                                                                                                                                                                      |
+| hash                     | varchar   | A unique identifier for that block                                                                                                                                                          |
+| input                    | varchar   |                                                                                                                                                                                             |
+| max_fee_per_gas          | bigint    | The maximum fee per gas the transaction sender is willing to pay total (introduced by [EIP1559](https://eips.ethereum.org/EIPS/eip-1559))                                                   |
+| max_priority_fee_per_gas | bigint    | Maximum fee per gas the transaction sender is willing to give to miners to incentivize them to include their transaction (introduced by [EIP1559](https://eips.ethereum.org/EIPS/eip-1559)) |
+| nonce                    | varchar   | The transaction nonce, unique to that wallet                                                                                                                                                |
+| to_address               | varchar   | Address of the receiver. `null` when its a contract creation transaction                                                                                                                    |
+| transaction_index        | bigint    | The transactions index position in the block                                                                                                                                                |
+| transaction_type         | bigint    | The type of the transaction: `Legacy`, `AccessList`, or `DynamicFee`                                                                                                                        |
+| value                    | bigint    | The amount of `[chain_gas_token]` sent in this transaction in `wei`. Note that ERC20 tokens do not show up here                                                                             |
+
+## Receipts
+
+**Coming soon**
+
+## Logs
+
+Event Logs tables store all logs data that gets generated by smart contracts.
+
+This can be useful for querying contracts that are not yet decoded or are not able to be decoded since the code of the smart contract is not public.
+
+Logs are an elegant way to store tiny amounts of data on EVM blockchains for a small amount of gas. Specifically, event logs are useful to let other people know something has happened without them having to query contracts individually.
+
+For more on this topic read [this article](https://medium.com/mycrypto/understanding-event-logs-on-the-ethereum-blockchain-f4ae7ba50378).
+
+| Column name       | Data type | Description                                                                                                  |
+|-------------------|-----------|--------------------------------------------------------------------------------------------------------------|
+| address           | varchar   | The address of the contract that emitted the log                                                             |
+| block_hash        | varchar   | A unique identifier for that block                                                                           |
+| block_number      | bigint    | The length of the blockchain in blocks                                                                       |
+| data              | varchar   | Unindexed data containing further information on the event                                                   |
+| log_index         | bigint    | This logs index position in the block (cumulative amount of logs ordered by execution)                       |
+| topics            | varchar   |                                                                                                              |
+| transaction_hash  | varchar   | The transaction hash of the transaction that produced this log                                               |
+| transaction_index | bigint    | The index position of the transaction in this block (cumulative amount of transactions ordered by execution) |
+
+# Stacks
+
+# Soroban (Stellar)
+
+# Move based chains
+
+## Aptos derived
+
+## Sui derived
