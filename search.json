@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "articles/template.html",
-    "href": "articles/template.html",
-    "title": "Contributing a Research article",
-    "section": "",
-    "text": "Inserting data from Ortege Lakehouse\nThe great thing about Quarto is that you can embed code. That means you’ll be able to embed code directly into your Ortege Researh article and when the article gets accepted, the code will be executed and the results of the code displayed in your research article.\nLet’s unpack that by adding a bar char of Bitcoin Hash power over the past month.\n\n\nMissing Datasets\nIf your research report needs data that isn’t in our lakehouse, you have a few options in order to get the data into our lakehouse. 1. Send us the Parquet files of the dataset 2. Create a pipeline by submitting a PR to Ortege’s open source ETL codebase 3. Reach out to the team to discuss a joint effort"
-  },
-  {
     "objectID": "contributing.html",
     "href": "contributing.html",
     "title": "Contributing a Research article",
@@ -14,53 +7,60 @@
     "text": "Contributing a research article through Ortege is a great way for budding crypto research analysts and more general data analysts to showcase their skills to the broader community and gain some exposure.\nIn this article, we’ll walk you through how simple it is to create a research article. We’ll walk through an example of creating a Bitcoin research article.\nFirst navigate to articles folder in this repository and make a copy of the template."
   },
   {
-    "objectID": "quick_start.html",
-    "href": "quick_start.html",
-    "title": "Quick Start",
+    "objectID": "testnet_partner.html",
+    "href": "testnet_partner.html",
+    "title": "Testnet Partner",
     "section": "",
-    "text": "Welcome to Ortege Studio, your premier destination for insightful data analytics and AI-driven exploration in the realm of blockchain data. This guide is crafted to help you swiftly navigate through Ortege Studio’s robust features, ensuring an efficient and productive start.\nThis guide will walk you through creating a simple Bitcoin visualization.\n\n\nBegin your journey by accessing Ortege Studio through our dedicated web portal. Ensure you have your login credentials ready, which you would have received upon your successful registration.\nPlease note Currently user logins for Ortege Studio are restricted to whitelisted users."
+    "text": "Testing new workflow\n\nA text field (1)\n  \n\n\nAnother text field (2)\n  \n\nThis is a form spacer\n\n\n\nMy Radio Button\n\n  \n   Good\n\n\n  \n   Bad\n\n\n\n\n\nMy Checkbox\n\n  \n   High\n\n\n  \n   Low\n\n\n  \n   Mid\n\n\n\n\nMy Selector\n\n  Option 1\n  Option 2\n  Option 3\n  Option 4\n\n\n\nEnter lots of text\n\n\n\nEnter your email\n\n\n\nUpload a file"
   },
   {
-    "objectID": "quick_start.html#accessing-ortege-studio",
-    "href": "quick_start.html#accessing-ortege-studio",
-    "title": "Quick Start",
+    "objectID": "ortegegpt.html",
+    "href": "ortegegpt.html",
+    "title": "OrtegeGPT",
     "section": "",
-    "text": "Begin your journey by accessing Ortege Studio through our dedicated web portal. Ensure you have your login credentials ready, which you would have received upon your successful registration.\nPlease note Currently user logins for Ortege Studio are restricted to whitelisted users."
+    "text": "OrtegeGPT is the primary way we’d like our users to discover Ortege. All our documentation in this site is deployed into our own Large Language Model, or LLM. We then deploy this as a chat agent that our users can utilise in order to discover Ortege and it’s suite of products.\nOur first chat agent is called Asimov and is in active development at the moment.\nWhile he is not deployed at present, he should be up and running in the next few weeks and deployed via Hugging Face Spaces."
   },
   {
-    "objectID": "quick_start.html#querying-bitcoin",
-    "href": "quick_start.html#querying-bitcoin",
-    "title": "Quick Start",
-    "section": "Querying Bitcoin",
-    "text": "Querying Bitcoin\nOrtege Studio seamlessly integrates with a variety of blockchain data sources. To connect, navigate to the ‘SQL Lab’ section."
+    "objectID": "articles/btc/btc.html",
+    "href": "articles/btc/btc.html",
+    "title": "Contributing a Research article",
+    "section": "",
+    "text": "tESTING The aim of this report is to create a realtime alternative to Messari’s State of Bitcoin report"
   },
   {
-    "objectID": "quick_start.html#data-exploration",
-    "href": "quick_start.html#data-exploration",
-    "title": "Quick Start",
-    "section": "Data Exploration",
-    "text": "Data Exploration\nPlease connect to:\n\nDatabase = “Ortege Lakehouse Test”\nSchema = “bitcoin”\n\nNow please run the following SQL Query:\nSELECT \n    tx.block_number - tx.block_number % 1000 AS block_number,\n    ox.script_pub_key.type,\n    COUNT(*) AS output_count\nFROM \n    bitcoin.transactions tx\nCROSS JOIN \n    UNNEST(tx.output) AS ox\nWHERE \n    tx.is_coinbase\nGROUP BY \n    1, 2\nORDER BY \n    1;\nThis query looks at transactions on Bitcoin whereby miners are rewarded for mining blocks and is categorized according to the output type of the transaction.\nPlease note: A coinbase transaction has to do with a type of transaction that appears in every new block of a blockchain and is not to be confused with the Coinbase Centralized Exchange. Please see here for more information."
+    "objectID": "articles/btc/btc.html#financial-performance",
+    "href": "articles/btc/btc.html#financial-performance",
+    "title": "Contributing a Research article",
+    "section": "Financial Performance",
+    "text": "Financial Performance\n\nPrice\nMarket capitalization\nDominance"
   },
   {
-    "objectID": "quick_start.html#visualization",
-    "href": "quick_start.html#visualization",
-    "title": "Quick Start",
-    "section": "Visualization",
-    "text": "Visualization\nTransform your data into compelling visual stories. Select from a range of visualization tools within Ortege Studio to depict your data in the most impactful way."
+    "objectID": "articles/btc/btc.html#network-performance",
+    "href": "articles/btc/btc.html#network-performance",
+    "title": "Contributing a Research article",
+    "section": "Network performance",
+    "text": "Network performance\n\nFunded addresses\nAverage daily active addresses\nAverage daily transactoin count\nTotal value settled\nAverage daily transaction fees"
   },
   {
-    "objectID": "quick_start.html#collaborate-and-share",
-    "href": "quick_start.html#collaborate-and-share",
-    "title": "Quick Start",
-    "section": "Collaborate and Share",
-    "text": "Collaborate and Share\nCollaboration is key in data analytics. Ortege Studio facilitates sharing your findings with team members. Utilize our sharing features to collaborate effectively, enhancing the collective understanding of blockchain data."
+    "objectID": "articles/btc/btc.html#network-security",
+    "href": "articles/btc/btc.html#network-security",
+    "title": "Contributing a Research article",
+    "section": "Network security",
+    "text": "Network security\n\nAverage daily miner revenue\nAverage hash rate"
   },
   {
-    "objectID": "quick_start.html#exporting-results",
-    "href": "quick_start.html#exporting-results",
-    "title": "Quick Start",
-    "section": "Exporting Results",
-    "text": "Exporting Results\nFor external presentations or reports, easily export your visualizations and data insights from Ortege Studio in various formats."
+    "objectID": "studio.html",
+    "href": "studio.html",
+    "title": "Ortege Studio",
+    "section": "",
+    "text": "Ortege Studio is based on Apache Superset.\nApache Superset is an open-source, enterprise-ready Business Intelligence (BI) web application. It was originally created by Airbnb and later donated to the Apache Software Foundation. Superset is designed to be highly intuitive and accessible, enabling users to quickly and easily explore, visualize, and share data insights.\n\nSQL Lab - this is where you can write SQL queries to explore blockchain data.\nDatasets - This is where you’ll save your datasets to be used for Visualizations\nCharts - Charts make your data come to life.\nDashboards - Dashboards are a collection of charts you can share with the world."
+  },
+  {
+    "objectID": "studio/datasets.html",
+    "href": "studio/datasets.html",
+    "title": "Datasets",
+    "section": "",
+    "text": "Datasets\nDatasets in Ortege Studio are foundational elements that represent the structured data you work with. They are usually tables or views from connected databases. Understanding the Datasets feature is key to effectively utilizing Ortege Studio for your data analysis and visualization needs.\n\nAccessing Datasets\nScreenshot needed: Accessing Datasets from the Ortege Studio menu\n\nNavigation: You can access the Datasets feature from the main Ortege Studio menu, typically found under the “Data” section.\nDatasets Page: This page lists all available datasets, showing their names, database connections, and other relevant details.\n\n\n\nDataset Overview\nScreenshot needed: Overview of a Dataset\n\nMetadata: Each dataset listing provides metadata, such as the database it belongs to, the schema, and when it was last updated.\nActions: From here, you can perform actions like editing dataset properties, deleting datasets, or exploring the dataset through visualizations.\n\n\n\nEditing a Dataset\nScreenshot needed: Dataset editing interface\n\nEditing Interface: By selecting a dataset, you enter the editing interface. This area allows you to modify various aspects of the dataset.\nChanging Metadata: You can change the dataset’s descriptive information, like its verbose name, description, and more.\n\n\n\nColumns and Metrics\nScreenshot needed: Columns and Metrics section of a dataset\n\nColumns Tab: This tab shows all the columns of your dataset, including their type and source. You can edit column details, like renaming them, changing data types, or adding calculated columns.\nMetrics Tab: Here, you can define and manage custom metrics that are specific to the dataset, like aggregations or formulas.\n\n\n\nDataset Usage\nScreenshot needed: Visualization using a selected dataset\n\nVisualization: Datasets can be directly used to create various visualizations and dashboards.\nSQL Lab Integration: Datasets also integrate seamlessly with SQL Lab, allowing for advanced querying and exploration.\n\n\n\nSecurity and Permissions\nScreenshot needed: Dataset’s security settings\n\nAccess Control: Ortege Studio enables fine-grained access control on datasets, allowing you to control who can view or edit them.\nRow-Level Security: You can also set up row-level security to ensure users only see data they are permitted to view.\n\n\n\nConclusion\nThe Datasets feature in Ortege Studio is a versatile and crucial component of the platform. It allows for the organized management and utilization of your data within Ortege Studio, facilitating everything from simple explorations to complex visualizations and analyses."
   },
   {
     "objectID": "studio/sqllab.html",
@@ -70,6 +70,41 @@
     "text": "SQL Lab\nSQL Lab is a feature-rich SQL editor within Ortege Studio designed for crafting and running complex queries. The interface is user-friendly and supports a variety of functions to enhance your data exploration experience. Let’s take a detailed tour of its interface.\n\nSQL Editor\nScreenshot needed: SQL Editor interface\nThe SQL Editor is the heart of SQL Lab. It’s where you write, edit, and run your SQL queries.\n\nQuery Tab: Located at the top, each tab represents a separate SQL query, allowing you to work on multiple queries simultaneously.\nSQL Editor Pane: This is the large text area where you write your SQL code. It features syntax highlighting and auto-completion to assist with writing queries efficiently.\nRun Button: Click this button to execute the query written in the active tab.\n\n\n\nResults Pane\nScreenshot needed: Results pane showing query results\nBelow the SQL Editor, you’ll find the Results Pane.\n\nData View: Once a query is run, the results are displayed here in a tabular format.\nRow Limit: The interface allows you to specify the number of rows to display, which is useful for large result sets.\nCSV Export: You can export the result of your query directly to a CSV file from this pane.\n\n\n\nData Preview\nScreenshot needed: Data preview of a selected table\n\nData Source Selector: To the left of the SQL Editor, you’ll find the Data Source Selector. Here, you can choose the database and schema you wish to query.\nTable Selector and Preview: Once a table is selected, a preview of the table’s data is displayed, along with column names and data types. This is particularly helpful for understanding the structure of your data before writing a query.\n\n\n\nQuery History\nScreenshot needed: Query history section\n\nAccessing History: The Query History section, accessible from the bottom left of the interface, keeps a log of all executed queries.\nDetails and Actions: Each entry in the history shows the query, the time of execution, and its status. You can also rerun or copy queries from this history.\n\n\n\nAdditional Features\n\nSave Query: You can save queries for future use. This option is located next to the Run button.\nSchema Browser: The Schema Browser, adjacent to the Data Source Selector, lists all tables in the selected schema and provides information about table columns, indexes, and partitions.\n\n\n\nConclusion\nThe SQL Lab interface in Ortege Studio is designed to be intuitive yet powerful, catering to both beginners and experienced SQL users. The seamless integration of query writing, data preview, and result analysis within a single interface makes SQL Lab an efficient tool for data exploration and analysis."
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to Ortege",
+    "section": "",
+    "text": "Ortege excels in delivering unparalleled insights into blockchain ecosystems. Our tools empower you to unlock more possibilities, completely free of charge."
+  },
+  {
+    "objectID": "index.html#ortege-studio",
+    "href": "index.html#ortege-studio",
+    "title": "Welcome to Ortege",
+    "section": "🔥 Ortege Studio",
+    "text": "🔥 Ortege Studio\nOrtege Studio allows you to dive into blockchain data analysis, craft engaging visualizations, and share your findings through interactive dashboards."
+  },
+  {
+    "objectID": "index.html#ortegegpt",
+    "href": "index.html#ortegegpt",
+    "title": "Welcome to Ortege",
+    "section": "🌐 OrtegeGPT",
+    "text": "🌐 OrtegeGPT\nExplore the future of AI-assisted data analysis with OrtegeGPT. This revolutionary chatbot provides insights into both on-chain and off-chain data, leveraging advanced AI for quick, accurate answers and analytics."
+  },
+  {
+    "objectID": "index.html#ortege-research",
+    "href": "index.html#ortege-research",
+    "title": "Welcome to Ortege",
+    "section": "Ortege Research",
+    "text": "Ortege Research\nDelve into the world of crypto with our comprehensive Ortege Research articles. Freely accessible to all, we cover more chains and dApps than any other competitor."
+  },
+  {
+    "objectID": "index.html#ortege-lakehouse",
+    "href": "index.html#ortege-lakehouse",
+    "title": "Welcome to Ortege",
+    "section": "🌟 Ortege Lakehouse",
+    "text": "🌟 Ortege Lakehouse\nIntroducing Ortege Lakehouse - our open data lakehouse. Accessible to everyone, it allows for both accessing and contributing data."
+  },
+  {
     "objectID": "studio/dashboards.html",
     "href": "studio/dashboards.html",
     "title": "Dashboards",
@@ -77,18 +112,25 @@
     "text": "Dashboards\nDashboards in Ortege Studio are powerful tools for combining various charts and visualizations into a single, interactive, and dynamic view. They provide a holistic view of your data, allowing for efficient monitoring and insightful decision-making.\n\nAccessing Dashboards\nScreenshot needed: Accessing Dashboards from the Ortege Studio menu\n\nNavigation: You can find Dashboards in the main Ortege Studio menu, often under a section labeled “Dashboards.”\nDashboard Page: This page displays all the available dashboards, with details like the dashboard name, owner, and last modified date.\n\n\n\nCreating a New Dashboard\nScreenshot needed: Creating a new dashboard interface\n\nStarting a New Dashboard: To create a new dashboard, click on the “+” or “New” button.\nNaming the Dashboard: Assign a name and optionally a description to your new dashboard for easy identification.\n\n\n\nAdding Charts to Dashboard\nScreenshot needed: Adding charts to a dashboard\n\nChart Selection: In the dashboard edit mode, you can add charts that you’ve previously created in the Charts section.\nPositioning and Resizing: Drag and drop the charts into your desired position on the dashboard. You can also resize them for optimal layout and visibility.\n\n\n\nCustomizing the Dashboard\nScreenshot needed: Customizing the dashboard layout and settings\n\nLayout Customization: You can customize the layout of the dashboard, organizing charts and components in a way that best tells your data story.\nFilter Options: Add interactive filters to the dashboard that allow users to dynamically change the data displayed across multiple charts.\n\n\n\nInteracting with Dashboards\nScreenshot needed: Interacting with a live dashboard\n\nData Interaction: Users can interact with the data in various ways, like hovering over charts to see detailed information or clicking on elements to drill down.\nFiltering: Apply filters to refine the data displayed on the entire dashboard or specific charts.\n\n\n\nSharing and Exporting\nScreenshot needed: Sharing and exporting options for a dashboard\n\nSharing Dashboards: Dashboards can be shared with others through direct links or by providing access within Superset.\nExporting: Dashboards can also be exported for external use, either as images or in other formats, depending on Ortege Studio’s configuration.\n\n\n\nSecurity and Permissions\nScreenshot needed: Dashboard’s security settings\n\nAccess Control: You can control who has access to view or edit the dashboard, ensuring data security and integrity.\nRow-Level Security: If set up, row-level security will apply to all the charts in the dashboard, ensuring users only see the data they are authorized to view.\n\n\n\nConclusion\nDashboards in Ortege Studio are an essential feature for synthesizing complex data into comprehensible and actionable insights. They offer a platform to narrate a data story, combining different visual elements into a cohesive and interactive experience."
   },
   {
-    "objectID": "lakehouse.html",
-    "href": "lakehouse.html",
-    "title": "Ortege Lakehouse",
+    "objectID": "studio/charts.html",
+    "href": "studio/charts.html",
+    "title": "Charts",
     "section": "",
-    "text": "We host our lakehouse on Azure Storage. So we do incur costs for it. We want to make our Lakehouse available to all, and at present is currently available through Ortege Studio.\nPlease read our Data Ontology in order to acquaint yourself with how the data is structured throughout all Ortege products."
+    "text": "Charts\nThe Charts feature in Ortege Studio is a powerful tool for creating and managing a wide range of data visualizations. From simple line charts to complex geospatial visualizations, Charts enable users to turn data into insightful and interactive visual representations.\n\nAccessing Charts\nScreenshot needed: Accessing Charts from the Studio menu\n\nNavigation: Charts can be accessed from the main Ortege Studio menu, typically under the “Charts” section.\nCharts Page: This page lists all the created charts, showing details like the chart name, type, and the dataset it’s based on.\n\n\n\nCreating a New Chart\nScreenshot needed: Creating a new chart interface\n\nChart Creation: To create a new chart, click on the “+” or “New” button.\nChoosing a Dataset: First, select the dataset you want to visualize.\nSelecting Chart Type: Ortege Studio offers a variety of chart types. Choose one that best suits the data and the insights you wish to convey.\n\n\n\nChart Customization\nScreenshot needed: Chart customization interface\n\nCustomization Panel: Once you’ve selected the chart type, you’ll be taken to the customization panel. Here, you can define and tweak various aspects of your chart.\nSetting Metrics and Dimensions: Choose the metrics and dimensions from your dataset that you want to visualize.\nChart Options: Adjust settings such as filters, sorting, and chart-specific options to fine-tune your visualization.\n\n\n\nVisualizing the Data\nScreenshot needed: Finished chart visualization\n\nPreviewing the Chart: As you customize your chart, you can preview it in real-time. This feature helps in iteratively building your visualization.\nInteractivity: Many chart types in Ortege Studio are interactive, allowing users to hover over elements to see more details or click to drill down further.\n\n\n\nSaving and Sharing Charts\nScreenshot needed: Saving and sharing options for a chart\n\nSaving the Chart: Once satisfied with the visualization, you can save the chart, giving it a descriptive name and, if necessary, adding it to a dashboard.\nSharing: Ortege Studio allows you to share charts with others, either through direct links or by adding them to shared dashboards.\n\n\n\nAdvanced Features\nScreenshot needed: Advanced features in chart creation, like SQL editing\n\nSQL Editing: For advanced users, Ortege Studio allows editing the underlying SQL of a chart, providing more control over the data and its presentation.\nCustom Visualization Plugins: Users can extend Ortege Studio’s visualization capabilities by adding custom chart plugins.\n\n\n\nConclusion\nThe Charts feature in Ortege Studio is a cornerstone of its data visualization capabilities. It offers a broad spectrum of options to represent data graphically, catering to both novice users and data experts. With its intuitive interface and wide range of customization options, Charts empower users to transform data into actionable insights."
   },
   {
-    "objectID": "testnet_partner.html",
-    "href": "testnet_partner.html",
-    "title": "Testnet Partner",
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research Articles",
     "section": "",
-    "text": "Testing new workflow\n\nA text field (1)\n  \n\n\nAnother text field (2)\n  \n\nThis is a form spacer\n\n\n\nMy Radio Button\n\n  \n   Good\n\n\n  \n   Bad\n\n\n\n\n\nMy Checkbox\n\n  \n   High\n\n\n  \n   Low\n\n\n  \n   Mid\n\n\n\n\nMy Selector\n\n  Option 1\n  Option 2\n  Option 3\n  Option 4\n\n\n\nEnter lots of text\n\n\n\nEnter your email\n\n\n\nUpload a file"
+    "text": "The Research reports will be updated daily with fresh data. This means we provide what internally we call, realtime Research articles. We grew frustrated with the high cost of solutions such as Messari and their point in time reports. We believe there is a better way to serve the crypto community: * Open access to market research * Presented in a visual style that encourages data storytelling * Research reports that update with live data\n\nCurrent Reports\n\nState of Bitcoin\n\n\n\nTechnologies used\nWe use Streamlit in order to host our charts and visualizations.\n\n\nContributing\nAnyone can release a research article and submit a PR in our Github. If the research article is accepted, it will deployed to our production documentation site and we will promote your article on our socials.\nPlease see the contributing guide to learn more about how to submit your own research report."
+  },
+  {
+    "objectID": "articles/template.html",
+    "href": "articles/template.html",
+    "title": "Contributing a Research article",
+    "section": "",
+    "text": "Inserting data from Ortege Lakehouse\nThe great thing about Quarto is that you can embed code. That means you’ll be able to embed code directly into your Ortege Researh article and when the article gets accepted, the code will be executed and the results of the code displayed in your research article.\nLet’s unpack that by adding a bar char of Bitcoin Hash power over the past month.\n\n\nMissing Datasets\nIf your research report needs data that isn’t in our lakehouse, you have a few options in order to get the data into our lakehouse. 1. Send us the Parquet files of the dataset 2. Create a pipeline by submitting a PR to Ortege’s open source ETL codebase 3. Reach out to the team to discuss a joint effort"
   },
   {
     "objectID": "data.html",
@@ -175,101 +217,59 @@
     "text": "Sui derived"
   },
   {
-    "objectID": "studio.html",
-    "href": "studio.html",
-    "title": "Ortege Studio",
+    "objectID": "quick_start.html",
+    "href": "quick_start.html",
+    "title": "Quick Start",
     "section": "",
-    "text": "Ortege Studio is based on Apache Superset.\nApache Superset is an open-source, enterprise-ready Business Intelligence (BI) web application. It was originally created by Airbnb and later donated to the Apache Software Foundation. Superset is designed to be highly intuitive and accessible, enabling users to quickly and easily explore, visualize, and share data insights.\n\nSQL Lab - this is where you can write SQL queries to explore blockchain data.\nDatasets - This is where you’ll save your datasets to be used for Visualizations\nCharts - Charts make your data come to life.\nDashboards - Dashboards are a collection of charts you can share with the world."
+    "text": "Welcome to Ortege Studio, your premier destination for insightful data analytics and AI-driven exploration in the realm of blockchain data. This guide is crafted to help you swiftly navigate through Ortege Studio’s robust features, ensuring an efficient and productive start.\nThis guide will walk you through creating a simple Bitcoin visualization.\n\n\nBegin your journey by accessing Ortege Studio through our dedicated web portal. Ensure you have your login credentials ready, which you would have received upon your successful registration.\nPlease note Currently user logins for Ortege Studio are restricted to whitelisted users."
   },
   {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research Articles",
+    "objectID": "quick_start.html#accessing-ortege-studio",
+    "href": "quick_start.html#accessing-ortege-studio",
+    "title": "Quick Start",
     "section": "",
-    "text": "The Research reports will be updated daily with fresh data. This means we provide what internally we call, realtime Research articles. We grew frustrated with the high cost of solutions such as Messari and their point in time reports. We believe there is a better way to serve the crypto community: * Open access to market research * Presented in a visual style that encourages data storytelling * Research reports that update with live data\n\nCurrent Reports\n\nState of Bitcoin\n\n\n\nTechnologies used\nWe use Streamlit in order to host our charts and visualizations.\n\n\nContributing\nAnyone can release a research article and submit a PR in our Github. If the research article is accepted, it will deployed to our production documentation site and we will promote your article on our socials.\nPlease see the contributing guide to learn more about how to submit your own research report."
+    "text": "Begin your journey by accessing Ortege Studio through our dedicated web portal. Ensure you have your login credentials ready, which you would have received upon your successful registration.\nPlease note Currently user logins for Ortege Studio are restricted to whitelisted users."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to Ortege",
+    "objectID": "quick_start.html#querying-bitcoin",
+    "href": "quick_start.html#querying-bitcoin",
+    "title": "Quick Start",
+    "section": "Querying Bitcoin",
+    "text": "Querying Bitcoin\nOrtege Studio seamlessly integrates with a variety of blockchain data sources. To connect, navigate to the ‘SQL Lab’ section."
+  },
+  {
+    "objectID": "quick_start.html#data-exploration",
+    "href": "quick_start.html#data-exploration",
+    "title": "Quick Start",
+    "section": "Data Exploration",
+    "text": "Data Exploration\nPlease connect to:\n\nDatabase = “Ortege Lakehouse Test”\nSchema = “bitcoin”\n\nNow please run the following SQL Query:\nSELECT \n    tx.block_number - tx.block_number % 1000 AS block_number,\n    ox.script_pub_key.type,\n    COUNT(*) AS output_count\nFROM \n    bitcoin.transactions tx\nCROSS JOIN \n    UNNEST(tx.output) AS ox\nWHERE \n    tx.is_coinbase\nGROUP BY \n    1, 2\nORDER BY \n    1;\nThis query looks at transactions on Bitcoin whereby miners are rewarded for mining blocks and is categorized according to the output type of the transaction.\nPlease note: A coinbase transaction has to do with a type of transaction that appears in every new block of a blockchain and is not to be confused with the Coinbase Centralized Exchange. Please see here for more information."
+  },
+  {
+    "objectID": "quick_start.html#visualization",
+    "href": "quick_start.html#visualization",
+    "title": "Quick Start",
+    "section": "Visualization",
+    "text": "Visualization\nTransform your data into compelling visual stories. Select from a range of visualization tools within Ortege Studio to depict your data in the most impactful way."
+  },
+  {
+    "objectID": "quick_start.html#collaborate-and-share",
+    "href": "quick_start.html#collaborate-and-share",
+    "title": "Quick Start",
+    "section": "Collaborate and Share",
+    "text": "Collaborate and Share\nCollaboration is key in data analytics. Ortege Studio facilitates sharing your findings with team members. Utilize our sharing features to collaborate effectively, enhancing the collective understanding of blockchain data."
+  },
+  {
+    "objectID": "quick_start.html#exporting-results",
+    "href": "quick_start.html#exporting-results",
+    "title": "Quick Start",
+    "section": "Exporting Results",
+    "text": "Exporting Results\nFor external presentations or reports, easily export your visualizations and data insights from Ortege Studio in various formats."
+  },
+  {
+    "objectID": "lakehouse.html",
+    "href": "lakehouse.html",
+    "title": "Ortege Lakehouse",
     "section": "",
-    "text": "Ortege excels in delivering unparalleled insights into blockchain ecosystems. Our tools empower you to unlock more possibilities, completely free of charge."
-  },
-  {
-    "objectID": "index.html#ortege-studio",
-    "href": "index.html#ortege-studio",
-    "title": "Welcome to Ortege",
-    "section": "🔥 Ortege Studio",
-    "text": "🔥 Ortege Studio\nOrtege Studio allows you to dive into blockchain data analysis, craft engaging visualizations, and share your findings through interactive dashboards."
-  },
-  {
-    "objectID": "index.html#ortegegpt",
-    "href": "index.html#ortegegpt",
-    "title": "Welcome to Ortege",
-    "section": "🌐 OrtegeGPT",
-    "text": "🌐 OrtegeGPT\nExplore the future of AI-assisted data analysis with OrtegeGPT. This revolutionary chatbot provides insights into both on-chain and off-chain data, leveraging advanced AI for quick, accurate answers and analytics."
-  },
-  {
-    "objectID": "index.html#ortege-research",
-    "href": "index.html#ortege-research",
-    "title": "Welcome to Ortege",
-    "section": "Ortege Research",
-    "text": "Ortege Research\nDelve into the world of crypto with our comprehensive Ortege Research articles. Freely accessible to all, we cover more chains and dApps than any other competitor."
-  },
-  {
-    "objectID": "index.html#ortege-lakehouse",
-    "href": "index.html#ortege-lakehouse",
-    "title": "Welcome to Ortege",
-    "section": "🌟 Ortege Lakehouse",
-    "text": "🌟 Ortege Lakehouse\nIntroducing Ortege Lakehouse - our open data lakehouse. Accessible to everyone, it allows for both accessing and contributing data."
-  },
-  {
-    "objectID": "studio/datasets.html",
-    "href": "studio/datasets.html",
-    "title": "Datasets",
-    "section": "",
-    "text": "Datasets\nDatasets in Ortege Studio are foundational elements that represent the structured data you work with. They are usually tables or views from connected databases. Understanding the Datasets feature is key to effectively utilizing Ortege Studio for your data analysis and visualization needs.\n\nAccessing Datasets\nScreenshot needed: Accessing Datasets from the Ortege Studio menu\n\nNavigation: You can access the Datasets feature from the main Ortege Studio menu, typically found under the “Data” section.\nDatasets Page: This page lists all available datasets, showing their names, database connections, and other relevant details.\n\n\n\nDataset Overview\nScreenshot needed: Overview of a Dataset\n\nMetadata: Each dataset listing provides metadata, such as the database it belongs to, the schema, and when it was last updated.\nActions: From here, you can perform actions like editing dataset properties, deleting datasets, or exploring the dataset through visualizations.\n\n\n\nEditing a Dataset\nScreenshot needed: Dataset editing interface\n\nEditing Interface: By selecting a dataset, you enter the editing interface. This area allows you to modify various aspects of the dataset.\nChanging Metadata: You can change the dataset’s descriptive information, like its verbose name, description, and more.\n\n\n\nColumns and Metrics\nScreenshot needed: Columns and Metrics section of a dataset\n\nColumns Tab: This tab shows all the columns of your dataset, including their type and source. You can edit column details, like renaming them, changing data types, or adding calculated columns.\nMetrics Tab: Here, you can define and manage custom metrics that are specific to the dataset, like aggregations or formulas.\n\n\n\nDataset Usage\nScreenshot needed: Visualization using a selected dataset\n\nVisualization: Datasets can be directly used to create various visualizations and dashboards.\nSQL Lab Integration: Datasets also integrate seamlessly with SQL Lab, allowing for advanced querying and exploration.\n\n\n\nSecurity and Permissions\nScreenshot needed: Dataset’s security settings\n\nAccess Control: Ortege Studio enables fine-grained access control on datasets, allowing you to control who can view or edit them.\nRow-Level Security: You can also set up row-level security to ensure users only see data they are permitted to view.\n\n\n\nConclusion\nThe Datasets feature in Ortege Studio is a versatile and crucial component of the platform. It allows for the organized management and utilization of your data within Ortege Studio, facilitating everything from simple explorations to complex visualizations and analyses."
-  },
-  {
-    "objectID": "studio/charts.html",
-    "href": "studio/charts.html",
-    "title": "Charts",
-    "section": "",
-    "text": "Charts\nThe Charts feature in Ortege Studio is a powerful tool for creating and managing a wide range of data visualizations. From simple line charts to complex geospatial visualizations, Charts enable users to turn data into insightful and interactive visual representations.\n\nAccessing Charts\nScreenshot needed: Accessing Charts from the Studio menu\n\nNavigation: Charts can be accessed from the main Ortege Studio menu, typically under the “Charts” section.\nCharts Page: This page lists all the created charts, showing details like the chart name, type, and the dataset it’s based on.\n\n\n\nCreating a New Chart\nScreenshot needed: Creating a new chart interface\n\nChart Creation: To create a new chart, click on the “+” or “New” button.\nChoosing a Dataset: First, select the dataset you want to visualize.\nSelecting Chart Type: Ortege Studio offers a variety of chart types. Choose one that best suits the data and the insights you wish to convey.\n\n\n\nChart Customization\nScreenshot needed: Chart customization interface\n\nCustomization Panel: Once you’ve selected the chart type, you’ll be taken to the customization panel. Here, you can define and tweak various aspects of your chart.\nSetting Metrics and Dimensions: Choose the metrics and dimensions from your dataset that you want to visualize.\nChart Options: Adjust settings such as filters, sorting, and chart-specific options to fine-tune your visualization.\n\n\n\nVisualizing the Data\nScreenshot needed: Finished chart visualization\n\nPreviewing the Chart: As you customize your chart, you can preview it in real-time. This feature helps in iteratively building your visualization.\nInteractivity: Many chart types in Ortege Studio are interactive, allowing users to hover over elements to see more details or click to drill down further.\n\n\n\nSaving and Sharing Charts\nScreenshot needed: Saving and sharing options for a chart\n\nSaving the Chart: Once satisfied with the visualization, you can save the chart, giving it a descriptive name and, if necessary, adding it to a dashboard.\nSharing: Ortege Studio allows you to share charts with others, either through direct links or by adding them to shared dashboards.\n\n\n\nAdvanced Features\nScreenshot needed: Advanced features in chart creation, like SQL editing\n\nSQL Editing: For advanced users, Ortege Studio allows editing the underlying SQL of a chart, providing more control over the data and its presentation.\nCustom Visualization Plugins: Users can extend Ortege Studio’s visualization capabilities by adding custom chart plugins.\n\n\n\nConclusion\nThe Charts feature in Ortege Studio is a cornerstone of its data visualization capabilities. It offers a broad spectrum of options to represent data graphically, catering to both novice users and data experts. With its intuitive interface and wide range of customization options, Charts empower users to transform data into actionable insights."
-  },
-  {
-    "objectID": "ortegegpt.html",
-    "href": "ortegegpt.html",
-    "title": "OrtegeGPT",
-    "section": "",
-    "text": "OrtegeGPT is the primary way we’d like our users to discover Ortege. All our documentation in this site is deployed into our own Large Language Model, or LLM. We then deploy this as a chat agent that our users can utilise in order to discover Ortege and it’s suite of products.\nOur first chat agent is called Asimov and is in active development at the moment.\nWhile he is not deployed at present, he should be up and running in the next few weeks and deployed via Hugging Face Spaces."
-  },
-  {
-    "objectID": "articles/btc/btc.html",
-    "href": "articles/btc/btc.html",
-    "title": "Contributing a Research article",
-    "section": "",
-    "text": "tESTING The aim of this report is to create a realtime alternative to Messari’s State of Bitcoin report"
-  },
-  {
-    "objectID": "articles/btc/btc.html#financial-performance",
-    "href": "articles/btc/btc.html#financial-performance",
-    "title": "Contributing a Research article",
-    "section": "Financial Performance",
-    "text": "Financial Performance\n\nPrice\nMarket capitalization\nDominance"
-  },
-  {
-    "objectID": "articles/btc/btc.html#network-performance",
-    "href": "articles/btc/btc.html#network-performance",
-    "title": "Contributing a Research article",
-    "section": "Network performance",
-    "text": "Network performance\n\nFunded addresses\nAverage daily active addresses\nAverage daily transactoin count\nTotal value settled\nAverage daily transaction fees"
-  },
-  {
-    "objectID": "articles/btc/btc.html#network-security",
-    "href": "articles/btc/btc.html#network-security",
-    "title": "Contributing a Research article",
-    "section": "Network security",
-    "text": "Network security\n\nAverage daily miner revenue\nAverage hash rate"
+    "text": "We host our lakehouse on Azure Storage. So we do incur costs for it. We want to make our Lakehouse available to all, and at present is currently available through Ortege Studio.\nPlease read our Data Ontology in order to acquaint yourself with how the data is structured throughout all Ortege products."
   }
 ]
