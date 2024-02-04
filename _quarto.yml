@@ -5,7 +5,8 @@ project:
 
 format:
   html:
-    theme: lumen
+    css: styles/custom-style.css
+#    theme: lumen
 
 website:
   favicon: /images/favicon.png
@@ -15,14 +16,26 @@ website:
     left:
       - text: "Home"
         file: index.qmd
-      - text: "Products"
+      - text: "Ortege Studio"
         menu:
-          - text: "Ortege Studio"
-            file: studio.qmd
-          - text: "OrtegeGPT"
-            file: ortegegpt.qmd
-          - text: "Ortege Lakehouse"
-            file: lakehouse.qmd
-          - text: "Ortege Research"
-            file: research.qmd
+          - text: "Overview"
+            file: content/studio/overview.qmd
+          - text: "Dashboards"
+            file: content/studio/dashboards.qmd
+          - text: "Charts"
+            file: content/studio/charts.qmd
+          - text: "Datasets"
+            file: content/studio/datasets.qmd
+          - text: "SQL LAB"
+            file: content/studio/sqllab.qmd
+          - text: "Database Connections"
+            file: content/studio/dbconnections.qmd
+      - text: "Ortege Lakehouse"
+        menu:
+          - text: "Bronze Layer"
+            file: bronze.qmd
+      - text: "OrtegeGPT"
+        menu: 
+          - text: "Overview"
+            file: overview.qmd
       

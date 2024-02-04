@@ -7,21 +7,14 @@ format:
     css: styles.css
 ---
 
-Ortege excels in delivering unparalleled insights into blockchain ecosystems. Our tools empower you to unlock more possibilities, completely free of charge.
+# Ortege Studio
+[Ortege Studio](content/studio/overview.qmd): Ortege Studio is a cutting-edge analytics platform designed to empower users with unparalleled insights into their data through an extensive array of visualization options, with over 30 types of charts available to cater to a wide range of analytical needs. At its core, Ortege Studio harnesses the power of predictive analytics, enabling businesses to forecast trends and make data-driven decisions with greater accuracy. The platform stands out by offering the flexibility to connect to a multitude of data sources, allowing users to seamlessly integrate and harmonize disparate data sets. Thanks to its sophisticated Data Manipulation Language (DML) capabilities, users can effortlessly join, query, and analyze their data across various sources, all within a user-friendly interface. Ortege Studio is the ultimate tool for organizations looking to unlock the full potential of their data, offering a comprehensive solution that blends advanced analytics with intuitive data integration and exploration features.
 
-# Our Product Offerings
+# Ortege Lakehouse
+[Ortege Lakehouse](content/lakehouse/overview.qmd): Ortege Lakehouse is an innovative data management platform engineered for the era of big data, embodying cutting-edge technology to meet the demands of extensive datasets and complex analytics. Designed to effortlessly integrate with MLOps frameworks and Large Language Models (LLMs), it provides a robust foundation for advanced machine learning projects and predictive analytics. A standout feature of Ortege Lakehouse is its comprehensive datasets for a wide array of the market's most popular blockchains. With these datasets, users gain immediate access to a wealth of blockchain data, streamlined for analysis. Moreover, our platform introduces "silver and gold layers" – a feature that simplifies the querying of complex blockchain datasets, ensuring that even the most intricate data becomes easily navigable. This makes Ortege Lakehouse an indispensable tool for organizations looking to leverage blockchain data for insightful analysis, predictive modeling, and strategic decision-making, all while ensuring seamless workflow integration and operational efficiency.
 
-## 🔥 Ortege Studio
-[Ortege Studio](studio.qmd) allows you to dive into blockchain data analysis, craft engaging visualizations, and share your findings through interactive dashboards.
-
-## 🌐 OrtegeGPT
-Explore the future of AI-assisted data analysis with [OrtegeGPT](ortegegpt.qmd). This revolutionary chatbot provides insights into both on-chain and off-chain data, leveraging advanced AI for quick, accurate answers and analytics.
-
-## Ortege Research
-Delve into the world of crypto with our comprehensive [Ortege Research](research.qmd) articles. Freely accessible to all, we cover more chains and dApps than any other competitor.
-
-## 🌟 Ortege Lakehouse
-Introducing [Ortege Lakehouse](lakehouse.qmd) - our open data lakehouse. Accessible to everyone, it allows for both accessing and contributing data.
+# OrtegeGPT
+[OrtegeGPT](content/ortegegpt/overview.qmd): OrtegeGPT, our latest innovation currently under rigorous development, is poised to redefine the way we interact with blockchain data. This cutting-edge Large Language Model (LLM) is being meticulously crafted to provide real-time, intuitive querying capabilities across a vast spectrum of supported blockchains. Upon completion, OrtegeGPT will empower users to effortlessly extract insights, perform complex analyses, and obtain answers to virtually any query about the blockchain ecosystems we support. Recognizing the diverse needs of our users, OrtegeGPT is also designed with flexibility in mind, allowing organizations to integrate their proprietary data seamlessly, thereby enriching their analytical capabilities and insights. Furthermore, OrtegeGPT is set to offer multiple distribution channels, ensuring that our advanced LLM can be accessed conveniently, whether through direct API integrations, web interfaces, or customized applications. This ambitious feature signifies our commitment to pioneering in the blockchain analytics space, offering an unparalleled tool that combines the latest in AI technology with the expansive world of blockchain data.
 
 # Quick Start
 To familiarize yourself with our documentation approach, please read the [Quick Start section](quick_start.qmd).
