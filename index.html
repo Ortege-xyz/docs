@@ -69,6 +69,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="styles/custom-style.css">
 <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -94,25 +95,55 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-products" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Products</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ortege-studio" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Ortege Studio</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-products">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-ortege-studio">    
         <li>
-    <a class="dropdown-item" href="./studio.html">
- <span class="dropdown-text">Ortege Studio</span></a>
+    <a class="dropdown-item" href="./content/studio/overview.html">
+ <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./ortegegpt.html">
- <span class="dropdown-text">OrtegeGPT</span></a>
+    <a class="dropdown-item" href="./content/studio/dashboards.html">
+ <span class="dropdown-text">Dashboards</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./lakehouse.html">
- <span class="dropdown-text">Ortege Lakehouse</span></a>
+    <a class="dropdown-item" href="./content/studio/charts.html">
+ <span class="dropdown-text">Charts</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./research.html">
- <span class="dropdown-text">Ortege Research</span></a>
+    <a class="dropdown-item" href="./content/studio/datasets.html">
+ <span class="dropdown-text">Datasets</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./content/studio/sqllab.html">
+ <span class="dropdown-text">SQL LAB</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./content/studio/dbconnections.html">
+ <span class="dropdown-text">Database Connections</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ortege-lakehouse" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Ortege Lakehouse</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-ortege-lakehouse">    
+        <li>
+    <a class="dropdown-item" href="./bronze.qmd">
+ <span class="dropdown-text">Bronze Layer</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ortegegpt" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">OrtegeGPT</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-ortegegpt">    
+        <li>
+    <a class="dropdown-item" href="./overview.qmd">
+ <span class="dropdown-text">Overview</span></a>
   </li>  
     </ul>
   </li>
@@ -132,13 +163,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#our-product-offerings" id="toc-our-product-offerings" class="nav-link active" data-scroll-target="#our-product-offerings">Our Product Offerings</a>
-  <ul class="collapse">
-  <li><a href="#ortege-studio" id="toc-ortege-studio" class="nav-link" data-scroll-target="#ortege-studio">🔥 Ortege Studio</a></li>
-  <li><a href="#ortegegpt" id="toc-ortegegpt" class="nav-link" data-scroll-target="#ortegegpt">🌐 OrtegeGPT</a></li>
-  <li><a href="#ortege-research" id="toc-ortege-research" class="nav-link" data-scroll-target="#ortege-research">Ortege Research</a></li>
-  <li><a href="#ortege-lakehouse" id="toc-ortege-lakehouse" class="nav-link" data-scroll-target="#ortege-lakehouse">🌟 Ortege Lakehouse</a></li>
-  </ul></li>
+  <li><a href="#ortege-studio" id="toc-ortege-studio" class="nav-link active" data-scroll-target="#ortege-studio">Ortege Studio</a></li>
+  <li><a href="#ortege-lakehouse" id="toc-ortege-lakehouse" class="nav-link" data-scroll-target="#ortege-lakehouse">Ortege Lakehouse</a></li>
+  <li><a href="#ortegegpt" id="toc-ortegegpt" class="nav-link" data-scroll-target="#ortegegpt">OrtegeGPT</a></li>
   <li><a href="#quick-start" id="toc-quick-start" class="nav-link" data-scroll-target="#quick-start">Quick Start</a></li>
   </ul>
 </nav>
@@ -165,29 +192,21 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Ortege excels in delivering unparalleled insights into blockchain ecosystems. Our tools empower you to unlock more possibilities, completely free of charge.</p>
-<section id="our-product-offerings" class="level1">
-<h1>Our Product Offerings</h1>
-<section id="ortege-studio" class="level2">
-<h2 class="anchored" data-anchor-id="ortege-studio">🔥 Ortege Studio</h2>
-<p><a href="./studio.html">Ortege Studio</a> allows you to dive into blockchain data analysis, craft engaging visualizations, and share your findings through interactive dashboards.</p>
+<section id="ortege-studio" class="level1">
+<h1>Ortege Studio</h1>
+<p><a href="./content/studio/overview.html">Ortege Studio</a>: Ortege Studio is a cutting-edge analytics platform designed to empower users with unparalleled insights into their data through an extensive array of visualization options, with over 30 types of charts available to cater to a wide range of analytical needs. At its core, Ortege Studio harnesses the power of predictive analytics, enabling businesses to forecast trends and make data-driven decisions with greater accuracy. The platform stands out by offering the flexibility to connect to a multitude of data sources, allowing users to seamlessly integrate and harmonize disparate data sets. Thanks to its sophisticated Data Manipulation Language (DML) capabilities, users can effortlessly join, query, and analyze their data across various sources, all within a user-friendly interface. Ortege Studio is the ultimate tool for organizations looking to unlock the full potential of their data, offering a comprehensive solution that blends advanced analytics with intuitive data integration and exploration features.</p>
 </section>
-<section id="ortegegpt" class="level2">
-<h2 class="anchored" data-anchor-id="ortegegpt">🌐 OrtegeGPT</h2>
-<p>Explore the future of AI-assisted data analysis with <a href="./ortegegpt.html">OrtegeGPT</a>. This revolutionary chatbot provides insights into both on-chain and off-chain data, leveraging advanced AI for quick, accurate answers and analytics.</p>
+<section id="ortege-lakehouse" class="level1">
+<h1>Ortege Lakehouse</h1>
+<p><a href="./content/lakehouse/overview.html">Ortege Lakehouse</a>: Ortege Lakehouse is an innovative data management platform engineered for the era of big data, embodying cutting-edge technology to meet the demands of extensive datasets and complex analytics. Designed to effortlessly integrate with MLOps frameworks and Large Language Models (LLMs), it provides a robust foundation for advanced machine learning projects and predictive analytics. A standout feature of Ortege Lakehouse is its comprehensive datasets for a wide array of the market’s most popular blockchains. With these datasets, users gain immediate access to a wealth of blockchain data, streamlined for analysis. Moreover, our platform introduces “silver and gold layers” – a feature that simplifies the querying of complex blockchain datasets, ensuring that even the most intricate data becomes easily navigable. This makes Ortege Lakehouse an indispensable tool for organizations looking to leverage blockchain data for insightful analysis, predictive modeling, and strategic decision-making, all while ensuring seamless workflow integration and operational efficiency.</p>
 </section>
-<section id="ortege-research" class="level2">
-<h2 class="anchored" data-anchor-id="ortege-research">Ortege Research</h2>
-<p>Delve into the world of crypto with our comprehensive <a href="./research.html">Ortege Research</a> articles. Freely accessible to all, we cover more chains and dApps than any other competitor.</p>
-</section>
-<section id="ortege-lakehouse" class="level2">
-<h2 class="anchored" data-anchor-id="ortege-lakehouse">🌟 Ortege Lakehouse</h2>
-<p>Introducing <a href="./lakehouse.html">Ortege Lakehouse</a> - our open data lakehouse. Accessible to everyone, it allows for both accessing and contributing data.</p>
-</section>
+<section id="ortegegpt" class="level1">
+<h1>OrtegeGPT</h1>
+<p><a href="./content/ortegegpt/overview.html">OrtegeGPT</a>: OrtegeGPT, our latest innovation currently under rigorous development, is poised to redefine the way we interact with blockchain data. This cutting-edge Large Language Model (LLM) is being meticulously crafted to provide real-time, intuitive querying capabilities across a vast spectrum of supported blockchains. Upon completion, OrtegeGPT will empower users to effortlessly extract insights, perform complex analyses, and obtain answers to virtually any query about the blockchain ecosystems we support. Recognizing the diverse needs of our users, OrtegeGPT is also designed with flexibility in mind, allowing organizations to integrate their proprietary data seamlessly, thereby enriching their analytical capabilities and insights. Furthermore, OrtegeGPT is set to offer multiple distribution channels, ensuring that our advanced LLM can be accessed conveniently, whether through direct API integrations, web interfaces, or customized applications. This ambitious feature signifies our commitment to pioneering in the blockchain analytics space, offering an unparalleled tool that combines the latest in AI technology with the expansive world of blockchain data.</p>
 </section>
 <section id="quick-start" class="level1">
 <h1>Quick Start</h1>
-<p>To familiarize yourself with our documentation approach, please read the <a href="./quick_start.html">Quick Start section</a>.</p>
+<p>To familiarize yourself with our documentation approach, please read the <a href="quick_start.qmd">Quick Start section</a>.</p>
 
 
 </section>

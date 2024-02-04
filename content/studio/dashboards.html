@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Ortege - Contributing a Research article</title>
+<title>Ortege - Dashboards</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,7 +69,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles/custom-style.css">
 </head>
 
 <body class="nav-fixed">
@@ -94,25 +94,55 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-products" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Products</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ortege-studio" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Ortege Studio</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-products">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-ortege-studio">    
         <li>
-    <a class="dropdown-item" href="../../studio.html">
- <span class="dropdown-text">Ortege Studio</span></a>
+    <a class="dropdown-item" href="../../content/studio/overview.html">
+ <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../ortegegpt.html">
- <span class="dropdown-text">OrtegeGPT</span></a>
+    <a class="dropdown-item" href="../../content/studio/dashboards.html">
+ <span class="dropdown-text">Dashboards</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../lakehouse.html">
- <span class="dropdown-text">Ortege Lakehouse</span></a>
+    <a class="dropdown-item" href="../../content/studio/charts.html">
+ <span class="dropdown-text">Charts</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../research.html">
- <span class="dropdown-text">Ortege Research</span></a>
+    <a class="dropdown-item" href="../../content/studio/datasets.html">
+ <span class="dropdown-text">Datasets</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../content/studio/sqllab.html">
+ <span class="dropdown-text">SQL LAB</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../content/studio/dbconnections.html">
+ <span class="dropdown-text">Database Connections</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ortege-lakehouse" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Ortege Lakehouse</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-ortege-lakehouse">    
+        <li>
+    <a class="dropdown-item" href="../../bronze.qmd">
+ <span class="dropdown-text">Bronze Layer</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ortegegpt" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">OrtegeGPT</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-ortegegpt">    
+        <li>
+    <a class="dropdown-item" href="../../overview.qmd">
+ <span class="dropdown-text">Overview</span></a>
   </li>  
     </ul>
   </li>
@@ -128,28 +158,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#key-insights" id="toc-key-insights" class="nav-link active" data-scroll-target="#key-insights">Key Insights:</a></li>
-  <li><a href="#key-metrics" id="toc-key-metrics" class="nav-link" data-scroll-target="#key-metrics">Key Metrics</a>
-  <ul class="collapse">
-  <li><a href="#financial-performance" id="toc-financial-performance" class="nav-link" data-scroll-target="#financial-performance">Financial Performance</a></li>
-  <li><a href="#network-performance" id="toc-network-performance" class="nav-link" data-scroll-target="#network-performance">Network performance</a></li>
-  <li><a href="#network-security" id="toc-network-security" class="nav-link" data-scroll-target="#network-security">Network security</a></li>
-  </ul></li>
-  <li><a href="#addresses" id="toc-addresses" class="nav-link" data-scroll-target="#addresses">Addresses</a></li>
-  <li><a href="#missing-datasets" id="toc-missing-datasets" class="nav-link" data-scroll-target="#missing-datasets">Missing Datasets</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Contributing a Research article</h1>
+<h1 class="title">Dashboards</h1>
 </div>
 
 
@@ -166,66 +182,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>tESTING The aim of this report is to create a realtime alternative to <a href="https://messari.io/report/state-of-bitcoin-q4-2022">Messari’s State of Bitcoin report</a></p>
-<section id="key-insights" class="level1">
-<h1>Key Insights:</h1>
-<ul>
-<li>BTC volume on centralized exchanges - wE NEED Binance</li>
-<li>BTC total exchange balance -</li>
-<li>BTC correlation to equities and commoddities. This can be supplemented by some ML charts</li>
-<li>BTC volatility</li>
-<li>BTC active addresses</li>
-<li>BTC transactions</li>
-<li>BTC transactions correlated to Twitter converstaions. Perhaps classification of conversation topics</li>
-<li>BTC miners financial standing? How do we determine their health?</li>
-<li>BTC hashrate</li>
-<li>BTC pricing data</li>
-<li>Worldwide electricity prices</li>
-</ul>
-</section>
-<section id="key-metrics" class="level1">
-<h1>Key Metrics</h1>
-<section id="financial-performance" class="level2">
-<h2 class="anchored" data-anchor-id="financial-performance">Financial Performance</h2>
-<ul>
-<li>Price</li>
-<li>Market capitalization</li>
-<li>Dominance</li>
-</ul>
-</section>
-<section id="network-performance" class="level2">
-<h2 class="anchored" data-anchor-id="network-performance">Network performance</h2>
-<ul>
-<li>Funded addresses</li>
-<li>Average daily active addresses</li>
-<li>Average daily transactoin count</li>
-<li>Total value settled</li>
-<li>Average daily transaction fees</li>
-</ul>
-</section>
-<section id="network-security" class="level2">
-<h2 class="anchored" data-anchor-id="network-security">Network security</h2>
-<ul>
-<li>Average daily miner revenue</li>
-<li>Average hash rate</li>
-</ul>
-</section>
-</section>
-<section id="addresses" class="level1">
-<h1>Addresses</h1>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./images/addresses.webp" class="img-fluid figure-img"></p>
-<figcaption>Addresses</figcaption>
-</figure>
-</div>
-<p><img src="./images/btc_halving.webp" class="img-fluid" alt="btc_halving"> <img src="../images/btc_performance.webp" class="img-fluid" alt="btc_performance"> <img src="./images/calendar.webp" class="img-fluid" alt="calendar"> <img src="./images/cex.webp" class="img-fluid" alt="cex"> <img src="./images/correlations.webp" class="img-fluid" alt="correlations"> <img src="./images/hashprice.webp" class="img-fluid" alt="hashprice"> <img src="./images/hashrate.webp" class="img-fluid" alt="hashrate"> <img src="./images/hashrate01.webp" class="img-fluid" alt="hashrate01"> <img src="./images/index.webp" class="img-fluid" alt="index"> <img src="./images/laundering.webp" class="img-fluid" alt="laundering"> <img src="./images/lightning.webp" class="img-fluid" alt="lightning"> <img src="./images/miner_revenue.webp" class="img-fluid" alt="miner_revenue"> <img src="./images/miner_selloff.webp" class="img-fluid" alt="miner_selloff"> <img src="./images/mining_sustain.webp" class="img-fluid" alt="mining_sustain"> <img src="./images/price.webp" class="img-fluid" alt="price"> <img src="./images/puell.webp" class="img-fluid" alt="puell"> <img src="./images/reserve.webp" class="img-fluid" alt="reserve"> <img src="./images/supply.webp" class="img-fluid" alt="supply"> <img src="./images/tx.webp" class="img-fluid" alt="tx"> <img src="./images/txfees.webp" class="img-fluid" alt="txfees"> <img src="./images/volatility.webp" class="img-fluid" alt="volatility"> <img src="./images/volatility01.webp" class="img-fluid" alt="volatility01"></p>
-</section>
-<section id="missing-datasets" class="level1">
-<h1>Missing Datasets</h1>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

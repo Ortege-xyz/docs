@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap');
+
+:root {
+  --primary-color: #f04275;
+  --secondary-color: #510e74;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  color: #000; /* Ensures default text is black */
+}
+
+a, .navbar-brand, .button-primary {
+  color: var(--primary-color);
+}
+
+.navbar, footer {
+  background-color: var(--secondary-color);
+}
+
+/* Continue to customize further as needed */

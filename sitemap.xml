@@ -1,67 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://Ortege-xyz.github.io/docs/contributing.html</loc>
-    <lastmod>2024-02-04T22:02:37.710Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Ortege-xyz.github.io/docs/testnet_partner.html</loc>
-    <lastmod>2024-02-04T22:02:37.714Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Ortege-xyz.github.io/docs/ortegegpt.html</loc>
-    <lastmod>2024-02-04T22:02:37.714Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Ortege-xyz.github.io/docs/articles/btc/btc.html</loc>
-    <lastmod>2024-02-04T22:02:37.706Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Ortege-xyz.github.io/docs/studio.html</loc>
-    <lastmod>2024-02-04T22:02:37.714Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Ortege-xyz.github.io/docs/submit_form.html</loc>
-    <lastmod>2024-02-04T22:02:37.714Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Ortege-xyz.github.io/docs/studio/datasets.html</loc>
-    <lastmod>2024-02-04T22:02:37.714Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Ortege-xyz.github.io/docs/studio/sqllab.html</loc>
-    <lastmod>2024-02-04T22:02:37.714Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Ortege-xyz.github.io/docs/index.html</loc>
-    <lastmod>2024-02-04T22:02:37.714Z</lastmod>
+    <loc>https://Ortege-xyz.github.io/docs/studio/charts.html</loc>
+    <lastmod>2024-02-04T23:07:49.812Z</lastmod>
   </url>
   <url>
     <loc>https://Ortege-xyz.github.io/docs/studio/dashboards.html</loc>
-    <lastmod>2024-02-04T22:02:37.714Z</lastmod>
+    <lastmod>2024-02-04T23:07:49.812Z</lastmod>
   </url>
   <url>
-    <loc>https://Ortege-xyz.github.io/docs/studio/charts.html</loc>
-    <lastmod>2024-02-04T22:02:37.714Z</lastmod>
+    <loc>https://Ortege-xyz.github.io/docs/content/lakehouse/overview.html</loc>
+    <lastmod>2024-02-04T23:07:49.808Z</lastmod>
   </url>
   <url>
-    <loc>https://Ortege-xyz.github.io/docs/research.html</loc>
-    <lastmod>2024-02-04T22:02:37.714Z</lastmod>
+    <loc>https://Ortege-xyz.github.io/docs/content/ortegegpt/overview.html</loc>
+    <lastmod>2024-02-04T23:07:49.808Z</lastmod>
   </url>
   <url>
-    <loc>https://Ortege-xyz.github.io/docs/articles/template.html</loc>
-    <lastmod>2024-02-04T22:02:37.710Z</lastmod>
+    <loc>https://Ortege-xyz.github.io/docs/content/studio/overview.html</loc>
+    <lastmod>2024-02-04T23:07:49.808Z</lastmod>
   </url>
   <url>
-    <loc>https://Ortege-xyz.github.io/docs/data.html</loc>
-    <lastmod>2024-02-04T22:02:37.710Z</lastmod>
+    <loc>https://Ortege-xyz.github.io/docs/content/studio/datasets.html</loc>
+    <lastmod>2024-02-04T23:07:49.808Z</lastmod>
   </url>
   <url>
-    <loc>https://Ortege-xyz.github.io/docs/quick_start.html</loc>
-    <lastmod>2024-02-04T22:02:37.714Z</lastmod>
+    <loc>https://Ortege-xyz.github.io/docs/content/studio/sqllab.html</loc>
+    <lastmod>2024-02-04T23:07:49.808Z</lastmod>
   </url>
   <url>
-    <loc>https://Ortege-xyz.github.io/docs/lakehouse.html</loc>
-    <lastmod>2024-02-04T22:02:37.714Z</lastmod>
+    <loc>https://Ortege-xyz.github.io/docs/index.html</loc>
+    <lastmod>2024-02-04T23:07:49.812Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Ortege-xyz.github.io/docs/content/studio/dashboards.html</loc>
+    <lastmod>2024-02-04T23:07:49.808Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Ortege-xyz.github.io/docs/content/studio/charts.html</loc>
+    <lastmod>2024-02-04T23:07:49.808Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Ortege-xyz.github.io/docs/content/studio/dbconnections.html</loc>
+    <lastmod>2024-02-04T23:07:49.808Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Ortege-xyz.github.io/docs/content/lakehouse/data.html</loc>
+    <lastmod>2024-02-04T23:07:49.808Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Ortege-xyz.github.io/docs/studio/sqllab.html</loc>
+    <lastmod>2024-02-04T23:07:49.812Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Ortege-xyz.github.io/docs/studio/datasets.html</loc>
+    <lastmod>2024-02-04T23:07:49.812Z</lastmod>
   </url>
 </urlset>

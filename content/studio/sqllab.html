@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Ortege - Quick Start</title>
+<title>Ortege - SQL Lab</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,60 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href=".//images/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../..//images/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -103,7 +69,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles/custom-style.css">
 </head>
 
 <body class="nav-fixed">
@@ -113,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Ortege</span>
     </a>
   </div>
@@ -124,29 +90,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-products" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Products</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ortege-studio" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Ortege Studio</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-products">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-ortege-studio">    
         <li>
-    <a class="dropdown-item" href="./studio.html">
- <span class="dropdown-text">Ortege Studio</span></a>
+    <a class="dropdown-item" href="../../content/studio/overview.html">
+ <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./ortegegpt.html">
- <span class="dropdown-text">OrtegeGPT</span></a>
+    <a class="dropdown-item" href="../../content/studio/dashboards.html">
+ <span class="dropdown-text">Dashboards</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./lakehouse.html">
- <span class="dropdown-text">Ortege Lakehouse</span></a>
+    <a class="dropdown-item" href="../../content/studio/charts.html">
+ <span class="dropdown-text">Charts</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./research.html">
- <span class="dropdown-text">Ortege Research</span></a>
+    <a class="dropdown-item" href="../../content/studio/datasets.html">
+ <span class="dropdown-text">Datasets</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../content/studio/sqllab.html">
+ <span class="dropdown-text">SQL LAB</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../content/studio/dbconnections.html">
+ <span class="dropdown-text">Database Connections</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ortege-lakehouse" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Ortege Lakehouse</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-ortege-lakehouse">    
+        <li>
+    <a class="dropdown-item" href="../../bronze.qmd">
+ <span class="dropdown-text">Bronze Layer</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ortegegpt" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">OrtegeGPT</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-ortegegpt">    
+        <li>
+    <a class="dropdown-item" href="../../overview.qmd">
+ <span class="dropdown-text">Overview</span></a>
   </li>  
     </ul>
   </li>
@@ -162,35 +158,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
-  <ul class="collapse">
-  <li><a href="#accessing-ortege-studio" id="toc-accessing-ortege-studio" class="nav-link" data-scroll-target="#accessing-ortege-studio">Accessing Ortege Studio</a></li>
-  </ul></li>
-  <li><a href="#delving-into-data" id="toc-delving-into-data" class="nav-link" data-scroll-target="#delving-into-data">Delving into Data</a>
-  <ul class="collapse">
-  <li><a href="#querying-bitcoin" id="toc-querying-bitcoin" class="nav-link" data-scroll-target="#querying-bitcoin">Querying Bitcoin</a></li>
-  <li><a href="#data-exploration" id="toc-data-exploration" class="nav-link" data-scroll-target="#data-exploration">Data Exploration</a></li>
-  <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization">Visualization</a></li>
-  </ul></li>
-  <li><a href="#sharing-insights" id="toc-sharing-insights" class="nav-link" data-scroll-target="#sharing-insights">Sharing Insights</a>
-  <ul class="collapse">
-  <li><a href="#collaborate-and-share" id="toc-collaborate-and-share" class="nav-link" data-scroll-target="#collaborate-and-share">Collaborate and Share</a></li>
-  <li><a href="#exporting-results" id="toc-exporting-results" class="nav-link" data-scroll-target="#exporting-results">Exporting Results</a></li>
-  </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Quick Start</h1>
+<h1 class="title">SQL Lab</h1>
 </div>
 
 
@@ -207,70 +182,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<p>Welcome to Ortege Studio, your premier destination for insightful data analytics and AI-driven exploration in the realm of blockchain data. This guide is crafted to help you swiftly navigate through Ortege Studio’s robust features, ensuring an efficient and productive start.</p>
-<p>This guide will walk you through creating a simple Bitcoin visualization.</p>
-<section id="accessing-ortege-studio" class="level2">
-<h2 class="anchored" data-anchor-id="accessing-ortege-studio">Accessing Ortege Studio</h2>
-<p>Begin your journey by accessing Ortege Studio through our dedicated <a href="https://app.ortege.xyz">web portal</a>. Ensure you have your login credentials ready, which you would have received upon your successful registration.</p>
-<p><strong>Please note</strong> Currently user logins for Ortege Studio are restricted to whitelisted users.</p>
-</section>
-</section>
-<section id="delving-into-data" class="level1">
-<h1>Delving into Data</h1>
-<section id="querying-bitcoin" class="level2">
-<h2 class="anchored" data-anchor-id="querying-bitcoin">Querying Bitcoin</h2>
-<p>Ortege Studio seamlessly integrates with a variety of blockchain data sources. To connect, navigate to the ‘SQL Lab’ section.</p>
-<p><img src="images/SQLLab.png" class="img-fluid"></p>
-</section>
-<section id="data-exploration" class="level2">
-<h2 class="anchored" data-anchor-id="data-exploration">Data Exploration</h2>
-<p>Please connect to:</p>
-<ul>
-<li><p>Database = “Ortege Lakehouse Test”</p></li>
-<li><p>Schema = “bitcoin”</p></li>
-</ul>
-<p>Now please run the following SQL Query:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    tx.block_number <span class="op">-</span> tx.block_number % <span class="dv">1000</span> <span class="kw">AS</span> block_number,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    ox.script_pub_key.<span class="kw">type</span>,</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> output_count</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> </span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    bitcoin.transactions tx</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="kw">CROSS</span> <span class="kw">JOIN</span> </span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    UNNEST(tx.output) <span class="kw">AS</span> ox</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    tx.is_coinbase</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>, <span class="dv">2</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> </span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This query looks at transactions on Bitcoin whereby miners are rewarded for mining blocks and is categorized according to the output type of the transaction.</p>
-<p><strong>Please note:</strong> A coinbase transaction has to do with a type of transaction that appears in every new block of a blockchain and is not to be confused with the Coinbase Centralized Exchange. <a href="https://cointelegraph.com/explained/what-is-a-coinbase-transaction">Please see here for more information.</a></p>
-</section>
-<section id="visualization" class="level2">
-<h2 class="anchored" data-anchor-id="visualization">Visualization</h2>
-<p>Transform your data into compelling visual stories. Select from a range of visualization tools within Ortege Studio to depict your data in the most impactful way.</p>
-</section>
-</section>
-<section id="sharing-insights" class="level1">
-<h1>Sharing Insights</h1>
-<section id="collaborate-and-share" class="level2">
-<h2 class="anchored" data-anchor-id="collaborate-and-share">Collaborate and Share</h2>
-<p>Collaboration is key in data analytics. Ortege Studio facilitates sharing your findings with team members. Utilize our sharing features to collaborate effectively, enhancing the collective understanding of blockchain data.</p>
-</section>
-<section id="exporting-results" class="level2">
-<h2 class="anchored" data-anchor-id="exporting-results">Exporting Results</h2>
-<p>For external presentations or reports, easily export your visualizations and data insights from Ortege Studio in various formats.</p>
-</section>
-</section>
-<section id="conclusion" class="level1">
-<h1>Conclusion</h1>
-<p>Ortege Studio is more than just an analytics platform; it’s a gateway to unlocking the vast potential of blockchain data. This quick start guide is just the beginning. Dive in and explore the myriad of features at your disposal. Happy analyzing!</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
