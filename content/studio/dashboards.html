@@ -130,8 +130,20 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-ortege-lakehouse">    
         <li>
-    <a class="dropdown-item" href="../../bronze.qmd">
+    <a class="dropdown-item" href="../../content/lakehouse/overview.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../content/lakehouse/bronze.html">
  <span class="dropdown-text">Bronze Layer</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../content/lakehouse/silver.html">
+ <span class="dropdown-text">Silver Layer</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../content/lakehouse/gold.html">
+ <span class="dropdown-text">Gold Layer</span></a>
   </li>  
     </ul>
   </li>
@@ -141,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-ortegegpt">    
         <li>
-    <a class="dropdown-item" href="../../overview.qmd">
+    <a class="dropdown-item" href="../../content/ortegegpt/overview.html">
  <span class="dropdown-text">Overview</span></a>
   </li>  
     </ul>
@@ -158,7 +170,18 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#dashboards-in-ortege-studio" id="toc-dashboards-in-ortege-studio" class="nav-link active" data-scroll-target="#dashboards-in-ortege-studio">Dashboards in Ortege Studio</a></li>
+  <li><a href="#creating-a-dashboard" id="toc-creating-a-dashboard" class="nav-link" data-scroll-target="#creating-a-dashboard">Creating a Dashboard</a></li>
+  <li><a href="#customizing-dashboards" id="toc-customizing-dashboards" class="nav-link" data-scroll-target="#customizing-dashboards">Customizing Dashboards</a></li>
+  <li><a href="#sharing-dashboards" id="toc-sharing-dashboards" class="nav-link" data-scroll-target="#sharing-dashboards">Sharing Dashboards</a></li>
+  <li><a href="#best-practices-for-dashboard-design" id="toc-best-practices-for-dashboard-design" class="nav-link" data-scroll-target="#best-practices-for-dashboard-design">Best Practices for Dashboard Design</a></li>
+  <li><a href="#maintaining-dashboards" id="toc-maintaining-dashboards" class="nav-link" data-scroll-target="#maintaining-dashboards">Maintaining Dashboards</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -182,8 +205,52 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="dashboards-in-ortege-studio" class="level1">
+<h1>Dashboards in Ortege Studio</h1>
+<p>Dashboards are powerful tools within Ortege Studio that allow users to compile and visualize various charts and widgets into a single, cohesive interface. Designed for flexibility and interactivity, dashboards provide a snapshot of key metrics, trends, and insights, enabling data-driven decision-making at a glance. This section of the documentation will guide you through creating, customizing, and sharing dashboards in Ortege Studio.</p>
+</section>
+<section id="creating-a-dashboard" class="level1">
+<h1>Creating a Dashboard</h1>
+<ol type="1">
+<li>Initiate Dashboard Creation: Navigate to the Dashboard section and click on the “Create” button. You’ll be prompted to choose between starting from scratch or duplicating an existing dashboard.</li>
+<li>Add Charts: Once your dashboard shell is created, add charts by clicking the “+ Add Chart” button. You can select from existing charts or create new ones to add to the dashboard.</li>
+<li>Arrange Layout: Drag and drop charts to arrange them on your dashboard. You can adjust the size and position of each chart to create a visually appealing layout.</li>
+</ol>
+</section>
+<section id="customizing-dashboards" class="level1">
+<h1>Customizing Dashboards</h1>
+<ol type="1">
+<li>Edit Properties: Access the dashboard’s properties to rename it, add a description, or update its settings. This is where you can make the dashboard public or private and set refresh intervals.</li>
+<li>Apply Filters: Enhance dashboard interactivity by adding filters. Filters allow viewers to refine what data is displayed across the entire dashboard, making it more dynamic and useful.</li>
+<li>Styling: Use the styling options to apply your branding or preferred visual theme to the dashboard. You can adjust colors, fonts, and spacing to match your organization’s style guide.</li>
+</ol>
+</section>
+<section id="sharing-dashboards" class="level1">
+<h1>Sharing Dashboards</h1>
+<ol type="1">
+<li>Direct Sharing: Share a dashboard directly with other Ortege Studio users by granting them access. You can control whether they can view, edit, or manage the dashboard.</li>
+<li>Public Link: Generate a public link to your dashboard for easy sharing with external stakeholders. Ensure sensitive data is appropriately protected when using this feature.</li>
+<li>Exporting: Dashboards can be exported as images or PDF documents for offline viewing or inclusion in reports and presentations.</li>
+</ol>
+</section>
+<section id="best-practices-for-dashboard-design" class="level1">
+<h1>Best Practices for Dashboard Design</h1>
+<ul>
+<li>Focus on Clarity: Ensure your dashboards are easy to understand at a glance. Use clear chart titles and labels, and avoid overcrowding the dashboard with too many charts.</li>
+<li>Logical Grouping: Group related charts close to each other to tell a cohesive story. This helps users quickly make connections between different data points.</li>
+<li>Consistent Styling: Apply a consistent style across all charts for a professional appearance. Consistency in colors, fonts, and chart types improves readability.</li>
+</ul>
+</section>
+<section id="maintaining-dashboards" class="level1">
+<h1>Maintaining Dashboards</h1>
+<ul>
+<li>Regular Updates: Keep your dashboards relevant by regularly updating the charts and data they display. Consider setting up automatic data refreshes if supported.</li>
+<li>Gather Feedback: Engage with your dashboard viewers to collect feedback and identify areas for improvement. User input can guide you in refining and enhancing your dashboards.</li>
+</ul>
+<p>Dashboards are a central feature of Ortege Studio, offering a powerful way to present and explore data. By following these guidelines, you can create effective and impactful dashboards that serve as valuable tools for your organization’s data analysis and decision-making processes.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

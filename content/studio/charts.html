@@ -130,8 +130,20 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-ortege-lakehouse">    
         <li>
-    <a class="dropdown-item" href="../../bronze.qmd">
+    <a class="dropdown-item" href="../../content/lakehouse/overview.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../content/lakehouse/bronze.html">
  <span class="dropdown-text">Bronze Layer</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../content/lakehouse/silver.html">
+ <span class="dropdown-text">Silver Layer</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../content/lakehouse/gold.html">
+ <span class="dropdown-text">Gold Layer</span></a>
   </li>  
     </ul>
   </li>
@@ -141,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-ortegegpt">    
         <li>
-    <a class="dropdown-item" href="../../overview.qmd">
+    <a class="dropdown-item" href="../../content/ortegegpt/overview.html">
  <span class="dropdown-text">Overview</span></a>
   </li>  
     </ul>
@@ -158,7 +170,18 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#charts-in-ortege-studio" id="toc-charts-in-ortege-studio" class="nav-link active" data-scroll-target="#charts-in-ortege-studio">Charts in Ortege Studio</a></li>
+  <li><a href="#creating-a-chart" id="toc-creating-a-chart" class="nav-link" data-scroll-target="#creating-a-chart">Creating a Chart</a></li>
+  <li><a href="#customizing-charts" id="toc-customizing-charts" class="nav-link" data-scroll-target="#customizing-charts">Customizing Charts</a></li>
+  <li><a href="#managing-charts" id="toc-managing-charts" class="nav-link" data-scroll-target="#managing-charts">Managing Charts</a></li>
+  <li><a href="#best-practices-for-chart-design" id="toc-best-practices-for-chart-design" class="nav-link" data-scroll-target="#best-practices-for-chart-design">Best Practices for Chart Design</a></li>
+  <li><a href="#advanced-chart-features" id="toc-advanced-chart-features" class="nav-link" data-scroll-target="#advanced-chart-features">Advanced Chart Features</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -182,8 +205,53 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="charts-in-ortege-studio" class="level1">
+<h1>Charts in Ortege Studio</h1>
+<p>Charts are at the heart of data visualization in Ortege Studio, offering a dynamic way to represent data and uncover insights through a wide range of visual formats. This section of the documentation will walk you through the process of creating, customizing, and managing charts, ensuring you can fully leverage Ortege Studio’s powerful visualization capabilities.</p>
+</section>
+<section id="creating-a-chart" class="level1">
+<h1>Creating a Chart</h1>
+<ol type="1">
+<li>Select Dataset: Begin by choosing the dataset from which you want to create your chart. Ortege Studio supports a diverse array of datasets, ensuring you can visualize data from various sources.</li>
+<li>Choose Chart Type: Select the type of chart that best fits your data visualization needs. Ortege Studio offers an extensive selection, from traditional bar and line charts to more complex scatter plots and heatmaps.</li>
+<li>Configure Chart: Customize your chart by specifying dimensions and metrics, applying filters, and setting aggregation functions. This step is crucial in defining how your data will be displayed.</li>
+</ol>
+</section>
+<section id="customizing-charts" class="level1">
+<h1>Customizing Charts</h1>
+<ol type="1">
+<li>Styling Options: Use the chart’s styling options to enhance its appearance. You can adjust colors, fonts, axis labels, and legends to make your chart more informative and visually appealing.</li>
+<li>Interactive Features: Enhance user interaction by enabling tooltips, clickable elements, and drill-down capabilities. These features make your charts more engaging and informative.</li>
+<li>Responsive Design: Ensure your charts are responsive and look great on all devices. Ortege Studio allows you to preview and adjust chart layouts for different screen sizes.</li>
+</ol>
+</section>
+<section id="managing-charts" class="level1">
+<h1>Managing Charts</h1>
+<ol type="1">
+<li>Saving and Organizing: Once you are satisfied with your chart, save it to your dashboard or a specific folder. Proper organization helps in easily accessing and managing your charts.</li>
+<li>Sharing and Collaboration: Share your charts with team members for collaborative analysis or embed them in presentations and reports. Ortege Studio provides various sharing options, including direct links and embedding codes.</li>
+<li>Version Control: Keep track of changes to your charts with version control. This feature allows you to revert to previous versions if needed and understand how your chart evolved over time.</li>
+</ol>
+</section>
+<section id="best-practices-for-chart-design" class="level1">
+<h1>Best Practices for Chart Design</h1>
+<ul>
+<li>Simplicity is Key: Aim for clarity and simplicity in your charts. Avoid unnecessary decorations that can distract from the data.</li>
+<li>Choose the Right Chart Type: Match the chart type with the nature of your data and the story you want to tell. Each chart type serves a specific purpose.</li>
+<li>Use Color Wisely: Use color to enhance comprehension, not just for aesthetics. Differentiate data points clearly and use consistent color schemes across similar charts.</li>
+</ul>
+</section>
+<section id="advanced-chart-features" class="level1">
+<h1>Advanced Chart Features</h1>
+<ul>
+<li>Custom SQL and Expressions: For advanced users, Ortege Studio supports the use of custom SQL queries and expressions to create more complex data visualizations.</li>
+<li>Integration with Predictive Analytics: Leverage Ortege Studio’s integration capabilities to incorporate predictive analytics into your charts, providing forward-looking insights based on historical data trends.</li>
+<li>API Access: Automate chart creation and updates through Ortege Studio’s API, enabling dynamic and real-time data visualizations in your charts.</li>
+</ul>
+<p>Charts are a fundamental aspect of data visualization in Ortege Studio, enabling users to tell compelling stories with their data. By understanding how to effectively create, customize, and manage your charts, you can unlock the full potential of your data, providing valuable insights to drive decision-making within your organization.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
