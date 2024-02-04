@@ -8,6 +8,7 @@ format:
     theme: lumen
 
 website:
+  favicon: /images/favicon.png
   navbar:
     background: primary
     search: true
