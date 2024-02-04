@@ -1,0 +1,33 @@
+---
+title: "Overview of Ortege Lakehouse"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+Ortege Lakehouse represents a cutting-edge data management and analytics platform, meticulously designed to accommodate the vast and growing needs of blockchain data analysis. At the core of our innovation is a seamless integration with OrtegeETL, comprehensive access through Ortege Studio, and exclusive API access for institutional customers. This platform not only underscores our commitment to leveraging open-source software but also ensures that our users have unparalleled access to blockchain datasets.
+
+# OrtegeETL: Open-Source Blockchain Data Ingestion
+[OrtegeETL](https://github.com/Ortege-xyz/ortegeETL), an integral component of our ecosystem, is an open-source tool specifically developed to facilitate the efficient ingestion of blockchain data into Ortege Lakehouse. This tool exemplifies our dedication to the open-source community, providing a robust and transparent solution for data extraction, transformation, and loading (ETL). With OrtegeETL, users can effortlessly synchronize blockchain data into the lakehouse, ensuring that the datasets are up-to-date and comprehensive. The open-source nature of OrtegeETL invites contributions and enhancements from the community, fostering innovation and continual improvement in handling blockchain data.
+
+# Seamless Integration with Ortege Studio
+Ortege Studio users automatically gain access to all blockchain datasets hosted on Ortege Lakehouse. This default integration ensures that data analysts, developers, and researchers can directly tap into a rich repository of blockchain information within their familiar Ortege Studio environment. By providing this seamless access, we aim to enhance the analytical capabilities of our users, enabling them to derive actionable insights, conduct in-depth research, and develop innovative applications and solutions based on blockchain data.
+
+# Exclusive API Access for Institutional Customers
+Understanding the unique needs of institutional customers, Ortege Lakehouse offers exclusive API access to its blockchain datasets. This feature is tailored to organizations requiring direct, programmatic access to data for integrating blockchain analytics into their own systems and applications. While this service is currently limited to institutional customers, it represents our commitment to providing flexible, scalable, and secure data access solutions. Interested parties are encouraged to reach out for more information on obtaining API access, as we explore opportunities to expand and customize data access to meet diverse organizational needs.
+
+# Commitment to Open Source and Innovation
+Ortege Lakehouse, together with OrtegeETL and its integration into Ortege Studio, reflects our unwavering commitment to developing open-source software and contributing to the technological advancements in blockchain data analysis. By fostering an ecosystem where data is accessible, and tools are transparent and collaborative, we empower our users to explore the full potential of blockchain technology. As we continue to innovate and expand our offerings, our focus remains on delivering solutions that drive insights, foster development, and support the growth of the blockchain community.
+
+# The Medallion Layer Architecture of Ortege Lakehouse
+At the heart of Ortege Lakehouse's innovative approach to blockchain data management and analytics is our unique Medallion Layer Architecture. This structured framework is meticulously designed to cater to various levels of data complexity and user needs, from raw blockchain transactions to highly optimized and use-case-specific datasets. The architecture is segmented into three distinct layers: Bronze, Silver, and Gold, each serving a unique purpose in the data transformation and analysis process.
+
+## Bronze Layer: The Foundation with Raw Data
+The [Bronze Layer](bronze.qmd) forms the foundational bedrock of Ortege Lakehouse, containing the raw, unprocessed data directly ingested from multiple blockchains. Utilizing OrtegeETL, this layer captures a wide array of blockchain transactions and metadata, preserving the original integrity and granularity of the data. Ideal for users who need access to the most unadulterated form of blockchain data, the Bronze Layer offers a comprehensive snapshot of blockchain ecosystems in their native state.
+
+## Silver Layer: Enhanced Readability and Transformation
+Building upon the raw data stored in the Bronze Layer, the [Silver Layer](silver.qmd) introduces a series of transformations and enhancements to make the data more accessible and human-readable. This layer focuses on cleaning, structuring, and enriching the raw data, applying consistent schemas, and resolving common issues such as data normalization and deduplication. The Silver Layer is designed for users who require a balance between the raw detail of blockchain transactions and the convenience of pre-processed data, enabling more straightforward analysis and exploration.
+
+## Gold Layer: Optimized Queries and Focused Datasets
+The pinnacle of the Medallion Layer Architecture, the [Gold Layer](gold.qmd), is where data meets performance and specificity. This layer includes datasets that have been further refined and optimized for specific use cases, themes, or queries. With a focus on performance, the Gold Layer offers pre-built queries, aggregated summaries, and analytical models tailored to particular areas of interest, such as market trends, transaction patterns, or network health indicators. This layer is perfect for users seeking the most efficient access to actionable insights, with data curated and optimized to support rapid analysis and decision-making.

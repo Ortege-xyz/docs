@@ -32,10 +32,16 @@ website:
             file: content/studio/dbconnections.qmd
       - text: "Ortege Lakehouse"
         menu:
+          - text: "Overview"
+            file: content/lakehouse/overview.qmd
           - text: "Bronze Layer"
-            file: bronze.qmd
+            file: content/lakehouse/bronze.qmd
+          - text: "Silver Layer"
+            file: content/lakehouse/silver.qmd
+          - text: "Gold Layer"
+            file: content/lakehouse/gold.qmd
       - text: "OrtegeGPT"
         menu: 
           - text: "Overview"
-            file: overview.qmd
+            file: content/ortegegpt/overview.qmd
       

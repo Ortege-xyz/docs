@@ -5,3 +5,37 @@ format:
     toc: true
     html-math-method: katex
 ---
+# Charts in Ortege Studio
+Charts are at the heart of data visualization in Ortege Studio, offering a dynamic way to represent data and uncover insights through a wide range of visual formats. This section of the documentation will walk you through the process of creating, customizing, and managing charts, ensuring you can fully leverage Ortege Studio's powerful visualization capabilities.
+
+# Creating a Chart
+1. Select Dataset: Begin by choosing the dataset from which you want to create your chart. Ortege Studio supports a diverse array of datasets, ensuring you can visualize data from various sources.
+2. Choose Chart Type: Select the type of chart that best fits your data visualization needs. Ortege Studio offers an extensive selection, from traditional bar and line charts to more complex scatter plots and heatmaps.
+3. Configure Chart: Customize your chart by specifying dimensions and metrics, applying filters, and setting aggregation functions. This step is crucial in defining how your data will be displayed.
+
+# Customizing Charts
+1. Styling Options: Use the chart's styling options to enhance its appearance. You can adjust colors, fonts, axis labels, and legends to make your chart more informative and visually appealing.
+2. Interactive Features: Enhance user interaction by enabling tooltips, clickable elements, and drill-down capabilities. These features make your charts more engaging and informative.
+3. Responsive Design: Ensure your charts are responsive and look great on all devices. Ortege Studio allows you to preview and adjust chart layouts for different screen sizes.
+
+# Managing Charts
+1. Saving and Organizing: Once you are satisfied with your chart, save it to your dashboard or a specific folder. Proper organization helps in easily accessing and managing your charts.
+2. Sharing and Collaboration: Share your charts with team members for collaborative analysis or embed them in presentations and reports. Ortege Studio provides various sharing options, including direct links and embedding codes.
+3. Version Control: Keep track of changes to your charts with version control. This feature allows you to revert to previous versions if needed and understand how your chart evolved over time.
+
+# Best Practices for Chart Design
+* Simplicity is Key: Aim for clarity and simplicity in your charts. Avoid unnecessary decorations that can distract from the data.
+* Choose the Right Chart Type: Match the chart type with the nature of your data and the story you want to tell. Each chart type serves a specific purpose.
+* Use Color Wisely: Use color to enhance comprehension, not just for aesthetics. Differentiate data points clearly and use consistent color schemes across similar charts.
+
+# Advanced Chart Features
+* Custom SQL and Expressions: For advanced users, Ortege Studio supports the use of custom SQL queries and expressions to create more complex data visualizations.
+* Integration with Predictive Analytics: Leverage Ortege Studio’s integration capabilities to incorporate predictive analytics into your charts, providing forward-looking insights based on historical data trends.
+* API Access: Automate chart creation and updates through Ortege Studio’s API, enabling dynamic and real-time data visualizations in your charts.
+
+Charts are a fundamental aspect of data visualization in Ortege Studio, enabling users to tell compelling stories with their data. By understanding how to effectively create, customize, and manage your charts, you can unlock the full potential of your data, providing valuable insights to drive decision-making within your organization.
+
+
+
+
+

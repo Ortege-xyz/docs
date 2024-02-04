@@ -1,0 +1,8 @@
+---
+title: "Bronze Layer"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+

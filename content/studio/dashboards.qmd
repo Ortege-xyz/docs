@@ -5,3 +5,32 @@ format:
     toc: true
     html-math-method: katex
 ---
+
+# Dashboards in Ortege Studio
+Dashboards are powerful tools within Ortege Studio that allow users to compile and visualize various charts and widgets into a single, cohesive interface. Designed for flexibility and interactivity, dashboards provide a snapshot of key metrics, trends, and insights, enabling data-driven decision-making at a glance. This section of the documentation will guide you through creating, customizing, and sharing dashboards in Ortege Studio.
+
+# Creating a Dashboard
+1. Initiate Dashboard Creation: Navigate to the Dashboard section and click on the “Create” button. You’ll be prompted to choose between starting from scratch or duplicating an existing dashboard.
+2. Add Charts: Once your dashboard shell is created, add charts by clicking the “+ Add Chart” button. You can select from existing charts or create new ones to add to the dashboard.
+3. Arrange Layout: Drag and drop charts to arrange them on your dashboard. You can adjust the size and position of each chart to create a visually appealing layout.
+
+# Customizing Dashboards
+1. Edit Properties: Access the dashboard's properties to rename it, add a description, or update its settings. This is where you can make the dashboard public or private and set refresh intervals.
+2. Apply Filters: Enhance dashboard interactivity by adding filters. Filters allow viewers to refine what data is displayed across the entire dashboard, making it more dynamic and useful.
+3. Styling: Use the styling options to apply your branding or preferred visual theme to the dashboard. You can adjust colors, fonts, and spacing to match your organization’s style guide.
+
+# Sharing Dashboards
+1. Direct Sharing: Share a dashboard directly with other Ortege Studio users by granting them access. You can control whether they can view, edit, or manage the dashboard.
+2. Public Link: Generate a public link to your dashboard for easy sharing with external stakeholders. Ensure sensitive data is appropriately protected when using this feature.
+3. Exporting: Dashboards can be exported as images or PDF documents for offline viewing or inclusion in reports and presentations.
+
+# Best Practices for Dashboard Design
+* Focus on Clarity: Ensure your dashboards are easy to understand at a glance. Use clear chart titles and labels, and avoid overcrowding the dashboard with too many charts.
+* Logical Grouping: Group related charts close to each other to tell a cohesive story. This helps users quickly make connections between different data points.
+* Consistent Styling: Apply a consistent style across all charts for a professional appearance. Consistency in colors, fonts, and chart types improves readability.
+
+# Maintaining Dashboards
+* Regular Updates: Keep your dashboards relevant by regularly updating the charts and data they display. Consider setting up automatic data refreshes if supported.
+* Gather Feedback: Engage with your dashboard viewers to collect feedback and identify areas for improvement. User input can guide you in refining and enhancing your dashboards.
+
+Dashboards are a central feature of Ortege Studio, offering a powerful way to present and explore data. By following these guidelines, you can create effective and impactful dashboards that serve as valuable tools for your organization's data analysis and decision-making processes.

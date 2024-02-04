@@ -15,6 +15,3 @@ format:
 
 # OrtegeGPT
 [OrtegeGPT](content/ortegegpt/overview.qmd): OrtegeGPT, our latest innovation currently under rigorous development, is poised to redefine the way we interact with blockchain data. This cutting-edge Large Language Model (LLM) is being meticulously crafted to provide real-time, intuitive querying capabilities across a vast spectrum of supported blockchains. Upon completion, OrtegeGPT will empower users to effortlessly extract insights, perform complex analyses, and obtain answers to virtually any query about the blockchain ecosystems we support. Recognizing the diverse needs of our users, OrtegeGPT is also designed with flexibility in mind, allowing organizations to integrate their proprietary data seamlessly, thereby enriching their analytical capabilities and insights. Furthermore, OrtegeGPT is set to offer multiple distribution channels, ensuring that our advanced LLM can be accessed conveniently, whether through direct API integrations, web interfaces, or customized applications. This ambitious feature signifies our commitment to pioneering in the blockchain analytics space, offering an unparalleled tool that combines the latest in AI technology with the expansive world of blockchain data.
-
-# Quick Start
-To familiarize yourself with our documentation approach, please read the [Quick Start section](quick_start.qmd).
