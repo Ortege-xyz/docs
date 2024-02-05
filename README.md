@@ -18,3 +18,6 @@ This command starts a local web server and automatically opens your default web 
 Just run `quarto publish`
 
 This is a self documenting document repo. Please go to the `index.qmd` to read about our documention. 
+
+## Updating the Lakehouse schema's
+`DESCRIBE TABLE external.db_stacks.tbl_dev_br_blocks`

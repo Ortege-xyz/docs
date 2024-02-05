@@ -1,0 +1,34 @@
+---
+title: "Medallian Architecture"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+# Introduction
+Ortege Lakehouse is designed around the innovative Medallion Architecture, a tiered data management strategy that systematically categorizes data into three distinct layers: Bronze, Silver, and Gold. This architecture facilitates a streamlined progression of data from raw ingestion to refined analytics, ensuring users across various roles and functions can access the most relevant and optimized data for their needs. The structured approach underpinning the Medallion Architecture reflects our commitment to delivering clarity, efficiency, and value in data analysis.
+
+# Layered Approach
+## Bronze Layer: 
+The foundation of the Medallion Architecture, the Bronze Layer, houses raw data directly ingested from diverse sources. This layer prioritizes the authenticity and completeness of data, serving as the primary repository for unprocessed information. Views that reference tables within the Bronze Layer remain in this tier, preserving the raw state of data until specific transformations are applied.
+
+## Silver Layer: 
+Data transitions to the Silver Layer following initial processing, which includes cleansing, normalization, and structuring. This layer enhances the usability of data, making it more accessible and meaningful for analysis. The Silver Layer acts as a bridge between raw data and advanced analytics, providing a balanced dataset that is both rich in detail and optimized for exploration.
+
+## Gold Layer: 
+Representing the pinnacle of data refinement, the Gold Layer contains datasets that are highly curated and performance-optimized for specific analytical use cases. Data in this layer is tailored to deliver actionable insights, supporting decision-making processes with precision and speed. The Gold Layer embodies the ultimate goal of data transformation within Ortege Lakehouse, offering users targeted, ready-to-use datasets for in-depth analysis.
+
+# Naming Convention
+To navigate the Medallion Architecture effectively, a consistent naming convention is employed across all layers, encapsulating key attributes of data entities:
+
+* Type: Classifies the data entity (tbl for tables, vw for views, and mvw for materialized views), indicating its structure and purpose within the data ecosystem.
+
+* Environment (Env): Identifies the operational stage of the data entity (dev for development, test for testing, and prod for production), facilitating environment-specific data management and access controls.
+
+* Layer: Denotes the tier within the Medallion Architecture (br for Bronze, sl for Silver, and gld for Gold), reflecting the data's processing stage and intended use case.
+
+* Entity: Describes the content or function of the data entity, offering insights into its relevance and application.
+
+# Conclusion
+The Medallion Architecture is a cornerstone of Ortege Lakehouse, providing a clear and effective framework for data management and analysis. By categorizing data into Bronze, Silver, and Gold layers, and employing a systematic naming convention, Ortege Lakehouse empowers users to harness the full potential of their data, from raw ingestion to advanced analytics. This tiered approach ensures that regardless of where data resides in the lifecycle, its value is maximized for all stakeholders involved.

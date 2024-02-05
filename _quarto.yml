@@ -34,6 +34,8 @@ website:
         menu:
           - text: "Overview"
             file: content/lakehouse/overview.qmd
+          - text: "Medallian Architecture"
+            file: content/lakehouse/medallian.qmd
           - text: "Bronze Layer"
             file: content/lakehouse/bronze.qmd
           - text: "Silver Layer"

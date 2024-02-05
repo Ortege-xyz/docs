@@ -19,3 +19,32 @@ a, .navbar-brand, .button-primary {
 }
 
 /* Continue to customize further as needed */
+/* Table base style */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Table headers */
+th {
+  background-color: #4CAF50;
+  color: white;
+  text-align: left;
+  padding: 8px;
+}
+
+/* Table rows and cells */
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/* Zebra striping for rows */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Hover effect for rows */
+tr:hover {
+  background-color: #ddd;
+}
