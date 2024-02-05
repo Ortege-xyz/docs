@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Ortege - Overview of Ortege Lakehouse</title>
+<title>Ortege - Medallian Architecture</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -178,16 +178,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ortegeetl-open-source-blockchain-data-ingestion" id="toc-ortegeetl-open-source-blockchain-data-ingestion" class="nav-link active" data-scroll-target="#ortegeetl-open-source-blockchain-data-ingestion">OrtegeETL: Open-Source Blockchain Data Ingestion</a></li>
-  <li><a href="#seamless-integration-with-ortege-studio" id="toc-seamless-integration-with-ortege-studio" class="nav-link" data-scroll-target="#seamless-integration-with-ortege-studio">Seamless Integration with Ortege Studio</a></li>
-  <li><a href="#exclusive-api-access-for-institutional-customers" id="toc-exclusive-api-access-for-institutional-customers" class="nav-link" data-scroll-target="#exclusive-api-access-for-institutional-customers">Exclusive API Access for Institutional Customers</a></li>
-  <li><a href="#commitment-to-open-source-and-innovation" id="toc-commitment-to-open-source-and-innovation" class="nav-link" data-scroll-target="#commitment-to-open-source-and-innovation">Commitment to Open Source and Innovation</a></li>
-  <li><a href="#the-medallion-layer-architecture-of-ortege-lakehouse" id="toc-the-medallion-layer-architecture-of-ortege-lakehouse" class="nav-link" data-scroll-target="#the-medallion-layer-architecture-of-ortege-lakehouse">The Medallion Layer Architecture of Ortege Lakehouse</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#layered-approach" id="toc-layered-approach" class="nav-link" data-scroll-target="#layered-approach">Layered Approach</a>
   <ul class="collapse">
-  <li><a href="#bronze-layer-the-foundation-with-raw-data" id="toc-bronze-layer-the-foundation-with-raw-data" class="nav-link" data-scroll-target="#bronze-layer-the-foundation-with-raw-data">Bronze Layer: The Foundation with Raw Data</a></li>
-  <li><a href="#silver-layer-enhanced-readability-and-transformation" id="toc-silver-layer-enhanced-readability-and-transformation" class="nav-link" data-scroll-target="#silver-layer-enhanced-readability-and-transformation">Silver Layer: Enhanced Readability and Transformation</a></li>
-  <li><a href="#gold-layer-optimized-queries-and-focused-datasets" id="toc-gold-layer-optimized-queries-and-focused-datasets" class="nav-link" data-scroll-target="#gold-layer-optimized-queries-and-focused-datasets">Gold Layer: Optimized Queries and Focused Datasets</a></li>
+  <li><a href="#bronze-layer" id="toc-bronze-layer" class="nav-link" data-scroll-target="#bronze-layer">Bronze Layer:</a></li>
+  <li><a href="#silver-layer" id="toc-silver-layer" class="nav-link" data-scroll-target="#silver-layer">Silver Layer:</a></li>
+  <li><a href="#gold-layer" id="toc-gold-layer" class="nav-link" data-scroll-target="#gold-layer">Gold Layer:</a></li>
   </ul></li>
+  <li><a href="#naming-convention" id="toc-naming-convention" class="nav-link" data-scroll-target="#naming-convention">Naming Convention</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -196,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Overview of Ortege Lakehouse</h1>
+<h1 class="title">Medallian Architecture</h1>
 </div>
 
 
@@ -213,40 +212,40 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Ortege Lakehouse represents a cutting-edge data management and analytics platform, meticulously designed to accommodate the vast and growing needs of blockchain data analysis. At the core of our innovation is a seamless integration with OrtegeETL, comprehensive access through Ortege Studio, and exclusive API access for institutional customers. This platform not only underscores our commitment to leveraging open-source software but also ensures that our users have unparalleled access to blockchain datasets.</p>
-<section id="ortegeetl-open-source-blockchain-data-ingestion" class="level1">
-<h1>OrtegeETL: Open-Source Blockchain Data Ingestion</h1>
-<p><a href="https://github.com/Ortege-xyz/ortegeETL">OrtegeETL</a>, an integral component of our ecosystem, is an open-source tool specifically developed to facilitate the efficient ingestion of blockchain data into Ortege Lakehouse. This tool exemplifies our dedication to the open-source community, providing a robust and transparent solution for data extraction, transformation, and loading (ETL). With OrtegeETL, users can effortlessly synchronize blockchain data into the lakehouse, ensuring that the datasets are up-to-date and comprehensive. The open-source nature of OrtegeETL invites contributions and enhancements from the community, fostering innovation and continual improvement in handling blockchain data.</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Ortege Lakehouse is designed around the innovative Medallion Architecture, a tiered data management strategy that systematically categorizes data into three distinct layers: Bronze, Silver, and Gold. This architecture facilitates a streamlined progression of data from raw ingestion to refined analytics, ensuring users across various roles and functions can access the most relevant and optimized data for their needs. The structured approach underpinning the Medallion Architecture reflects our commitment to delivering clarity, efficiency, and value in data analysis.</p>
 </section>
-<section id="seamless-integration-with-ortege-studio" class="level1">
-<h1>Seamless Integration with Ortege Studio</h1>
-<p>Ortege Studio users automatically gain access to all blockchain datasets hosted on Ortege Lakehouse. This default integration ensures that data analysts, developers, and researchers can directly tap into a rich repository of blockchain information within their familiar Ortege Studio environment. By providing this seamless access, we aim to enhance the analytical capabilities of our users, enabling them to derive actionable insights, conduct in-depth research, and develop innovative applications and solutions based on blockchain data.</p>
+<section id="layered-approach" class="level1">
+<h1>Layered Approach</h1>
+<section id="bronze-layer" class="level2">
+<h2 class="anchored" data-anchor-id="bronze-layer">Bronze Layer:</h2>
+<p>The foundation of the Medallion Architecture, the Bronze Layer, houses raw data directly ingested from diverse sources. This layer prioritizes the authenticity and completeness of data, serving as the primary repository for unprocessed information. Views that reference tables within the Bronze Layer remain in this tier, preserving the raw state of data until specific transformations are applied.</p>
 </section>
-<section id="exclusive-api-access-for-institutional-customers" class="level1">
-<h1>Exclusive API Access for Institutional Customers</h1>
-<p>Understanding the unique needs of institutional customers, Ortege Lakehouse offers exclusive API access to its blockchain datasets. This feature is tailored to organizations requiring direct, programmatic access to data for integrating blockchain analytics into their own systems and applications. While this service is currently limited to institutional customers, it represents our commitment to providing flexible, scalable, and secure data access solutions. Interested parties are encouraged to reach out for more information on obtaining API access, as we explore opportunities to expand and customize data access to meet diverse organizational needs.</p>
+<section id="silver-layer" class="level2">
+<h2 class="anchored" data-anchor-id="silver-layer">Silver Layer:</h2>
+<p>Data transitions to the Silver Layer following initial processing, which includes cleansing, normalization, and structuring. This layer enhances the usability of data, making it more accessible and meaningful for analysis. The Silver Layer acts as a bridge between raw data and advanced analytics, providing a balanced dataset that is both rich in detail and optimized for exploration.</p>
 </section>
-<section id="commitment-to-open-source-and-innovation" class="level1">
-<h1>Commitment to Open Source and Innovation</h1>
-<p>Ortege Lakehouse, together with OrtegeETL and its integration into Ortege Studio, reflects our unwavering commitment to developing open-source software and contributing to the technological advancements in blockchain data analysis. By fostering an ecosystem where data is accessible, and tools are transparent and collaborative, we empower our users to explore the full potential of blockchain technology. As we continue to innovate and expand our offerings, our focus remains on delivering solutions that drive insights, foster development, and support the growth of the blockchain community.</p>
+<section id="gold-layer" class="level2">
+<h2 class="anchored" data-anchor-id="gold-layer">Gold Layer:</h2>
+<p>Representing the pinnacle of data refinement, the Gold Layer contains datasets that are highly curated and performance-optimized for specific analytical use cases. Data in this layer is tailored to deliver actionable insights, supporting decision-making processes with precision and speed. The Gold Layer embodies the ultimate goal of data transformation within Ortege Lakehouse, offering users targeted, ready-to-use datasets for in-depth analysis.</p>
 </section>
-<section id="the-medallion-layer-architecture-of-ortege-lakehouse" class="level1">
-<h1>The Medallion Layer Architecture of Ortege Lakehouse</h1>
-<p>At the heart of Ortege Lakehouse’s innovative approach to blockchain data management and analytics is our unique Medallion Layer Architecture. This structured framework is meticulously designed to cater to various levels of data complexity and user needs, from raw blockchain transactions to highly optimized and use-case-specific datasets. The architecture is segmented into three distinct layers: Bronze, Silver, and Gold, each serving a unique purpose in the data transformation and analysis process.</p>
-<section id="bronze-layer-the-foundation-with-raw-data" class="level2">
-<h2 class="anchored" data-anchor-id="bronze-layer-the-foundation-with-raw-data">Bronze Layer: The Foundation with Raw Data</h2>
-<p>The <a href="../../content/lakehouse/bronze.html">Bronze Layer</a> forms the foundational bedrock of Ortege Lakehouse, containing the raw, unprocessed data directly ingested from multiple blockchains. Utilizing OrtegeETL, this layer captures a wide array of blockchain transactions and metadata, preserving the original integrity and granularity of the data. Ideal for users who need access to the most unadulterated form of blockchain data, the Bronze Layer offers a comprehensive snapshot of blockchain ecosystems in their native state.</p>
 </section>
-<section id="silver-layer-enhanced-readability-and-transformation" class="level2">
-<h2 class="anchored" data-anchor-id="silver-layer-enhanced-readability-and-transformation">Silver Layer: Enhanced Readability and Transformation</h2>
-<p>Building upon the raw data stored in the Bronze Layer, the <a href="../../content/lakehouse/silver.html">Silver Layer</a> introduces a series of transformations and enhancements to make the data more accessible and human-readable. This layer focuses on cleaning, structuring, and enriching the raw data, applying consistent schemas, and resolving common issues such as data normalization and deduplication. The Silver Layer is designed for users who require a balance between the raw detail of blockchain transactions and the convenience of pre-processed data, enabling more straightforward analysis and exploration.</p>
+<section id="naming-convention" class="level1">
+<h1>Naming Convention</h1>
+<p>To navigate the Medallion Architecture effectively, a consistent naming convention is employed across all layers, encapsulating key attributes of data entities:</p>
+<ul>
+<li><p>Type: Classifies the data entity (tbl for tables, vw for views, and mvw for materialized views), indicating its structure and purpose within the data ecosystem.</p></li>
+<li><p>Environment (Env): Identifies the operational stage of the data entity (dev for development, test for testing, and prod for production), facilitating environment-specific data management and access controls.</p></li>
+<li><p>Layer: Denotes the tier within the Medallion Architecture (br for Bronze, sl for Silver, and gld for Gold), reflecting the data’s processing stage and intended use case.</p></li>
+<li><p>Entity: Describes the content or function of the data entity, offering insights into its relevance and application.</p></li>
+</ul>
 </section>
-<section id="gold-layer-optimized-queries-and-focused-datasets" class="level2">
-<h2 class="anchored" data-anchor-id="gold-layer-optimized-queries-and-focused-datasets">Gold Layer: Optimized Queries and Focused Datasets</h2>
-<p>The pinnacle of the Medallion Layer Architecture, the <a href="../../content/lakehouse/gold.html">Gold Layer</a>, is where data meets performance and specificity. This layer includes datasets that have been further refined and optimized for specific use cases, themes, or queries. With a focus on performance, the Gold Layer offers pre-built queries, aggregated summaries, and analytical models tailored to particular areas of interest, such as market trends, transaction patterns, or network health indicators. This layer is perfect for users seeking the most efficient access to actionable insights, with data curated and optimized to support rapid analysis and decision-making.</p>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>The Medallion Architecture is a cornerstone of Ortege Lakehouse, providing a clear and effective framework for data management and analysis. By categorizing data into Bronze, Silver, and Gold layers, and employing a systematic naming convention, Ortege Lakehouse empowers users to harness the full potential of their data, from raw ingestion to advanced analytics. This tiered approach ensures that regardless of where data resides in the lifecycle, its value is maximized for all stakeholders involved.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
