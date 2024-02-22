@@ -42,6 +42,8 @@ website:
             file: content/lakehouse/silver.qmd
           - text: "Gold Layer"
             file: content/lakehouse/gold.qmd
+          - text: "API"
+            file: content/lakehouse/api.qmd
       - text: "OrtegeGPT"
         menu: 
           - text: "Overview"
