@@ -12,7 +12,7 @@ Welcome to the Ortege Lakehouse API documentation. Our APIs offer seamless, secu
 * **Customizable Data Access:** Tailor your data queries to meet the specific needs of your project, with the flexibility to access as much or as little data as required.
 * **Secure Authentication:** Connect to our APIs using a secure access key, ensuring your data queries and transfers are protected at every step.
 * **Scalable Solutions**: Our infrastructure is designed to scale with your needs, from small-scale data exploration to enterprise-level data processing.
-**Real-time Insights**: Run SQL queries in real-time to gain immediate insights from the latest data available in the Ortege Lakehouse.
+* **Real-time Insights**: Run SQL queries in real-time to gain immediate insights from the latest data available in the Ortege Lakehouse.
 
 # Getting Started
 ## Authentication
