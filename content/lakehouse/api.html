@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Ortege - Bronze Layer</title>
+<title>Ortege - API</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -178,22 +212,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction-to-the-bronze-layer-in-development" id="toc-introduction-to-the-bronze-layer-in-development" class="nav-link active" data-scroll-target="#introduction-to-the-bronze-layer-in-development">Introduction to the Bronze Layer in Development</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#features" id="toc-features" class="nav-link" data-scroll-target="#features">Features</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a>
   <ul class="collapse">
-  <li><a href="#data-fluidity-and-expectations" id="toc-data-fluidity-and-expectations" class="nav-link" data-scroll-target="#data-fluidity-and-expectations">Data Fluidity and Expectations</a></li>
-  <li><a href="#navigating-the-development-environment" id="toc-navigating-the-development-environment" class="nav-link" data-scroll-target="#navigating-the-development-environment">Navigating the Development Environment</a></li>
+  <li><a href="#authentication" id="toc-authentication" class="nav-link" data-scroll-target="#authentication">Authentication</a></li>
   </ul></li>
-  <li><a href="#bitcoin" id="toc-bitcoin" class="nav-link" data-scroll-target="#bitcoin">Bitcoin</a>
+  <li><a href="#api-reference" id="toc-api-reference" class="nav-link" data-scroll-target="#api-reference">API Reference</a>
   <ul class="collapse">
-  <li><a href="#tbl_dev_br_blocks" id="toc-tbl_dev_br_blocks" class="nav-link" data-scroll-target="#tbl_dev_br_blocks">tbl_dev_br_blocks</a></li>
-  <li><a href="#tbl_dev_br_transactions" id="toc-tbl_dev_br_transactions" class="nav-link" data-scroll-target="#tbl_dev_br_transactions">tbl_dev_br_transactions</a></li>
+  <li><a href="#query-data" id="toc-query-data" class="nav-link" data-scroll-target="#query-data">Query Data</a></li>
   </ul></li>
-  <li><a href="#stacks" id="toc-stacks" class="nav-link" data-scroll-target="#stacks">Stacks</a>
-  <ul class="collapse">
-  <li><a href="#tbl_dev_br_blocks-1" id="toc-tbl_dev_br_blocks-1" class="nav-link" data-scroll-target="#tbl_dev_br_blocks-1">tbl_dev_br_blocks</a></li>
-  <li><a href="#tbl_dev_br_transactions-1" id="toc-tbl_dev_br_transactions-1" class="nav-link" data-scroll-target="#tbl_dev_br_transactions-1">tbl_dev_br_transactions</a></li>
-  <li><a href="#tbl_dev_br_contracts" id="toc-tbl_dev_br_contracts" class="nav-link" data-scroll-target="#tbl_dev_br_contracts">tbl_dev_br_contracts</a></li>
-  </ul></li>
+  <li><a href="#data-management" id="toc-data-management" class="nav-link" data-scroll-target="#data-management">Data Management</a></li>
+  <li><a href="#security-and-permissions" id="toc-security-and-permissions" class="nav-link" data-scroll-target="#security-and-permissions">Security and Permissions</a></li>
+  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices">Best Practices</a></li>
+  <li><a href="#support" id="toc-support" class="nav-link" data-scroll-target="#support">Support</a></li>
   </ul>
 </nav>
     </div>
@@ -202,7 +234,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Bronze Layer</h1>
+<h1 class="title">API</h1>
 </div>
 
 
@@ -219,610 +251,84 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introduction-to-the-bronze-layer-in-development" class="level1">
-<h1>Introduction to the Bronze Layer in Development</h1>
-<p>As you embark on exploring and utilizing the Bronze Layer within Ortege Lakehouse, it is crucial to understand the dynamic nature of the data in our development (dev) environment. The Bronze Layer, designed to house raw, unprocessed data directly ingested from diverse sources, serves as the foundational bedrock for all subsequent data analysis and processing within Ortege Lakehouse. At this stage, our focus is on the development environment, which is characterized by rapid iterations and frequent updates.</p>
-<section id="data-fluidity-and-expectations" class="level2">
-<h2 class="anchored" data-anchor-id="data-fluidity-and-expectations">Data Fluidity and Expectations</h2>
-<p>In the development environment, data within the Bronze Layer is subject to change frequently. This fluidity is a natural and necessary part of the development process, allowing for the testing of new data sources, the refinement of ingestion processes, and the early detection of issues that could impact data quality or availability. Users interacting with the Bronze Layer in this environment should anticipate:</p>
+<section id="overview" class="level1">
+<h1>Overview</h1>
+<p>Welcome to the Ortege Lakehouse API documentation. Our APIs offer seamless, secure, and efficient access to the Ortege Lakehouse, empowering you to run SQL queries against a vast, curated dataset tailored to meet the evolving needs of your projects. This documentation is designed to guide you through using our APIs to access and manipulate data within the Ortege Lakehouse, ensuring you can harness the full potential of our platform to drive insights and innovation.</p>
+</section>
+<section id="features" class="level1">
+<h1>Features</h1>
 <ul>
-<li><p>Frequent Updates: Data may be added, modified, or removed as part of ongoing development efforts to enhance data accuracy, completeness, and relevance.</p></li>
-<li><p>Schema Evolution: The structure of datasets, including tables and views, may evolve as we refine our understanding of the data and its potential applications within Ortege Lakehouse.</p></li>
-<li><p>Variable Data Quality: While we strive for high data quality across all layers, the Bronze Layer in the dev environment may include data that is in the early stages of quality assurance and validation.</p></li>
+<li><strong>Customizable Data Access:</strong> Tailor your data queries to meet the specific needs of your project, with the flexibility to access as much or as little data as required.</li>
+<li><strong>Secure Authentication:</strong> Connect to our APIs using a secure access key, ensuring your data queries and transfers are protected at every step.</li>
+<li><strong>Scalable Solutions</strong>: Our infrastructure is designed to scale with your needs, from small-scale data exploration to enterprise-level data processing. <strong>Real-time Insights</strong>: Run SQL queries in real-time to gain immediate insights from the latest data available in the Ortege Lakehouse.</li>
 </ul>
 </section>
-<section id="navigating-the-development-environment" class="level2">
-<h2 class="anchored" data-anchor-id="navigating-the-development-environment">Navigating the Development Environment</h2>
-<p>To effectively navigate and leverage the Bronze Layer in the development environment, users are encouraged to:</p>
+<section id="getting-started" class="level1">
+<h1>Getting Started</h1>
+<section id="authentication" class="level2">
+<h2 class="anchored" data-anchor-id="authentication">Authentication</h2>
+<p>To begin using the Ortege Lakehouse APIs, you’ll need an API access key. Please reach out to christos@ortege.io in order to obtain an API key.</p>
+<p>Once you have your access key, you’re ready to make your first API call. Here’s a simple example to get you started:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Copy</span> code</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-X</span> POST <span class="at">-H</span> <span class="st">"Authorization: Bearer YOUR_ACCESS_KEY"</span> <span class="dt">\</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">-H</span> <span class="st">"Content-Type: application/json"</span> <span class="dt">\</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">-d</span> <span class="st">'{"sql": "SELECT * FROM your_dataset LIMIT 10"}'</span> <span class="dt">\</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>     https://api.ortege.ai/lakehouse/query</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Replace <code>YOUR_ACCESS_KEY</code> with your actual access key and your_dataset with the dataset you wish to query.</p>
+</section>
+</section>
+<section id="api-reference" class="level1">
+<h1>API Reference</h1>
+<section id="query-data" class="level2">
+<h2 class="anchored" data-anchor-id="query-data">Query Data</h2>
 <ul>
-<li><p>Stay Informed: Keep abreast of updates and changes by monitoring release notes, documentation updates, and communications from the development team.</p></li>
-<li><p>Embrace Experimentation: Use this opportunity to explore and experiment with the raw data available, understanding that the flexibility of the development environment is conducive to innovation and discovery.</p></li>
-<li><p>Provide Feedback: Your insights and feedback are invaluable as we iterate on data ingestion and processing techniques. Engage with our development team to share your experiences and suggestions.</p></li>
+<li>Endpoint: /lakehouse/query</li>
+<li>Method: POST</li>
+<li>Description: Run SQL queries against datasets in the Ortege Lakehouse.</li>
+<li>Request Body:
+<ul>
+<li><code>sql</code>: The SQL query string you wish to execute.</li>
+</ul></li>
+<li>Response: A JSON object containing the query results.</li>
 </ul>
 </section>
 </section>
-<section id="bitcoin" class="level1">
-<h1>Bitcoin</h1>
-<section id="tbl_dev_br_blocks" class="level2">
-<h2 class="anchored" data-anchor-id="tbl_dev_br_blocks">tbl_dev_br_blocks</h2>
-<table class="table">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 10%">
-<col style="width: 69%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>col_name</th>
-<th>data_type</th>
-<th>comment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>bits</td>
-<td>string</td>
-<td>The encoded form of the target threshold this block’s header hash must be less than or equal to.</td>
-</tr>
-<tr class="even">
-<td>chainwork</td>
-<td>string</td>
-<td>The total amount of work done on this block’s chain, in hexadecimal.</td>
-</tr>
-<tr class="odd">
-<td>coinbase</td>
-<td>string</td>
-<td>The transaction containing the miner’s reward and any fees paid by transactions included in this block.</td>
-</tr>
-<tr class="even">
-<td>date</td>
-<td>string</td>
-<td>The date and time when this block was mined.</td>
-</tr>
-<tr class="odd">
-<td>difficulty</td>
-<td>string</td>
-<td>The difficulty target for this block.</td>
-</tr>
-<tr class="even">
-<td>hash</td>
-<td>string</td>
-<td>The hash of this block’s header.</td>
-</tr>
-<tr class="odd">
-<td>height</td>
-<td>bigint</td>
-<td>The height of this block in the blockchain.</td>
-</tr>
-<tr class="even">
-<td>merkle_root</td>
-<td>string</td>
-<td>The Merkle root of the transactions included in this block.</td>
-</tr>
-<tr class="odd">
-<td>mint_reward</td>
-<td>double</td>
-<td>The total amount of new bitcoins generated by mining this block.</td>
-</tr>
-<tr class="even">
-<td>nonce</td>
-<td>string</td>
-<td>A random number used to try to find a valid block hash.</td>
-</tr>
-<tr class="odd">
-<td>previous_block_hash</td>
-<td>string</td>
-<td>The hash of the previous block in the blockchain.</td>
-</tr>
-<tr class="even">
-<td>size</td>
-<td>bigint</td>
-<td>The size of this block in bytes.</td>
-</tr>
-<tr class="odd">
-<td>stripped_size</td>
-<td>bigint</td>
-<td>The size of this block without witness data in bytes.</td>
-</tr>
-<tr class="even">
-<td>time</td>
-<td>timestamp</td>
-<td>The Unix timestamp when this block was mined.</td>
-</tr>
-<tr class="odd">
-<td>total_fees</td>
-<td>double</td>
-<td>The total amount of fees paid by transactions included in this block.</td>
-</tr>
-<tr class="even">
-<td>total_reward</td>
-<td>double</td>
-<td>The total amount of bitcoins generated by mining this block, including both the mint reward and transaction fees.</td>
-</tr>
-<tr class="odd">
-<td>transaction_count</td>
-<td>bigint</td>
-<td>The number of transactions included in this block.</td>
-</tr>
-<tr class="even">
-<td>weight</td>
-<td>bigint</td>
-<td>The weight of this block, used to calculate transaction fees.</td>
-</tr>
-</tbody>
-</table>
+<section id="data-management" class="level1">
+<h1>Data Management</h1>
+<ul>
+<li>Endpoint: /lakehouse/data</li>
+<li>Method: POST</li>
+<li>Description: Upload or update datasets within the Ortege Lakehouse.</li>
+<li>Request Body:
+<ul>
+<li><code>data</code>: The data to be uploaded or updated.</li>
+<li><code>metadata</code>: Optional metadata for the dataset.</li>
+</ul></li>
+<li>Response: A JSON object confirming the successful upload or update of data.</li>
+</ul>
 </section>
-<section id="tbl_dev_br_transactions" class="level2">
-<h2 class="anchored" data-anchor-id="tbl_dev_br_transactions">tbl_dev_br_transactions</h2>
-<table class="table">
-<colgroup>
-<col style="width: 13%">
-<col style="width: 8%">
-<col style="width: 77%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>col_name</th>
-<th>data_type</th>
-<th>comment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>block_date</td>
-<td>date</td>
-<td>The date when the block was added to the blockchain</td>
-</tr>
-<tr class="even">
-<td>block_hash</td>
-<td>string</td>
-<td>The unique identifier of the block</td>
-</tr>
-<tr class="odd">
-<td>block_height</td>
-<td>bigint</td>
-<td>The height of the block in the blockchain</td>
-</tr>
-<tr class="even">
-<td>block_time</td>
-<td>timestamp</td>
-<td>The time when the block was added to the blockchain</td>
-</tr>
-<tr class="odd">
-<td>coinbase</td>
-<td>string</td>
-<td>The address that received the block reward for mining the block</td>
-</tr>
-<tr class="even">
-<td>fee</td>
-<td>bigint</td>
-<td>The transaction fee paid by the sender</td>
-</tr>
-<tr class="odd">
-<td>hex</td>
-<td>string</td>
-<td>The hexadecimal representation of the transaction</td>
-</tr>
-<tr class="even">
-<td>id</td>
-<td>string</td>
-<td>The unique identifier of the transaction</td>
-</tr>
-<tr class="odd">
-<td>index</td>
-<td>bigint</td>
-<td>The index of the transaction in the block</td>
-</tr>
-<tr class="even">
-<td>input_count</td>
-<td>bigint</td>
-<td>The number of inputs in the transaction</td>
-</tr>
-<tr class="odd">
-<td>input_value</td>
-<td>bigint</td>
-<td>The total value of all inputs in the transaction</td>
-</tr>
-<tr class="even">
-<td>inputs</td>
-<td>array</td>
-<td>An array of input objects containing information about each input in the transaction</td>
-</tr>
-<tr class="odd">
-<td>is_coinbase</td>
-<td>boolean</td>
-<td>A boolean indicating whether the transaction is a coinbase transaction</td>
-</tr>
-<tr class="even">
-<td>lock_time</td>
-<td>bigint</td>
-<td>The lock time of the transaction</td>
-</tr>
-<tr class="odd">
-<td>output_count</td>
-<td>bigint</td>
-<td>The number of outputs in the transaction</td>
-</tr>
-<tr class="even">
-<td>output_value</td>
-<td>bigint</td>
-<td>The total value of all outputs in the transaction</td>
-</tr>
-<tr class="odd">
-<td>outputs</td>
-<td>array</td>
-<td>An array of output objects containing information about each output in the transaction</td>
-</tr>
-<tr class="even">
-<td>size</td>
-<td>bigint</td>
-<td>The size of the transaction in bytes</td>
-</tr>
-<tr class="odd">
-<td>version</td>
-<td>bigint</td>
-<td>The version number of the transaction</td>
-</tr>
-<tr class="even">
-<td>virtual_size</td>
-<td>bigint</td>
-<td>The virtual size of the transaction</td>
-</tr>
-</tbody>
-</table>
+<section id="security-and-permissions" class="level1">
+<h1>Security and Permissions</h1>
+<ul>
+<li>Endpoint: /lakehouse/security</li>
+<li>Method: GET</li>
+<li>Description: Retrieve information about the current security settings and permissions for your API key.</li>
+<li>Response: A JSON object detailing the security settings and permissions associated with your API key.</li>
+</ul>
 </section>
+<section id="best-practices" class="level1">
+<h1>Best Practices</h1>
+<ul>
+<li><strong>Secure Your API Key:</strong> Treat your API key as you would a password. Do not share it or expose it in client-side code.</li>
+<li><strong>Optimize Queries:</strong> To ensure efficient use of resources, optimize your SQL queries before execution.</li>
+<li><strong>Monitor Usage</strong>: Keep an eye on your API usage to ensure it aligns with your project’s needs and adjust as necessary.</li>
+</ul>
 </section>
-<section id="stacks" class="level1">
-<h1>Stacks</h1>
-<section id="tbl_dev_br_blocks-1" class="level2">
-<h2 class="anchored" data-anchor-id="tbl_dev_br_blocks-1">tbl_dev_br_blocks</h2>
-<table class="table">
-<colgroup>
-<col style="width: 10%">
-<col style="width: 4%">
-<col style="width: 85%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>col_name</th>
-<th>data_type</th>
-<th>comment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>canonical</td>
-<td>boolean</td>
-<td>Canonical Blocks are the building blocks that contribute to the continuous, unbroken chain of blocks in the blockchain, each linking to its predecessor, forming the indelible ledger that blockchain is celebrated for. You expect this to be true.</td>
-</tr>
-<tr class="even">
-<td>number</td>
-<td>bigint</td>
-<td>stacks block number</td>
-</tr>
-<tr class="odd">
-<td>hash</td>
-<td>string</td>
-<td>A unique identifier for each block, generated by applying a cryptographic hash function to the block’s data</td>
-</tr>
-<tr class="even">
-<td>index_block_hash</td>
-<td>string</td>
-<td>The hash of the index block.</td>
-</tr>
-<tr class="odd">
-<td>parent_block_hash</td>
-<td>string</td>
-<td>The hash of the parent block.</td>
-</tr>
-<tr class="even">
-<td>timestamp</td>
-<td>bigint</td>
-<td>Timestamp of relevant block. If you use <code>to_timestamp(timestamp)</code> SQL code, you will get the actual date-time.</td>
-</tr>
-<tr class="odd">
-<td>burn_block_hash</td>
-<td>string</td>
-<td>Corresponding Bitcoin block number’s hash. The block that is written in Bitcoin block’s hash.</td>
-</tr>
-<tr class="even">
-<td>burn_block_height</td>
-<td>bigint</td>
-<td>Corresponding Bitcoin block number. The block that is written in a Bitcoin block.</td>
-</tr>
-<tr class="odd">
-<td>miner_txid</td>
-<td>string</td>
-<td>Corresponding transaction burned on Bitcoin block for the stacks block. Every stacks block is a transaction on Bitcoin. And this is that tx’s id. If you remove the <code>0x</code> from the beginning, you will get the Bitcoin tx id.</td>
-</tr>
-<tr class="even">
-<td>transaction_count</td>
-<td>bigint</td>
-<td>Count of each transaction in the relevant block.</td>
-</tr>
-<tr class="odd">
-<td>execution_cost_read_count</td>
-<td>bigint</td>
-<td>Captures the number of independent reads performed on the underlying data store.</td>
-</tr>
-<tr class="even">
-<td>execution_cost_read_length</td>
-<td>bigint</td>
-<td>The number of bytes read from the underlying data store.</td>
-</tr>
-<tr class="odd">
-<td>execution_cost_runtime</td>
-<td>bigint</td>
-<td>Captures the number of cycles that a single processor would require to process the Clarity block. This is a unitless metric, meant to provide a basis for comparison between different Clarity code blocks.</td>
-</tr>
-<tr class="even">
-<td>execution_cost_write_count</td>
-<td>bigint</td>
-<td>Captures the number of independent writes performed on the underlying data store (see SIP-004).</td>
-</tr>
-<tr class="odd">
-<td>execution_cost_write_length</td>
-<td>bigint</td>
-<td>The number of bytes written to the underlying data store.</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="tbl_dev_br_transactions-1" class="level2">
-<h2 class="anchored" data-anchor-id="tbl_dev_br_transactions-1">tbl_dev_br_transactions</h2>
-<table class="table">
-<colgroup>
-<col style="width: 13%">
-<col style="width: 10%">
-<col style="width: 75%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>col_name</th>
-<th>data_type</th>
-<th>comment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>hash</td>
-<td>string</td>
-<td>Unique identifier for the transaction</td>
-</tr>
-<tr class="even">
-<td>nonce</td>
-<td>bigint</td>
-<td>Random number used in mining process</td>
-</tr>
-<tr class="odd">
-<td>fee_rate</td>
-<td>string</td>
-<td>Fee rate for the transaction</td>
-</tr>
-<tr class="even">
-<td>sender_address</td>
-<td>string</td>
-<td>Address of the sender</td>
-</tr>
-<tr class="odd">
-<td>sponsored</td>
-<td>boolean</td>
-<td>Boolean indicating if the transaction is sponsored</td>
-</tr>
-<tr class="even">
-<td>post_condition_mode</td>
-<td>string</td>
-<td>Mode for post-conditions</td>
-</tr>
-<tr class="odd">
-<td>post_conditions</td>
-<td>array<struct></struct></td>
-<td>Array of post-conditions</td>
-</tr>
-<tr class="even">
-<td>anchor_mode</td>
-<td>string</td>
-<td>Mode for anchoring</td>
-</tr>
-<tr class="odd">
-<td>is_unanchored</td>
-<td>boolean</td>
-<td>Boolean indicating if the transaction is unanchored</td>
-</tr>
-<tr class="even">
-<td>parent_block_hash</td>
-<td>string</td>
-<td>Hash of the parent block</td>
-</tr>
-<tr class="odd">
-<td>block_hash</td>
-<td>string</td>
-<td>Hash of the block containing the transaction</td>
-</tr>
-<tr class="even">
-<td>block_number</td>
-<td>bigint</td>
-<td>Block number containing the transaction</td>
-</tr>
-<tr class="odd">
-<td>block_timestamp</td>
-<td>bigint</td>
-<td>Timestamp of the block containing the transaction</td>
-</tr>
-<tr class="even">
-<td>parent_burn_block_time</td>
-<td>bigint</td>
-<td>Timestamp of the parent burn block</td>
-</tr>
-<tr class="odd">
-<td>canonical</td>
-<td>boolean</td>
-<td>Boolean indicating if the block is canonical</td>
-</tr>
-<tr class="even">
-<td>tx_index</td>
-<td>bigint</td>
-<td>Index of the transaction within the block</td>
-</tr>
-<tr class="odd">
-<td>tx_status</td>
-<td>string</td>
-<td>Status of the transaction</td>
-</tr>
-<tr class="even">
-<td>tx_result</td>
-<td>struct</td>
-<td>Result of the transaction</td>
-</tr>
-<tr class="odd">
-<td>microblock_hash</td>
-<td>string</td>
-<td>Hash of the microblock containing the transaction</td>
-</tr>
-<tr class="even">
-<td>microblock_sequence</td>
-<td>bigint</td>
-<td>Sequence number of the microblock containing the transaction</td>
-</tr>
-<tr class="odd">
-<td>microblock_canonical</td>
-<td>boolean</td>
-<td>Boolean indicating if the microblock is canonical (Field marked as ‘null’ suggests missing information or not applicable.)</td>
-</tr>
-<tr class="even">
-<td>event_count</td>
-<td>bigint</td>
-<td>Count of events (Field marked as ‘null’ suggests missing information or not applicable.)</td>
-</tr>
-<tr class="odd">
-<td>events</td>
-<td>array<struct></struct></td>
-<td>Array of events (Field marked as ‘null’ suggests missing information or not applicable.)</td>
-</tr>
-<tr class="even">
-<td>execution_cost_read_count</td>
-<td>bigint</td>
-<td>Number of independent reads performed on the underlying data store (Field marked as ‘null’ suggests missing information or not applicable.)</td>
-</tr>
-<tr class="odd">
-<td>execution_cost_read_length</td>
-<td>bigint</td>
-<td>Number of bytes read from the underlying data store (Field marked as ‘null’ suggests missing information or not applicable.)</td>
-</tr>
-<tr class="even">
-<td>execution_cost_runtime</td>
-<td>bigint</td>
-<td>Number of cycles for processing (Field marked as ‘null’ suggests missing information or not applicable.)</td>
-</tr>
-<tr class="odd">
-<td>execution_cost_write_count</td>
-<td>bigint</td>
-<td>Number of independent writes performed on the underlying data store (Field marked as ‘null’ suggests missing information or not applicable.)</td>
-</tr>
-<tr class="even">
-<td>execution_cost_write_length</td>
-<td>bigint</td>
-<td>Number of bytes written to the underlying data store (Field marked as ‘null’ suggests missing information or not applicable.)</td>
-</tr>
-<tr class="odd">
-<td>tx_type</td>
-<td>string</td>
-<td>Type of the transaction (Field marked as ‘null’ suggests missing information or not applicable.)</td>
-</tr>
-<tr class="even">
-<td>token_transfer</td>
-<td>struct</td>
-<td>Details of token transfer if applicable (Field marked as ‘null’ suggests missing information or not applicable.)</td>
-</tr>
-<tr class="odd">
-<td>coinbase_payload</td>
-<td>struct</td>
-<td>Data for coinbase transactions (Field marked as ‘null’ suggests missing information or not applicable.)</td>
-</tr>
-<tr class="even">
-<td>smart_contract</td>
-<td>struct</td>
-<td>Details of the smart contract if applicable (Field marked as ‘null’ suggests missing information or not applicable.)</td>
-</tr>
-<tr class="odd">
-<td>contract_call</td>
-<td>struct</td>
-<td>Details of the contract call if applicable (Field marked as ‘null’ suggests missing information or not applicable.)</td>
-</tr>
-<tr class="even">
-<td>poison_microblock</td>
-<td>map&lt;string,string&gt;</td>
-<td>Information on poisoned microblock if applicable (Field marked as ‘null’ suggests missing information or not applicable.)</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="tbl_dev_br_contracts" class="level2">
-<h2 class="anchored" data-anchor-id="tbl_dev_br_contracts">tbl_dev_br_contracts</h2>
-<table class="table">
-<colgroup>
-<col style="width: 7%">
-<col style="width: 4%">
-<col style="width: 88%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>col_name</th>
-<th>data_type</th>
-<th>comment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>tx_hash</td>
-<td>string</td>
-<td>Transaction hash of the contract. Try searching it in explorer.hiro.so</td>
-</tr>
-<tr class="even">
-<td>canonical</td>
-<td>boolean</td>
-<td>Canonical Blocks are the building blocks that contribute to the continuous, unbroken chain of blocks in the blockchain, each linking to its predecessor, forming the indelible ledger that blockchain is celebrated for. You expect this to be true.</td>
-</tr>
-<tr class="odd">
-<td>address</td>
-<td>string</td>
-<td>Address of the contract.</td>
-</tr>
-<tr class="even">
-<td>block_number</td>
-<td>bigint</td>
-<td>In which block this contract recorded in.</td>
-</tr>
-<tr class="odd">
-<td>clarity_version</td>
-<td>bigint</td>
-<td>Clarity version of the contract.</td>
-</tr>
-<tr class="even">
-<td>source_code</td>
-<td>string</td>
-<td>The source code of the contract.</td>
-</tr>
-<tr class="odd">
-<td>abi</td>
-<td>string</td>
-<td>The ABI (Application Binary Interface) of the contract.</td>
-</tr>
-<tr class="even">
-<td>is_stx20</td>
-<td>boolean</td>
-<td>Indicates whether the contract is a Stacks 2.0 token (STX20).</td>
-</tr>
-<tr class="odd">
-<td>is_nft</td>
-<td>boolean</td>
-<td>Indicates whether the contract is a non-fungible token (NFT).</td>
-</tr>
-</tbody>
-</table>
+<section id="support" class="level1">
+<h1>Support</h1>
+<p>Should you require assistance or have any questions, please visit our <a href="https://discord.gg/ortege">Discord</a> or <a href="mailto:christos@ortege.io">contact our support team</a>. We’re here to help you make the most of the Ortege Lakehouse.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
