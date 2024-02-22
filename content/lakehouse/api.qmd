@@ -1,0 +1,63 @@
+---
+title: "API"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+# Overview
+Welcome to the Ortege Lakehouse API documentation. Our APIs offer seamless, secure, and efficient access to the Ortege Lakehouse, empowering you to run SQL queries against a vast, curated dataset tailored to meet the evolving needs of your projects. This documentation is designed to guide you through using our APIs to access and manipulate data within the Ortege Lakehouse, ensuring you can harness the full potential of our platform to drive insights and innovation.
+
+# Features
+* **Customizable Data Access:** Tailor your data queries to meet the specific needs of your project, with the flexibility to access as much or as little data as required.
+* **Secure Authentication:** Connect to our APIs using a secure access key, ensuring your data queries and transfers are protected at every step.
+* **Scalable Solutions**: Our infrastructure is designed to scale with your needs, from small-scale data exploration to enterprise-level data processing.
+**Real-time Insights**: Run SQL queries in real-time to gain immediate insights from the latest data available in the Ortege Lakehouse.
+
+# Getting Started
+## Authentication
+To begin using the Ortege Lakehouse APIs, you'll need an API access key. Please reach out to christos@ortege.io in order to obtain an API key.
+
+Once you have your access key, you're ready to make your first API call. Here's a simple example to get you started:
+
+```bash
+Copy code
+curl -X POST -H "Authorization: Bearer YOUR_ACCESS_KEY" \
+     -H "Content-Type: application/json" \
+     -d '{"sql": "SELECT * FROM your_dataset LIMIT 10"}' \
+     https://api.ortege.ai/lakehouse/query
+```
+
+Replace `YOUR_ACCESS_KEY` with your actual access key and your_dataset with the dataset you wish to query.
+
+# API Reference
+## Query Data
+* Endpoint: /lakehouse/query
+* Method: POST
+* Description: Run SQL queries against datasets in the Ortege Lakehouse.
+* Request Body:
+  * `sql`: The SQL query string you wish to execute.
+* Response: A JSON object containing the query results.
+
+# Data Management
+* Endpoint: /lakehouse/data
+* Method: POST
+* Description: Upload or update datasets within the Ortege Lakehouse.
+* Request Body:
+  * `data`: The data to be uploaded or updated.
+  * `metadata`: Optional metadata for the dataset.
+* Response: A JSON object confirming the successful upload or update of data.
+
+# Security and Permissions
+* Endpoint: /lakehouse/security
+* Method: GET
+* Description: Retrieve information about the current security settings and permissions for your API key.
+* Response: A JSON object detailing the security settings and permissions associated with your API key.
+
+# Best Practices
+* **Secure Your API Key:** Treat your API key as you would a password. Do not share it or expose it in client-side code.
+* **Optimize Queries:** To ensure efficient use of resources, optimize your SQL queries before execution.
+* **Monitor Usage**: Keep an eye on your API usage to ensure it aligns with your project's needs and adjust as necessary.
+
+# Support
+Should you require assistance or have any questions, please visit our [Discord](https://discord.gg/ortege) or [contact our support team](mailto:christos@ortege.io). We're here to help you make the most of the Ortege Lakehouse.
