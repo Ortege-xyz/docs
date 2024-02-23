@@ -6,3 +6,48 @@ format:
     html-math-method: katex
 ---
 
+# Stacks
+The Silver Layer in the Stacks ecosystem serves as a crucial intermediary layer that enriches raw blockchain data with meaningful metadata, facilitating deeper insights and analysis. This layer particularly focuses on metadata about all tokens compliant with the SIP010 standard, STX20 tokens and individual decentralized application (dApp) activities through smart contract interactions. Below are the details of the views included in the Silver Layer for Stacks, highlighting the comprehensive metadata and activity records.
+
+## vw_dev_sl_sip10_tokens
+The vw_dev_sl_sip10_tokens view provides metadata about all tokens that comply with the SIP010 Fungible Token standard. This includes critical information such as the token address and its decimal precision, which is essential for accurately representing token quantities and facilitating token-related operations.
+
+| Column    | Description |
+|-----------|-------------|
+| address   | address of the SIP010 token        |
+| decimals  | the amount of decimals of the token            |
+
+## vw_dev_sl_stx20
+The vw_dev_sl_stx20 view captures transactions involving STX20 tokens, including minting, deploying, and transferring operations. It includes transaction identifiers, participant addresses, transaction dates, and operation types, among other details. This view is vital for tracking STX20 token movements and understanding their supply dynamics.
+
+| Column             | Description                       |
+|--------------------|-----------------------------------|
+| hash               | Unique identifier for a transaction (varchar) |
+| sender_address     | Address of the sender (varchar)   |
+| fee_rate           | Transaction fee rate (varchar)    |
+| recipient_address  | Address of the recipient (varchar)|
+| stx_paid           | Amount of STX paid (varchar)      |
+| date               | Date of the transaction (date)    |
+| memo_text          | Text of the memo field (varchar)  |
+| STX_operation      | Type of operation (mint, deploy, or transfer) (enum) |
+| stx20_ticker       | Ticker symbol for the token (varchar) |
+| amount             | Amount of tokens (varchar)        |
+| total_supply       | Total supply of tokens (varchar)  |
+| limit_per_mint     | Limit per mint operation (varchar)|
+
+## vw_dev_sl_dapp_alex_swap
+The vw_dev_sl_dapp_alex_swap view provides a comprehensive look into the smart contract activity of the ALEX dApp, showcasing token swaps. It includes transaction timestamps, block numbers, contract identifiers, and detailed function arguments, facilitating an in-depth analysis of dApp interactions on the Stacks blockchain.
+
+| Column          | Description                        |
+|-----------------|------------------------------------|
+| block_timestamp | Timestamp of the block (datetime)  |
+| block_number    | Number of the block (bigint)       |
+| hash            | Unique identifier for a transaction (varchar) |
+| sender_address  | Address of the sender (varchar)    |
+| contract_id     | Identifier of the contract (varchar) |
+| function_name   | Name of the function called (varchar) |
+| function_args   | Arguments passed to the function (struct) |
+| tokenA          | Identifier for token A (varchar)   |
+| tokenB          | Identifier for token B (varchar)   |
+| tokenAOut       | Amount of token A output (bigint)  |
+| tokenBIn        | Amount of token B input (varchar)  |
