@@ -178,7 +178,18 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#stacks" id="toc-stacks" class="nav-link active" data-scroll-target="#stacks">Stacks</a>
+  <ul class="collapse">
+  <li><a href="#vw_dev_sl_sip10_tokens" id="toc-vw_dev_sl_sip10_tokens" class="nav-link" data-scroll-target="#vw_dev_sl_sip10_tokens">vw_dev_sl_sip10_tokens</a></li>
+  <li><a href="#vw_dev_sl_stx20" id="toc-vw_dev_sl_stx20" class="nav-link" data-scroll-target="#vw_dev_sl_stx20">vw_dev_sl_stx20</a></li>
+  <li><a href="#vw_dev_sl_dapp_alex_swap" id="toc-vw_dev_sl_dapp_alex_swap" class="nav-link" data-scroll-target="#vw_dev_sl_dapp_alex_swap">vw_dev_sl_dapp_alex_swap</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -202,8 +213,158 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="stacks" class="level1">
+<h1>Stacks</h1>
+<p>The Silver Layer in the Stacks ecosystem serves as a crucial intermediary layer that enriches raw blockchain data with meaningful metadata, facilitating deeper insights and analysis. This layer particularly focuses on metadata about all tokens compliant with the SIP010 standard, STX20 tokens and individual decentralized application (dApp) activities through smart contract interactions. Below are the details of the views included in the Silver Layer for Stacks, highlighting the comprehensive metadata and activity records.</p>
+<section id="vw_dev_sl_sip10_tokens" class="level2">
+<h2 class="anchored" data-anchor-id="vw_dev_sl_sip10_tokens">vw_dev_sl_sip10_tokens</h2>
+<p>The vw_dev_sl_sip10_tokens view provides metadata about all tokens that comply with the SIP010 Fungible Token standard. This includes critical information such as the token address and its decimal precision, which is essential for accurately representing token quantities and facilitating token-related operations.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>address</td>
+<td>address of the SIP010 token</td>
+</tr>
+<tr class="even">
+<td>decimals</td>
+<td>the amount of decimals of the token</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="vw_dev_sl_stx20" class="level2">
+<h2 class="anchored" data-anchor-id="vw_dev_sl_stx20">vw_dev_sl_stx20</h2>
+<p>The vw_dev_sl_stx20 view captures transactions involving STX20 tokens, including minting, deploying, and transferring operations. It includes transaction identifiers, participant addresses, transaction dates, and operation types, among other details. This view is vital for tracking STX20 token movements and understanding their supply dynamics.</p>
+<table class="table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 63%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>hash</td>
+<td>Unique identifier for a transaction (varchar)</td>
+</tr>
+<tr class="even">
+<td>sender_address</td>
+<td>Address of the sender (varchar)</td>
+</tr>
+<tr class="odd">
+<td>fee_rate</td>
+<td>Transaction fee rate (varchar)</td>
+</tr>
+<tr class="even">
+<td>recipient_address</td>
+<td>Address of the recipient (varchar)</td>
+</tr>
+<tr class="odd">
+<td>stx_paid</td>
+<td>Amount of STX paid (varchar)</td>
+</tr>
+<tr class="even">
+<td>date</td>
+<td>Date of the transaction (date)</td>
+</tr>
+<tr class="odd">
+<td>memo_text</td>
+<td>Text of the memo field (varchar)</td>
+</tr>
+<tr class="even">
+<td>STX_operation</td>
+<td>Type of operation (mint, deploy, or transfer) (enum)</td>
+</tr>
+<tr class="odd">
+<td>stx20_ticker</td>
+<td>Ticker symbol for the token (varchar)</td>
+</tr>
+<tr class="even">
+<td>amount</td>
+<td>Amount of tokens (varchar)</td>
+</tr>
+<tr class="odd">
+<td>total_supply</td>
+<td>Total supply of tokens (varchar)</td>
+</tr>
+<tr class="even">
+<td>limit_per_mint</td>
+<td>Limit per mint operation (varchar)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="vw_dev_sl_dapp_alex_swap" class="level2">
+<h2 class="anchored" data-anchor-id="vw_dev_sl_dapp_alex_swap">vw_dev_sl_dapp_alex_swap</h2>
+<p>The vw_dev_sl_dapp_alex_swap view provides a comprehensive look into the smart contract activity of the ALEX dApp, showcasing token swaps. It includes transaction timestamps, block numbers, contract identifiers, and detailed function arguments, facilitating an in-depth analysis of dApp interactions on the Stacks blockchain.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>block_timestamp</td>
+<td>Timestamp of the block (datetime)</td>
+</tr>
+<tr class="even">
+<td>block_number</td>
+<td>Number of the block (bigint)</td>
+</tr>
+<tr class="odd">
+<td>hash</td>
+<td>Unique identifier for a transaction (varchar)</td>
+</tr>
+<tr class="even">
+<td>sender_address</td>
+<td>Address of the sender (varchar)</td>
+</tr>
+<tr class="odd">
+<td>contract_id</td>
+<td>Identifier of the contract (varchar)</td>
+</tr>
+<tr class="even">
+<td>function_name</td>
+<td>Name of the function called (varchar)</td>
+</tr>
+<tr class="odd">
+<td>function_args</td>
+<td>Arguments passed to the function (struct)</td>
+</tr>
+<tr class="even">
+<td>tokenA</td>
+<td>Identifier for token A (varchar)</td>
+</tr>
+<tr class="odd">
+<td>tokenB</td>
+<td>Identifier for token B (varchar)</td>
+</tr>
+<tr class="even">
+<td>tokenAOut</td>
+<td>Amount of token A output (bigint)</td>
+</tr>
+<tr class="odd">
+<td>tokenBIn</td>
+<td>Amount of token B input (varchar)</td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

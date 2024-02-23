@@ -42,6 +42,34 @@
     "text": "Gold Layer:\nRepresenting the pinnacle of data refinement, the Gold Layer contains datasets that are highly curated and performance-optimized for specific analytical use cases. Data in this layer is tailored to deliver actionable insights, supporting decision-making processes with precision and speed. The Gold Layer embodies the ultimate goal of data transformation within Ortege Lakehouse, offering users targeted, ready-to-use datasets for in-depth analysis."
   },
   {
+    "objectID": "content/lakehouse/silver.html",
+    "href": "content/lakehouse/silver.html",
+    "title": "Silver Layer",
+    "section": "",
+    "text": "The Silver Layer in the Stacks ecosystem serves as a crucial intermediary layer that enriches raw blockchain data with meaningful metadata, facilitating deeper insights and analysis. This layer particularly focuses on metadata about all tokens compliant with the SIP010 standard, STX20 tokens and individual decentralized application (dApp) activities through smart contract interactions. Below are the details of the views included in the Silver Layer for Stacks, highlighting the comprehensive metadata and activity records.\n\n\nThe vw_dev_sl_sip10_tokens view provides metadata about all tokens that comply with the SIP010 Fungible Token standard. This includes critical information such as the token address and its decimal precision, which is essential for accurately representing token quantities and facilitating token-related operations.\n\n\n\nColumn\nDescription\n\n\n\n\naddress\naddress of the SIP010 token\n\n\ndecimals\nthe amount of decimals of the token\n\n\n\n\n\n\nThe vw_dev_sl_stx20 view captures transactions involving STX20 tokens, including minting, deploying, and transferring operations. It includes transaction identifiers, participant addresses, transaction dates, and operation types, among other details. This view is vital for tracking STX20 token movements and understanding their supply dynamics.\n\n\n\n\n\n\n\nColumn\nDescription\n\n\n\n\nhash\nUnique identifier for a transaction (varchar)\n\n\nsender_address\nAddress of the sender (varchar)\n\n\nfee_rate\nTransaction fee rate (varchar)\n\n\nrecipient_address\nAddress of the recipient (varchar)\n\n\nstx_paid\nAmount of STX paid (varchar)\n\n\ndate\nDate of the transaction (date)\n\n\nmemo_text\nText of the memo field (varchar)\n\n\nSTX_operation\nType of operation (mint, deploy, or transfer) (enum)\n\n\nstx20_ticker\nTicker symbol for the token (varchar)\n\n\namount\nAmount of tokens (varchar)\n\n\ntotal_supply\nTotal supply of tokens (varchar)\n\n\nlimit_per_mint\nLimit per mint operation (varchar)\n\n\n\n\n\n\nThe vw_dev_sl_dapp_alex_swap view provides a comprehensive look into the smart contract activity of the ALEX dApp, showcasing token swaps. It includes transaction timestamps, block numbers, contract identifiers, and detailed function arguments, facilitating an in-depth analysis of dApp interactions on the Stacks blockchain.\n\n\n\nColumn\nDescription\n\n\n\n\nblock_timestamp\nTimestamp of the block (datetime)\n\n\nblock_number\nNumber of the block (bigint)\n\n\nhash\nUnique identifier for a transaction (varchar)\n\n\nsender_address\nAddress of the sender (varchar)\n\n\ncontract_id\nIdentifier of the contract (varchar)\n\n\nfunction_name\nName of the function called (varchar)\n\n\nfunction_args\nArguments passed to the function (struct)\n\n\ntokenA\nIdentifier for token A (varchar)\n\n\ntokenB\nIdentifier for token B (varchar)\n\n\ntokenAOut\nAmount of token A output (bigint)\n\n\ntokenBIn\nAmount of token B input (varchar)"
+  },
+  {
+    "objectID": "content/lakehouse/silver.html#vw_dev_sl_sip10_tokens",
+    "href": "content/lakehouse/silver.html#vw_dev_sl_sip10_tokens",
+    "title": "Silver Layer",
+    "section": "",
+    "text": "The vw_dev_sl_sip10_tokens view provides metadata about all tokens that comply with the SIP010 Fungible Token standard. This includes critical information such as the token address and its decimal precision, which is essential for accurately representing token quantities and facilitating token-related operations.\n\n\n\nColumn\nDescription\n\n\n\n\naddress\naddress of the SIP010 token\n\n\ndecimals\nthe amount of decimals of the token"
+  },
+  {
+    "objectID": "content/lakehouse/silver.html#vw_dev_sl_stx20",
+    "href": "content/lakehouse/silver.html#vw_dev_sl_stx20",
+    "title": "Silver Layer",
+    "section": "",
+    "text": "The vw_dev_sl_stx20 view captures transactions involving STX20 tokens, including minting, deploying, and transferring operations. It includes transaction identifiers, participant addresses, transaction dates, and operation types, among other details. This view is vital for tracking STX20 token movements and understanding their supply dynamics.\n\n\n\n\n\n\n\nColumn\nDescription\n\n\n\n\nhash\nUnique identifier for a transaction (varchar)\n\n\nsender_address\nAddress of the sender (varchar)\n\n\nfee_rate\nTransaction fee rate (varchar)\n\n\nrecipient_address\nAddress of the recipient (varchar)\n\n\nstx_paid\nAmount of STX paid (varchar)\n\n\ndate\nDate of the transaction (date)\n\n\nmemo_text\nText of the memo field (varchar)\n\n\nSTX_operation\nType of operation (mint, deploy, or transfer) (enum)\n\n\nstx20_ticker\nTicker symbol for the token (varchar)\n\n\namount\nAmount of tokens (varchar)\n\n\ntotal_supply\nTotal supply of tokens (varchar)\n\n\nlimit_per_mint\nLimit per mint operation (varchar)"
+  },
+  {
+    "objectID": "content/lakehouse/silver.html#vw_dev_sl_dapp_alex_swap",
+    "href": "content/lakehouse/silver.html#vw_dev_sl_dapp_alex_swap",
+    "title": "Silver Layer",
+    "section": "",
+    "text": "The vw_dev_sl_dapp_alex_swap view provides a comprehensive look into the smart contract activity of the ALEX dApp, showcasing token swaps. It includes transaction timestamps, block numbers, contract identifiers, and detailed function arguments, facilitating an in-depth analysis of dApp interactions on the Stacks blockchain.\n\n\n\nColumn\nDescription\n\n\n\n\nblock_timestamp\nTimestamp of the block (datetime)\n\n\nblock_number\nNumber of the block (bigint)\n\n\nhash\nUnique identifier for a transaction (varchar)\n\n\nsender_address\nAddress of the sender (varchar)\n\n\ncontract_id\nIdentifier of the contract (varchar)\n\n\nfunction_name\nName of the function called (varchar)\n\n\nfunction_args\nArguments passed to the function (struct)\n\n\ntokenA\nIdentifier for token A (varchar)\n\n\ntokenB\nIdentifier for token B (varchar)\n\n\ntokenAOut\nAmount of token A output (bigint)\n\n\ntokenBIn\nAmount of token B input (varchar)"
+  },
+  {
     "objectID": "content/lakehouse/bronze.html",
     "href": "content/lakehouse/bronze.html",
     "title": "Bronze Layer",
