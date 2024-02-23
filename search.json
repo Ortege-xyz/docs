@@ -105,6 +105,13 @@
     "text": "tbl_dev_br_transactions\n\n\n\n\n\n\n\n\ncol_name\ndata_type\ncomment\n\n\n\n\nblock_date\ndate\nThe date when the block was added to the blockchain\n\n\nblock_hash\nstring\nThe unique identifier of the block\n\n\nblock_height\nbigint\nThe height of the block in the blockchain\n\n\nblock_time\ntimestamp\nThe time when the block was added to the blockchain\n\n\ncoinbase\nstring\nThe address that received the block reward for mining the block\n\n\nfee\nbigint\nThe transaction fee paid by the sender\n\n\nhex\nstring\nThe hexadecimal representation of the transaction\n\n\nid\nstring\nThe unique identifier of the transaction\n\n\nindex\nbigint\nThe index of the transaction in the block\n\n\ninput_count\nbigint\nThe number of inputs in the transaction\n\n\ninput_value\nbigint\nThe total value of all inputs in the transaction\n\n\ninputs\narray\nAn array of input objects containing information about each input in the transaction\n\n\nis_coinbase\nboolean\nA boolean indicating whether the transaction is a coinbase transaction\n\n\nlock_time\nbigint\nThe lock time of the transaction\n\n\noutput_count\nbigint\nThe number of outputs in the transaction\n\n\noutput_value\nbigint\nThe total value of all outputs in the transaction\n\n\noutputs\narray\nAn array of output objects containing information about each output in the transaction\n\n\nsize\nbigint\nThe size of the transaction in bytes\n\n\nversion\nbigint\nThe version number of the transaction\n\n\nvirtual_size\nbigint\nThe virtual size of the transaction"
   },
   {
+    "objectID": "content/lakehouse/bronze.html#tbl_dev_br_cycles",
+    "href": "content/lakehouse/bronze.html#tbl_dev_br_cycles",
+    "title": "Bronze Layer",
+    "section": "tbl_dev_br_cycles",
+    "text": "tbl_dev_br_cycles\nThe tbl_dev_sl_cycles table provides a structured overview of cycles within the Stacks blockchain, starting from the genesis of Stacks 2.0. Each cycle represents a fixed number of blocks, facilitating the organization and analysis of blockchain data over time. This table is essential for understanding the temporal division of blockchain activity and aids in analyzing trends, rewards distributions, and other cycle-based metrics.\n\n\n\n\n\n\n\nColumn\nDescription\n\n\n\n\ncycle\nThe sequential number of the cycle, starting from 0. Each cycle represents a group of 2100 blocks within the Stacks blockchain.\n\n\nstart_block\nThe starting block number for the given cycle. This marks the first block in the cycle.\n\n\nend_block\nThe ending block number for the given cycle. This marks the last block in the cycle."
+  },
+  {
     "objectID": "content/lakehouse/bronze.html#tbl_dev_br_blocks-1",
     "href": "content/lakehouse/bronze.html#tbl_dev_br_blocks-1",
     "title": "Bronze Layer",
