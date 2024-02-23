@@ -74,6 +74,16 @@ To effectively navigate and leverage the Bronze Layer in the development environ
 | virtual_size    | bigint    | The virtual size of the transaction                                                           |
 
 # Stacks
+## tbl_dev_br_cycles
+The `tbl_dev_sl_cycles` table provides a structured overview of cycles within the Stacks blockchain, starting from the genesis of Stacks 2.0. Each cycle represents a fixed number of blocks, facilitating the organization and analysis of blockchain data over time. This table is essential for understanding the temporal division of blockchain activity and aids in analyzing trends, rewards distributions, and other cycle-based metrics.
+
+| Column       | Description                                       |
+|--------------|---------------------------------------------------|
+| `cycle`      | The sequential number of the cycle, starting from 0. Each cycle represents a group of 2100 blocks within the Stacks blockchain. |
+| `start_block`| The starting block number for the given cycle. This marks the first block in the cycle. |
+| `end_block`  | The ending block number for the given cycle. This marks the last block in the cycle. |
+
+
 ## tbl_dev_br_blocks
 | col_name                  | data_type | comment                                                                                                                                                                                                                       |
 |---------------------------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
