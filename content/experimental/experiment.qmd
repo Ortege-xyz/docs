@@ -1,0 +1,59 @@
+---
+title: "Environment-Sensitive Document"
+format: html
+---
+
+```{python}
+import os
+from dotenv import load_dotenv
+
+# Check if running in GitHub Actions
+if os.getenv("CI") == "true":
+  # Running on GitHub Actions
+  db_host = os.getenv("DATABRICKS_HOST")
+  db_token = os.getenv("DATABRICKS_TOKEN")
+  db_http = os.getenv("DATABRICKS_HTTP")
+else:
+  # Running locally, load the .env file
+  load_dotenv()
+  db_host = os.getenv("DATABRICKS_HOST")
+  db_token = os.getenv("DATABRICKS_TOKEN")
+  db_http = os.getenv("DATABRICKS_HTTP")
+
+# Now you can use db_host, db_user, db_password as needed
+print(f"DB Host: {db_host}")
+print(f"DB Token: {db_token}")
+print(f"DB HTTP: {db_http}")
+```
+
+Now we run the Databricks stuff
+```{python}
+import pandas as pd
+import plotly.figure_factory as ff
+from databricks import sql
+
+# Connection details (replace with your Databricks instance specifics)
+hostname = db_host
+http_path = db_http
+access_token = db_token
+
+# Create a connection
+with sql.connect(server_hostname=hostname,
+                 http_path=http_path,
+                 access_token=access_token) as connection:
+
+    # Create a cursor to execute SQL queries
+    with connection.cursor() as cursor:
+        # Execute the SQL query
+        cursor.execute("SELECT * FROM external.db_stacks.tbl_dev_br_blocks LIMIT 5")
+        
+        # Fetch the results into a Pandas DataFrame
+        df = pd.DataFrame(cursor.fetchall(), columns=[desc[0] for desc in cursor.description])
+
+# Create a table figure using Plotly
+table_figure = ff.create_table(df)
+
+# Show the table
+table_figure.show()
+
+```

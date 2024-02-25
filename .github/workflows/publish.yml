@@ -1,13 +1,15 @@
 on:
-  workflow_dispatch:
   push:
-    branches: ["main"]
+    branches:
+      - main
+      - staging
 
 name: Quarto Publish
 
 jobs:
-  build-deploy:
+  build-deploy-main:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     permissions:
       contents: write
     steps:
@@ -17,27 +19,48 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Render and Publish
+      - name: Render and Publish to docs.ortege.ai
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # this we only want to run if event is push
-      # quarto publish action automatically removes all extra files
-      # so its removing CNAME which is for custom domain for github pages
-      - name: Create & Push CNAME file
-        if: github.event_name == 'push'
+      - name: Create & Push CNAME file for docs.ortege.ai
         run: |
           git fetch
           git checkout gh-pages
           git pull origin gh-pages
-          if [ ! -f CNAME ]; then
-            echo "docs.ortege.ai" > CNAME
-            git add CNAME
-            git commit -m "Create CNAME"
-            git push origin gh-pages
-          else
-            echo "CNAME file already exists."
-          fi
+          echo "docs.ortege.ai" > CNAME
+          git add CNAME
+          git commit -m "Update CNAME for docs.ortege.ai"
+          git push origin gh-pages
+
+  build-deploy-staging:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/staging'
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Render and Publish to docs-staging.ortege.ai
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create & Push CNAME file for docs-staging.ortege.ai
+        run: |
+          git fetch
+          git checkout gh-pages
+          git pull origin gh-pages
+          echo "docs-staging.ortege.ai" > CNAME
+          git add CNAME
+          git commit -m "Update CNAME for docs-staging.ortege.ai"
+          git push origin gh-pages
