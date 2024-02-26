@@ -6,8 +6,95 @@ format:
     html-math-method: katex
 ---
 
+# Bitcoin
+
+The Silver layer on Bitcoin will focus on exploding the inputs and outputs from the raw data as well as focus on all the L2's, Rollups and Sidechains that are building on Bitcoin
+
+## tbl_dev_sl_l2_stacks
+
+## vw_dev_sl_inputs
+
+## vw_dev_sl_outputs
+
 # Stacks
 The Silver Layer in the Stacks ecosystem serves as a crucial intermediary layer that enriches raw blockchain data with meaningful metadata, facilitating deeper insights and analysis. This layer particularly focuses on metadata about all tokens compliant with the SIP010 standard, STX20 tokens and individual decentralized application (dApp) activities through smart contract interactions. Below are the details of the views included in the Silver Layer for Stacks, highlighting the comprehensive metadata and activity records.
+
+## vw_dev_sl_pox_individual_stackers
+ Tracks various Proof of Transfer (PoX) and Stacking operations on the Stacks blockchain. It includes direct stacking transactions. The transactions are filtered to only include successful ones pertaining to the pox-3 smart contract and are related to stacking operations such as stack-stx, stack-extend, and stack-increase.
+
+| Field Name                        | Description                                                                                                                        |
+|-----------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| `hash`                            | The unique identifier of the transaction on the blockchain.                                                                        |
+| `sender_address`                  | The Stacks wallet address of the sender initiating the transaction.                                                                |
+| `block_number`                    | The block number in which the transaction was included.                                                                            |
+| `to_timestamp(block_timestamp)`   | The timestamp of the block, converted to a human-readable date and time format.                                                   |
+| `events`                          | An array of events triggered by the transaction.                                                                                   |
+| `contract_call`                   | An object containing details of the contract call, including function name, contract ID, signature, and arguments.                |
+| `contract_call.function_name`     | The name of the function called within the contract, indicating the type of stacking operation performed.                         |
+| `contract_call.contract_id`       | The ID of the contract that includes the function being called.                                                                    |
+| `contract_call.function_signature`| The signature of the function being called in the contract, representing the function's interface.                                |
+| `contract_call.function_args`     | The arguments provided to the function call within the contract.                                                                   |
+| `amount` (conditional)            | The amount of STX locked for stacking, normalized to STX units (divided by 1e6), depending on the stacking operation.             |
+| `btcAddress_to_receive_rewards`   | The Bitcoin address set to receive stacking rewards, extracted and decoded from the function arguments.                           |
+| `lock_period` (conditional)       | For `stack-stx` operations, this represents the number of cycles the tokens are locked for stacking.                              |
+| `start_burn_height` (conditional) | For `stack-stx` operations, this is the burnchain block height at which the stacking period starts.                                |
+| `extend_cycle` (conditional)      | For `stack-extend` operations, this signifies the additional number of cycles for which an existing stack is extended.            |
+
+
+## vw_dev_sl_pox_delegates
+This dataset focuses on delegated stacking operations, capturing the delegation of STX tokens for stacking purposes. It tracks the delegation transactions, detailing the delegators, delegatees, and the amounts involved.
+
+| Field Name                     | Description                                                                                                    |
+|--------------------------------|----------------------------------------------------------------------------------------------------------------|
+| `hash`                         | The unique identifier of the transaction on the blockchain.                                                    |
+| `sender_address`               | The Stacks wallet address of the sender initiating the transaction.                                            |
+| `block_number`                 | The block number in which the transaction was included.                                                        |
+| `block_timestamp`              | The timestamp of the block, converted to a human-readable date and time format.                                |
+| `events`                       | An array of events triggered by the transaction.                                                               |
+| `contract_call`                | An object containing details of the contract call, including function name, contract ID, signature, and arguments. |
+| `contract_call.function_name`  | The name of the function called within the contract, indicating the type of delegated stacking operation.      |
+| `contract_call.contract_id`    | The ID of the contract that includes the function being called.                                                |
+| `contract_call.function_signature` | The signature of the function being called in the contract, representing the function's interface.         |
+| `contract_call.function_args`  | The arguments provided to the function call within the contract.                                               |
+| `amount` (conditional)         | The amount of STX delegated for stacking, specified in the function arguments, depending on the operation type. |
+| `delegate_to` (conditional)    | The address to which the STX tokens are being delegated for stacking purposes.                                 |
+
+
+## vw_dev_sl_pox_aggregates
+This dataset captures transactions pertaining to partial stacking commitments, allowing for an analysis of stacking operations that aggregate STX tokens from multiple sources. It provides insights into the delegation process, the amount of STX committed, and the intended reward cycles.
+
+| Field Name                   | Description                                                                                           |
+|------------------------------|-------------------------------------------------------------------------------------------------------|
+| `hash`                       | The unique identifier of the transaction on the blockchain.                                           |
+| `sender_address`             | The Stacks wallet address of the sender initiating the transaction.                                   |
+| `block_number`               | The block number in which the transaction was included.                                               |
+| `block_timestamp`            | The timestamp of the block, converted to a human-readable date and time format.                       |
+| `contract_call`              | An object containing details of the contract call, including function name, contract ID, and signature. |
+| `contract_call.function_name`| The specific function called within the contract, indicating the type of stacking operation.         |
+| `contract_call.contract_id`  | The ID of the contract that includes the function being called.                                       |
+| `contract_call.function_signature` | The signature of the function being called in the contract.                                      |
+| `contract_call.function_args`| The arguments provided to the function call within the contract.                                      |
+| `events`                     | An array of events triggered by the transaction.                                                      |
+| `amount`                     | The amount of microSTX committed to stacking, extracted from the contract log's event data.           |
+| `delegator`                  | The address of the delegator, if applicable, extracted from the contract log's event data.            |
+| `pox_address`                | The Bitcoin address intended to receive the stacking rewards, extracted from the contract log's event data. |
+| `reward_cycle`               | The specific reward cycle(s) for which the stacking commitment is made, extracted from the contract log's event data. |
+| `stacker`                    | The address of the stacker, extracted from the contract log's event data.                             |
+
+
+## vw_dev_sl_bns.sql
+The view retrieves successful transactions related to domain names, such as preorders, registrations, transfers, renewals, and other updates. It aims to offer insights into the usage and activities around the Stacks domain name services.
+
+| Field Name          | Description                                                                                      |
+|---------------------|--------------------------------------------------------------------------------------------------|
+| `hash`              | The unique identifier of the transaction on the blockchain.                                      |
+| `sender_address`    | The Stacks wallet address of the sender initiating the transaction.                              |
+| `block_number`      | The block number in which the transaction was included.                                          |
+| `to_timestamp(block_timestamp)` | The timestamp of the block, converted to a human-readable date and time format.             |
+| `contract_call.function_name` | The specific function called within the `bns` contract, indicating the type of domain name operation. |
+| `amount`            | Conditionally shows the asset amount for `name-preorder` and the renewal fee for `name-renewal`. |
+| `name`              | For `name-register`, `name-transfer`, and `name-renewal`, this is the domain name involved.      |
+| `new_owner`         | For `name-transfer` operations, this indicates the new owner's address of the domain name.       |
 
 ## vw_dev_sl_sip10_tokens
 The vw_dev_sl_sip10_tokens view provides metadata about all tokens that comply with the SIP010 Fungible Token standard. This includes critical information such as the token address and its decimal precision, which is essential for accurately representing token quantities and facilitating token-related operations.
@@ -16,6 +103,21 @@ The vw_dev_sl_sip10_tokens view provides metadata about all tokens that comply w
 |-----------|-------------|
 | address   | address of the SIP010 token        |
 | decimals  | the amount of decimals of the token            |
+
+## vw_dev_sl_bridge_abtc
+This dataset captures successful transaction events for ABTC. The dataset includes transactions for transfer, mint-fixed, and burn-fixed operations. Each record details the transaction hash, sender address, block number, timestamp of the block, the events array, the name of the function called in the contract (function_name), and the arguments passed to the function (function_args). Additionally, it extracts the amount for transfer, burn-fixed, and mint-fixed functions, and the recipient for transfer function.
+
+| Field Name          | Description                                                                                                    |
+|---------------------|----------------------------------------------------------------------------------------------------------------|
+| `hash`              | The unique identifier of the transaction on the blockchain.                                                    |
+| `sender_address`    | The Stacks wallet address of the sender initiating the transaction.                                            |
+| `block_number`      | The block number in which the transaction was included.                                                        |
+| `to_timestamp(block_timestamp)` | The timestamp of the block, converted to a human-readable date and time format.                           |
+| `events`            | An array of events triggered by the transaction.                                                               |
+| `contract_call.function_name` | The specific function called within the contract, indicating the type of token operation performed.          |
+| `contract_call.function_args` | The arguments provided to the function call within the contract.                                             |
+| `amount` (conditional) | The token amount involved in the `transfer`, `mint-fixed`, or `burn-fixed` operations, extracted from the function arguments. |
+| `recipient` (conditional) | For `transfer` operations, the address of the recipient of the tokens, extracted from the function arguments. |
 
 ## vw_dev_sl_stx20
 The vw_dev_sl_stx20 view captures transactions involving STX20 tokens, including minting, deploying, and transferring operations. It includes transaction identifiers, participant addresses, transaction dates, and operation types, among other details. This view is vital for tracking STX20 token movements and understanding their supply dynamics.
@@ -51,3 +153,40 @@ The vw_dev_sl_dapp_alex_swap view provides a comprehensive look into the smart c
 | tokenB          | Identifier for token B (varchar)   |
 | tokenAOut       | Amount of token A output (bigint)  |
 | tokenBIn        | Amount of token B input (varchar)  |
+
+**Please note** This chart needs some improvements which will be found in the Gold Layer. Take note the volume has all been divided by 8 decimals places. This is hardcoded and some of those tokens may not have 8 decimal places so to get accurate figures you'd need to get the decimals from `vw_dev_sl_sip10_tokens`
+
+## vw_dev_sl_dapp_stacking_dao
+This dataset includes successful transaction records for staking-related operations (deposit, withdraw, init-withdraw, add-rewards) on the Stacks blockchain. Each record in the dataset includes the transaction hash, sender address, block number, and a human-readable transaction date. It also details the events triggered, the specific function called within the staking contract, and the arguments provided to the function call. The dataset captures the amount involved in the transactions and, for certain operations, the NFT number and cycle number related to the transaction.
+
+| Field Name            | Description                                                                                                                     |
+|-----------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| `hash`                | The unique identifier of the transaction on the blockchain.                                                                     |
+| `sender_address`      | The Stacks wallet address of the sender initiating the transaction.                                                             |
+| `block_number`        | The block number in which the transaction was included.                                                                         |
+| `tx_date`             | The timestamp of the block, converted to a human-readable date and time format.                                                |
+| `events`              | An array of events triggered by the transaction.                                                                                |
+| `contract_call.function_name` | The specific function called within the staking contract.                                                                      |
+| `contract_call.function_args` | The arguments provided to the function call within the contract.                                                               |
+| `tx_result`           | The result of the transaction execution, containing details about the success or failure of the operation.                      |
+| `tx_status`           | The status of the transaction, indicating whether it was successful.                                                            |
+| `amount` (conditional) | The token amount involved in the `deposit`, `init-withdraw`, `withdraw`, or `add-rewards` operations, based on the function name. |
+| `nft_number` (conditional) | The NFT number associated with the `init-withdraw` and `withdraw` operations.                                                 |
+| `cycle` (conditional) | For `add-rewards` operations, this field indicates the cycle number for which rewards are being added.                         |
+
+
+## vw_dev_sl_dapp_bitflow
+This dataset focuses on successful liquidity and swap event transactions. It covers add-liquidity, swap-x-for-y, swap-y-for-x, and withdraw-liquidity operations. Each record provides a transaction hash, the sender's address, the block number, the date and time of the transaction (tx_date), an array of events (events), the function name indicating the operation (contract_call.function_name), and the function arguments (contract_call.function_args). The dataset also includes calculated fields for the amounts of token X and token Y involved in each transaction, with positive values typically representing token acquisitions and negative values indicating disbursements or deductions.
+
+| Field Name               | Description                                                                                                 |
+|--------------------------|-------------------------------------------------------------------------------------------------------------|
+| `hash`                   | The unique identifier of the transaction on the blockchain.                                                 |
+| `sender_address`         | The Stacks wallet address of the sender initiating the transaction.                                         |
+| `block_number`           | The block number in which the transaction was included.                                                     |
+| `tx_date`                | The timestamp of the block, formatted as a human-readable date and time.                                    |
+| `events`                 | An array of events that were triggered by the transaction.                                                  |
+| `contract_call.function_name` | The name of the function called, indicating the type of operation (e.g., adding liquidity, swapping, etc.). |
+| `contract_call.function_args` | The arguments provided to the function call within the contract.                                           |
+| `tokenY`                 | Represents the identifier or amount of token Y involved, extracted from the first function argument.         |
+| `tokenX_amount` (conditional) | The calculated amount of token X involved in the operation, depending on the function name.                |
+| `tokenY_amount` (conditional) | The calculated amount of token Y involved in the operation, depending on the function name.                |
