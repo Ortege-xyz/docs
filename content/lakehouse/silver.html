@@ -182,11 +182,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#stacks" id="toc-stacks" class="nav-link active" data-scroll-target="#stacks">Stacks</a>
+  <li><a href="#bitcoin" id="toc-bitcoin" class="nav-link active" data-scroll-target="#bitcoin">Bitcoin</a>
   <ul class="collapse">
+  <li><a href="#tbl_dev_sl_l2_stacks" id="toc-tbl_dev_sl_l2_stacks" class="nav-link" data-scroll-target="#tbl_dev_sl_l2_stacks">tbl_dev_sl_l2_stacks</a></li>
+  <li><a href="#vw_dev_sl_inputs" id="toc-vw_dev_sl_inputs" class="nav-link" data-scroll-target="#vw_dev_sl_inputs">vw_dev_sl_inputs</a></li>
+  <li><a href="#vw_dev_sl_outputs" id="toc-vw_dev_sl_outputs" class="nav-link" data-scroll-target="#vw_dev_sl_outputs">vw_dev_sl_outputs</a></li>
+  </ul></li>
+  <li><a href="#stacks" id="toc-stacks" class="nav-link" data-scroll-target="#stacks">Stacks</a>
+  <ul class="collapse">
+  <li><a href="#vw_dev_sl_pox_individual_stackers" id="toc-vw_dev_sl_pox_individual_stackers" class="nav-link" data-scroll-target="#vw_dev_sl_pox_individual_stackers">vw_dev_sl_pox_individual_stackers</a></li>
+  <li><a href="#vw_dev_sl_pox_delegates" id="toc-vw_dev_sl_pox_delegates" class="nav-link" data-scroll-target="#vw_dev_sl_pox_delegates">vw_dev_sl_pox_delegates</a></li>
+  <li><a href="#vw_dev_sl_pox_aggregates" id="toc-vw_dev_sl_pox_aggregates" class="nav-link" data-scroll-target="#vw_dev_sl_pox_aggregates">vw_dev_sl_pox_aggregates</a></li>
+  <li><a href="#vw_dev_sl_bns.sql" id="toc-vw_dev_sl_bns.sql" class="nav-link" data-scroll-target="#vw_dev_sl_bns.sql">vw_dev_sl_bns.sql</a></li>
   <li><a href="#vw_dev_sl_sip10_tokens" id="toc-vw_dev_sl_sip10_tokens" class="nav-link" data-scroll-target="#vw_dev_sl_sip10_tokens">vw_dev_sl_sip10_tokens</a></li>
+  <li><a href="#vw_dev_sl_bridge_abtc" id="toc-vw_dev_sl_bridge_abtc" class="nav-link" data-scroll-target="#vw_dev_sl_bridge_abtc">vw_dev_sl_bridge_abtc</a></li>
   <li><a href="#vw_dev_sl_stx20" id="toc-vw_dev_sl_stx20" class="nav-link" data-scroll-target="#vw_dev_sl_stx20">vw_dev_sl_stx20</a></li>
   <li><a href="#vw_dev_sl_dapp_alex_swap" id="toc-vw_dev_sl_dapp_alex_swap" class="nav-link" data-scroll-target="#vw_dev_sl_dapp_alex_swap">vw_dev_sl_dapp_alex_swap</a></li>
+  <li><a href="#vw_dev_sl_dapp_stacking_dao" id="toc-vw_dev_sl_dapp_stacking_dao" class="nav-link" data-scroll-target="#vw_dev_sl_dapp_stacking_dao">vw_dev_sl_dapp_stacking_dao</a></li>
+  <li><a href="#vw_dev_sl_dapp_bitflow" id="toc-vw_dev_sl_dapp_bitflow" class="nav-link" data-scroll-target="#vw_dev_sl_dapp_bitflow">vw_dev_sl_dapp_bitflow</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -213,9 +226,294 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="bitcoin" class="level1">
+<h1>Bitcoin</h1>
+<p>The Silver layer on Bitcoin will focus on exploding the inputs and outputs from the raw data as well as focus on all the L2’s, Rollups and Sidechains that are building on Bitcoin</p>
+<section id="tbl_dev_sl_l2_stacks" class="level2">
+<h2 class="anchored" data-anchor-id="tbl_dev_sl_l2_stacks">tbl_dev_sl_l2_stacks</h2>
+</section>
+<section id="vw_dev_sl_inputs" class="level2">
+<h2 class="anchored" data-anchor-id="vw_dev_sl_inputs">vw_dev_sl_inputs</h2>
+</section>
+<section id="vw_dev_sl_outputs" class="level2">
+<h2 class="anchored" data-anchor-id="vw_dev_sl_outputs">vw_dev_sl_outputs</h2>
+</section>
+</section>
 <section id="stacks" class="level1">
 <h1>Stacks</h1>
 <p>The Silver Layer in the Stacks ecosystem serves as a crucial intermediary layer that enriches raw blockchain data with meaningful metadata, facilitating deeper insights and analysis. This layer particularly focuses on metadata about all tokens compliant with the SIP010 standard, STX20 tokens and individual decentralized application (dApp) activities through smart contract interactions. Below are the details of the views included in the Silver Layer for Stacks, highlighting the comprehensive metadata and activity records.</p>
+<section id="vw_dev_sl_pox_individual_stackers" class="level2">
+<h2 class="anchored" data-anchor-id="vw_dev_sl_pox_individual_stackers">vw_dev_sl_pox_individual_stackers</h2>
+<p>Tracks various Proof of Transfer (PoX) and Stacking operations on the Stacks blockchain. It includes direct stacking transactions. The transactions are filtered to only include successful ones pertaining to the pox-3 smart contract and are related to stacking operations such as stack-stx, stack-extend, and stack-increase.</p>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 79%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>hash</code></td>
+<td>The unique identifier of the transaction on the blockchain.</td>
+</tr>
+<tr class="even">
+<td><code>sender_address</code></td>
+<td>The Stacks wallet address of the sender initiating the transaction.</td>
+</tr>
+<tr class="odd">
+<td><code>block_number</code></td>
+<td>The block number in which the transaction was included.</td>
+</tr>
+<tr class="even">
+<td><code>to_timestamp(block_timestamp)</code></td>
+<td>The timestamp of the block, converted to a human-readable date and time format.</td>
+</tr>
+<tr class="odd">
+<td><code>events</code></td>
+<td>An array of events triggered by the transaction.</td>
+</tr>
+<tr class="even">
+<td><code>contract_call</code></td>
+<td>An object containing details of the contract call, including function name, contract ID, signature, and arguments.</td>
+</tr>
+<tr class="odd">
+<td><code>contract_call.function_name</code></td>
+<td>The name of the function called within the contract, indicating the type of stacking operation performed.</td>
+</tr>
+<tr class="even">
+<td><code>contract_call.contract_id</code></td>
+<td>The ID of the contract that includes the function being called.</td>
+</tr>
+<tr class="odd">
+<td><code>contract_call.function_signature</code></td>
+<td>The signature of the function being called in the contract, representing the function’s interface.</td>
+</tr>
+<tr class="even">
+<td><code>contract_call.function_args</code></td>
+<td>The arguments provided to the function call within the contract.</td>
+</tr>
+<tr class="odd">
+<td><code>amount</code> (conditional)</td>
+<td>The amount of STX locked for stacking, normalized to STX units (divided by 1e6), depending on the stacking operation.</td>
+</tr>
+<tr class="even">
+<td><code>btcAddress_to_receive_rewards</code></td>
+<td>The Bitcoin address set to receive stacking rewards, extracted and decoded from the function arguments.</td>
+</tr>
+<tr class="odd">
+<td><code>lock_period</code> (conditional)</td>
+<td>For <code>stack-stx</code> operations, this represents the number of cycles the tokens are locked for stacking.</td>
+</tr>
+<tr class="even">
+<td><code>start_burn_height</code> (conditional)</td>
+<td>For <code>stack-stx</code> operations, this is the burnchain block height at which the stacking period starts.</td>
+</tr>
+<tr class="odd">
+<td><code>extend_cycle</code> (conditional)</td>
+<td>For <code>stack-extend</code> operations, this signifies the additional number of cycles for which an existing stack is extended.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="vw_dev_sl_pox_delegates" class="level2">
+<h2 class="anchored" data-anchor-id="vw_dev_sl_pox_delegates">vw_dev_sl_pox_delegates</h2>
+<p>This dataset focuses on delegated stacking operations, capturing the delegation of STX tokens for stacking purposes. It tracks the delegation transactions, detailing the delegators, delegatees, and the amounts involved.</p>
+<table class="table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 77%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>hash</code></td>
+<td>The unique identifier of the transaction on the blockchain.</td>
+</tr>
+<tr class="even">
+<td><code>sender_address</code></td>
+<td>The Stacks wallet address of the sender initiating the transaction.</td>
+</tr>
+<tr class="odd">
+<td><code>block_number</code></td>
+<td>The block number in which the transaction was included.</td>
+</tr>
+<tr class="even">
+<td><code>block_timestamp</code></td>
+<td>The timestamp of the block, converted to a human-readable date and time format.</td>
+</tr>
+<tr class="odd">
+<td><code>events</code></td>
+<td>An array of events triggered by the transaction.</td>
+</tr>
+<tr class="even">
+<td><code>contract_call</code></td>
+<td>An object containing details of the contract call, including function name, contract ID, signature, and arguments.</td>
+</tr>
+<tr class="odd">
+<td><code>contract_call.function_name</code></td>
+<td>The name of the function called within the contract, indicating the type of delegated stacking operation.</td>
+</tr>
+<tr class="even">
+<td><code>contract_call.contract_id</code></td>
+<td>The ID of the contract that includes the function being called.</td>
+</tr>
+<tr class="odd">
+<td><code>contract_call.function_signature</code></td>
+<td>The signature of the function being called in the contract, representing the function’s interface.</td>
+</tr>
+<tr class="even">
+<td><code>contract_call.function_args</code></td>
+<td>The arguments provided to the function call within the contract.</td>
+</tr>
+<tr class="odd">
+<td><code>amount</code> (conditional)</td>
+<td>The amount of STX delegated for stacking, specified in the function arguments, depending on the operation type.</td>
+</tr>
+<tr class="even">
+<td><code>delegate_to</code> (conditional)</td>
+<td>The address to which the STX tokens are being delegated for stacking purposes.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="vw_dev_sl_pox_aggregates" class="level2">
+<h2 class="anchored" data-anchor-id="vw_dev_sl_pox_aggregates">vw_dev_sl_pox_aggregates</h2>
+<p>This dataset captures transactions pertaining to partial stacking commitments, allowing for an analysis of stacking operations that aggregate STX tokens from multiple sources. It provides insights into the delegation process, the amount of STX committed, and the intended reward cycles.</p>
+<table class="table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 77%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>hash</code></td>
+<td>The unique identifier of the transaction on the blockchain.</td>
+</tr>
+<tr class="even">
+<td><code>sender_address</code></td>
+<td>The Stacks wallet address of the sender initiating the transaction.</td>
+</tr>
+<tr class="odd">
+<td><code>block_number</code></td>
+<td>The block number in which the transaction was included.</td>
+</tr>
+<tr class="even">
+<td><code>block_timestamp</code></td>
+<td>The timestamp of the block, converted to a human-readable date and time format.</td>
+</tr>
+<tr class="odd">
+<td><code>contract_call</code></td>
+<td>An object containing details of the contract call, including function name, contract ID, and signature.</td>
+</tr>
+<tr class="even">
+<td><code>contract_call.function_name</code></td>
+<td>The specific function called within the contract, indicating the type of stacking operation.</td>
+</tr>
+<tr class="odd">
+<td><code>contract_call.contract_id</code></td>
+<td>The ID of the contract that includes the function being called.</td>
+</tr>
+<tr class="even">
+<td><code>contract_call.function_signature</code></td>
+<td>The signature of the function being called in the contract.</td>
+</tr>
+<tr class="odd">
+<td><code>contract_call.function_args</code></td>
+<td>The arguments provided to the function call within the contract.</td>
+</tr>
+<tr class="even">
+<td><code>events</code></td>
+<td>An array of events triggered by the transaction.</td>
+</tr>
+<tr class="odd">
+<td><code>amount</code></td>
+<td>The amount of microSTX committed to stacking, extracted from the contract log’s event data.</td>
+</tr>
+<tr class="even">
+<td><code>delegator</code></td>
+<td>The address of the delegator, if applicable, extracted from the contract log’s event data.</td>
+</tr>
+<tr class="odd">
+<td><code>pox_address</code></td>
+<td>The Bitcoin address intended to receive the stacking rewards, extracted from the contract log’s event data.</td>
+</tr>
+<tr class="even">
+<td><code>reward_cycle</code></td>
+<td>The specific reward cycle(s) for which the stacking commitment is made, extracted from the contract log’s event data.</td>
+</tr>
+<tr class="odd">
+<td><code>stacker</code></td>
+<td>The address of the stacker, extracted from the contract log’s event data.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="vw_dev_sl_bns.sql" class="level2">
+<h2 class="anchored" data-anchor-id="vw_dev_sl_bns.sql">vw_dev_sl_bns.sql</h2>
+<p>The view retrieves successful transactions related to domain names, such as preorders, registrations, transfers, renewals, and other updates. It aims to offer insights into the usage and activities around the Stacks domain name services.</p>
+<table class="table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 82%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>hash</code></td>
+<td>The unique identifier of the transaction on the blockchain.</td>
+</tr>
+<tr class="even">
+<td><code>sender_address</code></td>
+<td>The Stacks wallet address of the sender initiating the transaction.</td>
+</tr>
+<tr class="odd">
+<td><code>block_number</code></td>
+<td>The block number in which the transaction was included.</td>
+</tr>
+<tr class="even">
+<td><code>to_timestamp(block_timestamp)</code></td>
+<td>The timestamp of the block, converted to a human-readable date and time format.</td>
+</tr>
+<tr class="odd">
+<td><code>contract_call.function_name</code></td>
+<td>The specific function called within the <code>bns</code> contract, indicating the type of domain name operation.</td>
+</tr>
+<tr class="even">
+<td><code>amount</code></td>
+<td>Conditionally shows the asset amount for <code>name-preorder</code> and the renewal fee for <code>name-renewal</code>.</td>
+</tr>
+<tr class="odd">
+<td><code>name</code></td>
+<td>For <code>name-register</code>, <code>name-transfer</code>, and <code>name-renewal</code>, this is the domain name involved.</td>
+</tr>
+<tr class="even">
+<td><code>new_owner</code></td>
+<td>For <code>name-transfer</code> operations, this indicates the new owner’s address of the domain name.</td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="vw_dev_sl_sip10_tokens" class="level2">
 <h2 class="anchored" data-anchor-id="vw_dev_sl_sip10_tokens">vw_dev_sl_sip10_tokens</h2>
 <p>The vw_dev_sl_sip10_tokens view provides metadata about all tokens that comply with the SIP010 Fungible Token standard. This includes critical information such as the token address and its decimal precision, which is essential for accurately representing token quantities and facilitating token-related operations.</p>
@@ -234,6 +532,60 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td>decimals</td>
 <td>the amount of decimals of the token</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="vw_dev_sl_bridge_abtc" class="level2">
+<h2 class="anchored" data-anchor-id="vw_dev_sl_bridge_abtc">vw_dev_sl_bridge_abtc</h2>
+<p>This dataset captures successful transaction events for ABTC. The dataset includes transactions for transfer, mint-fixed, and burn-fixed operations. Each record details the transaction hash, sender address, block number, timestamp of the block, the events array, the name of the function called in the contract (function_name), and the arguments passed to the function (function_args). Additionally, it extracts the amount for transfer, burn-fixed, and mint-fixed functions, and the recipient for transfer function.</p>
+<table class="table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 84%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>hash</code></td>
+<td>The unique identifier of the transaction on the blockchain.</td>
+</tr>
+<tr class="even">
+<td><code>sender_address</code></td>
+<td>The Stacks wallet address of the sender initiating the transaction.</td>
+</tr>
+<tr class="odd">
+<td><code>block_number</code></td>
+<td>The block number in which the transaction was included.</td>
+</tr>
+<tr class="even">
+<td><code>to_timestamp(block_timestamp)</code></td>
+<td>The timestamp of the block, converted to a human-readable date and time format.</td>
+</tr>
+<tr class="odd">
+<td><code>events</code></td>
+<td>An array of events triggered by the transaction.</td>
+</tr>
+<tr class="even">
+<td><code>contract_call.function_name</code></td>
+<td>The specific function called within the contract, indicating the type of token operation performed.</td>
+</tr>
+<tr class="odd">
+<td><code>contract_call.function_args</code></td>
+<td>The arguments provided to the function call within the contract.</td>
+</tr>
+<tr class="even">
+<td><code>amount</code> (conditional)</td>
+<td>The token amount involved in the <code>transfer</code>, <code>mint-fixed</code>, or <code>burn-fixed</code> operations, extracted from the function arguments.</td>
+</tr>
+<tr class="odd">
+<td><code>recipient</code> (conditional)</td>
+<td>For <code>transfer</code> operations, the address of the recipient of the tokens, extracted from the function arguments.</td>
 </tr>
 </tbody>
 </table>
@@ -358,6 +710,131 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td>tokenBIn</td>
 <td>Amount of token B input (varchar)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Please note</strong> This chart needs some improvements which will be found in the Gold Layer. Take note the volume has all been divided by 8 decimals places. This is hardcoded and some of those tokens may not have 8 decimal places so to get accurate figures you’d need to get the decimals from <code>vw_dev_sl_sip10_tokens</code></p>
+</section>
+<section id="vw_dev_sl_dapp_stacking_dao" class="level2">
+<h2 class="anchored" data-anchor-id="vw_dev_sl_dapp_stacking_dao">vw_dev_sl_dapp_stacking_dao</h2>
+<p>This dataset includes successful transaction records for staking-related operations (deposit, withdraw, init-withdraw, add-rewards) on the Stacks blockchain. Each record in the dataset includes the transaction hash, sender address, block number, and a human-readable transaction date. It also details the events triggered, the specific function called within the staking contract, and the arguments provided to the function call. The dataset captures the amount involved in the transactions and, for certain operations, the NFT number and cycle number related to the transaction.</p>
+<table class="table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 84%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>hash</code></td>
+<td>The unique identifier of the transaction on the blockchain.</td>
+</tr>
+<tr class="even">
+<td><code>sender_address</code></td>
+<td>The Stacks wallet address of the sender initiating the transaction.</td>
+</tr>
+<tr class="odd">
+<td><code>block_number</code></td>
+<td>The block number in which the transaction was included.</td>
+</tr>
+<tr class="even">
+<td><code>tx_date</code></td>
+<td>The timestamp of the block, converted to a human-readable date and time format.</td>
+</tr>
+<tr class="odd">
+<td><code>events</code></td>
+<td>An array of events triggered by the transaction.</td>
+</tr>
+<tr class="even">
+<td><code>contract_call.function_name</code></td>
+<td>The specific function called within the staking contract.</td>
+</tr>
+<tr class="odd">
+<td><code>contract_call.function_args</code></td>
+<td>The arguments provided to the function call within the contract.</td>
+</tr>
+<tr class="even">
+<td><code>tx_result</code></td>
+<td>The result of the transaction execution, containing details about the success or failure of the operation.</td>
+</tr>
+<tr class="odd">
+<td><code>tx_status</code></td>
+<td>The status of the transaction, indicating whether it was successful.</td>
+</tr>
+<tr class="even">
+<td><code>amount</code> (conditional)</td>
+<td>The token amount involved in the <code>deposit</code>, <code>init-withdraw</code>, <code>withdraw</code>, or <code>add-rewards</code> operations, based on the function name.</td>
+</tr>
+<tr class="odd">
+<td><code>nft_number</code> (conditional)</td>
+<td>The NFT number associated with the <code>init-withdraw</code> and <code>withdraw</code> operations.</td>
+</tr>
+<tr class="even">
+<td><code>cycle</code> (conditional)</td>
+<td>For <code>add-rewards</code> operations, this field indicates the cycle number for which rewards are being added.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="vw_dev_sl_dapp_bitflow" class="level2">
+<h2 class="anchored" data-anchor-id="vw_dev_sl_dapp_bitflow">vw_dev_sl_dapp_bitflow</h2>
+<p>This dataset focuses on successful liquidity and swap event transactions. It covers add-liquidity, swap-x-for-y, swap-y-for-x, and withdraw-liquidity operations. Each record provides a transaction hash, the sender’s address, the block number, the date and time of the transaction (tx_date), an array of events (events), the function name indicating the operation (contract_call.function_name), and the function arguments (contract_call.function_args). The dataset also includes calculated fields for the amounts of token X and token Y involved in each transaction, with positive values typically representing token acquisitions and negative values indicating disbursements or deductions.</p>
+<table class="table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 80%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>hash</code></td>
+<td>The unique identifier of the transaction on the blockchain.</td>
+</tr>
+<tr class="even">
+<td><code>sender_address</code></td>
+<td>The Stacks wallet address of the sender initiating the transaction.</td>
+</tr>
+<tr class="odd">
+<td><code>block_number</code></td>
+<td>The block number in which the transaction was included.</td>
+</tr>
+<tr class="even">
+<td><code>tx_date</code></td>
+<td>The timestamp of the block, formatted as a human-readable date and time.</td>
+</tr>
+<tr class="odd">
+<td><code>events</code></td>
+<td>An array of events that were triggered by the transaction.</td>
+</tr>
+<tr class="even">
+<td><code>contract_call.function_name</code></td>
+<td>The name of the function called, indicating the type of operation (e.g., adding liquidity, swapping, etc.).</td>
+</tr>
+<tr class="odd">
+<td><code>contract_call.function_args</code></td>
+<td>The arguments provided to the function call within the contract.</td>
+</tr>
+<tr class="even">
+<td><code>tokenY</code></td>
+<td>Represents the identifier or amount of token Y involved, extracted from the first function argument.</td>
+</tr>
+<tr class="odd">
+<td><code>tokenX_amount</code> (conditional)</td>
+<td>The calculated amount of token X involved in the operation, depending on the function name.</td>
+</tr>
+<tr class="even">
+<td><code>tokenY_amount</code> (conditional)</td>
+<td>The calculated amount of token Y involved in the operation, depending on the function name.</td>
 </tr>
 </tbody>
 </table>
