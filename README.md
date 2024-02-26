@@ -15,9 +15,9 @@ Serve the Website: Run the following command to serve your Quarto website locall
 This command starts a local web server and automatically opens your default web browser to the address of your locally served site (usually http://localhost:4000 or similar). If the browser doesn't open automatically, you can manually open it and enter the local address provided in the terminal output.
 
 ## Publishing
-Just run `quarto publish`
+Run `quarto publish`
 
 This is a self documenting document repo. Please go to the `index.qmd` to read about our documention. 
 
 ## Updating the Lakehouse schema's
-`DESCRIBE TABLE external.db_stacks.tbl_dev_br_blocks`
+`DESCRIBE TABLE external.db_stacks.tbl_dev_br_blocks` 
