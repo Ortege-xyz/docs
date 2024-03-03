@@ -10,7 +10,24 @@ format:
 
 The Silver layer on Bitcoin will focus on exploding the inputs and outputs from the raw data as well as focus on all the L2's, Rollups and Sidechains that are building on Bitcoin
 
-## tbl_dev_sl_l2_stacks
+## tbl_test_sl_l2_stacks
+The transaction output data reflects various operations on the Stacks blockchain. Each row represents a transaction output, described by the following fields:
+
+id: This represents the transaction hash.
+block_height: The block height the transaction occured in.
+block_date: The date the transaction occured.
+address: Address of the sender.
+index: The sequence number of the output in a transaction, starting at 0.
+script_asm: The script of the transaction. An OP_RETURN followed by specific codes at index 0 indicates a non-spendable output embedding different types of data:
+value: The amount associated with the output, typically zero for OP_RETURN outputs as they are not intended for transfer.
+transaction_type:
+*  vrf - VRF key registrations relating to OP_RETURN 58325e(`X2^`)
+* commit - Transactions relating to OP_RETURN 58325b(`X2[`): Block commit. Every output after the index 0, represents an amount that the Stacks miner commits in Satoshi's to be paid to Stacks stackers. The  final transaction is the unspent change to send back to the miner
+* stack-stx - Transaction relating to OP_RETURN 583278(`X2x`)
+* transfer-stx Transactions relating OP_RETURN 583224(`X2$`)
+* preSTX - Transactions relating to OP_RETURN 583270(`X2p`)
+commit: A boolean reflecting true if the value is an amount of Satoshi's committed to STX miners
+
 
 ## vw_dev_sl_inputs
 
