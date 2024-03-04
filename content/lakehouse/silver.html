@@ -430,8 +430,8 @@ ul.task-list li input[type="checkbox"] {
 <p>The transaction output data reflects various operations on the Stacks blockchain. Each row represents a transaction output, described by the following fields:</p>
 <table class="table">
 <colgroup>
-<col style="width: 4%">
-<col style="width: 95%">
+<col style="width: 60%">
+<col style="width: 39%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -470,7 +470,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td><code>transaction_type</code></td>
-<td>- <code>vrf</code> - VRF key registrations relating to <code>OP_RETURN 58325e</code> (<code>X2^</code>).<br>- <code>commit</code> - Transactions relating to <code>OP_RETURN 58325b</code> (<code>X2[</code>): Block commit. Every output after the index 0, represents an amount that the Stacks miner commits in Satoshi’s to be paid to Stacks stackers. The final transaction is the unspent change to send back to the miner.<br>- <code>stack-stx</code> - Transaction relating to <code>OP_RETURN 583278</code> (<code>X2x</code>).<br>- <code>transfer-stx</code> - Transactions relating <code>OP_RETURN 583224</code> (<code>X2$</code>).<br>- <code>preSTX</code> - Transactions relating to <code>OP_RETURN 583270</code> (<code>X2p</code>).</td>
+<td>- <code>vrf</code> - VRF key registrations relating to <code>OP_RETURN 58325e</code> (<code>X2^</code>). - <code>commit</code> - Transactions relating to <code>OP_RETURN 58325b</code> (<code>X2[</code>): Block commit. Every output after the index 0, represents an amount that the Stacks miner commits in Satoshi’s to be paid to Stacks stackers. The final transaction is the unspent change to send back to the miner. - <code>stack-stx</code> - Transaction relating to <code>OP_RETURN 583278</code> (<code>X2x</code>). - <code>transfer-stx</code> - Transactions relating <code>OP_RETURN 583224</code> (<code>X2$</code>). - <code>preSTX</code> - Transactions relating to <code>OP_RETURN 583270</code> (<code>X2p</code>).</td>
 </tr>
 <tr class="odd">
 <td><code>commit</code></td>
@@ -479,6 +479,10 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td><code>burnt</code></td>
 <td>Highlights transactions that send BTC to the burn address <code>1111111111111111111114oLvT2</code>, indicating that miners burn BTC.</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
