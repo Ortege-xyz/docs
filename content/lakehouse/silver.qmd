@@ -71,11 +71,6 @@ The transaction output data reflects various operations on the Stacks blockchain
 | `commit`         | A boolean reflecting true if the value is an amount of Satoshi's committed to STX miners.                                                                                                                                                                                                                                                                                    |
 | `burnt`          | Highlights transactions that send BTC to the burn address `1111111111111111111114oLvT2`, indicating that miners burn BTC.                                                                                                                                                                                                                                                    |
 
-
-## vw_dev_sl_inputs
-
-## vw_dev_sl_outputs
-
 # Stacks
 The Silver Layer in the Stacks ecosystem serves as a crucial intermediary layer that enriches raw blockchain data with meaningful metadata, facilitating deeper insights and analysis. This layer particularly focuses on metadata about all tokens compliant with the SIP010 standard, STX20 tokens and individual decentralized application (dApp) activities through smart contract interactions. Below are the details of the views included in the Silver Layer for Stacks, highlighting the comprehensive metadata and activity records.
 
