@@ -7,8 +7,53 @@ format:
 ---
 
 # Bitcoin
-
 The Silver layer on Bitcoin will focus on exploding the inputs and outputs from the raw data as well as focus on all the L2's, Rollups and Sidechains that are building on Bitcoin
+
+## vw_test_sl_outputs
+The `vw_test_sl_outputs` table is a structured representation of transaction outputs derived from the raw transactional data in the Bronze Layer of the Ortege Lakehouse. This table breaks down the transaction outputs, which are the results of Bitcoin transactions, into a format that is easier to analyze and query.
+
+| col_name           | data_type | comment                                                                                   |
+|--------------------|-----------|-------------------------------------------------------------------------------------------|
+| id                 | string    | The unique identifier of the transaction from which the output is derived.                 |
+| block_height       | bigint    | The height of the block in the blockchain that includes the transaction.                   |
+| block_date         | date      | The date when the block containing the transaction was added to the blockchain.            |
+| is_coinbase        | boolean   | Indicates whether the transaction output is from a coinbase transaction, signifying new bitcoins entering circulation as a miner's reward. |
+| address            | string    | The Bitcoin address that is the recipient of this output.                                 |
+| index              | bigint    | The position of this output within the transaction; the first output is indexed as 0.     |
+| required_signatures| bigint    | The number of signatures required to spend this output.                                   |
+| script_asm         | string    | The assembly notation of the script that dictates how this output can be spent.           |
+| script_hex         | string    | The hexadecimal encoding of the output script.                                            |
+| type               | string    | The type of script used in the transaction output (e.g., 'pubkeyhash', 'scripthash').     |
+| value              | bigint    | The value of bitcoins held in this output, represented in Satoshis (the smallest unit of bitcoin). |
+
+## vw_test_sl_inputs
+The `vw_test_sl_inputs` table is an expanded view of the inputs from the raw transaction data within the Bronze Layer of the Ortege Lakehouse. This table breaks down individual transaction inputs, providing a granular look at the data that constitutes the transactional elements of the Bitcoin network.
+
+| col_name            | data_type | comment                                                                                         |
+|---------------------|-----------|-------------------------------------------------------------------------------------------------|
+| id                  | string    | The unique identifier for the transaction containing this input.                                |
+| block_height        | bigint    | The height of the block in the blockchain that includes this transaction.                       |
+| block_date          | date      | The date when the block was added to the blockchain.                                            |
+| is_coinbase         | boolean   | A flag indicating whether the input is part of a coinbase transaction.                          |
+| address             | string    | The Bitcoin address associated with this input.                                                 |
+| index               | bigint    | The position of this input within the transaction.                                              |
+| required_signatures | bigint    | The number of required signatures for the transaction this input is part of.                    |
+| script_asm          | string    | The assembly notation of the script used in the input.                                          |
+| script_hex          | string    | The hexadecimal encoding of the script used in the input.                                       |
+| sequence            | bigint    | A sequence number associated with this input, used for replacement transactions.                |
+| spent_output_index  | bigint    | The index of the output that this input is spending from.                                       |
+| spent_transaction_hash | string    | The hash of the transaction from which this input spends.                                       |
+| type                | string    | The type of script used in this input (e.g., 'pubkeyhash', 'scripthash').                       |
+| value               | bigint    | The value of bitcoins being input, typically matching the value of the spent output.            |
+
+## vw_test_sl_block_miners
+The `vw_test_sl_block_miners` table is a linkage between the mined blocks in the Bronze Layer of the Ortege Lakehouse and the miners who mined them. This table is the result of joining miner address data with block information to establish which entity mined each block.
+
+| col_name     | data_type | comment                                                                 |
+|--------------|-----------|-------------------------------------------------------------------------|
+| block_height | bigint    | The height of a block within the blockchain.                            |
+| miner_name   | string    | The name of the miner or mining pool that mined the block.              |
+
 
 ## tbl_test_sl_l2_stacks
 The transaction output data reflects various operations on the Stacks blockchain. Each row represents a transaction output, described by the following fields:

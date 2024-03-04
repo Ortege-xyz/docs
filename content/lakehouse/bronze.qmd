@@ -26,6 +26,8 @@ Embrace this phase as an integral step toward a robust and sophisticated data in
 
 # Bitcoin
 ## tbl_dev_br_blocks
+This table encapsulates comprehensive details on Bitcoin blocks, encompassing mining data, block identification, and transaction specifics. It records the difficulty level, mining rewards, the unique hash identifying each block, its position within the blockchain, and the Merkle root for transaction integrity verification. Additionally, it includes metrics such as the block's size, the total number of transactions it contains, and the cumulative work or "chainwork" up to that point, expressed in hexadecimal. This table not only provides insights into the mining process, including the nonce and the compact target "bits," but also captures the economic aspects of mining through fields like mint reward, total fees, and the overall reward. The tbl_dev_br_blocks serves as a pivotal resource for analyzing the blockchain’s structural and economic dynamics, offering a granular view of each block's contribution to the ledger.
+
 | col_name            | data_type | comment                                                                 |
 |---------------------|-----------|-------------------------------------------------------------------------|
 | bits                | string    | The encoded form of the target threshold this block’s header hash must be less than or equal to. |
@@ -48,6 +50,8 @@ Embrace this phase as an integral step toward a robust and sophisticated data in
 | weight              | bigint    | The weight of this block, used to calculate transaction fees.           |
 
 ## tbl_dev_br_transactions
+This table provides a detailed ledger of transactions within the Bitcoin chain, capturing both the technical aspects and the economic activities of each transaction. It records the transaction's metadata, such as its unique identifier (id), the block_hash it belongs to, its block_height and timing (block_date and block_time), and its placement within the block (index). The table delves into the composition of transactions, detailing the number and total value of inputs (input_count and input_value) and outputs (output_count and output_value), alongside arrays of input and output objects for granular transaction analysis. It also highlights whether a transaction is a coinbase transaction, indicating a miner's reward (is_coinbase), the transaction fees involved (fee), and technical parameters like hex representation, lock_time, size, version, and virtual_size. This comprehensive transactional overview aids in understanding the flow of bitcoins, transaction costs, and the operational dynamics of the Bitcoin blockchain.
+
 | col_name        | data_type | comment                                                                                       |
 |-----------------|-----------|-----------------------------------------------------------------------------------------------|
 | block_date      | date      | The date when the block was added to the blockchain                                           |
@@ -70,6 +74,15 @@ Embrace this phase as an integral step toward a robust and sophisticated data in
 | size            | bigint    | The size of the transaction in bytes                                                          |
 | version         | bigint    | The version number of the transaction                                                         |
 | virtual_size    | bigint    | The virtual size of the transaction                                                           |
+
+## tbl_test_br_miners
+The `tbl_test_br_miners` table maintains a mapping of blockchain miner addresses to their corresponding identifiable miner names. It is used to associate mining activities with specific entities or mining pools within the Bitcoin network.
+
+| col_name  | data_type | comment                                                             |
+|-----------|-----------|---------------------------------------------------------------------|
+| address   | string    | The unique Bitcoin address associated with a miner or mining pool.   |
+| miner     | string    | The name of the miner or mining pool associated with the address.    |
+
 
 # Stacks
 ## tbl_dev_br_cycles
