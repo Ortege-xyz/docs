@@ -5,26 +5,24 @@ format:
     toc: true
     html-math-method: katex
 ---
-# Introduction to the Bronze Layer in Development
-As you embark on exploring and utilizing the Bronze Layer within Ortege Lakehouse, it is crucial to understand the dynamic nature of the data in our development (dev) environment. The Bronze Layer, designed to house raw, unprocessed data directly ingested from diverse sources, serves as the foundational bedrock for all subsequent data analysis and processing within Ortege Lakehouse. At this stage, our focus is on the development environment, which is characterized by rapid iterations and frequent updates.
+# Introduction to the Bronze Layer in Testing
+Welcome to the testing phase of the Ortege Lakehouse, where the Bronze Layer acts as the primary reservoir for raw data from varied sources. This layer serves as the initial platform for data analysis and processing within the Ortege ecosystem. It's essential to recognize the testing environment's relative stability, which nonetheless permits periodic updates and modifications for improvement.
 
-## Data Fluidity and Expectations
-In the development environment, data within the Bronze Layer is subject to change frequently. This fluidity is a natural and necessary part of the development process, allowing for the testing of new data sources, the refinement of ingestion processes, and the early detection of issues that could impact data quality or availability. Users interacting with the Bronze Layer in this environment should anticipate:
+## Managing Expectations in Testing
+The data in the Bronze Layer during testing is more stable than in active development but still flexible to accommodate enhancements:
 
-* Frequent Updates: Data may be added, modified, or removed as part of ongoing development efforts to enhance data accuracy, completeness, and relevance.
+* Iterative Updates: Expect incremental changes as we refine data sets and adapt to new insights.
+* Schema Adaptability: Data structures may be adjusted to align with evolving requirements and findings.
+* Quality Progression: Data quality is continually advancing towards our high standards, with interim variations as part of the testing phase.
 
-* Schema Evolution: The structure of datasets, including tables and views, may evolve as we refine our understanding of the data and its potential applications within Ortege Lakehouse.
+## Utilizing the Testing Environment
+To make the most of the Bronze Layer during testing:
 
-* Variable Data Quality: While we strive for high data quality across all layers, the Bronze Layer in the dev environment may include data that is in the early stages of quality assurance and validation.
+* Stay Updated: Follow the latest changes through our communications and documentation.
+* Explore and Test: Engage with the data, keeping in mind the environment's purpose to test and improve.
+* Feedback Loop: Contribute feedback to aid in the evolution of data management practices.
 
-## Navigating the Development Environment
-To effectively navigate and leverage the Bronze Layer in the development environment, users are encouraged to:
-
-* Stay Informed: Keep abreast of updates and changes by monitoring release notes, documentation updates, and communications from the development team.
-
-* Embrace Experimentation: Use this opportunity to explore and experiment with the raw data available, understanding that the flexibility of the development environment is conducive to innovation and discovery.
-
-* Provide Feedback: Your insights and feedback are invaluable as we iterate on data ingestion and processing techniques. Engage with our development team to share your experiences and suggestions.
+Embrace this phase as an integral step toward a robust and sophisticated data infrastructure.
 
 # Bitcoin
 ## tbl_dev_br_blocks
