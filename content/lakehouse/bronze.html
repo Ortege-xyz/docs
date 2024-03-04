@@ -191,6 +191,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#tbl_dev_br_blocks" id="toc-tbl_dev_br_blocks" class="nav-link" data-scroll-target="#tbl_dev_br_blocks">tbl_dev_br_blocks</a></li>
   <li><a href="#tbl_dev_br_transactions" id="toc-tbl_dev_br_transactions" class="nav-link" data-scroll-target="#tbl_dev_br_transactions">tbl_dev_br_transactions</a></li>
+  <li><a href="#tbl_test_br_miners" id="toc-tbl_test_br_miners" class="nav-link" data-scroll-target="#tbl_test_br_miners">tbl_test_br_miners</a></li>
   </ul></li>
   <li><a href="#stacks" id="toc-stacks" class="nav-link" data-scroll-target="#stacks">Stacks</a>
   <ul class="collapse">
@@ -251,6 +252,7 @@ ul.task-list li input[type="checkbox"] {
 <h1>Bitcoin</h1>
 <section id="tbl_dev_br_blocks" class="level2">
 <h2 class="anchored" data-anchor-id="tbl_dev_br_blocks">tbl_dev_br_blocks</h2>
+<p>This table encapsulates comprehensive details on Bitcoin blocks, encompassing mining data, block identification, and transaction specifics. It records the difficulty level, mining rewards, the unique hash identifying each block, its position within the blockchain, and the Merkle root for transaction integrity verification. Additionally, it includes metrics such as the block’s size, the total number of transactions it contains, and the cumulative work or “chainwork” up to that point, expressed in hexadecimal. This table not only provides insights into the mining process, including the nonce and the compact target “bits,” but also captures the economic aspects of mining through fields like mint reward, total fees, and the overall reward. The tbl_dev_br_blocks serves as a pivotal resource for analyzing the blockchain’s structural and economic dynamics, offering a granular view of each block’s contribution to the ledger.</p>
 <table class="table">
 <colgroup>
 <col style="width: 20%">
@@ -360,6 +362,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="tbl_dev_br_transactions" class="level2">
 <h2 class="anchored" data-anchor-id="tbl_dev_br_transactions">tbl_dev_br_transactions</h2>
+<p>This table provides a detailed ledger of transactions within the Bitcoin chain, capturing both the technical aspects and the economic activities of each transaction. It records the transaction’s metadata, such as its unique identifier (id), the block_hash it belongs to, its block_height and timing (block_date and block_time), and its placement within the block (index). The table delves into the composition of transactions, detailing the number and total value of inputs (input_count and input_value) and outputs (output_count and output_value), alongside arrays of input and output objects for granular transaction analysis. It also highlights whether a transaction is a coinbase transaction, indicating a miner’s reward (is_coinbase), the transaction fees involved (fee), and technical parameters like hex representation, lock_time, size, version, and virtual_size. This comprehensive transactional overview aids in understanding the flow of bitcoins, transaction costs, and the operational dynamics of the Bitcoin blockchain.</p>
 <table class="table">
 <colgroup>
 <col style="width: 13%">
@@ -473,6 +476,36 @@ ul.task-list li input[type="checkbox"] {
 <td>virtual_size</td>
 <td>bigint</td>
 <td>The virtual size of the transaction</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tbl_test_br_miners" class="level2">
+<h2 class="anchored" data-anchor-id="tbl_test_br_miners">tbl_test_br_miners</h2>
+<p>The <code>tbl_test_br_miners</code> table maintains a mapping of blockchain miner addresses to their corresponding identifiable miner names. It is used to associate mining activities with specific entities or mining pools within the Bitcoin network.</p>
+<table class="table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>col_name</th>
+<th>data_type</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>address</td>
+<td>string</td>
+<td>The unique Bitcoin address associated with a miner or mining pool.</td>
+</tr>
+<tr class="even">
+<td>miner</td>
+<td>string</td>
+<td>The name of the miner or mining pool associated with the address.</td>
 </tr>
 </tbody>
 </table>
