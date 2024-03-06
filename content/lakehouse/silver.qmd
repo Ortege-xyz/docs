@@ -167,7 +167,7 @@ These foundational tables are pivotal in enriching our suite of dApp-specific ta
 #### vw_test_sl_sip10_tokens
 **Please note** This view is still in test as we are still adding support for Symbol, Name and Circulating supply.
 
-This view provides metadata about all tokens that comply with the SIP010 Fungible Token standard. This includes critical information such as the token address and its decimal precision, which is essential for accurately representing token quantities and facilitating token-related operations.
+This view provides metadata about all tokens that comply with the [SIP010 Fungible Token standard](https://github.com/stacksgov/sips/blob/main/sips/sip-010/sip-010-fungible-token-standard.md). This includes critical information such as the token address and its decimal precision, which is essential for accurately representing token quantities and facilitating token-related operations.
 
 | Column    | Description |
 |-----------|-------------|
