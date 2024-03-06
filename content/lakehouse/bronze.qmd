@@ -5,27 +5,38 @@ format:
     toc: true
     html-math-method: katex
 ---
-# Introduction to the Bronze Layer in Testing
-Welcome to the testing phase of the Ortege Lakehouse, where the Bronze Layer acts as the primary reservoir for raw data from varied sources. This layer serves as the initial platform for data analysis and processing within the Ortege ecosystem. It's essential to recognize the testing environment's relative stability, which nonetheless permits periodic updates and modifications for improvement.
+# Introduction to the Bronze Layer
+The Bronze Layer acts as the primary reservoir for raw data from varied sources. This layer serves as the initial platform for data analysis and processing within the Ortege ecosystem. 
 
-## Managing Expectations in Testing
-The data in the Bronze Layer during testing is more stable than in active development but still flexible to accommodate enhancements:
+# Address book
+Ortege Lakehouse distinguishes itself with a dedicated address book database that consolidates wallet addresses across various blockchains into a single unified repository. This unique design supports ML and AI-driven cross-chain analytics, enabling a comprehensive understanding and deeper insights into the entire crypto ecosystem from one source of truth.
 
-* Iterative Updates: Expect incremental changes as we refine data sets and adapt to new insights.
-* Schema Adaptability: Data structures may be adjusted to align with evolving requirements and findings.
-* Quality Progression: Data quality is continually advancing towards our high standards, with interim variations as part of the testing phase.
 
-## Utilizing the Testing Environment
-To make the most of the Bronze Layer during testing:
 
-* Stay Updated: Follow the latest changes through our communications and documentation.
-* Explore and Test: Engage with the data, keeping in mind the environment's purpose to test and improve.
-* Feedback Loop: Contribute feedback to aid in the evolution of data management practices.
+# Pricing (db_pricing)
+Our pricing table currently gets aggregated pricing and not in realtime.
 
-Embrace this phase as an integral step toward a robust and sophisticated data infrastructure.
+## tbl_prod_br_prices
+This dataset includes various metrics such as supply details, current price, market capitalization, and price change percentages over different time frames. It also contains a timestamp indicating when the data was recorded or updated. 
 
-# Bitcoin
-## tbl_dev_br_blocks
+| Column Name          | Type          | Description                                                                                      |
+|----------------------|---------------|--------------------------------------------------------------------------------------------------|
+| id                   | Integer/String| Unique identifier for the cryptocurrency record.                                                 |
+| name                 | String        | The full name of the cryptocurrency.                                                             |
+| symbol               | String        | The abbreviated symbol or ticker used to represent the cryptocurrency.                           |
+| circulating_supply   | Decimal/Double| The amount of cryptocurrency that is currently circulating in the market and publicly available. |
+| total_supply         | Decimal/Double| The total amount of cryptocurrency that exists right now (minus any coins that have been verifiably burned).|
+| price                | Decimal/Double| The current price of the cryptocurrency.                                                         |
+| market_cap           | Decimal/Double| The total market value of the cryptocurrency's circulating supply.                               |
+| percent_change_1h    | Decimal/Double| The percentage change in price over the last hour.                                               |
+| percent_change_24h   | Decimal/Double| The percentage change in price over the last 24 hours.                                           |
+| percent_change_7d    | Decimal/Double| The percentage change in price over the last 7 days.                                             |
+| percent_change_30d   | Decimal/Double| The percentage change in price over the last 30 days.                                            |
+| volume_24h           | Decimal/Double| The total trading volume of the cryptocurrency over the last 24 hours.                           |
+| timestamp            | Timestamp     | The date and time at which the record was updated.                                               |
+
+# Bitcoin (db_btc)
+## tbl_prod_br_blocks
 This table encapsulates comprehensive details on Bitcoin blocks, encompassing mining data, block identification, and transaction specifics. It records the difficulty level, mining rewards, the unique hash identifying each block, its position within the blockchain, and the Merkle root for transaction integrity verification. Additionally, it includes metrics such as the block's size, the total number of transactions it contains, and the cumulative work or "chainwork" up to that point, expressed in hexadecimal. This table not only provides insights into the mining process, including the nonce and the compact target "bits," but also captures the economic aspects of mining through fields like mint reward, total fees, and the overall reward. The tbl_dev_br_blocks serves as a pivotal resource for analyzing the blockchain’s structural and economic dynamics, offering a granular view of each block's contribution to the ledger.
 
 | col_name            | data_type | comment                                                                 |
@@ -49,7 +60,7 @@ This table encapsulates comprehensive details on Bitcoin blocks, encompassing mi
 | transaction_count   | bigint    | The number of transactions included in this block.                      |
 | weight              | bigint    | The weight of this block, used to calculate transaction fees.           |
 
-## tbl_dev_br_transactions
+## tbl_prod_br_transactions
 This table provides a detailed ledger of transactions within the Bitcoin chain, capturing both the technical aspects and the economic activities of each transaction. It records the transaction's metadata, such as its unique identifier (id), the block_hash it belongs to, its block_height and timing (block_date and block_time), and its placement within the block (index). The table delves into the composition of transactions, detailing the number and total value of inputs (input_count and input_value) and outputs (output_count and output_value), alongside arrays of input and output objects for granular transaction analysis. It also highlights whether a transaction is a coinbase transaction, indicating a miner's reward (is_coinbase), the transaction fees involved (fee), and technical parameters like hex representation, lock_time, size, version, and virtual_size. This comprehensive transactional overview aids in understanding the flow of bitcoins, transaction costs, and the operational dynamics of the Bitcoin blockchain.
 
 | col_name        | data_type | comment                                                                                       |
@@ -75,17 +86,8 @@ This table provides a detailed ledger of transactions within the Bitcoin chain, 
 | version         | bigint    | The version number of the transaction                                                         |
 | virtual_size    | bigint    | The virtual size of the transaction                                                           |
 
-## tbl_test_br_miners
-The `tbl_test_br_miners` table maintains a mapping of blockchain miner addresses to their corresponding identifiable miner names. It is used to associate mining activities with specific entities or mining pools within the Bitcoin network.
-
-| col_name  | data_type | comment                                                             |
-|-----------|-----------|---------------------------------------------------------------------|
-| address   | string    | The unique Bitcoin address associated with a miner or mining pool.   |
-| miner     | string    | The name of the miner or mining pool associated with the address.    |
-
-
 # Stacks
-## tbl_dev_br_cycles
+## tbl_prod_br_cycles
 The `tbl_dev_sl_cycles` table provides a structured overview of cycles within the Stacks blockchain, starting from the genesis of Stacks 2.0. Each cycle represents a fixed number of blocks, facilitating the organization and analysis of blockchain data over time. This table is essential for understanding the temporal division of blockchain activity and aids in analyzing trends, rewards distributions, and other cycle-based metrics.
 
 | Column       | Description                                       |
