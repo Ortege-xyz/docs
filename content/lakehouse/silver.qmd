@@ -9,8 +9,10 @@ format:
 # Bitcoin
 The Silver layer on Bitcoin will focus on exploding the inputs and outputs from the raw data as well as focus on all the L2's, Rollups and Sidechains that are building on Bitcoin
 
-## vw_test_sl_outputs
-The `vw_test_sl_outputs` table is a structured representation of transaction outputs derived from the raw transactional data in the Bronze Layer of the Ortege Lakehouse. This table breaks down the transaction outputs, which are the results of Bitcoin transactions, into a format that is easier to analyze and query.
+## Base tables
+
+### vw_prod_sl_outputs
+The `vw_prod_sl_outputs` table is a structured representation of transaction outputs derived from the raw transactional data in the Bronze Layer of the Ortege Lakehouse. This table breaks down the transaction outputs, which are the results of Bitcoin transactions, into a format that is easier to analyze and query.
 
 | col_name           | data_type | comment                                                                                   |
 |--------------------|-----------|-------------------------------------------------------------------------------------------|
@@ -26,8 +28,8 @@ The `vw_test_sl_outputs` table is a structured representation of transaction out
 | type               | string    | The type of script used in the transaction output (e.g., 'pubkeyhash', 'scripthash').     |
 | value              | bigint    | The value of bitcoins held in this output, represented in Satoshis (the smallest unit of bitcoin). |
 
-## vw_test_sl_inputs
-The `vw_test_sl_inputs` table is an expanded view of the inputs from the raw transaction data within the Bronze Layer of the Ortege Lakehouse. This table breaks down individual transaction inputs, providing a granular look at the data that constitutes the transactional elements of the Bitcoin network.
+### vw_prod_sl_inputs
+The `vw_prod_sl_inputs` table is an expanded view of the inputs from the raw transaction data within the Bronze Layer of the Ortege Lakehouse. This table breaks down individual transaction inputs, providing a granular look at the data that constitutes the transactional elements of the Bitcoin network.
 
 | col_name            | data_type | comment                                                                                         |
 |---------------------|-----------|-------------------------------------------------------------------------------------------------|
@@ -46,17 +48,18 @@ The `vw_test_sl_inputs` table is an expanded view of the inputs from the raw tra
 | type                | string    | The type of script used in this input (e.g., 'pubkeyhash', 'scripthash').                       |
 | value               | bigint    | The value of bitcoins being input, typically matching the value of the spent output.            |
 
-## vw_test_sl_block_miners
-The `vw_test_sl_block_miners` table is a linkage between the mined blocks in the Bronze Layer of the Ortege Lakehouse and the miners who mined them. This table is the result of joining miner address data with block information to establish which entity mined each block.
 
-| col_name     | data_type | comment                                                                 |
-|--------------|-----------|-------------------------------------------------------------------------|
-| block_height | bigint    | The height of a block within the blockchain.                            |
-| miner_name   | string    | The name of the miner or mining pool that mined the block.              |
+## Layer 2's
+In the blockchain community, terminology such as "layer-2 solutions," "sidechains," and "rollups" can often lead to confusion due to overlapping features and capabilities. For the sake of clarity and convenience within our documentation, we will refer to these various technologies collectively as "L2 solutions." This encompasses any scalability and extensibility solutions that are built on top of the Bitcoin network to enhance its performance and functionality.
 
+Currently, our data platform focuses exclusively on the Stacks L2 solution, which brings smart contract capabilities and decentralized applications to Bitcoin. As an integral part of our data ecosystem, the Stacks-related tables and views provide users with detailed information about transactions and interactions specific to the Stacks blockchain. Our dedication to thorough data representation ensures users have comprehensive insights into this innovative L2, bolstering their understanding and analysis of its growing impact on the Bitcoin network.
 
-## tbl_test_sl_l2_stacks
-The transaction output data reflects various operations on the Stacks blockchain. Each row represents a transaction output, described by the following fields:
+## tbl_prod_sl_l2_stacks
+Tracks and catalogues every transaction on the Bitcoin network that pertains to the Stacks Layer-2 solution. This is achieved by scanning for the distinctive "X2" magic code, which is a unique identifier embedded within the OP_RETURN opcode of Bitcoin transaction outputs. The presence of this magic code signals a transaction that is related to the Stacks ecosystem.
+
+Each transaction captured by our table is then systematically classified and decoded. This process transforms the raw data into a structured and user-friendly format, thereby allowing our users to effortlessly discern the nature and details of Stacks-related activities taking place on the Bitcoin blockchain.
+
+The table serves as a powerful tool for users who are interested in monitoring the interactions between Bitcoin and the Stacks L2 solution. 
 
 | Field              | Description |
 |--------------------|-------------|
@@ -71,12 +74,23 @@ The transaction output data reflects various operations on the Stacks blockchain
 | `commit`           | A boolean reflecting true if the value is an amount of Satoshi's committed to STX miners. |
 | `burnt`            | Highlights transactions that send BTC to the burn address `1111111111111111111114oLvT2`, indicating that miners burn BTC. |
                                             |
+## tbl_prod_sl_l2_stacks_rewards
+Captures the rewards earned by Stacks (STX) token stackers, expressed in satoshis, which is the smallest unit of Bitcoin. It logs the unique identifier of the reward transaction (id), the block height at which the reward was recorded (block_height), the date of the block (block_date), the recipient address (address), and the amount of the reward (input_value).
+
+| Column Name | Type         | Description                                                     |
+|-------------|--------------|-----------------------------------------------------------------|
+| id          | Integer      | The unique identifier for the stacking reward record.           |
+| block_height| Integer      | The height of the block in the Stacks blockchain.               |
+| block_date  | Date         | The date when the block was mined.                              |
+| address     | String       | The Stacks wallet address that received the reward.             |
+| input_value | Integer/Long | The reward amount earned for stacking, denominated in satoshis. |
+
 
 # Stacks
 The Silver Layer in the Stacks ecosystem serves as a crucial intermediary layer that enriches raw blockchain data with meaningful metadata, facilitating deeper insights and analysis. This layer particularly focuses on metadata about all tokens compliant with the SIP010 standard, STX20 tokens and individual decentralized application (dApp) activities through smart contract interactions. Below are the details of the views included in the Silver Layer for Stacks, highlighting the comprehensive metadata and activity records.
 
-## vw_dev_sl_pox_individual_stackers
- Tracks various Proof of Transfer (PoX) and Stacking operations on the Stacks blockchain. It includes direct stacking transactions. The transactions are filtered to only include successful ones pertaining to the pox-3 smart contract and are related to stacking operations such as stack-stx, stack-extend, and stack-increase.
+## tbl_prod_sl_pox3_stackers_solo
+ Tracks various Proof of Transfer (PoX) and Stacking operations on the Stacks blockchain. It includes direct stacking transactions. The transactions are filtered to only include successful ones pertaining to the pox-3 smart contract and are related to solo stacking operations such as stack-stx, stack-extend, and stack-increase.
 
 | Field Name                        | Description                                                                                                                        |
 |-----------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
