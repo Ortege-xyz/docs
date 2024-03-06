@@ -790,9 +790,9 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
-<section id="vw_dev_sl_bns.sql" class="level4">
-<h4 class="anchored" data-anchor-id="vw_dev_sl_bns.sql">vw_dev_sl_bns.sql</h4>
-<p>The view retrieves successful transactions related to domain names, such as preorders, registrations, transfers, renewals, and other updates. It aims to offer insights into the usage and activities around the Stacks domain name services.</p>
+<section id="vw_dev_sl_bns" class="level4">
+<h4 class="anchored" data-anchor-id="vw_dev_sl_bns">vw_dev_sl_bns</h4>
+<p>The view retrieves successful transactions related to <a href="https://www.dots.so/register">BNS (Bitcoin Name Service)</a> domain names, such as preorders, registrations, transfers, renewals, and other updates. It aims to offer insights into the usage and activities around the Stacks domain name services.</p>
 <table class="table">
 <colgroup>
 <col style="width: 17%">
@@ -818,11 +818,11 @@ ul.task-list li input[type="checkbox"] {
 <td>The block number in which the transaction was included.</td>
 </tr>
 <tr class="even">
-<td><code>to_timestamp(block_timestamp)</code></td>
+<td><code>tx_date</code></td>
 <td>The timestamp of the block, converted to a human-readable date and time format.</td>
 </tr>
 <tr class="odd">
-<td><code>contract_call.function_name</code></td>
+<td><code>function_name</code></td>
 <td>The specific function called within the <code>bns</code> contract, indicating the type of domain name operation.</td>
 </tr>
 <tr class="even">
