@@ -173,6 +173,8 @@ This view provides metadata about all tokens that comply with the SIP010 Fungibl
 |-----------|-------------|
 | address   | address of the SIP010 token        |
 | decimals  | the amount of decimals of the token            |
+| symbol    | the symbol of the token   |
+| name      | the name of the token     |
 
 #### vw_dev_sl_bns.sql
 The view retrieves successful transactions related to domain names, such as preorders, registrations, transfers, renewals, and other updates. It aims to offer insights into the usage and activities around the Stacks domain name services.
