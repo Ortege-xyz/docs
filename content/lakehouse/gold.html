@@ -178,7 +178,19 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#stacks" id="toc-stacks" class="nav-link active" data-scroll-target="#stacks">Stacks</a>
+  <ul class="collapse">
+  <li><a href="#proof-of-transfer" id="toc-proof-of-transfer" class="nav-link" data-scroll-target="#proof-of-transfer">Proof of Transfer</a>
+  <ul class="collapse">
+  <li><a href="#tb_prod_gld_pox3_stackers_solo_cycles" id="toc-tb_prod_gld_pox3_stackers_solo_cycles" class="nav-link" data-scroll-target="#tb_prod_gld_pox3_stackers_solo_cycles">tb_prod_gld_pox3_stackers_solo_cycles</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -206,8 +218,84 @@ ul.task-list li input[type="checkbox"] {
 <p>As cryptocurrencies continue to grow in both complexity and volume, the need for an advanced, reliable data foundation becomes increasingly important. The Gold Layer addresses this need by offering a comprehensive dataset solution that encompasses everything from individual decentralized exchange (DEX) volumes to complex, aggregated data models. This layer is not just about data storage; it’s about transforming raw data into a goldmine of insights that power our language and machine learning models, as well as our innovative aggregate data models.</p>
 <p>Our commitment to excellence is reflected in the meticulous design and functionality of the Gold Layer. By leveraging state-of-the-art technologies and methodologies, we ensure that the data within this layer is of the highest quality, accuracy, and reliability. Whether you’re developing advanced ML models or seeking to consolidate numerous DEX volumes into a cohesive aggregation layer, the Gold Layer provides the essential datasets needed to drive your analytics forward.</p>
 <p>In the following sections, we will delve deeper into the architecture and design of the Gold Layer, the types of datasets available, their use cases, and how you can access and integrate these datasets into your analytical tools and models. Join us as we explore the foundational layer that is setting new standards in cryptocurrency analytics.</p>
+<section id="stacks" class="level1">
+<h1>Stacks</h1>
+<section id="proof-of-transfer" class="level2">
+<h2 class="anchored" data-anchor-id="proof-of-transfer">Proof of Transfer</h2>
+<section id="tb_prod_gld_pox3_stackers_solo_cycles" class="level3">
+<h3 class="anchored" data-anchor-id="tb_prod_gld_pox3_stackers_solo_cycles">tb_prod_gld_pox3_stackers_solo_cycles</h3>
+<p>Each record in the table represents a unique stacking event by an individual stacker. The table records encompass a broad range of information, from basic transaction details to specific stacking parameters, such as the lock period and eligible cycles for rewards.</p>
+<table class="table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>hash</code></td>
+<td>Unique hash of the stacking transaction.</td>
+</tr>
+<tr class="even">
+<td><code>sender_address</code></td>
+<td>Cryptocurrency address of the stacker.</td>
+</tr>
+<tr class="odd">
+<td><code>block_number</code></td>
+<td>Block number where the transaction was recorded.</td>
+</tr>
+<tr class="even">
+<td><code>tx_date</code></td>
+<td>Date and time when the transaction was processed.</td>
+</tr>
+<tr class="odd">
+<td><code>btc_block_height</code></td>
+<td>Bitcoin block height at the time of the transaction.</td>
+</tr>
+<tr class="even">
+<td><code>amount</code></td>
+<td>Amount of cryptocurrency stacked.</td>
+</tr>
+<tr class="odd">
+<td><code>btc_reward_address_decoded</code></td>
+<td>Decoded Bitcoin address for reward eligibility.</td>
+</tr>
+<tr class="even">
+<td><code>function_name</code></td>
+<td>Name of the smart contract function invoked.</td>
+</tr>
+<tr class="odd">
+<td><code>lock_period</code></td>
+<td>Number of cycles the funds are locked for stacking.</td>
+</tr>
+<tr class="even">
+<td><code>start_burn_height</code></td>
+<td>Starting burn block height for stacking.</td>
+</tr>
+<tr class="odd">
+<td><code>extend_cycle</code></td>
+<td>Indicator for extending the lock period.</td>
+</tr>
+<tr class="even">
+<td><code>start_cycle</code></td>
+<td>First eligible cycle for rewards.</td>
+</tr>
+<tr class="odd">
+<td><code>end_cycle</code></td>
+<td>Last eligible cycle for rewards.</td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
