@@ -13,3 +13,25 @@ As cryptocurrencies continue to grow in both complexity and volume, the need for
 Our commitment to excellence is reflected in the meticulous design and functionality of the Gold Layer. By leveraging state-of-the-art technologies and methodologies, we ensure that the data within this layer is of the highest quality, accuracy, and reliability. Whether you're developing advanced ML models or seeking to consolidate numerous DEX volumes into a cohesive aggregation layer, the Gold Layer provides the essential datasets needed to drive your analytics forward.
 
 In the following sections, we will delve deeper into the architecture and design of the Gold Layer, the types of datasets available, their use cases, and how you can access and integrate these datasets into your analytical tools and models. Join us as we explore the foundational layer that is setting new standards in cryptocurrency analytics.
+
+# Stacks
+
+## Proof of Transfer
+### tb_prod_gld_pox3_stackers_solo_cycles
+Each record in the table represents a unique stacking event by an individual stacker. The table records encompass a broad range of information, from basic transaction details to specific stacking parameters, such as the lock period and eligible cycles for rewards.
+
+| Field Name               | Description                                                  |
+|--------------------------|--------------------------------------------------------------|
+| `hash`                   | Unique hash of the stacking transaction.                     |
+| `sender_address`         | Cryptocurrency address of the stacker.                       |
+| `block_number`           | Block number where the transaction was recorded.             |
+| `tx_date`                | Date and time when the transaction was processed.            |
+| `btc_block_height`       | Bitcoin block height at the time of the transaction.         |
+| `amount`                 | Amount of cryptocurrency stacked.                            |
+| `btc_reward_address_decoded` | Decoded Bitcoin address for reward eligibility.         |
+| `function_name`          | Name of the smart contract function invoked.                 |
+| `lock_period`            | Number of cycles the funds are locked for stacking.          |
+| `start_burn_height`      | Starting burn block height for stacking.                     |
+| `extend_cycle`           | Indicator for extending the lock period.                     |
+| `start_cycle`            | First eligible cycle for rewards.                            |
+| `end_cycle`              | Last eligible cycle for rewards.                             |
