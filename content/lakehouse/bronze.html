@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -182,22 +182,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction-to-the-bronze-layer-in-testing" id="toc-introduction-to-the-bronze-layer-in-testing" class="nav-link active" data-scroll-target="#introduction-to-the-bronze-layer-in-testing">Introduction to the Bronze Layer in Testing</a>
+  <li><a href="#introduction-to-the-bronze-layer" id="toc-introduction-to-the-bronze-layer" class="nav-link active" data-scroll-target="#introduction-to-the-bronze-layer">Introduction to the Bronze Layer</a></li>
+  <li><a href="#address-book" id="toc-address-book" class="nav-link" data-scroll-target="#address-book">Address book</a></li>
+  <li><a href="#pricing-db_pricing" id="toc-pricing-db_pricing" class="nav-link" data-scroll-target="#pricing-db_pricing">Pricing (db_pricing)</a>
   <ul class="collapse">
-  <li><a href="#managing-expectations-in-testing" id="toc-managing-expectations-in-testing" class="nav-link" data-scroll-target="#managing-expectations-in-testing">Managing Expectations in Testing</a></li>
-  <li><a href="#utilizing-the-testing-environment" id="toc-utilizing-the-testing-environment" class="nav-link" data-scroll-target="#utilizing-the-testing-environment">Utilizing the Testing Environment</a></li>
+  <li><a href="#tbl_prod_br_prices" id="toc-tbl_prod_br_prices" class="nav-link" data-scroll-target="#tbl_prod_br_prices">tbl_prod_br_prices</a></li>
   </ul></li>
-  <li><a href="#bitcoin" id="toc-bitcoin" class="nav-link" data-scroll-target="#bitcoin">Bitcoin</a>
+  <li><a href="#bitcoin-db_btc" id="toc-bitcoin-db_btc" class="nav-link" data-scroll-target="#bitcoin-db_btc">Bitcoin (db_btc)</a>
   <ul class="collapse">
-  <li><a href="#tbl_dev_br_blocks" id="toc-tbl_dev_br_blocks" class="nav-link" data-scroll-target="#tbl_dev_br_blocks">tbl_dev_br_blocks</a></li>
-  <li><a href="#tbl_dev_br_transactions" id="toc-tbl_dev_br_transactions" class="nav-link" data-scroll-target="#tbl_dev_br_transactions">tbl_dev_br_transactions</a></li>
-  <li><a href="#tbl_test_br_miners" id="toc-tbl_test_br_miners" class="nav-link" data-scroll-target="#tbl_test_br_miners">tbl_test_br_miners</a></li>
+  <li><a href="#tbl_prod_br_blocks" id="toc-tbl_prod_br_blocks" class="nav-link" data-scroll-target="#tbl_prod_br_blocks">tbl_prod_br_blocks</a></li>
+  <li><a href="#tbl_prod_br_transactions" id="toc-tbl_prod_br_transactions" class="nav-link" data-scroll-target="#tbl_prod_br_transactions">tbl_prod_br_transactions</a></li>
   </ul></li>
   <li><a href="#stacks" id="toc-stacks" class="nav-link" data-scroll-target="#stacks">Stacks</a>
   <ul class="collapse">
-  <li><a href="#tbl_dev_br_cycles" id="toc-tbl_dev_br_cycles" class="nav-link" data-scroll-target="#tbl_dev_br_cycles">tbl_dev_br_cycles</a></li>
-  <li><a href="#tbl_dev_br_blocks-1" id="toc-tbl_dev_br_blocks-1" class="nav-link" data-scroll-target="#tbl_dev_br_blocks-1">tbl_dev_br_blocks</a></li>
-  <li><a href="#tbl_dev_br_transactions-1" id="toc-tbl_dev_br_transactions-1" class="nav-link" data-scroll-target="#tbl_dev_br_transactions-1">tbl_dev_br_transactions</a></li>
+  <li><a href="#tbl_prod_br_cycles" id="toc-tbl_prod_br_cycles" class="nav-link" data-scroll-target="#tbl_prod_br_cycles">tbl_prod_br_cycles</a></li>
+  <li><a href="#tbl_dev_br_blocks" id="toc-tbl_dev_br_blocks" class="nav-link" data-scroll-target="#tbl_dev_br_blocks">tbl_dev_br_blocks</a></li>
+  <li><a href="#tbl_dev_br_transactions" id="toc-tbl_dev_br_transactions" class="nav-link" data-scroll-target="#tbl_dev_br_transactions">tbl_dev_br_transactions</a></li>
   <li><a href="#tbl_dev_br_contracts" id="toc-tbl_dev_br_contracts" class="nav-link" data-scroll-target="#tbl_dev_br_contracts">tbl_dev_br_contracts</a></li>
   </ul></li>
   </ul>
@@ -225,33 +225,107 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introduction-to-the-bronze-layer-in-testing" class="level1">
-<h1>Introduction to the Bronze Layer in Testing</h1>
-<p>Welcome to the testing phase of the Ortege Lakehouse, where the Bronze Layer acts as the primary reservoir for raw data from varied sources. This layer serves as the initial platform for data analysis and processing within the Ortege ecosystem. It’s essential to recognize the testing environment’s relative stability, which nonetheless permits periodic updates and modifications for improvement.</p>
-<section id="managing-expectations-in-testing" class="level2">
-<h2 class="anchored" data-anchor-id="managing-expectations-in-testing">Managing Expectations in Testing</h2>
-<p>The data in the Bronze Layer during testing is more stable than in active development but still flexible to accommodate enhancements:</p>
-<ul>
-<li>Iterative Updates: Expect incremental changes as we refine data sets and adapt to new insights.</li>
-<li>Schema Adaptability: Data structures may be adjusted to align with evolving requirements and findings.</li>
-<li>Quality Progression: Data quality is continually advancing towards our high standards, with interim variations as part of the testing phase.</li>
-</ul>
+<section id="introduction-to-the-bronze-layer" class="level1">
+<h1>Introduction to the Bronze Layer</h1>
+<p>The Bronze Layer acts as the primary reservoir for raw data from varied sources. This layer serves as the initial platform for data analysis and processing within the Ortege ecosystem.</p>
 </section>
-<section id="utilizing-the-testing-environment" class="level2">
-<h2 class="anchored" data-anchor-id="utilizing-the-testing-environment">Utilizing the Testing Environment</h2>
-<p>To make the most of the Bronze Layer during testing:</p>
-<ul>
-<li>Stay Updated: Follow the latest changes through our communications and documentation.</li>
-<li>Explore and Test: Engage with the data, keeping in mind the environment’s purpose to test and improve.</li>
-<li>Feedback Loop: Contribute feedback to aid in the evolution of data management practices.</li>
-</ul>
-<p>Embrace this phase as an integral step toward a robust and sophisticated data infrastructure.</p>
+<section id="address-book" class="level1">
+<h1>Address book</h1>
+<p>Ortege Lakehouse distinguishes itself with a dedicated address book database that consolidates wallet addresses across various blockchains into a single unified repository. This unique design supports ML and AI-driven cross-chain analytics, enabling a comprehensive understanding and deeper insights into the entire crypto ecosystem from one source of truth.</p>
+</section>
+<section id="pricing-db_pricing" class="level1">
+<h1>Pricing (db_pricing)</h1>
+<p>Our pricing table currently gets aggregated pricing and not in realtime.</p>
+<section id="tbl_prod_br_prices" class="level2">
+<h2 class="anchored" data-anchor-id="tbl_prod_br_prices">tbl_prod_br_prices</h2>
+<p>This dataset includes various metrics such as supply details, current price, market capitalization, and price change percentages over different time frames. It also contains a timestamp indicating when the data was recorded or updated.</p>
+<table class="table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 11%">
+<col style="width: 72%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>Integer/String</td>
+<td>Unique identifier for the cryptocurrency record.</td>
+</tr>
+<tr class="even">
+<td>name</td>
+<td>String</td>
+<td>The full name of the cryptocurrency.</td>
+</tr>
+<tr class="odd">
+<td>symbol</td>
+<td>String</td>
+<td>The abbreviated symbol or ticker used to represent the cryptocurrency.</td>
+</tr>
+<tr class="even">
+<td>circulating_supply</td>
+<td>Decimal/Double</td>
+<td>The amount of cryptocurrency that is currently circulating in the market and publicly available.</td>
+</tr>
+<tr class="odd">
+<td>total_supply</td>
+<td>Decimal/Double</td>
+<td>The total amount of cryptocurrency that exists right now (minus any coins that have been verifiably burned).</td>
+</tr>
+<tr class="even">
+<td>price</td>
+<td>Decimal/Double</td>
+<td>The current price of the cryptocurrency.</td>
+</tr>
+<tr class="odd">
+<td>market_cap</td>
+<td>Decimal/Double</td>
+<td>The total market value of the cryptocurrency’s circulating supply.</td>
+</tr>
+<tr class="even">
+<td>percent_change_1h</td>
+<td>Decimal/Double</td>
+<td>The percentage change in price over the last hour.</td>
+</tr>
+<tr class="odd">
+<td>percent_change_24h</td>
+<td>Decimal/Double</td>
+<td>The percentage change in price over the last 24 hours.</td>
+</tr>
+<tr class="even">
+<td>percent_change_7d</td>
+<td>Decimal/Double</td>
+<td>The percentage change in price over the last 7 days.</td>
+</tr>
+<tr class="odd">
+<td>percent_change_30d</td>
+<td>Decimal/Double</td>
+<td>The percentage change in price over the last 30 days.</td>
+</tr>
+<tr class="even">
+<td>volume_24h</td>
+<td>Decimal/Double</td>
+<td>The total trading volume of the cryptocurrency over the last 24 hours.</td>
+</tr>
+<tr class="odd">
+<td>timestamp</td>
+<td>Timestamp</td>
+<td>The date and time at which the record was updated.</td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
-<section id="bitcoin" class="level1">
-<h1>Bitcoin</h1>
-<section id="tbl_dev_br_blocks" class="level2">
-<h2 class="anchored" data-anchor-id="tbl_dev_br_blocks">tbl_dev_br_blocks</h2>
+<section id="bitcoin-db_btc" class="level1">
+<h1>Bitcoin (db_btc)</h1>
+<section id="tbl_prod_br_blocks" class="level2">
+<h2 class="anchored" data-anchor-id="tbl_prod_br_blocks">tbl_prod_br_blocks</h2>
 <p>This table encapsulates comprehensive details on Bitcoin blocks, encompassing mining data, block identification, and transaction specifics. It records the difficulty level, mining rewards, the unique hash identifying each block, its position within the blockchain, and the Merkle root for transaction integrity verification. Additionally, it includes metrics such as the block’s size, the total number of transactions it contains, and the cumulative work or “chainwork” up to that point, expressed in hexadecimal. This table not only provides insights into the mining process, including the nonce and the compact target “bits,” but also captures the economic aspects of mining through fields like mint reward, total fees, and the overall reward. The tbl_dev_br_blocks serves as a pivotal resource for analyzing the blockchain’s structural and economic dynamics, offering a granular view of each block’s contribution to the ledger.</p>
 <table class="table">
 <colgroup>
@@ -360,8 +434,8 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
-<section id="tbl_dev_br_transactions" class="level2">
-<h2 class="anchored" data-anchor-id="tbl_dev_br_transactions">tbl_dev_br_transactions</h2>
+<section id="tbl_prod_br_transactions" class="level2">
+<h2 class="anchored" data-anchor-id="tbl_prod_br_transactions">tbl_prod_br_transactions</h2>
 <p>This table provides a detailed ledger of transactions within the Bitcoin chain, capturing both the technical aspects and the economic activities of each transaction. It records the transaction’s metadata, such as its unique identifier (id), the block_hash it belongs to, its block_height and timing (block_date and block_time), and its placement within the block (index). The table delves into the composition of transactions, detailing the number and total value of inputs (input_count and input_value) and outputs (output_count and output_value), alongside arrays of input and output objects for granular transaction analysis. It also highlights whether a transaction is a coinbase transaction, indicating a miner’s reward (is_coinbase), the transaction fees involved (fee), and technical parameters like hex representation, lock_time, size, version, and virtual_size. This comprehensive transactional overview aids in understanding the flow of bitcoins, transaction costs, and the operational dynamics of the Bitcoin blockchain.</p>
 <table class="table">
 <colgroup>
@@ -480,41 +554,11 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
-<section id="tbl_test_br_miners" class="level2">
-<h2 class="anchored" data-anchor-id="tbl_test_br_miners">tbl_test_br_miners</h2>
-<p>The <code>tbl_test_br_miners</code> table maintains a mapping of blockchain miner addresses to their corresponding identifiable miner names. It is used to associate mining activities with specific entities or mining pools within the Bitcoin network.</p>
-<table class="table">
-<colgroup>
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 75%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>col_name</th>
-<th>data_type</th>
-<th>comment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>address</td>
-<td>string</td>
-<td>The unique Bitcoin address associated with a miner or mining pool.</td>
-</tr>
-<tr class="even">
-<td>miner</td>
-<td>string</td>
-<td>The name of the miner or mining pool associated with the address.</td>
-</tr>
-</tbody>
-</table>
-</section>
 </section>
 <section id="stacks" class="level1">
 <h1>Stacks</h1>
-<section id="tbl_dev_br_cycles" class="level2">
-<h2 class="anchored" data-anchor-id="tbl_dev_br_cycles">tbl_dev_br_cycles</h2>
+<section id="tbl_prod_br_cycles" class="level2">
+<h2 class="anchored" data-anchor-id="tbl_prod_br_cycles">tbl_prod_br_cycles</h2>
 <p>The <code>tbl_dev_sl_cycles</code> table provides a structured overview of cycles within the Stacks blockchain, starting from the genesis of Stacks 2.0. Each cycle represents a fixed number of blocks, facilitating the organization and analysis of blockchain data over time. This table is essential for understanding the temporal division of blockchain activity and aids in analyzing trends, rewards distributions, and other cycle-based metrics.</p>
 <table class="table">
 <colgroup>
@@ -543,8 +587,8 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
-<section id="tbl_dev_br_blocks-1" class="level2">
-<h2 class="anchored" data-anchor-id="tbl_dev_br_blocks-1">tbl_dev_br_blocks</h2>
+<section id="tbl_dev_br_blocks" class="level2">
+<h2 class="anchored" data-anchor-id="tbl_dev_br_blocks">tbl_dev_br_blocks</h2>
 <table class="table">
 <colgroup>
 <col style="width: 10%">
@@ -637,8 +681,8 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
-<section id="tbl_dev_br_transactions-1" class="level2">
-<h2 class="anchored" data-anchor-id="tbl_dev_br_transactions-1">tbl_dev_br_transactions</h2>
+<section id="tbl_dev_br_transactions" class="level2">
+<h2 class="anchored" data-anchor-id="tbl_dev_br_transactions">tbl_dev_br_transactions</h2>
 <table class="table">
 <colgroup>
 <col style="width: 13%">
@@ -974,6 +1018,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/Ortege-xyz\.github\.io\/docs\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1008,7 +1070,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

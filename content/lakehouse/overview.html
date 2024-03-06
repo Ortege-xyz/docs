@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -190,7 +190,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#bronze-layer-the-foundation-with-raw-data" id="toc-bronze-layer-the-foundation-with-raw-data" class="nav-link" data-scroll-target="#bronze-layer-the-foundation-with-raw-data">Bronze Layer: The Foundation with Raw Data</a></li>
   <li><a href="#silver-layer-enhanced-readability-and-transformation" id="toc-silver-layer-enhanced-readability-and-transformation" class="nav-link" data-scroll-target="#silver-layer-enhanced-readability-and-transformation">Silver Layer: Enhanced Readability and Transformation</a></li>
-  <li><a href="#gold-layer-optimized-queries-and-focused-datasets" id="toc-gold-layer-optimized-queries-and-focused-datasets" class="nav-link" data-scroll-target="#gold-layer-optimized-queries-and-focused-datasets">Gold Layer: Optimized Queries and Focused Datasets</a></li>
+  <li><a href="#gold-layer-advanced-analytics-and-specialized-datasets" id="toc-gold-layer-advanced-analytics-and-specialized-datasets" class="nav-link" data-scroll-target="#gold-layer-advanced-analytics-and-specialized-datasets">Gold Layer: Advanced Analytics and Specialized Datasets</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -217,14 +217,14 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Ortege Lakehouse represents a cutting-edge data management and analytics platform, meticulously designed to accommodate the vast and growing needs of blockchain data analysis. At the core of our innovation is a seamless integration with OrtegeETL, comprehensive access through Ortege Studio, and exclusive API access for institutional customers. This platform not only underscores our commitment to leveraging open-source software but also ensures that our users have unparalleled access to blockchain datasets.</p>
+<p>Ortege Lakehouse represents a cutting-edge data management and analytics platform, meticulously designed to accommodate the vast and growing needs of blockchain data analysis. At the core of our innovation is a seamless integration with <a href="https://github.com/Ortege-xyz/ortegeETL">OrtegeETL</a>, comprehensive access through <a href="https://app.ortege.ai/dashboard/list/">Ortege Studio</a>, and exclusive API access for institutional customers. This platform not only underscores our commitment to leveraging open-source software but also ensures that our users have unparalleled access to blockchain datasets.</p>
 <section id="ortegeetl-open-source-blockchain-data-ingestion" class="level1">
 <h1>OrtegeETL: Open-Source Blockchain Data Ingestion</h1>
 <p><a href="https://github.com/Ortege-xyz/ortegeETL">OrtegeETL</a>, an integral component of our ecosystem, is an open-source tool specifically developed to facilitate the efficient ingestion of blockchain data into Ortege Lakehouse. This tool exemplifies our dedication to the open-source community, providing a robust and transparent solution for data extraction, transformation, and loading (ETL). With OrtegeETL, users can effortlessly synchronize blockchain data into the lakehouse, ensuring that the datasets are up-to-date and comprehensive. The open-source nature of OrtegeETL invites contributions and enhancements from the community, fostering innovation and continual improvement in handling blockchain data.</p>
 </section>
 <section id="seamless-integration-with-ortege-studio" class="level1">
 <h1>Seamless Integration with Ortege Studio</h1>
-<p>Ortege Studio users automatically gain access to all blockchain datasets hosted on Ortege Lakehouse. This default integration ensures that data analysts, developers, and researchers can directly tap into a rich repository of blockchain information within their familiar Ortege Studio environment. By providing this seamless access, we aim to enhance the analytical capabilities of our users, enabling them to derive actionable insights, conduct in-depth research, and develop innovative applications and solutions based on blockchain data.</p>
+<p>Ortege Studio users automatically gain access to all <code>production</code> blockchain datasets hosted on Ortege Lakehouse. This default integration ensures that data analysts, developers, and researchers can directly tap into a rich repository of blockchain information within their familiar Ortege Studio environment. By providing this seamless access, we aim to enhance the analytical capabilities of our users, enabling them to derive actionable insights, conduct in-depth research, and develop innovative applications and solutions based on blockchain data.</p>
 </section>
 <section id="exclusive-api-access-for-institutional-customers" class="level1">
 <h1>Exclusive API Access for Institutional Customers</h1>
@@ -236,18 +236,18 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="the-medallion-layer-architecture-of-ortege-lakehouse" class="level1">
 <h1>The Medallion Layer Architecture of Ortege Lakehouse</h1>
-<p>At the heart of Ortege Lakehouse’s innovative approach to blockchain data management and analytics is our unique Medallion Layer Architecture. This structured framework is meticulously designed to cater to various levels of data complexity and user needs, from raw blockchain transactions to highly optimized and use-case-specific datasets. The architecture is segmented into three distinct layers: Bronze, Silver, and Gold, each serving a unique purpose in the data transformation and analysis process.</p>
+<p>At the heart of Ortege Lakehouse’s innovative approach to blockchain data management and analytics is our Medallion Layer Architecture. This structured framework is meticulously designed to cater to various levels of data complexity and user needs, from raw blockchain transactions to highly optimized and use-case-specific datasets. The architecture is segmented into three distinct layers: Bronze, Silver, and Gold, each serving a unique purpose in the data transformation and analysis process.</p>
 <section id="bronze-layer-the-foundation-with-raw-data" class="level2">
 <h2 class="anchored" data-anchor-id="bronze-layer-the-foundation-with-raw-data">Bronze Layer: The Foundation with Raw Data</h2>
-<p>The <a href="../../content/lakehouse/bronze.html">Bronze Layer</a> forms the foundational bedrock of Ortege Lakehouse, containing the raw, unprocessed data directly ingested from multiple blockchains. Utilizing OrtegeETL, this layer captures a wide array of blockchain transactions and metadata, preserving the original integrity and granularity of the data. Ideal for users who need access to the most unadulterated form of blockchain data, the Bronze Layer offers a comprehensive snapshot of blockchain ecosystems in their native state.</p>
+<p>The <a href="../../content/lakehouse/bronze.html">Bronze Layer</a> forms the foundational bedrock of Ortege Lakehouse, containing the raw, unprocessed data directly ingested from multiple blockchains and multiple external sources. This layer captures a wide array of blockchain transactions and metadata, preserving the original integrity and granularity of the data. Ideal for users who need access to the most unadulterated form of blockchain data, the Bronze Layer offers a comprehensive snapshot of blockchain ecosystems in their native state.</p>
 </section>
 <section id="silver-layer-enhanced-readability-and-transformation" class="level2">
 <h2 class="anchored" data-anchor-id="silver-layer-enhanced-readability-and-transformation">Silver Layer: Enhanced Readability and Transformation</h2>
 <p>Building upon the raw data stored in the Bronze Layer, the <a href="../../content/lakehouse/silver.html">Silver Layer</a> introduces a series of transformations and enhancements to make the data more accessible and human-readable. This layer focuses on cleaning, structuring, and enriching the raw data, applying consistent schemas, and resolving common issues such as data normalization and deduplication. The Silver Layer is designed for users who require a balance between the raw detail of blockchain transactions and the convenience of pre-processed data, enabling more straightforward analysis and exploration.</p>
 </section>
-<section id="gold-layer-optimized-queries-and-focused-datasets" class="level2">
-<h2 class="anchored" data-anchor-id="gold-layer-optimized-queries-and-focused-datasets">Gold Layer: Optimized Queries and Focused Datasets</h2>
-<p>The pinnacle of the Medallion Layer Architecture, the <a href="../../content/lakehouse/gold.html">Gold Layer</a>, is where data meets performance and specificity. This layer includes datasets that have been further refined and optimized for specific use cases, themes, or queries. With a focus on performance, the Gold Layer offers pre-built queries, aggregated summaries, and analytical models tailored to particular areas of interest, such as market trends, transaction patterns, or network health indicators. This layer is perfect for users seeking the most efficient access to actionable insights, with data curated and optimized to support rapid analysis and decision-making.</p>
+<section id="gold-layer-advanced-analytics-and-specialized-datasets" class="level2">
+<h2 class="anchored" data-anchor-id="gold-layer-advanced-analytics-and-specialized-datasets">Gold Layer: Advanced Analytics and Specialized Datasets</h2>
+<p>The <a href="../../content/lakehouse/gold.html">Gold Layer</a> stands at the forefront of Ortege Lakehouse’s Medallion Layer Architecture, delivering unparalleled data sophistication and utility. In this layer, we integrate advanced machine learning and AI-driven insights, pushing the boundaries of data intelligence within the blockchain realm. It is home to highly complex datasets, including in-depth analyses of STX stacking on the Stacks blockchain and consolidated DeFi activity tables, offering a multi-faceted view of decentralized finance operations. Designed for peak performance, the Gold Layer facilitates quick and incisive access to data that has been meticulously refined for precise use cases. This tier caters to those who demand the most detailed and actionable intelligence, with optimized queries and models that enable users to perform rapid analysis and make informed decisions with confidence.</p>
 
 
 </section>
@@ -333,6 +333,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/Ortege-xyz\.github\.io\/docs\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -367,7 +385,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
