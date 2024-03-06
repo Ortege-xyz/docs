@@ -108,7 +108,7 @@ Proof of Transfer, or PoX, is a novel consensus mechanism implemented by the Sta
 | `contract_call.contract_id`       | The ID of the contract that includes the function being called.                                                                    |
 | `contract_call.function_signature`| The signature of the function being called in the contract, representing the function's interface.                                |
 | `contract_call.function_args`     | The arguments provided to the function call within the contract.                                                                   |
-| `amount` (conditional)            | The amount of STX locked for stacking, normalized to STX units (divided by 1e6), depending on the stacking operation.             |
+| `amount` (conditional)            | The amount of STX locked for stacking, normalized to STX units (converted from microSTX to STX with a decimal precision of 6), depending on the stacking operation.             |
 | `btcAddress_to_receive_rewards`   | The Bitcoin address set to receive stacking rewards, extracted and decoded from the function arguments.                           |
 | `lock_period` (conditional)       | For `stack-stx` operations, this represents the number of cycles the tokens are locked for stacking.                              |
 | `start_burn_height` (conditional) | For `stack-stx` operations, this is the burnchain block height at which the stacking period starts.                                |
