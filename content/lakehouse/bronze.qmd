@@ -5,12 +5,19 @@ format:
     toc: true
     html-math-method: katex
 ---
-# Introduction to the Bronze Layer
 The Bronze Layer acts as the primary reservoir for raw data from varied sources. This layer serves as the initial platform for data analysis and processing within the Ortege ecosystem. 
 
-# Address book
+# Address book (db_address_book)
 Ortege Lakehouse distinguishes itself with a dedicated address book database that consolidates wallet addresses across various blockchains into a single unified repository. This unique design supports ML and AI-driven cross-chain analytics, enabling a comprehensive understanding and deeper insights into the entire crypto ecosystem from one source of truth.
 
+## tbl_test_br_address_labels
+Classifies blockchain addresses based on their associated activities. Currently, this table includes Bitcoin addresses known for participating in Stacks (STX) token stacking. This table allows users to quickly identify and analyze addresses that are active in specific blockchain operations.
+
+| Column Name | Type    | Description                                              |
+|-------------|---------|----------------------------------------------------------|
+| address     | String  | The unique identifier for a wallet on the blockchain.     |
+| blockchain  | String  | The name of the blockchain network, e.g., 'bitcoin'.      |
+| label       | String  | A descriptive label for the address, e.g., 'STX stacker'. |
 
 
 # Pricing (db_pricing)
@@ -97,7 +104,9 @@ The `tbl_dev_sl_cycles` table provides a structured overview of cycles within th
 | `end_block`  | The ending block number for the given cycle. This marks the last block in the cycle. |
 
 
-## tbl_dev_br_blocks
+## tbl_prod_br_blocks
+The table archives block data for the Stacks blockchain, detailing block identification, sequencing, and associated Bitcoin blockchain references due to Stacks' unique proof-of-burn consensus mechanism. It records block numbers, hashes, transaction counts, and the execution costs related to transactions, offering essential insights for analysis of network activity and transactional efficiency on the Stacks blockchain.
+
 | col_name                  | data_type | comment                                                                                                                                                                                                                       |
 |---------------------------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | canonical                 | boolean   | Canonical Blocks are the building blocks that contribute to the continuous, unbroken chain of blocks in the blockchain, each linking to its predecessor, forming the indelible ledger that blockchain is celebrated for. You expect this to be true. |
@@ -117,6 +126,8 @@ The `tbl_dev_sl_cycles` table provides a structured overview of cycles within th
 | execution_cost_write_length| bigint   | The number of bytes written to the underlying data store.                                                                                                                                                                     |
 
 ## tbl_dev_br_transactions
+The table is a comprehensive record of transactions on the Stacks blockchain. It includes transaction identifiers, sender information, execution costs, and status details. This table links transactions to blocks, tracks microblock inclusion, and categorizes transaction types, such as token transfers and smart contract executions. It's a key resource for analyzing transactional data within the Stacks ecosystem.
+
 | col_name                  | data_type            | comment                                                                                                                                                 |
 |---------------------------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
 | hash                      | string               | Unique identifier for the transaction                                                                                                                   |
@@ -156,6 +167,8 @@ The `tbl_dev_sl_cycles` table provides a structured overview of cycles within th
 
 
 ## tbl_dev_br_contracts
+The table records details of smart contracts on the Stacks blockchain. It tracks the transaction hash (tx_hash), whether the contract is the main (canonical) version, the contract's address, and the associated block number. Contract-specific data like Clarity language version (clarity_version), source code, and ABI (Application Binary Interface) are also stored. Additionally, flags indicate if the contract pertains to a STX20 token (is_stx20) or a non-fungible token (is_nft), offering insights into the contract's purpose and functionality. This table is vital for developers and analysts interested in smart contract deployment and usage patterns on Stacks.
+
 | col_name         | data_type | comment                                                                                                                                                                                                                     |
 |------------------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | tx_hash          | string    | Transaction hash of the contract. Try searching it in explorer.hiro.so                                                                                                                                                     |
