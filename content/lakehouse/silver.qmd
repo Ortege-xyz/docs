@@ -176,16 +176,16 @@ This view provides metadata about all tokens that comply with the [SIP010 Fungib
 | symbol    | the symbol of the token   |
 | name      | the name of the token     |
 
-#### vw_dev_sl_bns.sql
-The view retrieves successful transactions related to domain names, such as preorders, registrations, transfers, renewals, and other updates. It aims to offer insights into the usage and activities around the Stacks domain name services.
+#### vw_dev_sl_bns
+The view retrieves successful transactions related to [BNS (Bitcoin Name Service)](https://www.dots.so/register) domain names, such as preorders, registrations, transfers, renewals, and other updates. It aims to offer insights into the usage and activities around the Stacks domain name services.
 
 | Field Name          | Description                                                                                      |
 |---------------------|--------------------------------------------------------------------------------------------------|
 | `hash`              | The unique identifier of the transaction on the blockchain.                                      |
 | `sender_address`    | The Stacks wallet address of the sender initiating the transaction.                              |
 | `block_number`      | The block number in which the transaction was included.                                          |
-| `to_timestamp(block_timestamp)` | The timestamp of the block, converted to a human-readable date and time format.             |
-| `contract_call.function_name` | The specific function called within the `bns` contract, indicating the type of domain name operation. |
+| `tx_date` | The timestamp of the block, converted to a human-readable date and time format.             |
+| `function_name` | The specific function called within the `bns` contract, indicating the type of domain name operation. |
 | `amount`            | Conditionally shows the asset amount for `name-preorder` and the renewal fee for `name-renewal`. |
 | `name`              | For `name-register`, `name-transfer`, and `name-renewal`, this is the domain name involved.      |
 | `new_owner`         | For `name-transfer` operations, this indicates the new owner's address of the domain name.       |
