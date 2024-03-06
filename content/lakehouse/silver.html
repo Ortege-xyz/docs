@@ -182,7 +182,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#bitcoin" id="toc-bitcoin" class="nav-link active" data-scroll-target="#bitcoin">Bitcoin</a>
+  <li><a href="#bitcoin-db_btc" id="toc-bitcoin-db_btc" class="nav-link active" data-scroll-target="#bitcoin-db_btc">Bitcoin (db_btc)</a>
   <ul class="collapse">
   <li><a href="#base-tables" id="toc-base-tables" class="nav-link" data-scroll-target="#base-tables">Base tables</a>
   <ul class="collapse">
@@ -237,8 +237,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="bitcoin" class="level1">
-<h1>Bitcoin</h1>
+<section id="bitcoin-db_btc" class="level1">
+<h1>Bitcoin (db_btc)</h1>
 <p>The Silver layer on Bitcoin will focus on exploding the inputs and outputs from the raw data as well as focus on all the L2’s, Rollups and Sidechains that are building on Bitcoin</p>
 <section id="base-tables" class="level2">
 <h2 class="anchored" data-anchor-id="base-tables">Base tables</h2>
@@ -790,8 +790,8 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
-<section id="vw_dev_sl_bns" class="level4">
-<h4 class="anchored" data-anchor-id="vw_dev_sl_bns">vw_dev_sl_bns</h4>
+<section id="vw_prod_sl_bns" class="level4">
+<h4 class="anchored" data-anchor-id="vw_prod_sl_bns">vw_prod_sl_bns</h4>
 <p>The view retrieves successful transactions related to <a href="https://www.dots.so/register">BNS (Bitcoin Name Service)</a> domain names, such as preorders, registrations, transfers, renewals, and other updates. It aims to offer insights into the usage and activities around the Stacks domain name services.</p>
 <table class="table">
 <colgroup>
@@ -843,9 +843,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="dexs" class="level3">
 <h3 class="anchored" data-anchor-id="dexs">DEXs</h3>
-<section id="vw_dev_sl_dapp_alex_swap" class="level4">
-<h4 class="anchored" data-anchor-id="vw_dev_sl_dapp_alex_swap">vw_dev_sl_dapp_alex_swap</h4>
+<p>We aggregate and refine swap volume data from leading decentralized exchanges, specifically <a href="https://alexgo.io/">ALEX</a> and <a href="https://www.bitflow.finance/">Bitflow</a>. By streamlining the collection of trade data through direct blockchain interactions, the Silver Layer presents a unified and enriched view of the cryptocurrency market’s liquidity and trading activity. This integration allows users to access detailed records of swap events, providing insights into trading pair performances, volume fluctuations, and liquidity provisions. Our users leverage this high-fidelity data for in-depth market analysis, deriving strategic intelligence essential for traders and financial analysts who demand the most current and comprehensive market snapshots.</p>
+<section id="vw_prod_sl_dapp_alex_swap" class="level4">
+<h4 class="anchored" data-anchor-id="vw_prod_sl_dapp_alex_swap">vw_prod_sl_dapp_alex_swap</h4>
 <p>The vw_dev_sl_dapp_alex_swap view provides a comprehensive look into the smart contract activity of the ALEX dApp, showcasing token swaps. It includes transaction timestamps, block numbers, contract identifiers, and detailed function arguments, facilitating an in-depth analysis of dApp interactions on the Stacks blockchain.</p>
+<p><strong>Please note</strong> This layer includes the volume in the native currency of each token and doesn’t include pricing details. If you’d like it converted by the token’s decimals and to have the realtime pricing information, that is available on the <a href="../../content/lakehouse/gold.html">Gold layer</a>.</p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -902,8 +904,8 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <p><strong>Please note</strong> This chart needs some improvements which will be found in the Gold Layer. Take note the volume has all been divided by 8 decimals places. This is hardcoded and some of those tokens may not have 8 decimal places so to get accurate figures you’d need to get the decimals from <code>vw_dev_sl_sip10_tokens</code></p>
 </section>
-<section id="vw_dev_sl_dapp_bitflow" class="level4">
-<h4 class="anchored" data-anchor-id="vw_dev_sl_dapp_bitflow">vw_dev_sl_dapp_bitflow</h4>
+<section id="vw_prod_sl_dapp_bitflow" class="level4">
+<h4 class="anchored" data-anchor-id="vw_prod_sl_dapp_bitflow">vw_prod_sl_dapp_bitflow</h4>
 <p>This dataset focuses on successful liquidity and swap event transactions. It covers add-liquidity, swap-x-for-y, swap-y-for-x, and withdraw-liquidity operations. Each record provides a transaction hash, the sender’s address, the block number, the date and time of the transaction (tx_date), an array of events (events), the function name indicating the operation (contract_call.function_name), and the function arguments (contract_call.function_args). The dataset also includes calculated fields for the amounts of token X and token Y involved in each transaction, with positive values typically representing token acquisitions and negative values indicating disbursements or deductions.</p>
 <table class="table">
 <colgroup>
