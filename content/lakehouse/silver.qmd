@@ -86,6 +86,27 @@ Captures the rewards earned by Stacks (STX) token stackers, expressed in satoshi
 | input_value | Integer/Long | The reward amount earned for stacking, denominated in satoshis. |
 
 
+## MetaProtocols
+Bitcoin metaprotocols, such as Ordinals and BRC-20 tokens, represent innovative layers or protocols built on top of the Bitcoin blockchain that extend its functionality beyond simple financial transactions. These metaprotocols leverage the security and decentralization of Bitcoin while introducing new capabilities, such as the creation of smart contracts, tokens, and unique digital assets. 
+
+### Ordinals (tbl_prod_sl_ordinals)
+Ordinals introduce the concept of "digital artifacts" to the Bitcoin ecosystem. Unlike traditional Bitcoin transactions that are purely financial, Ordinals allow for the inscription of arbitrary data directly onto individual satoshis (the smallest unit of Bitcoin). This innovation means that any piece of digital content, whether it be text, images, audio, or even small programs, can be inscribed onto the Bitcoin blockchain. Each inscribed satoshi becomes a unique, non-fungible token (NFT) due to its specific ordinal number, making it possible to own, trade, and collect digital artifacts in a way that's secured by the Bitcoin network.
+
+**Key Features:**
+
+* Uniqueness: Each inscription is unique, tied to a specific satoshi.
+* Decentralization: Utilizes the secure and decentralized nature of Bitcoin.
+* Versatility: Allows for a wide range of digital content to be stored directly on the blockchain.
+
+### BRC20's (tbl_prod_sl_brc20)
+BRC-20 tokens represent a standard for issuing fungible tokens on the Bitcoin blockchain, analogous to Ethereum's ERC-20 standard. By utilizing Bitcoin sidechains or layers such as the Liquid Network or smart contract platforms built on top of Bitcoin, BRC-20 tokens enable the creation of custom tokens that can represent various assets, from traditional securities to new forms of digital assets. These tokens can be used for a multitude of purposes, including decentralized finance (DeFi), governance, and digital collectibles, all while benefiting from the security and liquidity of the Bitcoin network.
+
+**Key Features:**
+
+* Fungibility: Tokens conforming to the BRC-20 standard are interchangeable, with each token being identical to another in value and properties.
+* Smart Contracts: Enables complex financial operations and agreements to be executed automatically.
+* Bitcoin Security: Leverages the robust security features of the Bitcoin blockchain.
+
 # Stacks (db_stacks)
 The Silver Layer in the Stacks ecosystem serves as a crucial intermediary layer that enriches raw blockchain data with meaningful metadata, facilitating deeper insights and analysis. This layer particularly focuses on metadata about all tokens compliant with the SIP010 standard, STX20 tokens and individual decentralized application (dApp) activities through smart contract interactions. Below are the details of the views included in the Silver Layer for Stacks, highlighting the comprehensive metadata and activity records.
 
