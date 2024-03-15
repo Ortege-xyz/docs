@@ -109,7 +109,7 @@
     "href": "content/lakehouse/bronze.html#bitcoin",
     "title": "Bronze Layer",
     "section": "Bitcoin",
-    "text": "Bitcoin\nThese tables specifically focus on Bitcoin and interesting wallets in the Bitcoin ecosystem\n\nWallet first seen (tbl_test__br_address_bitcoin_first_seen)\nThis table returns all wallets on Bitcoin as well as the date the address was first seen\n\n\nWallet size (tbl_test_br_bitcoin_wallet_size)\nThis table classifies all Bitcoin addresses by their BTC holdings. We classify wallets as:\n\n&lt; 1 BTC Shrimp\n\n1 BTC and &lt; 10 BTC Crap\n\n\n10 BTC and &lt; 100 BTC Fish\n\n\n100 BTC and &lt; 1K BTC Shark\n\n\n1K BTC and &lt; 10k BTC Whale\n\n\n10k BTC Mega Whale"
+    "text": "Bitcoin\nThese tables specifically focus on Bitcoin and interesting wallets in the Bitcoin ecosystem\n\nWallet first seen (tbl_test__br_address_bitcoin_first_seen)\nThis table returns all wallets on Bitcoin as well as the date the address was first seen\n\n\nWallet size (tbl_test_br_bitcoin_wallet_size)\nThis table classifies all Bitcoin addresses by their BTC holdings. We classify wallets as:\n\n&lt; 1 BTC Shrimp\nBetween 1 BTC and &lt; 10 BTC Crap\nBetween 10 BTC and &lt; 100 BTC Fish\nBetween 100 BTC and &lt; 1K BTC Shark\nBetween 1K BTC and &lt; 10k BTC Whale\nMore than 10k BTC Mega Whale"
   },
   {
     "objectID": "content/lakehouse/bronze.html#tbl_prod_br_prices",
