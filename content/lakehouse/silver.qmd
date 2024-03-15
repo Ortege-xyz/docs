@@ -326,6 +326,6 @@ The vw_dev_sl_stx20 view captures transactions involving STX20 tokens, including
 | total_supply       | Total supply of tokens (varchar)  |
 | limit_per_mint     | Limit per mint operation (varchar)|
 
+# Soroban (Stellar)
 
-
-
+## Envelopes

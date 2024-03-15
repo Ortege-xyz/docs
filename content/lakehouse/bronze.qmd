@@ -10,7 +10,10 @@ The Bronze Layer acts as the primary reservoir for raw data from varied sources.
 # Address book (db_address_book)
 Ortege Lakehouse distinguishes itself with a dedicated address book database that consolidates wallet addresses across various blockchains into a single unified repository. This unique design supports ML and AI-driven cross-chain analytics, enabling a comprehensive understanding and deeper insights into the entire crypto ecosystem from one source of truth.
 
-## tbl_test_br_address_labels
+## General
+These tables cover addresses across multiple blockchains and aren't blockchain specific
+
+### tbl_test_br_address_labels
 Classifies blockchain addresses based on their associated activities. Currently, this table includes Bitcoin addresses known for participating in Stacks (STX) token stacking. This table allows users to quickly identify and analyze addresses that are active in specific blockchain operations.
 
 | Column Name | Type    | Description                                              |
@@ -19,6 +22,22 @@ Classifies blockchain addresses based on their associated activities. Currently,
 | blockchain  | String  | The name of the blockchain network, e.g., 'bitcoin'.      |
 | label       | String  | A descriptive label for the address, e.g., 'STX stacker'. |
 
+
+## Bitcoin
+These tables specifically focus on Bitcoin and interesting wallets in the Bitcoin ecosystem
+
+### Wallet first seen (tbl_test__br_address_bitcoin_first_seen)
+This table returns all wallets on Bitcoin as well as the date the address was first seen
+
+### Wallet size (tbl_test_br_bitcoin_wallet_size)
+This table classifies all Bitcoin addresses by their BTC holdings. We classify wallets as:
+
+* < 1 BTC Shrimp
+* > 1 BTC and < 10 BTC Crap
+* > 10 BTC and < 100 BTC Fish
+* > 100 BTC and < 1K BTC Shark
+* > 1K BTC and < 10k BTC Whale
+* > 10k BTC Mega Whale
 
 # Pricing (db_pricing)
 Our pricing table currently gets aggregated pricing and not in realtime.
