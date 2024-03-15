@@ -49,6 +49,16 @@ The `vw_prod_sl_inputs` table is an expanded view of the inputs from the raw tra
 | value               | bigint    | The value of bitcoins being input, typically matching the value of the spent output.            |
 
 
+## Wallet transactions (tbl_prod_sl_wallet_transactions)
+The tbl_prod_s1_wallet_transactions table is designed to store transactional data related to Bitcoin wallets. This data helps in monitoring and auditing the balance changes in each wallet associated with the system.
+
+This table is utilized by Ortege to:
+
+* Track incoming and outgoing transactions for each wallet.
+* Calculate the real-time balance of each wallet.
+* Audit transactions for compliance and reporting purposes.
+* Detect patterns and analyze wallet activity.
+
 ## Layer 2's
 In the blockchain community, terminology such as "layer-2 solutions," "sidechains," and "rollups" can often lead to confusion due to overlapping features and capabilities. For the sake of clarity and convenience within our documentation, we will refer to these various technologies collectively as "L2 solutions." This encompasses any scalability and extensibility solutions that are built on top of the Bitcoin network to enhance its performance and functionality.
 
