@@ -184,7 +184,15 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#address-book-db_address_book" id="toc-address-book-db_address_book" class="nav-link active" data-scroll-target="#address-book-db_address_book">Address book (db_address_book)</a>
   <ul class="collapse">
+  <li><a href="#general" id="toc-general" class="nav-link" data-scroll-target="#general">General</a>
+  <ul class="collapse">
   <li><a href="#tbl_test_br_address_labels" id="toc-tbl_test_br_address_labels" class="nav-link" data-scroll-target="#tbl_test_br_address_labels">tbl_test_br_address_labels</a></li>
+  </ul></li>
+  <li><a href="#bitcoin" id="toc-bitcoin" class="nav-link" data-scroll-target="#bitcoin">Bitcoin</a>
+  <ul class="collapse">
+  <li><a href="#wallet-first-seen-tbl_test__br_address_bitcoin_first_seen" id="toc-wallet-first-seen-tbl_test__br_address_bitcoin_first_seen" class="nav-link" data-scroll-target="#wallet-first-seen-tbl_test__br_address_bitcoin_first_seen">Wallet first seen (tbl_test__br_address_bitcoin_first_seen)</a></li>
+  <li><a href="#wallet-size-tbl_test_br_bitcoin_wallet_size" id="toc-wallet-size-tbl_test_br_bitcoin_wallet_size" class="nav-link" data-scroll-target="#wallet-size-tbl_test_br_bitcoin_wallet_size">Wallet size (tbl_test_br_bitcoin_wallet_size)</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#pricing-db_pricing" id="toc-pricing-db_pricing" class="nav-link" data-scroll-target="#pricing-db_pricing">Pricing (db_pricing)</a>
   <ul class="collapse">
@@ -231,8 +239,11 @@ ul.task-list li input[type="checkbox"] {
 <section id="address-book-db_address_book" class="level1">
 <h1>Address book (db_address_book)</h1>
 <p>Ortege Lakehouse distinguishes itself with a dedicated address book database that consolidates wallet addresses across various blockchains into a single unified repository. This unique design supports ML and AI-driven cross-chain analytics, enabling a comprehensive understanding and deeper insights into the entire crypto ecosystem from one source of truth.</p>
-<section id="tbl_test_br_address_labels" class="level2">
-<h2 class="anchored" data-anchor-id="tbl_test_br_address_labels">tbl_test_br_address_labels</h2>
+<section id="general" class="level2">
+<h2 class="anchored" data-anchor-id="general">General</h2>
+<p>These tables cover addresses across multiple blockchains and aren’t blockchain specific</p>
+<section id="tbl_test_br_address_labels" class="level3">
+<h3 class="anchored" data-anchor-id="tbl_test_br_address_labels">tbl_test_br_address_labels</h3>
 <p>Classifies blockchain addresses based on their associated activities. Currently, this table includes Bitcoin addresses known for participating in Stacks (STX) token stacking. This table allows users to quickly identify and analyze addresses that are active in specific blockchain operations.</p>
 <table class="table">
 <colgroup>
@@ -265,6 +276,37 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+</section>
+</section>
+<section id="bitcoin" class="level2">
+<h2 class="anchored" data-anchor-id="bitcoin">Bitcoin</h2>
+<p>These tables specifically focus on Bitcoin and interesting wallets in the Bitcoin ecosystem</p>
+<section id="wallet-first-seen-tbl_test__br_address_bitcoin_first_seen" class="level3">
+<h3 class="anchored" data-anchor-id="wallet-first-seen-tbl_test__br_address_bitcoin_first_seen">Wallet first seen (tbl_test__br_address_bitcoin_first_seen)</h3>
+<p>This table returns all wallets on Bitcoin as well as the date the address was first seen</p>
+</section>
+<section id="wallet-size-tbl_test_br_bitcoin_wallet_size" class="level3">
+<h3 class="anchored" data-anchor-id="wallet-size-tbl_test_br_bitcoin_wallet_size">Wallet size (tbl_test_br_bitcoin_wallet_size)</h3>
+<p>This table classifies all Bitcoin addresses by their BTC holdings. We classify wallets as:</p>
+<ul>
+<li>&lt; 1 BTC Shrimp</li>
+<li><blockquote class="blockquote">
+<p>1 BTC and &lt; 10 BTC Crap</p>
+</blockquote></li>
+<li><blockquote class="blockquote">
+<p>10 BTC and &lt; 100 BTC Fish</p>
+</blockquote></li>
+<li><blockquote class="blockquote">
+<p>100 BTC and &lt; 1K BTC Shark</p>
+</blockquote></li>
+<li><blockquote class="blockquote">
+<p>1K BTC and &lt; 10k BTC Whale</p>
+</blockquote></li>
+<li><blockquote class="blockquote">
+<p>10k BTC Mega Whale</p>
+</blockquote></li>
+</ul>
+</section>
 </section>
 </section>
 <section id="pricing-db_pricing" class="level1">
