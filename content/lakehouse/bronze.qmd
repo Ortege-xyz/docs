@@ -33,11 +33,11 @@ This table returns all wallets on Bitcoin as well as the date the address was fi
 This table classifies all Bitcoin addresses by their BTC holdings. We classify wallets as:
 
 * < 1 BTC Shrimp
-* > 1 BTC and < 10 BTC Crap
-* > 10 BTC and < 100 BTC Fish
-* > 100 BTC and < 1K BTC Shark
-* > 1K BTC and < 10k BTC Whale
-* > 10k BTC Mega Whale
+* Between 1 BTC and < 10 BTC Crap
+* Between 10 BTC and < 100 BTC Fish
+* Between 100 BTC and < 1K BTC Shark
+* Between 1K BTC and < 10k BTC Whale
+* More than 10k BTC Mega Whale
 
 # Pricing (db_pricing)
 Our pricing table currently gets aggregated pricing and not in realtime.
