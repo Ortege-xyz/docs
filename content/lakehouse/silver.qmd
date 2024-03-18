@@ -124,7 +124,8 @@ The Silver Layer in the Stacks ecosystem serves as a crucial intermediary layer 
 Proof of Transfer, or PoX, is a novel consensus mechanism implemented by the Stacks blockchain, which is built on top of Bitcoin. The mechanism allows participants to lock up (or "stack") their STX tokens temporarily to support the network's security and consensus. In return, stackers receive rewards in Bitcoin. This process is governed by the smart contract [SP000000000000000000002Q6VF78.pox-3](https://explorer.hiro.so/txid/0xf9e3ab172a3fd18da7a451b67f9ae686af04b8f520586394c597613099efc83e?chain=mainnet)
 
 
-### tbl_prod_sl_pox3_stackers_solo
+### POX3 Solo Stackers
+**tbl_prod_sl_pox3_stackers_solo**
  Tracks various Proof of Transfer (PoX) and Stacking operations on the Stacks blockchain. It includes solo stacking transactions. The transactions are filtered to only include successful ones pertaining to the pox-3 smart contract and are related to solo stacking operations such as stack-stx, stack-extend, and stack-increase.
 
 | Field Name                        | Description                                                                                                                        |
@@ -146,7 +147,8 @@ Proof of Transfer, or PoX, is a novel consensus mechanism implemented by the Sta
 | `extend_cycle` (conditional)      | For `stack-extend` operations, this signifies the additional number of cycles for which an existing stack is extended.            |
 
 
-### vw_prod_sl_pox3_stackers_delegates
+### POX3 Delegate Stackers
+**vw_prod_sl_pox3_stackers_delegates**
 This dataset focuses on delegated stacking operations, capturing the delegation of STX tokens for stacking purposes. It tracks the delegation transactions, detailing the delegators, delegatees, and the amounts involved.
 
 | Field Name                     | Description                                                                                                    |
@@ -165,7 +167,8 @@ This dataset focuses on delegated stacking operations, capturing the delegation 
 | `delegate_to` (conditional)    | The address to which the STX tokens are being delegated for stacking purposes.                                 |
 
 
-### vw_prod_sl_pox3_agg
+### POX3 Aggregate Stackers
+**vw_prod_sl_pox3_agg**
 This dataset captures transactions pertaining to partial stacking commitments, allowing for an analysis of stacking operations that aggregate STX tokens from multiple sources. It provides insights into the delegation process, the amount of STX committed, and the intended reward cycles.
 
 | Field Name                   | Description                                                                                           |
@@ -195,7 +198,8 @@ This data transformation allows users to effortlessly access DeFi-specific insig
 ### General
 These foundational tables are pivotal in enriching our suite of dApp-specific tables with essential data. They act as core sources that inform and enhance the utility of subsequent datasets, providing a robust bedrock for a more insightful aggregation of dApp activities.
 
-#### vw_test_sl_sip10_tokens
+#### SIP10 Tokens
+**vw_test_sl_sip10_tokens**
 **Please note** This view is still in test as we are still adding support for Symbol, Name and Circulating supply.
 
 This view provides metadata about all tokens that comply with the [SIP010 Fungible Token standard](https://github.com/stacksgov/sips/blob/main/sips/sip-010/sip-010-fungible-token-standard.md). This includes critical information such as the token address and its decimal precision, which is essential for accurately representing token quantities and facilitating token-related operations.
@@ -207,7 +211,8 @@ This view provides metadata about all tokens that comply with the [SIP010 Fungib
 | symbol    | the symbol of the token   |
 | name      | the name of the token     |
 
-#### vw_prod_sl_bns
+#### [BNS](https://btc.us/)
+**vw_prod_sl_bns**
 The view retrieves successful transactions related to [BNS (Bitcoin Name Service)](https://www.dots.so/register) domain names, such as preorders, registrations, transfers, renewals, and other updates. It aims to offer insights into the usage and activities around the Stacks domain name services.
 
 | Field Name          | Description                                                                                      |
@@ -224,7 +229,8 @@ The view retrieves successful transactions related to [BNS (Bitcoin Name Service
 ### DEXs
 We aggregate and refine swap volume data from leading decentralized exchanges, specifically [ALEX](https://alexgo.io/) and [Bitflow](https://www.bitflow.finance/). By streamlining the collection of trade data through direct blockchain interactions, the Silver Layer presents a unified and enriched view of the cryptocurrency market's liquidity and trading activity. This integration allows users to access detailed records of swap events, providing insights into trading pair performances, volume fluctuations, and liquidity provisions. Our users leverage this high-fidelity data for in-depth market analysis, deriving strategic intelligence essential for traders and financial analysts who demand the most current and comprehensive market snapshots.
 
-#### vw_prod_sl_dapp_alex_swap
+#### [ALEX](https://app.alexlab.co/swap)
+**vw_prod_sl_dapp_alex_swap**
 The vw_dev_sl_dapp_alex_swap view provides a comprehensive look into the smart contract activity of the ALEX dApp, showcasing token swaps. It includes transaction timestamps, block numbers, contract identifiers, and detailed function arguments, facilitating an in-depth analysis of dApp interactions on the Stacks blockchain.
 
 **Please note** This layer includes the volume in the native currency of each token and doesn't include pricing details. If you'd like it converted by the token's decimals and to have the realtime pricing information, that is available on the [Gold layer](gold.qmd).
@@ -245,7 +251,8 @@ The vw_dev_sl_dapp_alex_swap view provides a comprehensive look into the smart c
 
 **Please note** This chart needs some improvements which will be found in the Gold Layer. Take note the volume has all been divided by 8 decimals places. This is hardcoded and some of those tokens may not have 8 decimal places so to get accurate figures you'd need to get the decimals from `vw_dev_sl_sip10_tokens`
 
-#### vw_prod_sl_dapp_bitflow
+#### [Bitflow](https://www.bitflow.finance/)
+**vw_prod_sl_dapp_bitflow**
 This dataset focuses on successful liquidity and swap event transactions. It covers add-liquidity, swap-x-for-y, swap-y-for-x, and withdraw-liquidity operations. Each record provides a transaction hash, the sender's address, the block number, the date and time of the transaction (tx_date), an array of events (events), the function name indicating the operation (contract_call.function_name), and the function arguments (contract_call.function_args). The dataset also includes calculated fields for the amounts of token X and token Y involved in each transaction, with positive values typically representing token acquisitions and negative values indicating disbursements or deductions.
 
 | Field Name               | Description                                                                                                 |
@@ -266,18 +273,23 @@ This dataset focuses on successful liquidity and swap event transactions. It cov
 Liquid staking tokens are innovative financial instruments in the DeFi ecosystem, allowing participants to stake cryptocurrencies and receive tokenized derivatives in return. These derivatives represent the staked assets, offering liquidity and enabling holders to engage in additional DeFi activities without unbonding their original stakes.
 
 **Key Features:**
+
 * Liquidity: Users can access their staked value for use in other DeFi protocols.
 * Yield Optimization: Allows earning on staked assets while engaging in other yield-generating activities.
 * Flexibility and Security: Facilitates diverse investment strategies and mitigates certain risks associated with direct staking.
 
 **Use Cases:**
+
 * Used in yield farming, as collateral for loans, and for trading to speculate or hedge positions.
+
 **Risks:**
+
 * Involves smart contract risks, potential liquidity issues, and regulatory uncertainties.
 
 Liquid staking tokens enhance capital efficiency in the blockchain realm, making staked assets work harder for the holder. They represent a key development towards making DeFi more accessible and versatile, though participants should be mindful of inherent risks.
 
-#### vw_dev_sl_dapp_stacking_dao
+#### StackingDAO stSTX
+**vw_dev_sl_dapp_stacking_dao**
 This dataset includes successful transaction records for staking-related operations (deposit, withdraw, init-withdraw, add-rewards) on the Stacks blockchain. Each record in the dataset includes the transaction hash, sender address, block number, and a human-readable transaction date. It also details the events triggered, the specific function called within the staking contract, and the arguments provided to the function call. The dataset captures the amount involved in the transactions and, for certain operations, the NFT number and cycle number related to the transaction.
 
 | Field Name            | Description                                                                                                                     |
@@ -336,6 +348,3 @@ The vw_dev_sl_stx20 view captures transactions involving STX20 tokens, including
 | total_supply       | Total supply of tokens (varchar)  |
 | limit_per_mint     | Limit per mint operation (varchar)|
 
-# Soroban (Stellar)
-
-## Envelopes

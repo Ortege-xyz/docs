@@ -161,7 +161,7 @@ The table is a comprehensive record of transactions on the Stacks blockchain. It
 | parent_block_hash         | string               | Hash of the parent block                                                                                                                                |
 | block_hash                | string               | Hash of the block containing the transaction                                                                                                            |
 | block_number              | bigint               | Block number containing the transaction                                                                                                                 |
-| block_timestamp           | bigint               | Timestamp of the block containing the transaction                                                                                                       |
+| block_timestamp           | bigint               | Unix timestamp of the block containing the transaction                                                                                                       |
 | parent_burn_block_time    | bigint               | Timestamp of the parent burn block                                                                                                                      |
 | canonical                 | boolean              | Boolean indicating if the block is canonical                                                                                                            |
 | tx_index                  | bigint               | Index of the transaction within the block                                                                                                               |
