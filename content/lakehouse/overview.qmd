@@ -8,6 +8,9 @@ format:
 
 Ortege Lakehouse represents a cutting-edge data management and analytics platform, meticulously designed to accommodate the vast and growing needs of blockchain data analysis. At the core of our innovation is a seamless integration with [OrtegeETL](https://github.com/Ortege-xyz/ortegeETL), comprehensive access through [Ortege Studio](https://app.ortege.ai/dashboard/list/), and exclusive API access for institutional customers. This platform not only underscores our commitment to leveraging open-source software but also ensures that our users have unparalleled access to blockchain datasets.
 
+# Spark SQL Dialect in Ortege Lakehouse
+Ortege Lakehouse utilizes the Spark SQL dialect to enhance data processing capabilities. This dialect allows us to perform advanced data analysis and manipulation tasks efficiently, thanks to its expressive syntax and rich set of functions. Spark SQL's integration enables users to query blockchain datasets using SQL queries directly, making it easier to perform complex analyses, aggregate data, and extract meaningful insights from large volumes of blockchain transactions.
+
 # OrtegeETL: Open-Source Blockchain Data Ingestion
 [OrtegeETL](https://github.com/Ortege-xyz/ortegeETL), an integral component of our ecosystem, is an open-source tool specifically developed to facilitate the efficient ingestion of blockchain data into Ortege Lakehouse. This tool exemplifies our dedication to the open-source community, providing a robust and transparent solution for data extraction, transformation, and loading (ETL). With OrtegeETL, users can effortlessly synchronize blockchain data into the lakehouse, ensuring that the datasets are up-to-date and comprehensive. The open-source nature of OrtegeETL invites contributions and enhancements from the community, fostering innovation and continual improvement in handling blockchain data.
 

@@ -11,7 +11,7 @@ Ortege Lakehouse is designed around the innovative Medallion Architecture, a tie
 
 # Layered Approach
 ## Bronze Layer: 
-The foundation of the Medallion Architecture, the Bronze Layer, houses raw data directly ingested from diverse sources. This layer prioritizes the authenticity and completeness of data, serving as the primary repository for unprocessed information. Views that reference tables within the Bronze Layer remain in this tier, preserving the raw state of data until specific transformations are applied.
+The foundation of the Medallion Architecture, the Bronze Layer, houses raw data directly ingested from diverse sources. This layer prioritizes the authenticity and completeness of data, serving as the primary repository for unprocessed information. 
 
 ## Silver Layer: 
 Data transitions to the Silver Layer following initial processing, which includes cleansing, normalization, and structuring. This layer enhances the usability of data, making it more accessible and meaningful for analysis. The Silver Layer acts as a bridge between raw data and advanced analytics, providing a balanced dataset that is both rich in detail and optimized for exploration.
@@ -24,7 +24,7 @@ To navigate the Medallion Architecture effectively, a consistent naming conventi
 
 * Type: Classifies the data entity (tbl for tables, vw for views, and mvw for materialized views), indicating its structure and purpose within the data ecosystem.
 
-* Environment (Env): Identifies the operational stage of the data entity (dev for development, test for testing, and prod for production), facilitating environment-specific data management and access controls. **Please note** Generally we will only release production data to our customers, but for some cutting edge datasets we will release test to battle test them before promotion to production.
+* Environment (Env): Identifies the operational stage of the data entity (test for testing, and prod for production), facilitating environment-specific data management and access controls. **Please note** Generally we will only release production data to our customers, but for some cutting edge datasets we will release test to battle test them before promotion to production.
 
 * Layer: Denotes the tier within the Medallion Architecture (br for Bronze, sl for Silver, and gld for Gold), reflecting the data's processing stage and intended use case.
 

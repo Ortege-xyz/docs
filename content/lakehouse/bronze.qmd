@@ -112,7 +112,7 @@ This table provides a detailed ledger of transactions within the Bitcoin chain, 
 | version         | bigint    | The version number of the transaction                                                         |
 | virtual_size    | bigint    | The virtual size of the transaction                                                           |
 
-# Stacks
+# Stacks (db_stacks)
 ## tbl_prod_br_cycles
 The `tbl_dev_sl_cycles` table provides a structured overview of cycles within the Stacks blockchain, starting from the genesis of Stacks 2.0. Each cycle represents a fixed number of blocks, facilitating the organization and analysis of blockchain data over time. This table is essential for understanding the temporal division of blockchain activity and aids in analyzing trends, rewards distributions, and other cycle-based metrics.
 
