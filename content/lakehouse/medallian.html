@@ -224,7 +224,7 @@ ul.task-list li input[type="checkbox"] {
 <h1>Layered Approach</h1>
 <section id="bronze-layer" class="level2">
 <h2 class="anchored" data-anchor-id="bronze-layer">Bronze Layer:</h2>
-<p>The foundation of the Medallion Architecture, the Bronze Layer, houses raw data directly ingested from diverse sources. This layer prioritizes the authenticity and completeness of data, serving as the primary repository for unprocessed information. Views that reference tables within the Bronze Layer remain in this tier, preserving the raw state of data until specific transformations are applied.</p>
+<p>The foundation of the Medallion Architecture, the Bronze Layer, houses raw data directly ingested from diverse sources. This layer prioritizes the authenticity and completeness of data, serving as the primary repository for unprocessed information.</p>
 </section>
 <section id="silver-layer" class="level2">
 <h2 class="anchored" data-anchor-id="silver-layer">Silver Layer:</h2>
@@ -240,7 +240,7 @@ ul.task-list li input[type="checkbox"] {
 <p>To navigate the Medallion Architecture effectively, a consistent naming convention is employed across all layers, encapsulating key attributes of data entities:</p>
 <ul>
 <li><p>Type: Classifies the data entity (tbl for tables, vw for views, and mvw for materialized views), indicating its structure and purpose within the data ecosystem.</p></li>
-<li><p>Environment (Env): Identifies the operational stage of the data entity (dev for development, test for testing, and prod for production), facilitating environment-specific data management and access controls. <strong>Please note</strong> Generally we will only release production data to our customers, but for some cutting edge datasets we will release test to battle test them before promotion to production.</p></li>
+<li><p>Environment (Env): Identifies the operational stage of the data entity (test for testing, and prod for production), facilitating environment-specific data management and access controls. <strong>Please note</strong> Generally we will only release production data to our customers, but for some cutting edge datasets we will release test to battle test them before promotion to production.</p></li>
 <li><p>Layer: Denotes the tier within the Medallion Architecture (br for Bronze, sl for Silver, and gld for Gold), reflecting the data’s processing stage and intended use case.</p></li>
 <li><p>Entity: Describes the content or function of the data entity, offering insights into its relevance and application.</p></li>
 </ul>

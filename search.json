@@ -235,7 +235,7 @@
     "href": "content/lakehouse/medallian.html#bronze-layer",
     "title": "Medallian Architecture",
     "section": "Bronze Layer:",
-    "text": "Bronze Layer:\nThe foundation of the Medallion Architecture, the Bronze Layer, houses raw data directly ingested from diverse sources. This layer prioritizes the authenticity and completeness of data, serving as the primary repository for unprocessed information. Views that reference tables within the Bronze Layer remain in this tier, preserving the raw state of data until specific transformations are applied."
+    "text": "Bronze Layer:\nThe foundation of the Medallion Architecture, the Bronze Layer, houses raw data directly ingested from diverse sources. This layer prioritizes the authenticity and completeness of data, serving as the primary repository for unprocessed information."
   },
   {
     "objectID": "content/lakehouse/medallian.html#silver-layer",
