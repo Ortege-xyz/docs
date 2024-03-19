@@ -113,8 +113,10 @@ This table provides a detailed ledger of transactions within the Bitcoin chain, 
 | virtual_size    | bigint    | The virtual size of the transaction                                                           |
 
 # Stacks (db_stacks)
-## tbl_prod_br_cycles
-The `tbl_dev_sl_cycles` table provides a structured overview of cycles within the Stacks blockchain, starting from the genesis of Stacks 2.0. Each cycle represents a fixed number of blocks, facilitating the organization and analysis of blockchain data over time. This table is essential for understanding the temporal division of blockchain activity and aids in analyzing trends, rewards distributions, and other cycle-based metrics.
+## Cycles
+**tbl_prod_br_cycles**
+
+The `tbl_prod_br_cycles` table provides a structured overview of cycles within the Stacks blockchain, starting from the genesis of Stacks 2.0. Each cycle represents a fixed number of blocks, facilitating the organization and analysis of blockchain data over time. This table is essential for understanding the temporal division of blockchain activity and aids in analyzing trends, rewards distributions, and other cycle-based metrics.
 
 | Column       | Description                                       |
 |--------------|---------------------------------------------------|
@@ -123,7 +125,8 @@ The `tbl_dev_sl_cycles` table provides a structured overview of cycles within th
 | `end_block`  | The ending block number for the given cycle. This marks the last block in the cycle. |
 
 
-## tbl_prod_br_blocks
+## Blocks
+**tbl_prod_br_blocks**
 The table archives block data for the Stacks blockchain, detailing block identification, sequencing, and associated Bitcoin blockchain references due to Stacks' unique proof-of-burn consensus mechanism. It records block numbers, hashes, transaction counts, and the execution costs related to transactions, offering essential insights for analysis of network activity and transactional efficiency on the Stacks blockchain.
 
 | col_name                  | data_type | comment                                                                                                                                                                                                                       |
@@ -144,7 +147,8 @@ The table archives block data for the Stacks blockchain, detailing block identif
 | execution_cost_write_count| bigint    | Captures the number of independent writes performed on the underlying data store (see SIP-004).                                                                                                                               |
 | execution_cost_write_length| bigint   | The number of bytes written to the underlying data store.                                                                                                                                                                     |
 
-## tbl_prod_br_transactions
+## Transactions
+**tbl_prod_br_transactions**
 The table is a comprehensive record of transactions on the Stacks blockchain. It includes transaction identifiers, sender information, execution costs, and status details. This table links transactions to blocks, tracks microblock inclusion, and categorizes transaction types, such as token transfers and smart contract executions. It's a key resource for analyzing transactional data within the Stacks ecosystem.
 
 | col_name                  | data_type            | comment                                                                                                                                                 |
@@ -185,7 +189,8 @@ The table is a comprehensive record of transactions on the Stacks blockchain. It
 | poison_microblock         | map<string,string>   | Information on poisoned microblock if applicable (Field marked as 'null' suggests missing information or not applicable.)                              |
 
 
-## tbl_prod_br_contracts
+## Contracts
+**tbl_prod_br_contracts**
 The table records details of smart contracts on the Stacks blockchain. It tracks the transaction hash (tx_hash), whether the contract is the main (canonical) version, the contract's address, and the associated block number. Contract-specific data like Clarity language version (clarity_version), source code, and ABI (Application Binary Interface) are also stored. Additionally, flags indicate if the contract pertains to a STX20 token (is_stx20) or a non-fungible token (is_nft), offering insights into the contract's purpose and functionality. This table is vital for developers and analysts interested in smart contract deployment and usage patterns on Stacks.
 
 | col_name         | data_type | comment                                                                                                                                                                                                                     |
