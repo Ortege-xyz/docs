@@ -205,10 +205,10 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#stacks-db_stacks" id="toc-stacks-db_stacks" class="nav-link" data-scroll-target="#stacks-db_stacks">Stacks (db_stacks)</a>
   <ul class="collapse">
-  <li><a href="#tbl_prod_br_cycles" id="toc-tbl_prod_br_cycles" class="nav-link" data-scroll-target="#tbl_prod_br_cycles">tbl_prod_br_cycles</a></li>
-  <li><a href="#tbl_prod_br_blocks-1" id="toc-tbl_prod_br_blocks-1" class="nav-link" data-scroll-target="#tbl_prod_br_blocks-1">tbl_prod_br_blocks</a></li>
-  <li><a href="#tbl_prod_br_transactions-1" id="toc-tbl_prod_br_transactions-1" class="nav-link" data-scroll-target="#tbl_prod_br_transactions-1">tbl_prod_br_transactions</a></li>
-  <li><a href="#tbl_prod_br_contracts" id="toc-tbl_prod_br_contracts" class="nav-link" data-scroll-target="#tbl_prod_br_contracts">tbl_prod_br_contracts</a></li>
+  <li><a href="#cycles" id="toc-cycles" class="nav-link" data-scroll-target="#cycles">Cycles</a></li>
+  <li><a href="#blocks" id="toc-blocks" class="nav-link" data-scroll-target="#blocks">Blocks</a></li>
+  <li><a href="#transactions" id="toc-transactions" class="nav-link" data-scroll-target="#transactions">Transactions</a></li>
+  <li><a href="#contracts" id="toc-contracts" class="nav-link" data-scroll-target="#contracts">Contracts</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -623,9 +623,10 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="stacks-db_stacks" class="level1">
 <h1>Stacks (db_stacks)</h1>
-<section id="tbl_prod_br_cycles" class="level2">
-<h2 class="anchored" data-anchor-id="tbl_prod_br_cycles">tbl_prod_br_cycles</h2>
-<p>The <code>tbl_dev_sl_cycles</code> table provides a structured overview of cycles within the Stacks blockchain, starting from the genesis of Stacks 2.0. Each cycle represents a fixed number of blocks, facilitating the organization and analysis of blockchain data over time. This table is essential for understanding the temporal division of blockchain activity and aids in analyzing trends, rewards distributions, and other cycle-based metrics.</p>
+<section id="cycles" class="level2">
+<h2 class="anchored" data-anchor-id="cycles">Cycles</h2>
+<p><strong>tbl_prod_br_cycles</strong></p>
+<p>The <code>tbl_prod_br_cycles</code> table provides a structured overview of cycles within the Stacks blockchain, starting from the genesis of Stacks 2.0. Each cycle represents a fixed number of blocks, facilitating the organization and analysis of blockchain data over time. This table is essential for understanding the temporal division of blockchain activity and aids in analyzing trends, rewards distributions, and other cycle-based metrics.</p>
 <table class="table">
 <colgroup>
 <col style="width: 21%">
@@ -653,9 +654,9 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
-<section id="tbl_prod_br_blocks-1" class="level2">
-<h2 class="anchored" data-anchor-id="tbl_prod_br_blocks-1">tbl_prod_br_blocks</h2>
-<p>The table archives block data for the Stacks blockchain, detailing block identification, sequencing, and associated Bitcoin blockchain references due to Stacks’ unique proof-of-burn consensus mechanism. It records block numbers, hashes, transaction counts, and the execution costs related to transactions, offering essential insights for analysis of network activity and transactional efficiency on the Stacks blockchain.</p>
+<section id="blocks" class="level2">
+<h2 class="anchored" data-anchor-id="blocks">Blocks</h2>
+<p><strong>tbl_prod_br_blocks</strong> The table archives block data for the Stacks blockchain, detailing block identification, sequencing, and associated Bitcoin blockchain references due to Stacks’ unique proof-of-burn consensus mechanism. It records block numbers, hashes, transaction counts, and the execution costs related to transactions, offering essential insights for analysis of network activity and transactional efficiency on the Stacks blockchain.</p>
 <table class="table">
 <colgroup>
 <col style="width: 10%">
@@ -748,9 +749,9 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
-<section id="tbl_prod_br_transactions-1" class="level2">
-<h2 class="anchored" data-anchor-id="tbl_prod_br_transactions-1">tbl_prod_br_transactions</h2>
-<p>The table is a comprehensive record of transactions on the Stacks blockchain. It includes transaction identifiers, sender information, execution costs, and status details. This table links transactions to blocks, tracks microblock inclusion, and categorizes transaction types, such as token transfers and smart contract executions. It’s a key resource for analyzing transactional data within the Stacks ecosystem.</p>
+<section id="transactions" class="level2">
+<h2 class="anchored" data-anchor-id="transactions">Transactions</h2>
+<p><strong>tbl_prod_br_transactions</strong> The table is a comprehensive record of transactions on the Stacks blockchain. It includes transaction identifiers, sender information, execution costs, and status details. This table links transactions to blocks, tracks microblock inclusion, and categorizes transaction types, such as token transfers and smart contract executions. It’s a key resource for analyzing transactional data within the Stacks ecosystem.</p>
 <table class="table">
 <colgroup>
 <col style="width: 13%">
@@ -938,9 +939,9 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
-<section id="tbl_prod_br_contracts" class="level2">
-<h2 class="anchored" data-anchor-id="tbl_prod_br_contracts">tbl_prod_br_contracts</h2>
-<p>The table records details of smart contracts on the Stacks blockchain. It tracks the transaction hash (tx_hash), whether the contract is the main (canonical) version, the contract’s address, and the associated block number. Contract-specific data like Clarity language version (clarity_version), source code, and ABI (Application Binary Interface) are also stored. Additionally, flags indicate if the contract pertains to a STX20 token (is_stx20) or a non-fungible token (is_nft), offering insights into the contract’s purpose and functionality. This table is vital for developers and analysts interested in smart contract deployment and usage patterns on Stacks.</p>
+<section id="contracts" class="level2">
+<h2 class="anchored" data-anchor-id="contracts">Contracts</h2>
+<p><strong>tbl_prod_br_contracts</strong> The table records details of smart contracts on the Stacks blockchain. It tracks the transaction hash (tx_hash), whether the contract is the main (canonical) version, the contract’s address, and the associated block number. Contract-specific data like Clarity language version (clarity_version), source code, and ABI (Application Binary Interface) are also stored. Additionally, flags indicate if the contract pertains to a STX20 token (is_stx20) or a non-fungible token (is_nft), offering insights into the contract’s purpose and functionality. This table is vital for developers and analysts interested in smart contract deployment and usage patterns on Stacks.</p>
 <table class="table">
 <colgroup>
 <col style="width: 7%">
