@@ -233,6 +233,7 @@ We aggregate and refine swap volume data from leading decentralized exchanges, s
 ALEX is a DeFi platform built on Bitcoin through Stacks smart contracts. It aims to activate the latent capital in Bitcoin wallets by providing a suite of DeFi services. These include participating in IDO rounds of Stacks projects, AMM DEX, liquidity provision, $ALEX staking, and yield farming. 
 
 **tbl_prod_sl_dapp_alex_swap**
+
 The `tbl_prod_sl_dapp_alex_swap` table provides a comprehensive look into the smart contract activity of the ALEX dApp, showcasing token swaps. It includes transaction timestamps, block numbers, contract identifiers, and detailed function arguments, facilitating an in-depth analysis of dApp interactions on the Stacks blockchain.
 
 | Field          | Type        | Description                                 |
@@ -259,6 +260,7 @@ The `tbl_prod_sl_dapp_alex_swap` table provides a comprehensive look into the sm
 **Please note** This table gets decimal places from `tbl_prod_sl_sip10_tokens`. and in the [Gold layer](./gold.qmd) will have volume statistics in `STX` and `USD`.
 
 **tbl_prod_sl_dapp_alex_prices**
+
 The `tbl_prod_sl_dapp_alex_swap` table provides an exchange rate for every pool on ALEX after every transaction.
 
 | Field            | Type    | Description                                      |
