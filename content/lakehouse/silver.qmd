@@ -230,26 +230,52 @@ The view retrieves successful transactions related to [BNS (Bitcoin Name Service
 We aggregate and refine swap volume data from leading decentralized exchanges, specifically [ALEX](https://alexgo.io/) and [Bitflow](https://www.bitflow.finance/). By streamlining the collection of trade data through direct blockchain interactions, the Silver Layer presents a unified and enriched view of the cryptocurrency market's liquidity and trading activity. This integration allows users to access detailed records of swap events, providing insights into trading pair performances, volume fluctuations, and liquidity provisions. Our users leverage this high-fidelity data for in-depth market analysis, deriving strategic intelligence essential for traders and financial analysts who demand the most current and comprehensive market snapshots.
 
 #### [ALEX](https://app.alexlab.co/swap)
-**vw_prod_sl_dapp_alex_swap**
-The vw_dev_sl_dapp_alex_swap view provides a comprehensive look into the smart contract activity of the ALEX dApp, showcasing token swaps. It includes transaction timestamps, block numbers, contract identifiers, and detailed function arguments, facilitating an in-depth analysis of dApp interactions on the Stacks blockchain.
+ALEX is a DeFi platform built on Bitcoin through Stacks smart contracts. It aims to activate the latent capital in Bitcoin wallets by providing a suite of DeFi services. These include participating in IDO rounds of Stacks projects, AMM DEX, liquidity provision, $ALEX staking, and yield farming. 
+
+**tbl_prod_sl_dapp_alex_swap**
+The `tbl_prod_sl_dapp_alex_swap` table provides a comprehensive look into the smart contract activity of the ALEX dApp, showcasing token swaps. It includes transaction timestamps, block numbers, contract identifiers, and detailed function arguments, facilitating an in-depth analysis of dApp interactions on the Stacks blockchain.
 
 **Please note** This layer includes the volume in the native currency of each token and doesn't include pricing details. If you'd like it converted by the token's decimals and to have the realtime pricing information, that is available on the [Gold layer](gold.qmd).
 
-| Column          | Description                        |
-|-----------------|------------------------------------|
-| block_timestamp | Timestamp of the block (datetime)  |
-| block_number    | Number of the block (bigint)       |
-| hash            | Unique identifier for a transaction (varchar) |
-| sender_address  | Address of the sender (varchar)    |
-| contract_id     | Identifier of the contract (varchar) |
-| function_name   | Name of the function called (varchar) |
-| function_args   | Arguments passed to the function (struct) |
-| tokenA          | Identifier for token A (varchar)   |
-| tokenB          | Identifier for token B (varchar)   |
-| tokenAOut       | Amount of token A output (bigint)  |
-| tokenBIn        | Amount of token B input (varchar)  |
+| Field          | Type        | Description                                 |
+|----------------|-------------|---------------------------------------------|
+| block_timestamp| datetime    | Timestamp when the block was mined          |
+| block_number   | integer     | The block number in the blockchain          |
+| hash           | string      | The hash of the transaction                 |
+| fee_rate       | integer     | The fee rate for the transaction            |
+| sender_address | string      | The address of the sender in the transaction|
+| events         | array       | A list of events associated with the transaction |
+| contract_id    | string      | The identifier of the contract              |
+| function_name  | string      | The name of the function called in the transaction |
+| function_args  | array       | The arguments passed to the function        |
+| tokenA         | string      | The identifier for token A in the swap      |
+| tokenB         | string      | The identifier for token B in the swap      |
+| tokenAOut      | integer     | The amount of token A output from the swap  |
+| tokenBIn       | integer     | The amount of token B input into the swap   |
+| tokenA_symbol  | string      | The symbol of token A                       |
+| tokenB_symbol  | string      | The symbol of token B                       |
+| tokenA_decimals| integer     | The number of decimals for token A          |
+| tokenB_decimals| integer     | The number of decimals for token B          |
 
-**Please note** This chart needs some improvements which will be found in the Gold Layer. Take note the volume has all been divided by 8 decimals places. This is hardcoded and some of those tokens may not have 8 decimal places so to get accurate figures you'd need to get the decimals from `vw_dev_sl_sip10_tokens`
+
+**Please note** This table gets decimal places from `tbl_prod_sl_sip10_tokens`. and in the [Gold layer](./gold.qmd) will have volume statistics in `STX` and `USD`.
+
+**tbl_prod_sl_dapp_alex_prices**
+The `tbl_prod_sl_dapp_alex_swap` table provides an exchange rate for every pool on ALEX after every transaction.
+
+| Field            | Type    | Description                                      |
+|------------------|---------|--------------------------------------------------|
+| hash             | string  | Unique identifier of the transaction             |
+| sender_address   | string  | Address of the entity initiating the transaction |
+| tx_date          | date    | Date of the transaction                          |
+| tokenA           | string  | Identifier for the first token in the pair       |
+| tokenB           | string  | Identifier for the second token in the pair      |
+| tokenAPoolBalance| integer | Balance of tokenA in the liquidity pool          |
+| tokenBPoolBalance| integer | Balance of tokenB in the liquidity pool          |
+| exchangeRate     | decimal | The exchange rate between tokenA and tokenB      |
+| contract_id      | string  | Identifier for the smart contract                |
+| function_name    | string  | Name of the function called in the transaction   |
+
 
 #### [Bitflow](https://www.bitflow.finance/)
 **vw_prod_sl_dapp_bitflow**
