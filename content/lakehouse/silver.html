@@ -887,63 +887,178 @@ ul.task-list li input[type="checkbox"] {
 <p>We aggregate and refine swap volume data from leading decentralized exchanges, specifically <a href="https://alexgo.io/">ALEX</a> and <a href="https://www.bitflow.finance/">Bitflow</a>. By streamlining the collection of trade data through direct blockchain interactions, the Silver Layer presents a unified and enriched view of the cryptocurrency market’s liquidity and trading activity. This integration allows users to access detailed records of swap events, providing insights into trading pair performances, volume fluctuations, and liquidity provisions. Our users leverage this high-fidelity data for in-depth market analysis, deriving strategic intelligence essential for traders and financial analysts who demand the most current and comprehensive market snapshots.</p>
 <section id="alex" class="level4">
 <h4 class="anchored" data-anchor-id="alex"><a href="https://app.alexlab.co/swap">ALEX</a></h4>
-<p><strong>vw_prod_sl_dapp_alex_swap</strong> The vw_dev_sl_dapp_alex_swap view provides a comprehensive look into the smart contract activity of the ALEX dApp, showcasing token swaps. It includes transaction timestamps, block numbers, contract identifiers, and detailed function arguments, facilitating an in-depth analysis of dApp interactions on the Stacks blockchain.</p>
+<p>ALEX is a DeFi platform built on Bitcoin through Stacks smart contracts. It aims to activate the latent capital in Bitcoin wallets by providing a suite of DeFi services. These include participating in IDO rounds of Stacks projects, AMM DEX, liquidity provision, $ALEX staking, and yield farming.</p>
+<p><strong>tbl_prod_sl_dapp_alex_swap</strong> The <code>tbl_prod_sl_dapp_alex_swap</code> table provides a comprehensive look into the smart contract activity of the ALEX dApp, showcasing token swaps. It includes transaction timestamps, block numbers, contract identifiers, and detailed function arguments, facilitating an in-depth analysis of dApp interactions on the Stacks blockchain.</p>
 <p><strong>Please note</strong> This layer includes the volume in the native currency of each token and doesn’t include pricing details. If you’d like it converted by the token’s decimals and to have the realtime pricing information, that is available on the <a href="../../content/lakehouse/gold.html">Gold layer</a>.</p>
 <table class="table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 17%">
+<col style="width: 60%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Column</th>
+<th>Field</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>block_timestamp</td>
-<td>Timestamp of the block (datetime)</td>
+<td>datetime</td>
+<td>Timestamp when the block was mined</td>
 </tr>
 <tr class="even">
 <td>block_number</td>
-<td>Number of the block (bigint)</td>
+<td>integer</td>
+<td>The block number in the blockchain</td>
 </tr>
 <tr class="odd">
 <td>hash</td>
-<td>Unique identifier for a transaction (varchar)</td>
+<td>string</td>
+<td>The hash of the transaction</td>
 </tr>
 <tr class="even">
+<td>fee_rate</td>
+<td>integer</td>
+<td>The fee rate for the transaction</td>
+</tr>
+<tr class="odd">
 <td>sender_address</td>
-<td>Address of the sender (varchar)</td>
+<td>string</td>
+<td>The address of the sender in the transaction</td>
+</tr>
+<tr class="even">
+<td>events</td>
+<td>array</td>
+<td>A list of events associated with the transaction</td>
 </tr>
 <tr class="odd">
 <td>contract_id</td>
-<td>Identifier of the contract (varchar)</td>
+<td>string</td>
+<td>The identifier of the contract</td>
 </tr>
 <tr class="even">
 <td>function_name</td>
-<td>Name of the function called (varchar)</td>
+<td>string</td>
+<td>The name of the function called in the transaction</td>
 </tr>
 <tr class="odd">
 <td>function_args</td>
-<td>Arguments passed to the function (struct)</td>
+<td>array</td>
+<td>The arguments passed to the function</td>
 </tr>
 <tr class="even">
 <td>tokenA</td>
-<td>Identifier for token A (varchar)</td>
+<td>string</td>
+<td>The identifier for token A in the swap</td>
 </tr>
 <tr class="odd">
 <td>tokenB</td>
-<td>Identifier for token B (varchar)</td>
+<td>string</td>
+<td>The identifier for token B in the swap</td>
 </tr>
 <tr class="even">
 <td>tokenAOut</td>
-<td>Amount of token A output (bigint)</td>
+<td>integer</td>
+<td>The amount of token A output from the swap</td>
 </tr>
 <tr class="odd">
 <td>tokenBIn</td>
-<td>Amount of token B input (varchar)</td>
+<td>integer</td>
+<td>The amount of token B input into the swap</td>
+</tr>
+<tr class="even">
+<td>tokenA_symbol</td>
+<td>string</td>
+<td>The symbol of token A</td>
+</tr>
+<tr class="odd">
+<td>tokenB_symbol</td>
+<td>string</td>
+<td>The symbol of token B</td>
+</tr>
+<tr class="even">
+<td>tokenA_decimals</td>
+<td>integer</td>
+<td>The number of decimals for token A</td>
+</tr>
+<tr class="odd">
+<td>tokenB_decimals</td>
+<td>integer</td>
+<td>The number of decimals for token B</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Please note</strong> This chart needs some improvements which will be found in the Gold Layer. Take note the volume has all been divided by 8 decimals places. This is hardcoded and some of those tokens may not have 8 decimal places so to get accurate figures you’d need to get the decimals from <code>vw_dev_sl_sip10_tokens</code></p>
+<p><strong>Please note</strong> This table gets decimal places from <code>tbl_prod_sl_sip10_tokens</code>. and in the <a href="../../content/lakehouse/gold.html">Gold layer</a> will have volume statistics in <code>STX</code> and <code>USD</code>.</p>
+<p><strong>tbl_prod_sl_dapp_alex_prices</strong> The <code>tbl_prod_sl_dapp_alex_swap</code> table provides an exchange rate for every pool on ALEX after every transaction.</p>
+<table class="table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 11%">
+<col style="width: 64%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>hash</td>
+<td>string</td>
+<td>Unique identifier of the transaction</td>
+</tr>
+<tr class="even">
+<td>sender_address</td>
+<td>string</td>
+<td>Address of the entity initiating the transaction</td>
+</tr>
+<tr class="odd">
+<td>tx_date</td>
+<td>date</td>
+<td>Date of the transaction</td>
+</tr>
+<tr class="even">
+<td>tokenA</td>
+<td>string</td>
+<td>Identifier for the first token in the pair</td>
+</tr>
+<tr class="odd">
+<td>tokenB</td>
+<td>string</td>
+<td>Identifier for the second token in the pair</td>
+</tr>
+<tr class="even">
+<td>tokenAPoolBalance</td>
+<td>integer</td>
+<td>Balance of tokenA in the liquidity pool</td>
+</tr>
+<tr class="odd">
+<td>tokenBPoolBalance</td>
+<td>integer</td>
+<td>Balance of tokenB in the liquidity pool</td>
+</tr>
+<tr class="even">
+<td>exchangeRate</td>
+<td>decimal</td>
+<td>The exchange rate between tokenA and tokenB</td>
+</tr>
+<tr class="odd">
+<td>contract_id</td>
+<td>string</td>
+<td>Identifier for the smart contract</td>
+</tr>
+<tr class="even">
+<td>function_name</td>
+<td>string</td>
+<td>Name of the function called in the transaction</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="bitflow" class="level4">
 <h4 class="anchored" data-anchor-id="bitflow"><a href="https://www.bitflow.finance/">Bitflow</a></h4>
