@@ -6,12 +6,14 @@ format:
     html-math-method: katex
 ---
 
-# Bitcoin (db_btc)
+# Bitcoin 
+**db_btc**
 The Silver layer on Bitcoin will focus on exploding the inputs and outputs from the raw data as well as focus on all the L2's, Rollups and Sidechains that are building on Bitcoin
 
 ## Base tables
 
-### vw_prod_sl_outputs
+### Outputs
+**vw_prod_sl_outputs**
 The `vw_prod_sl_outputs` table is a structured representation of transaction outputs derived from the raw transactional data in the Bronze Layer of the Ortege Lakehouse. This table breaks down the transaction outputs, which are the results of Bitcoin transactions, into a format that is easier to analyze and query.
 
 | col_name           | data_type | comment                                                                                   |
@@ -28,7 +30,8 @@ The `vw_prod_sl_outputs` table is a structured representation of transaction out
 | type               | string    | The type of script used in the transaction output (e.g., 'pubkeyhash', 'scripthash').     |
 | value              | bigint    | The value of bitcoins held in this output, represented in Satoshis (the smallest unit of bitcoin). |
 
-### vw_prod_sl_inputs
+### Inputs
+**vw_prod_sl_inputs**
 The `vw_prod_sl_inputs` table is an expanded view of the inputs from the raw transaction data within the Bronze Layer of the Ortege Lakehouse. This table breaks down individual transaction inputs, providing a granular look at the data that constitutes the transactional elements of the Bitcoin network.
 
 | col_name            | data_type | comment                                                                                         |
@@ -49,7 +52,8 @@ The `vw_prod_sl_inputs` table is an expanded view of the inputs from the raw tra
 | value               | bigint    | The value of bitcoins being input, typically matching the value of the spent output.            |
 
 
-## Wallet transactions (tbl_prod_sl_wallet_transactions)
+## Wallet transactions 
+**tbl_prod_sl_wallet_transactions**
 The tbl_prod_s1_wallet_transactions table is designed to store transactional data related to Bitcoin wallets. This data helps in monitoring and auditing the balance changes in each wallet associated with the system.
 
 This table is utilized by Ortege to:
@@ -64,7 +68,8 @@ In the blockchain community, terminology such as "layer-2 solutions," "sidechain
 
 Currently, our data platform focuses exclusively on the Stacks L2 solution, which brings smart contract capabilities and decentralized applications to Bitcoin. As an integral part of our data ecosystem, the Stacks-related tables and views provide users with detailed information about transactions and interactions specific to the Stacks blockchain. Our dedication to thorough data representation ensures users have comprehensive insights into this innovative L2, bolstering their understanding and analysis of its growing impact on the Bitcoin network.
 
-### tbl_prod_sl_l2_stacks
+### [Stacks](https://www.stacks.co/)
+**tbl_prod_sl_l2_stacks**
 Tracks and catalogues every transaction on the Bitcoin network that pertains to the Stacks Layer-2 solution. This is achieved by scanning for the distinctive "X2" magic code, which is a unique identifier embedded within the OP_RETURN opcode of Bitcoin transaction outputs. The presence of this magic code signals a transaction that is related to the Stacks ecosystem.
 
 Each transaction captured by our table is then systematically classified and decoded. This process transforms the raw data into a structured and user-friendly format, thereby allowing our users to effortlessly discern the nature and details of Stacks-related activities taking place on the Bitcoin blockchain.
@@ -83,8 +88,11 @@ The table serves as a powerful tool for users who are interested in monitoring t
 | `transaction_type` | - `vrf` - VRF key registrations relating to `OP_RETURN 58325e` (`X2^`). - `commit` - Transactions relating to `OP_RETURN 58325b` (`X2[`): Block commit. Every output after the index 0, represents an amount that the Stacks miner commits in Satoshi's to be paid to Stacks stackers. The final transaction is the unspent change to send back to the miner. - `stack-stx` - Transaction relating to `OP_RETURN 583278` (`X2x`). - `transfer-stx` - Transactions relating `OP_RETURN 583224` (`X2$`). - `preSTX` - Transactions relating to `OP_RETURN 583270` (`X2p`). |
 | `commit`           | A boolean reflecting true if the value is an amount of Satoshi's committed to STX miners. |
 | `burnt`            | Highlights transactions that send BTC to the burn address `1111111111111111111114oLvT2`, indicating that miners burn BTC. |
-                                            |
-### tbl_prod_sl_l2_stacks_rewards
+| `commit_details`  | Contains details related to the proof-of-transfer commitment. The `commit_details` structure includes the following fields: `block_hash`: The hash of the corresponding block in the Bitcoin blockchain. `parent_block`: The hash of the parent Bitcoin block. `parent_txoff`: The transaction offset in the parent block. `key_block`: The hash of the key block for leader election in Stacks. `key_txoff`: The transaction offset in the key block. `burn_modulus`: The modulus for the burn amount.   |
+| `stack_stx_details`| Contains details about the STX tokens locked for Stacks mining. The `stack_stx_details` structure encompasses: `uSTX_to_lock`: The amount of microSTX (uSTX) tokens that are locked. `cycles`: The number of cycles for which the tokens are locked.|
+
+### Stacks Rewards
+**tbl_prod_sl_l2_stacks_rewards**
 Captures the rewards earned by Stacks (STX) token stackers, expressed in satoshis, which is the smallest unit of Bitcoin. It logs the unique identifier of the reward transaction (id), the block height at which the reward was recorded (block_height), the date of the block (block_date), the recipient address (address), and the amount of the reward (input_value).
 
 | Column Name | Type         | Description                                                     |
@@ -93,13 +101,19 @@ Captures the rewards earned by Stacks (STX) token stackers, expressed in satoshi
 | block_height| Integer      | The height of the block in the Stacks blockchain.               |
 | block_date  | Date         | The date when the block was mined.                              |
 | address     | String       | The Stacks wallet address that received the reward.             |
-| input_value | Integer/Long | The reward amount earned for stacking, denominated in satoshis. |
+| value       | Float        | The reward amount earned for stacking, denominated in satoshis. |
+| commit      | Boolean      | Indicates whether the row is an actual BTC committment          |
+| burnt       | Boolean      | Indicates whether the transaction was sent to the burn address  |
+| cycle       | Integer      | The cycle the transaction occurred in                           |
+| avg_btc_price | Float       | The average of the BTC price for the duration of the Stacks cylce |
+| usd_committed | Float       | The value mulitplied by the average BTC price to determine the amount of USD committed for rewards |
 
 
 ## MetaProtocols
 Bitcoin metaprotocols, such as Ordinals and BRC-20 tokens, represent innovative layers or protocols built on top of the Bitcoin blockchain that extend its functionality beyond simple financial transactions. These metaprotocols leverage the security and decentralization of Bitcoin while introducing new capabilities, such as the creation of smart contracts, tokens, and unique digital assets. 
 
-### Ordinals (tbl_prod_sl_ordinals)
+### Ordinals 
+**tbl_prod_sl_ordinals**
 Ordinals introduce the concept of "digital artifacts" to the Bitcoin ecosystem. Unlike traditional Bitcoin transactions that are purely financial, Ordinals allow for the inscription of arbitrary data directly onto individual satoshis (the smallest unit of Bitcoin). This innovation means that any piece of digital content, whether it be text, images, audio, or even small programs, can be inscribed onto the Bitcoin blockchain. Each inscribed satoshi becomes a unique, non-fungible token (NFT) due to its specific ordinal number, making it possible to own, trade, and collect digital artifacts in a way that's secured by the Bitcoin network.
 
 **Key Features:**
@@ -108,7 +122,8 @@ Ordinals introduce the concept of "digital artifacts" to the Bitcoin ecosystem. 
 * Decentralization: Utilizes the secure and decentralized nature of Bitcoin.
 * Versatility: Allows for a wide range of digital content to be stored directly on the blockchain.
 
-### BRC20's (tbl_prod_sl_brc20)
+### BRC20's 
+**tbl_prod_sl_brc20**
 BRC-20 tokens represent a standard for issuing fungible tokens on the Bitcoin blockchain, analogous to Ethereum's ERC-20 standard. By utilizing Bitcoin sidechains or layers such as the Liquid Network or smart contract platforms built on top of Bitcoin, BRC-20 tokens enable the creation of custom tokens that can represent various assets, from traditional securities to new forms of digital assets. These tokens can be used for a multitude of purposes, including decentralized finance (DeFi), governance, and digital collectibles, all while benefiting from the security and liquidity of the Bitcoin network.
 
 **Key Features:**
@@ -117,11 +132,12 @@ BRC-20 tokens represent a standard for issuing fungible tokens on the Bitcoin bl
 * Smart Contracts: Enables complex financial operations and agreements to be executed automatically.
 * Bitcoin Security: Leverages the robust security features of the Bitcoin blockchain.
 
-# Stacks (db_stacks)
+# Stacks
+**db_stacks**
 The Silver Layer in the Stacks ecosystem serves as a crucial intermediary layer that enriches raw blockchain data with meaningful metadata, facilitating deeper insights and analysis. This layer particularly focuses on metadata about all tokens compliant with the SIP010 standard, STX20 tokens and individual decentralized application (dApp) activities through smart contract interactions. Below are the details of the views included in the Silver Layer for Stacks, highlighting the comprehensive metadata and activity records.
 
 ## Proof of Transfer
-Proof of Transfer, or PoX, is a novel consensus mechanism implemented by the Stacks blockchain, which is built on top of Bitcoin. The mechanism allows participants to lock up (or "stack") their STX tokens temporarily to support the network's security and consensus. In return, stackers receive rewards in Bitcoin. This process is governed by the smart contract [SP000000000000000000002Q6VF78.pox-3](https://explorer.hiro.so/txid/0xf9e3ab172a3fd18da7a451b67f9ae686af04b8f520586394c597613099efc83e?chain=mainnet)
+Proof of Transfer, or PoX, is a novel consensus mechanism implemented by the Stacks blockchain, which is built on top of Bitcoin. The mechanism allows participants to lock up (or "stack") their STX tokens temporarily to support the network's security and consensus. In return, stackers receive rewards in Bitcoin. This process is governed by the smart contract [SP000000000000000000002Q6VF78.pox-3](https://explorer.hiro.so/txid/0xf9e3ab172a3fd18da7a451b67f9ae686af04b8f520586394c597613099efc83e?chain=mainnet). Please see our extensive deep dive article on how this data is generated [here](https://www.ortege.ai/news/exploring-stacks-proof-of-transfer-insights-ortegelakehouse-datasets).
 
 
 ### POX3 Solo Stackers

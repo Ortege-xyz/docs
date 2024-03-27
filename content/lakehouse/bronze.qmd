@@ -183,7 +183,7 @@ The table records details of smart contracts on the Stacks blockchain. It tracks
 | abi              | string    | The ABI (Application Binary Interface) of the contract.                                                                                                                                                                     |
 | is_stx20         | boolean   | Indicates whether the contract is a Stacks 2.0 token (STX20).                                                                                                                                                               |
 | is_nft           | boolean   | Indicates whether the contract is a non-fungible token (NFT).                                                                                                                                                               |
-# Stellar
+# [Stellar](https://stellar.org/)
 **db_soroban**
 
 ## Ledger
