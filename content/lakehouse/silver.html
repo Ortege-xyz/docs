@@ -218,6 +218,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#metatokens" id="toc-metatokens" class="nav-link" data-scroll-target="#metatokens">MetaTokens</a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#stellar" id="toc-stellar" class="nav-link" data-scroll-target="#stellar">Stellar</a></li>
   </ul>
 </nav>
     </div>
@@ -1364,11 +1365,114 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+</section>
+</section>
+</section>
+</section>
+<section id="stellar" class="level1">
+<h1>Stellar</h1>
+<p>Stellar transactions are encapsulated within structures known as envelopes, which are expressed in XDR (External Data Representation) format. These envelopes contain all the necessary information to submit a transaction to the Stellar network. The tbl_test_sl_tx_envelopes table in Ortege Lakehouse’s Silver layer captures this data, structured for easy access and query efficiency.</p>
+<p>In the context of Stellar, the envelope includes not only the transaction itself (tx) but also signatures (v1) and other metadata necessary for the transaction to be validated by the Stellar network (fee_bump, envelope_type). Each transaction has operational details (operations) that define what the transaction does, such as payments or account settings adjustments.</p>
+<p>The table schema for tbl_test_sl_tx_envelopes breaks down the envelope into its constituent components, storing details about transaction fees, sequence numbers, and memos, as well as the operations that the transaction performs.</p>
+<p>Below is the schema for the tbl_test_sl_tx_envelopes table with key fields that are extracted from the Stellar transaction envelope:</p>
+<table class="table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 15%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>Integer</td>
+<td>Unique identifier for the transaction envelope</td>
+</tr>
+<tr class="even">
+<td>hash</td>
+<td>String</td>
+<td>Hash of the transaction</td>
+</tr>
+<tr class="odd">
+<td>ledger</td>
+<td>Integer</td>
+<td>Ledger in which the transaction is recorded</td>
+</tr>
+<tr class="even">
+<td>created_at</td>
+<td>Datetime</td>
+<td>Timestamp when the transaction was created</td>
+</tr>
+<tr class="odd">
+<td>source_account</td>
+<td>String</td>
+<td>The account from which the transaction originated</td>
+</tr>
+<tr class="even">
+<td>memo_type</td>
+<td>String</td>
+<td>Type of memo included in the transaction</td>
+</tr>
+<tr class="odd">
+<td>envelope_type</td>
+<td>Struct</td>
+<td>Contains type and v1 (version) of the envelope</td>
+</tr>
+<tr class="even">
+<td>tx_source_account</td>
+<td>String</td>
+<td>Transaction-level source account</td>
+</tr>
+<tr class="odd">
+<td>tx_fee</td>
+<td>Integer</td>
+<td>Fee associated with the transaction</td>
+</tr>
+<tr class="even">
+<td>tx_seq_num</td>
+<td>Integer</td>
+<td>Sequence number of the transaction</td>
+</tr>
+<tr class="odd">
+<td>tx_cond</td>
+<td>Struct</td>
+<td>Conditions for the transaction (v2, time_bounds)</td>
+</tr>
+<tr class="even">
+<td>tx_memo</td>
+<td>Struct</td>
+<td>Memo details of the transaction</td>
+</tr>
+<tr class="odd">
+<td>operations</td>
+<td>Array</td>
+<td>List of operations included in the transaction</td>
+</tr>
+<tr class="even">
+<td>operation_detail</td>
+<td>Struct</td>
+<td>Detailed information of each operation</td>
+</tr>
+<tr class="odd">
+<td>operation_source_account</td>
+<td>String</td>
+<td>Source account specified for the operation</td>
+</tr>
+<tr class="even">
+<td>operation_body</td>
+<td>Struct</td>
+<td>Body of the operation, includes <code>operation_body_type</code></td>
+</tr>
+</tbody>
+</table>
 
 
-</section>
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
