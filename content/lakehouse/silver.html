@@ -627,52 +627,56 @@ ul.task-list li input[type="checkbox"] {
 <td>The block number in which the transaction was included.</td>
 </tr>
 <tr class="even">
-<td><code>to_timestamp(block_timestamp)</code></td>
+<td><code>tx_date</code></td>
 <td>The timestamp of the block, converted to a human-readable date and time format.</td>
 </tr>
 <tr class="odd">
-<td><code>events</code></td>
-<td>An array of events triggered by the transaction.</td>
+<td><code>btc_block_height</code></td>
+<td>The Bitcoin block height.</td>
 </tr>
 <tr class="even">
-<td><code>contract_call</code></td>
-<td>An object containing details of the contract call, including function name, contract ID, signature, and arguments.</td>
-</tr>
-<tr class="odd">
-<td><code>contract_call.function_name</code></td>
-<td>The name of the function called within the contract, indicating the type of stacking operation performed.</td>
-</tr>
-<tr class="even">
-<td><code>contract_call.contract_id</code></td>
-<td>The ID of the contract that includes the function being called.</td>
-</tr>
-<tr class="odd">
-<td><code>contract_call.function_signature</code></td>
-<td>The signature of the function being called in the contract, representing the function’s interface.</td>
-</tr>
-<tr class="even">
-<td><code>contract_call.function_args</code></td>
-<td>The arguments provided to the function call within the contract.</td>
-</tr>
-<tr class="odd">
-<td><code>amount</code> (conditional)</td>
+<td><code>amount</code></td>
 <td>The amount of STX locked for stacking, normalized to STX units (converted from microSTX to STX with a decimal precision of 6), depending on the stacking operation.</td>
 </tr>
+<tr class="odd">
+<td><code>btc_rewards_address_undecoded</code></td>
+<td>The Bitcoin address set to receive stacking rewards in it’s undecoded format</td>
+</tr>
 <tr class="even">
-<td><code>btcAddress_to_receive_rewards</code></td>
+<td><code>btc_rewards_address_version</code></td>
+<td>The Bitcoin address version. This is used to decode the Bitcoin address</td>
+</tr>
+<tr class="odd">
+<td><code>btc_rewards_address_decoded</code></td>
 <td>The Bitcoin address set to receive stacking rewards, extracted and decoded from the function arguments.</td>
 </tr>
+<tr class="even">
+<td><code>function_name</code></td>
+<td>The name of the function called within the contract, indicating the type of stacking operation performed.</td>
+</tr>
 <tr class="odd">
-<td><code>lock_period</code> (conditional)</td>
-<td>For <code>stack-stx</code> operations, this represents the number of cycles the tokens are locked for stacking.</td>
+<td><code>lock_period</code></td>
+<td>This represents the number of cycles the tokens are locked for stacking.</td>
 </tr>
 <tr class="even">
-<td><code>start_burn_height</code> (conditional)</td>
-<td>For <code>stack-stx</code> operations, this is the burnchain block height at which the stacking period starts.</td>
+<td><code>unlock_burn_height</code></td>
+<td>This represents the Bitcoin block number when the Stacked STX is unlocked</td>
 </tr>
 <tr class="odd">
-<td><code>extend_cycle</code> (conditional)</td>
+<td><code>start_burn_height</code></td>
+<td>This is the Bitcoin block height at which the stacking period starts.</td>
+</tr>
+<tr class="even">
+<td><code>extend_cycle</code></td>
 <td>For <code>stack-extend</code> operations, this signifies the additional number of cycles for which an existing stack is extended.</td>
+</tr>
+<tr class="odd">
+<td><code>start_cycle</code></td>
+<td>This signifies the start cycle the STX is locked in</td>
+</tr>
+<tr class="even">
+<td><code>end_cycle</code></td>
+<td>This signifies the end cycle the STX is locked in</td>
 </tr>
 </tbody>
 </table>
@@ -705,40 +709,56 @@ ul.task-list li input[type="checkbox"] {
 <td>The block number in which the transaction was included.</td>
 </tr>
 <tr class="even">
-<td><code>block_timestamp</code></td>
+<td><code>tx_date</code></td>
 <td>The timestamp of the block, converted to a human-readable date and time format.</td>
 </tr>
 <tr class="odd">
-<td><code>events</code></td>
-<td>An array of events triggered by the transaction.</td>
+<td><code>function_name</code></td>
+<td>The name of the function called within the contract, indicating the type of stacking operation performed.</td>
 </tr>
 <tr class="even">
-<td><code>contract_call</code></td>
-<td>An object containing details of the contract call, including function name, contract ID, signature, and arguments.</td>
+<td>depending on the stacking operation.</td>
+<td></td>
 </tr>
 <tr class="odd">
-<td><code>contract_call.function_name</code></td>
-<td>The name of the function called within the contract, indicating the type of delegated stacking operation.</td>
+<td><code>btc_rewards_address_undecoded</code></td>
+<td>The Bitcoin address set to receive stacking rewards in it’s undecoded format</td>
 </tr>
 <tr class="even">
-<td><code>contract_call.contract_id</code></td>
-<td>The ID of the contract that includes the function being called.</td>
+<td><code>btc_rewards_address_version</code></td>
+<td>The Bitcoin address version. This is used to decode the Bitcoin address</td>
 </tr>
 <tr class="odd">
-<td><code>contract_call.function_signature</code></td>
-<td>The signature of the function being called in the contract, representing the function’s interface.</td>
+<td><code>btc_rewards_address_decoded</code></td>
+<td>The Bitcoin address set to receive stacking rewards, extracted and decoded from the function arguments.</td>
 </tr>
 <tr class="even">
-<td><code>contract_call.function_args</code></td>
-<td>The arguments provided to the function call within the contract.</td>
+<td><code>start_burn_height</code></td>
+<td>This is the Bitcoin block height at which the stacking period starts.</td>
 </tr>
 <tr class="odd">
-<td><code>amount</code> (conditional)</td>
-<td>The amount of STX delegated for stacking, specified in the function arguments, depending on the operation type.</td>
+<td><code>unlock_burn_height</code></td>
+<td>This represents the Bitcoin block number when the Stacked STX is unlocked</td>
 </tr>
 <tr class="even">
-<td><code>delegate_to</code> (conditional)</td>
+<td><code>lock_period</code></td>
+<td>This represents the number of cycles the tokens are locked for stacking.</td>
+</tr>
+<tr class="odd">
+<td><code>amount</code></td>
+<td>The amount of STX locked for stacking, normalized to STX units (converted from microSTX to STX with a decimal precision of 6),</td>
+</tr>
+<tr class="even">
+<td><code>delegate_to</code></td>
 <td>The address to which the STX tokens are being delegated for stacking purposes.</td>
+</tr>
+<tr class="odd">
+<td><code>start_cycle</code></td>
+<td>This signifies the start cycle the STX is locked in</td>
+</tr>
+<tr class="even">
+<td><code>unlock_cycle</code></td>
+<td>This signifies the end cycle the STX is locked in</td>
 </tr>
 </tbody>
 </table>
@@ -771,52 +791,36 @@ ul.task-list li input[type="checkbox"] {
 <td>The block number in which the transaction was included.</td>
 </tr>
 <tr class="even">
-<td><code>block_timestamp</code></td>
+<td><code>tx_date</code></td>
 <td>The timestamp of the block, converted to a human-readable date and time format.</td>
 </tr>
 <tr class="odd">
-<td><code>contract_call</code></td>
-<td>An object containing details of the contract call, including function name, contract ID, and signature.</td>
+<td><code>function_name</code></td>
+<td>The name of the function called within the contract, indicating the type of stacking operation performed.</td>
 </tr>
 <tr class="even">
-<td><code>contract_call.function_name</code></td>
-<td>The specific function called within the contract, indicating the type of stacking operation.</td>
+<td>depending on the stacking operation.</td>
+<td></td>
 </tr>
 <tr class="odd">
-<td><code>contract_call.contract_id</code></td>
-<td>The ID of the contract that includes the function being called.</td>
+<td><code>btc_rewards_address_undecoded</code></td>
+<td>The Bitcoin address set to receive stacking rewards in it’s undecoded format</td>
 </tr>
 <tr class="even">
-<td><code>contract_call.function_signature</code></td>
-<td>The signature of the function being called in the contract.</td>
+<td><code>btc_rewards_address_version</code></td>
+<td>The Bitcoin address version. This is used to decode the Bitcoin address</td>
 </tr>
 <tr class="odd">
-<td><code>contract_call.function_args</code></td>
-<td>The arguments provided to the function call within the contract.</td>
+<td><code>btc_rewards_address_decoded</code></td>
+<td>The Bitcoin address set to receive stacking rewards, extracted and decoded from the function arguments.</td>
 </tr>
 <tr class="even">
-<td><code>events</code></td>
-<td>An array of events triggered by the transaction.</td>
-</tr>
-<tr class="odd">
 <td><code>amount</code></td>
-<td>The amount of microSTX committed to stacking, extracted from the contract log’s event data.</td>
-</tr>
-<tr class="even">
-<td><code>delegator</code></td>
-<td>The address of the delegator, if applicable, extracted from the contract log’s event data.</td>
+<td>The amount of STX locked for stacking, normalized to STX units (converted from microSTX to STX with a decimal precision of 6),</td>
 </tr>
 <tr class="odd">
-<td><code>pox_address</code></td>
-<td>The Bitcoin address intended to receive the stacking rewards, extracted from the contract log’s event data.</td>
-</tr>
-<tr class="even">
-<td><code>reward_cycle</code></td>
-<td>The specific reward cycle(s) for which the stacking commitment is made, extracted from the contract log’s event data.</td>
-</tr>
-<tr class="odd">
-<td><code>stacker</code></td>
-<td>The address of the stacker, extracted from the contract log’s event data.</td>
+<td><code>delegate_to</code></td>
+<td>The address to which the STX tokens are being delegated for stacking purposes.</td>
 </tr>
 </tbody>
 </table>
@@ -831,7 +835,7 @@ ul.task-list li input[type="checkbox"] {
 <p>These foundational tables are pivotal in enriching our suite of dApp-specific tables with essential data. They act as core sources that inform and enhance the utility of subsequent datasets, providing a robust bedrock for a more insightful aggregation of dApp activities.</p>
 <section id="sip10-tokens" class="level4">
 <h4 class="anchored" data-anchor-id="sip10-tokens">SIP10 Tokens</h4>
-<p><strong>vw_test_sl_sip10_tokens</strong> <strong>Please note</strong> This view is still in test as we are still adding support for Symbol, Name and Circulating supply.</p>
+<p><strong>tbl_test_sl_sip10_tokens</strong> <strong>Please note</strong> This table is still in test as we are still adding support for Symbol, Name and Circulating supply.</p>
 <p>This view provides metadata about all tokens that comply with the <a href="https://github.com/stacksgov/sips/blob/main/sips/sip-010/sip-010-fungible-token-standard.md">SIP010 Fungible Token standard</a>. This includes critical information such as the token address and its decimal precision, which is essential for accurately representing token quantities and facilitating token-related operations.</p>
 <table class="table">
 <thead>
