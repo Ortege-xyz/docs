@@ -182,26 +182,26 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#bitcoin-db_btc" id="toc-bitcoin-db_btc" class="nav-link active" data-scroll-target="#bitcoin-db_btc">Bitcoin (db_btc)</a>
+  <li><a href="#bitcoin" id="toc-bitcoin" class="nav-link active" data-scroll-target="#bitcoin">Bitcoin</a>
   <ul class="collapse">
   <li><a href="#base-tables" id="toc-base-tables" class="nav-link" data-scroll-target="#base-tables">Base tables</a>
   <ul class="collapse">
-  <li><a href="#vw_prod_sl_outputs" id="toc-vw_prod_sl_outputs" class="nav-link" data-scroll-target="#vw_prod_sl_outputs">vw_prod_sl_outputs</a></li>
-  <li><a href="#vw_prod_sl_inputs" id="toc-vw_prod_sl_inputs" class="nav-link" data-scroll-target="#vw_prod_sl_inputs">vw_prod_sl_inputs</a></li>
+  <li><a href="#outputs" id="toc-outputs" class="nav-link" data-scroll-target="#outputs">Outputs</a></li>
+  <li><a href="#inputs" id="toc-inputs" class="nav-link" data-scroll-target="#inputs">Inputs</a></li>
   </ul></li>
-  <li><a href="#wallet-transactions-tbl_prod_sl_wallet_transactions" id="toc-wallet-transactions-tbl_prod_sl_wallet_transactions" class="nav-link" data-scroll-target="#wallet-transactions-tbl_prod_sl_wallet_transactions">Wallet transactions (tbl_prod_sl_wallet_transactions)</a></li>
+  <li><a href="#wallet-transactions" id="toc-wallet-transactions" class="nav-link" data-scroll-target="#wallet-transactions">Wallet transactions</a></li>
   <li><a href="#layer-2s" id="toc-layer-2s" class="nav-link" data-scroll-target="#layer-2s">Layer 2’s</a>
   <ul class="collapse">
-  <li><a href="#tbl_prod_sl_l2_stacks" id="toc-tbl_prod_sl_l2_stacks" class="nav-link" data-scroll-target="#tbl_prod_sl_l2_stacks">tbl_prod_sl_l2_stacks</a></li>
-  <li><a href="#tbl_prod_sl_l2_stacks_rewards" id="toc-tbl_prod_sl_l2_stacks_rewards" class="nav-link" data-scroll-target="#tbl_prod_sl_l2_stacks_rewards">tbl_prod_sl_l2_stacks_rewards</a></li>
+  <li><a href="#stacks" id="toc-stacks" class="nav-link" data-scroll-target="#stacks">Stacks</a></li>
+  <li><a href="#stacks-rewards" id="toc-stacks-rewards" class="nav-link" data-scroll-target="#stacks-rewards">Stacks Rewards</a></li>
   </ul></li>
   <li><a href="#metaprotocols" id="toc-metaprotocols" class="nav-link" data-scroll-target="#metaprotocols">MetaProtocols</a>
   <ul class="collapse">
-  <li><a href="#ordinals-tbl_prod_sl_ordinals" id="toc-ordinals-tbl_prod_sl_ordinals" class="nav-link" data-scroll-target="#ordinals-tbl_prod_sl_ordinals">Ordinals (tbl_prod_sl_ordinals)</a></li>
-  <li><a href="#brc20s-tbl_prod_sl_brc20" id="toc-brc20s-tbl_prod_sl_brc20" class="nav-link" data-scroll-target="#brc20s-tbl_prod_sl_brc20">BRC20’s (tbl_prod_sl_brc20)</a></li>
+  <li><a href="#ordinals" id="toc-ordinals" class="nav-link" data-scroll-target="#ordinals">Ordinals</a></li>
+  <li><a href="#brc20s" id="toc-brc20s" class="nav-link" data-scroll-target="#brc20s">BRC20’s</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#stacks-db_stacks" id="toc-stacks-db_stacks" class="nav-link" data-scroll-target="#stacks-db_stacks">Stacks (db_stacks)</a>
+  <li><a href="#stacks-1" id="toc-stacks-1" class="nav-link" data-scroll-target="#stacks-1">Stacks</a>
   <ul class="collapse">
   <li><a href="#proof-of-transfer" id="toc-proof-of-transfer" class="nav-link" data-scroll-target="#proof-of-transfer">Proof of Transfer</a>
   <ul class="collapse">
@@ -243,14 +243,14 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="bitcoin-db_btc" class="level1">
-<h1>Bitcoin (db_btc)</h1>
-<p>The Silver layer on Bitcoin will focus on exploding the inputs and outputs from the raw data as well as focus on all the L2’s, Rollups and Sidechains that are building on Bitcoin</p>
+<section id="bitcoin" class="level1">
+<h1>Bitcoin</h1>
+<p><strong>db_btc</strong> The Silver layer on Bitcoin will focus on exploding the inputs and outputs from the raw data as well as focus on all the L2’s, Rollups and Sidechains that are building on Bitcoin</p>
 <section id="base-tables" class="level2">
 <h2 class="anchored" data-anchor-id="base-tables">Base tables</h2>
-<section id="vw_prod_sl_outputs" class="level3">
-<h3 class="anchored" data-anchor-id="vw_prod_sl_outputs">vw_prod_sl_outputs</h3>
-<p>The <code>vw_prod_sl_outputs</code> table is a structured representation of transaction outputs derived from the raw transactional data in the Bronze Layer of the Ortege Lakehouse. This table breaks down the transaction outputs, which are the results of Bitcoin transactions, into a format that is easier to analyze and query.</p>
+<section id="outputs" class="level3">
+<h3 class="anchored" data-anchor-id="outputs">Outputs</h3>
+<p><strong>vw_prod_sl_outputs</strong> The <code>vw_prod_sl_outputs</code> table is a structured representation of transaction outputs derived from the raw transactional data in the Bronze Layer of the Ortege Lakehouse. This table breaks down the transaction outputs, which are the results of Bitcoin transactions, into a format that is easier to analyze and query.</p>
 <table class="table">
 <colgroup>
 <col style="width: 16%">
@@ -323,9 +323,9 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
-<section id="vw_prod_sl_inputs" class="level3">
-<h3 class="anchored" data-anchor-id="vw_prod_sl_inputs">vw_prod_sl_inputs</h3>
-<p>The <code>vw_prod_sl_inputs</code> table is an expanded view of the inputs from the raw transaction data within the Bronze Layer of the Ortege Lakehouse. This table breaks down individual transaction inputs, providing a granular look at the data that constitutes the transactional elements of the Bitcoin network.</p>
+<section id="inputs" class="level3">
+<h3 class="anchored" data-anchor-id="inputs">Inputs</h3>
+<p><strong>vw_prod_sl_inputs</strong> The <code>vw_prod_sl_inputs</code> table is an expanded view of the inputs from the raw transaction data within the Bronze Layer of the Ortege Lakehouse. This table breaks down individual transaction inputs, providing a granular look at the data that constitutes the transactional elements of the Bitcoin network.</p>
 <table class="table">
 <colgroup>
 <col style="width: 16%">
@@ -414,9 +414,9 @@ ul.task-list li input[type="checkbox"] {
 </table>
 </section>
 </section>
-<section id="wallet-transactions-tbl_prod_sl_wallet_transactions" class="level2">
-<h2 class="anchored" data-anchor-id="wallet-transactions-tbl_prod_sl_wallet_transactions">Wallet transactions (tbl_prod_sl_wallet_transactions)</h2>
-<p>The tbl_prod_s1_wallet_transactions table is designed to store transactional data related to Bitcoin wallets. This data helps in monitoring and auditing the balance changes in each wallet associated with the system.</p>
+<section id="wallet-transactions" class="level2">
+<h2 class="anchored" data-anchor-id="wallet-transactions">Wallet transactions</h2>
+<p><strong>tbl_prod_sl_wallet_transactions</strong> The tbl_prod_s1_wallet_transactions table is designed to store transactional data related to Bitcoin wallets. This data helps in monitoring and auditing the balance changes in each wallet associated with the system.</p>
 <p>This table is utilized by Ortege to:</p>
 <ul>
 <li>Track incoming and outgoing transactions for each wallet.</li>
@@ -429,9 +429,9 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="layer-2s">Layer 2’s</h2>
 <p>In the blockchain community, terminology such as “layer-2 solutions,” “sidechains,” and “rollups” can often lead to confusion due to overlapping features and capabilities. For the sake of clarity and convenience within our documentation, we will refer to these various technologies collectively as “L2 solutions.” This encompasses any scalability and extensibility solutions that are built on top of the Bitcoin network to enhance its performance and functionality.</p>
 <p>Currently, our data platform focuses exclusively on the Stacks L2 solution, which brings smart contract capabilities and decentralized applications to Bitcoin. As an integral part of our data ecosystem, the Stacks-related tables and views provide users with detailed information about transactions and interactions specific to the Stacks blockchain. Our dedication to thorough data representation ensures users have comprehensive insights into this innovative L2, bolstering their understanding and analysis of its growing impact on the Bitcoin network.</p>
-<section id="tbl_prod_sl_l2_stacks" class="level3">
-<h3 class="anchored" data-anchor-id="tbl_prod_sl_l2_stacks">tbl_prod_sl_l2_stacks</h3>
-<p>Tracks and catalogues every transaction on the Bitcoin network that pertains to the Stacks Layer-2 solution. This is achieved by scanning for the distinctive “X2” magic code, which is a unique identifier embedded within the OP_RETURN opcode of Bitcoin transaction outputs. The presence of this magic code signals a transaction that is related to the Stacks ecosystem.</p>
+<section id="stacks" class="level3">
+<h3 class="anchored" data-anchor-id="stacks"><a href="https://www.stacks.co/">Stacks</a></h3>
+<p><strong>tbl_prod_sl_l2_stacks</strong> Tracks and catalogues every transaction on the Bitcoin network that pertains to the Stacks Layer-2 solution. This is achieved by scanning for the distinctive “X2” magic code, which is a unique identifier embedded within the OP_RETURN opcode of Bitcoin transaction outputs. The presence of this magic code signals a transaction that is related to the Stacks ecosystem.</p>
 <p>Each transaction captured by our table is then systematically classified and decoded. This process transforms the raw data into a structured and user-friendly format, thereby allowing our users to effortlessly discern the nature and details of Stacks-related activities taking place on the Bitcoin blockchain.</p>
 <p>The table serves as a powerful tool for users who are interested in monitoring the interactions between Bitcoin and the Stacks L2 solution.</p>
 <table class="table">
@@ -487,15 +487,19 @@ ul.task-list li input[type="checkbox"] {
 <td>Highlights transactions that send BTC to the burn address <code>1111111111111111111114oLvT2</code>, indicating that miners burn BTC.</td>
 </tr>
 <tr class="odd">
-<td></td>
-<td></td>
+<td><code>commit_details</code></td>
+<td>Contains details related to the proof-of-transfer commitment. The <code>commit_details</code> structure includes the following fields: <code>block_hash</code>: The hash of the corresponding block in the Bitcoin blockchain. <code>parent_block</code>: The hash of the parent Bitcoin block. <code>parent_txoff</code>: The transaction offset in the parent block. <code>key_block</code>: The hash of the key block for leader election in Stacks. <code>key_txoff</code>: The transaction offset in the key block. <code>burn_modulus</code>: The modulus for the burn amount.</td>
+</tr>
+<tr class="even">
+<td><code>stack_stx_details</code></td>
+<td>Contains details about the STX tokens locked for Stacks mining. The <code>stack_stx_details</code> structure encompasses: <code>uSTX_to_lock</code>: The amount of microSTX (uSTX) tokens that are locked. <code>cycles</code>: The number of cycles for which the tokens are locked.</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="tbl_prod_sl_l2_stacks_rewards" class="level3">
-<h3 class="anchored" data-anchor-id="tbl_prod_sl_l2_stacks_rewards">tbl_prod_sl_l2_stacks_rewards</h3>
-<p>Captures the rewards earned by Stacks (STX) token stackers, expressed in satoshis, which is the smallest unit of Bitcoin. It logs the unique identifier of the reward transaction (id), the block height at which the reward was recorded (block_height), the date of the block (block_date), the recipient address (address), and the amount of the reward (input_value).</p>
+<section id="stacks-rewards" class="level3">
+<h3 class="anchored" data-anchor-id="stacks-rewards">Stacks Rewards</h3>
+<p><strong>tbl_prod_sl_l2_stacks_rewards</strong> Captures the rewards earned by Stacks (STX) token stackers, expressed in satoshis, which is the smallest unit of Bitcoin. It logs the unique identifier of the reward transaction (id), the block height at which the reward was recorded (block_height), the date of the block (block_date), the recipient address (address), and the amount of the reward (input_value).</p>
 <table class="table">
 <colgroup>
 <col style="width: 14%">
@@ -531,9 +535,34 @@ ul.task-list li input[type="checkbox"] {
 <td>The Stacks wallet address that received the reward.</td>
 </tr>
 <tr class="odd">
-<td>input_value</td>
-<td>Integer/Long</td>
+<td>value</td>
+<td>Float</td>
 <td>The reward amount earned for stacking, denominated in satoshis.</td>
+</tr>
+<tr class="even">
+<td>commit</td>
+<td>Boolean</td>
+<td>Indicates whether the row is an actual BTC committment</td>
+</tr>
+<tr class="odd">
+<td>burnt</td>
+<td>Boolean</td>
+<td>Indicates whether the transaction was sent to the burn address</td>
+</tr>
+<tr class="even">
+<td>cycle</td>
+<td>Integer</td>
+<td>The cycle the transaction occurred in</td>
+</tr>
+<tr class="odd">
+<td>avg_btc_price</td>
+<td>Float</td>
+<td>The average of the BTC price for the duration of the Stacks cylce</td>
+</tr>
+<tr class="even">
+<td>usd_committed</td>
+<td>Float</td>
+<td>The value mulitplied by the average BTC price to determine the amount of USD committed for rewards</td>
 </tr>
 </tbody>
 </table>
@@ -542,9 +571,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="metaprotocols" class="level2">
 <h2 class="anchored" data-anchor-id="metaprotocols">MetaProtocols</h2>
 <p>Bitcoin metaprotocols, such as Ordinals and BRC-20 tokens, represent innovative layers or protocols built on top of the Bitcoin blockchain that extend its functionality beyond simple financial transactions. These metaprotocols leverage the security and decentralization of Bitcoin while introducing new capabilities, such as the creation of smart contracts, tokens, and unique digital assets.</p>
-<section id="ordinals-tbl_prod_sl_ordinals" class="level3">
-<h3 class="anchored" data-anchor-id="ordinals-tbl_prod_sl_ordinals">Ordinals (tbl_prod_sl_ordinals)</h3>
-<p>Ordinals introduce the concept of “digital artifacts” to the Bitcoin ecosystem. Unlike traditional Bitcoin transactions that are purely financial, Ordinals allow for the inscription of arbitrary data directly onto individual satoshis (the smallest unit of Bitcoin). This innovation means that any piece of digital content, whether it be text, images, audio, or even small programs, can be inscribed onto the Bitcoin blockchain. Each inscribed satoshi becomes a unique, non-fungible token (NFT) due to its specific ordinal number, making it possible to own, trade, and collect digital artifacts in a way that’s secured by the Bitcoin network.</p>
+<section id="ordinals" class="level3">
+<h3 class="anchored" data-anchor-id="ordinals">Ordinals</h3>
+<p><strong>tbl_prod_sl_ordinals</strong> Ordinals introduce the concept of “digital artifacts” to the Bitcoin ecosystem. Unlike traditional Bitcoin transactions that are purely financial, Ordinals allow for the inscription of arbitrary data directly onto individual satoshis (the smallest unit of Bitcoin). This innovation means that any piece of digital content, whether it be text, images, audio, or even small programs, can be inscribed onto the Bitcoin blockchain. Each inscribed satoshi becomes a unique, non-fungible token (NFT) due to its specific ordinal number, making it possible to own, trade, and collect digital artifacts in a way that’s secured by the Bitcoin network.</p>
 <p><strong>Key Features:</strong></p>
 <ul>
 <li>Uniqueness: Each inscription is unique, tied to a specific satoshi.</li>
@@ -552,9 +581,9 @@ ul.task-list li input[type="checkbox"] {
 <li>Versatility: Allows for a wide range of digital content to be stored directly on the blockchain.</li>
 </ul>
 </section>
-<section id="brc20s-tbl_prod_sl_brc20" class="level3">
-<h3 class="anchored" data-anchor-id="brc20s-tbl_prod_sl_brc20">BRC20’s (tbl_prod_sl_brc20)</h3>
-<p>BRC-20 tokens represent a standard for issuing fungible tokens on the Bitcoin blockchain, analogous to Ethereum’s ERC-20 standard. By utilizing Bitcoin sidechains or layers such as the Liquid Network or smart contract platforms built on top of Bitcoin, BRC-20 tokens enable the creation of custom tokens that can represent various assets, from traditional securities to new forms of digital assets. These tokens can be used for a multitude of purposes, including decentralized finance (DeFi), governance, and digital collectibles, all while benefiting from the security and liquidity of the Bitcoin network.</p>
+<section id="brc20s" class="level3">
+<h3 class="anchored" data-anchor-id="brc20s">BRC20’s</h3>
+<p><strong>tbl_prod_sl_brc20</strong> BRC-20 tokens represent a standard for issuing fungible tokens on the Bitcoin blockchain, analogous to Ethereum’s ERC-20 standard. By utilizing Bitcoin sidechains or layers such as the Liquid Network or smart contract platforms built on top of Bitcoin, BRC-20 tokens enable the creation of custom tokens that can represent various assets, from traditional securities to new forms of digital assets. These tokens can be used for a multitude of purposes, including decentralized finance (DeFi), governance, and digital collectibles, all while benefiting from the security and liquidity of the Bitcoin network.</p>
 <p><strong>Key Features:</strong></p>
 <ul>
 <li>Fungibility: Tokens conforming to the BRC-20 standard are interchangeable, with each token being identical to another in value and properties.</li>
@@ -564,12 +593,12 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </section>
 </section>
-<section id="stacks-db_stacks" class="level1">
-<h1>Stacks (db_stacks)</h1>
-<p>The Silver Layer in the Stacks ecosystem serves as a crucial intermediary layer that enriches raw blockchain data with meaningful metadata, facilitating deeper insights and analysis. This layer particularly focuses on metadata about all tokens compliant with the SIP010 standard, STX20 tokens and individual decentralized application (dApp) activities through smart contract interactions. Below are the details of the views included in the Silver Layer for Stacks, highlighting the comprehensive metadata and activity records.</p>
+<section id="stacks-1" class="level1">
+<h1>Stacks</h1>
+<p><strong>db_stacks</strong> The Silver Layer in the Stacks ecosystem serves as a crucial intermediary layer that enriches raw blockchain data with meaningful metadata, facilitating deeper insights and analysis. This layer particularly focuses on metadata about all tokens compliant with the SIP010 standard, STX20 tokens and individual decentralized application (dApp) activities through smart contract interactions. Below are the details of the views included in the Silver Layer for Stacks, highlighting the comprehensive metadata and activity records.</p>
 <section id="proof-of-transfer" class="level2">
 <h2 class="anchored" data-anchor-id="proof-of-transfer">Proof of Transfer</h2>
-<p>Proof of Transfer, or PoX, is a novel consensus mechanism implemented by the Stacks blockchain, which is built on top of Bitcoin. The mechanism allows participants to lock up (or “stack”) their STX tokens temporarily to support the network’s security and consensus. In return, stackers receive rewards in Bitcoin. This process is governed by the smart contract <a href="https://explorer.hiro.so/txid/0xf9e3ab172a3fd18da7a451b67f9ae686af04b8f520586394c597613099efc83e?chain=mainnet">SP000000000000000000002Q6VF78.pox-3</a></p>
+<p>Proof of Transfer, or PoX, is a novel consensus mechanism implemented by the Stacks blockchain, which is built on top of Bitcoin. The mechanism allows participants to lock up (or “stack”) their STX tokens temporarily to support the network’s security and consensus. In return, stackers receive rewards in Bitcoin. This process is governed by the smart contract <a href="https://explorer.hiro.so/txid/0xf9e3ab172a3fd18da7a451b67f9ae686af04b8f520586394c597613099efc83e?chain=mainnet">SP000000000000000000002Q6VF78.pox-3</a>. Please see our extensive deep dive article on how this data is generated <a href="https://www.ortege.ai/news/exploring-stacks-proof-of-transfer-insights-ortegelakehouse-datasets">here</a>.</p>
 <section id="pox3-solo-stackers" class="level3">
 <h3 class="anchored" data-anchor-id="pox3-solo-stackers">POX3 Solo Stackers</h3>
 <p><strong>tbl_prod_sl_pox3_stackers_solo</strong> Tracks various Proof of Transfer (PoX) and Stacking operations on the Stacks blockchain. It includes solo stacking transactions. The transactions are filtered to only include successful ones pertaining to the pox-3 smart contract and are related to solo stacking operations such as stack-stx, stack-extend, and stack-increase.</p>
