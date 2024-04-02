@@ -1,0 +1,31 @@
+---
+title: "Pricing"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+**db_pricing**
+Our pricing table currently gets aggregated pricing every 5 minutes and not in realtime.
+
+## Prices
+**tbl_prod_br_prices**
+This dataset includes various metrics such as supply details, current price, market capitalization, and price change percentages over different time frames. It also contains a timestamp indicating when the data was recorded or updated. 
+
+| Column Name          | Type          | Description                                                                                      |
+|----------------------|---------------|--------------------------------------------------------------------------------------------------|
+| id_cmc               | Integer       | Unique identifier for the [CoinMarketCap](https://coinmarketcap.com/)                            |
+| source               | string        | Source of where the pricing information is coming from                                           |
+| name                 | String        | The full name of the cryptocurrency.                                                             |
+| symbol               | String        | The abbreviated symbol or ticker used to represent the cryptocurrency.                           |
+| circulating_supply   | Decimal/Double| The amount of cryptocurrency that is currently circulating in the market and publicly available. |
+| total_supply         | Decimal/Double| The total amount of cryptocurrency that exists right now (minus any coins that have been verifiably burned).|
+| price                | Decimal/Double| The current price of the cryptocurrency.                                                         |
+| market_cap           | Decimal/Double| The total market value of the cryptocurrency's circulating supply.                               |
+| percent_change_1h    | Decimal/Double| The percentage change in price over the last hour.                                               |
+| percent_change_24h   | Decimal/Double| The percentage change in price over the last 24 hours.                                           |
+| percent_change_7d    | Decimal/Double| The percentage change in price over the last 7 days.                                             |
+| percent_change_30d   | Decimal/Double| The percentage change in price over the last 30 days.                                            |
+| volume_24h           | Decimal/Double| The total trading volume of the cryptocurrency over the last 24 hours.                           |
+| timestamp            | Timestamp     | The date and time at which the record was updated.                                               |

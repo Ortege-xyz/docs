@@ -36,14 +36,20 @@ website:
             file: content/lakehouse/overview.qmd
           - text: "Medallian Architecture"
             file: content/lakehouse/medallian.qmd
-          - text: "Bronze Layer"
-            file: content/lakehouse/bronze.qmd
-          - text: "Silver Layer"
-            file: content/lakehouse/silver.qmd
-          - text: "Gold Layer"
-            file: content/lakehouse/gold.qmd
           - text: "API"
             file: content/lakehouse/api.qmd
+      - text: "Datasets"
+        menu: 
+          - text: "Stacks"
+            file: content/lakehouse/datasets/stacks.qmd
+          - text: "Bitcoin"
+            file: content/lakehouse/datasets/bitcoin.qmd
+          - text: "Stellar"
+            file: content/lakehouse/datasets/stellar.qmd
+          - text: "Pricing"
+            file: content/lakehouse/datasets/pricing.qmd
+          - text: "Address Book"
+            file: content/lakehouse/datasets/address_book.qmd
       - text: "OrtegeGPT"
         menu: 
           - text: "Overview"

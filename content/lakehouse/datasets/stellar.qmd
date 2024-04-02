@@ -1,0 +1,116 @@
+---
+title: "Stellar"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+**db_soroban**
+
+# Bronze Layer
+## Ledger
+**tbl_test_br_ledgers**
+
+The `tbl_test_br_ledgers` table holds essential data for each ledger within the Stellar blockchain. It contains ledger identifiers, hash information, timestamps, and detailed transaction metrics. This data is crucial for understanding ledger changes, transaction dynamics, and overall blockchain activity on the Stellar network.
+
+| Column Name                | Data Type | Description                                                                                                             |
+|----------------------------|-----------|-------------------------------------------------------------------------------------------------------------------------|
+| `id`                       | Integer   | The unique identifier for the ledger.                                                                                   |
+| `sequence`                 | Integer   | The sequence number of the ledger, indicating its position in the Stellar blockchain.                                   |
+| `hash`                     | String    | The hash of the ledger, serving as a cryptographic signature.                                                           |
+| `prev_hash`                | String    | The hash of the previous ledger, linking the current ledger to its predecessor.                                         |
+| `timestamp`                | Timestamp | The timestamp of when the ledger was created.                                                                           |
+| `closed_at`                | Timestamp | The time when the ledger was closed and finalized.                                                                      |
+| `total_coins`              | String    | The total number of coins within the ledger.                                                                            |
+| `fee_pool`                 | String    | The pool of fees accumulated from transaction costs within the ledger.                                                  |
+| `base_fee_in_stroops`      | Integer   | The base fee (in stroops, the smallest unit of the Stellar cryptocurrency) for transactions within the ledger.          |
+| `base_reserve_in_stroops`  | Integer   | The base reserve (in stroops) required to be held in each account on the Stellar network.                               |
+| `max_tx_set_size`          | Integer   | The maximum number of transactions that can be included in a transaction set for this ledger.                           |
+| `protocol_version`         | Integer   | The version of the Stellar protocol with which the ledger complies.                                                     |
+| `header_xdr`               | String    | The XDR (External Data Representation) format of the ledger header.                                                     |
+| `paging_token`             | String    | A token used for paging through results.                                                                                |
+| `successful_transaction_count` | Integer | The number of transactions that were successfully processed in the ledger.                                           |
+| `failed_transaction_count` | Integer   | The number of transactions that failed processing in the ledger.                                                        |
+| `operation_count`          | Integer   | The total number of operations within all transactions in the ledger.                                                   |
+| `tx_set_operation_count`   | Integer   | The total number of operations within the transaction set for this ledger.                                              |
+
+
+## Transactions
+**tbl_test_br_transactions**
+
+This table catalogs the individual transactions on the Stellar blockchain, capturing the essence of each financial event. Each entry includes the transaction's unique identifier, its status, the associated ledger number, and precise timing information. It details the transaction fee, operation count, and the XDR (External Data Representation) information for envelopes, results, and fee meta, which encapsulates the transaction in a standardized format for interoperability. Furthermore, the table stores memo-related data, crucial for transaction annotation, along with a count and array of signatures verifying the transaction. This dataset is invaluable for tracing Stellar transactions, understanding fee structures, and examining transactional metadata for analysis and verification.
+
+| Column Name           | Type        | Description                                                        |
+|-----------------------|-------------|--------------------------------------------------------------------|
+| id                    | Integer     | Unique identifier for the transaction.                             |
+| paging_token          | String      | A cursor value used for paginating through transaction records.    |
+| successful            | Boolean     | Indicates whether the transaction was successful.                  |
+| hash                  | String      | The unique hash of the transaction.                                |
+| ledger                | Integer     | The ledger number that the transaction was included in.            |
+| timestamp             | Timestamp   | The date and time at which the transaction occurred.               |
+| created_at            | Timestamp   | The date and time when the transaction was created.                |
+| source_account        | String      | The initiating account of the transaction.                         |
+| source_account_sequence| Long       | The sequence number of the source account.                        |
+| fee_account           | String      | The account charged for the transaction fee.                       |
+| fee_charged           | Long        | The fee amount charged for the transaction.                        |
+| max_fee               | Long        | The maximum fee the source account is willing to pay.              |
+| operation_count       | Integer     | The number of operations included in the transaction.              |
+| envelope_xdr          | String      | The transaction envelope in XDR format.                            |
+| result_xdr            | String      | The result of the transaction in XDR format.                       |
+| result_meta_xdr       | String      | Additional result details in XDR format.                           |
+| fee_meta_xdr          | String      | Fee-related metadata in XDR format.                                |
+| memo_type             | String      | Type of memo included with the transaction.                        |
+| memo                  | String      | Memo value included with the transaction.                          |
+| memo_bytes            | Blob        | Memo value in bytes, for binary memos.                             |
+| signatures            | Struct      | Struct of signatures confirming the transaction's validity.        |
+| valid_after           | Timestamp   | The time after which the transaction is valid.                     |
+| valid_before          | Timestamp   | The time before which the transaction is valid.                    |
+| preconditions              | Struct      | Details of preconditions necessary for the transaction. Includes `timebounds`, `ledgerbounds`, `min_account_sequence`, `min_account_sequence_age`, `min_account_sequence_ledger_gap`, and `extra_signers`. |
+| fee_meta                   | Struct      | Metadata related to the transaction fee structure. Includes `fee_source`, `fee`, `inner_tx`, and `ext`.                                        |
+| result                     | Struct      | Outcome details of the transaction processing. Includes `fee_charged`, `result`, and `ext`.                                                   |
+| envelope                   | Struct      | Contains the transaction payload and authorization data. Includes `type`, `v1`, `fee_bump`, `tx`, and `signatures`.                            |
+
+## Events
+**tbl_test_br_events**
+The `tbl_test_br_events` table captures key event data within the Stellar blockchain. Each event is tied to a ledger and transaction, providing a detailed account of contract calls and operations. It includes event types, ledger closure times, contract identifiers, and transaction hashes. Notable is the inclusion of a 'paging_token' which allows for consistent querying within paginated results. The table is pivotal for tracking the execution and outcomes of contract calls, offering a granular view of the events that occur within the Stellar ecosystem.
+
+| Column Name             | Type        | Description |
+|-------------------------|-------------|-------------|
+| event_type              | String      | The type of event, such as a contract call or operation executed within the ledger. |
+| ledger                  | Integer     | The sequence number of the ledger where the event occurred. |
+| ledger_closed_at        | Timestamp   | The time when the ledger containing the event was closed and finalized. |
+| contract_id             | String      | The unique identifier for the contract involved in the event. |
+| tx_hash                 | String      | The hash of the transaction associated with the event. |
+| id                      | String      | The unique identifier for the event. |
+| paging_token            | String      | A token used for paginating through a set of results. |
+| in_successful_contract_call | Boolean | Indicates whether the event was part of a successful contract call. |
+| topic                   | Array       | Contains `items` with event-specific information, and `value` to describe the event details. |
+
+# Silver layer
+Stellar transactions are encapsulated within structures known as envelopes, which are expressed in XDR (External Data Representation) format. These envelopes contain all the necessary information to submit a transaction to the Stellar network. The tbl_test_sl_tx_envelopes table in Ortege Lakehouse's Silver layer captures this data, structured for easy access and query efficiency.
+
+In the context of Stellar, the envelope includes not only the transaction itself (tx) but also signatures (v1) and other metadata necessary for the transaction to be validated by the Stellar network (fee_bump, envelope_type). Each transaction has operational details (operations) that define what the transaction does, such as payments or account settings adjustments.
+
+The table schema for tbl_test_sl_tx_envelopes breaks down the envelope into its constituent components, storing details about transaction fees, sequence numbers, and memos, as well as the operations that the transaction performs.
+
+Below is the schema for the tbl_test_sl_tx_envelopes table with key fields that are extracted from the Stellar transaction envelope:
+
+| Field Name                 | Type          | Description                                         |
+|----------------------------|---------------|-----------------------------------------------------|
+| id                         | Integer       | Unique identifier for the transaction envelope      |
+| hash                       | String        | Hash of the transaction                             |
+| ledger                     | Integer       | Ledger in which the transaction is recorded         |
+| created_at                 | Datetime      | Timestamp when the transaction was created          |
+| source_account             | String        | The account from which the transaction originated   |
+| memo_type                  | String        | Type of memo included in the transaction            |
+| envelope_type              | Struct        | Contains type and v1 (version) of the envelope      |
+| tx_source_account          | String        | Transaction-level source account                    |
+| tx_fee                     | Integer       | Fee associated with the transaction                 |
+| tx_seq_num                 | Integer       | Sequence number of the transaction                  |
+| tx_cond                    | Struct        | Conditions for the transaction (v2, time_bounds)    |
+| tx_memo                    | Struct        | Memo details of the transaction                     |
+| operations                 | Array         | List of operations included in the transaction      |
+| operation_detail           | Struct        | Detailed information of each operation              |
+| operation_source_account   | String        | Source account specified for the operation          |
+| operation_body             | Struct        | Body of the operation, includes `operation_body_type` |

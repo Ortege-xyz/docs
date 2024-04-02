@@ -1,139 +1,110 @@
 ---
-title: "Silver Layer"
+title: "Stacks"
 format:
   html:
     toc: true
     html-math-method: katex
 ---
-
-# Bitcoin 
-**db_btc**
-The Silver layer on Bitcoin will focus on exploding the inputs and outputs from the raw data as well as focus on all the L2's, Rollups and Sidechains that are building on Bitcoin
-
-## Base tables
-
-### Outputs
-**vw_prod_sl_outputs**
-The `vw_prod_sl_outputs` table is a structured representation of transaction outputs derived from the raw transactional data in the Bronze Layer of the Ortege Lakehouse. This table breaks down the transaction outputs, which are the results of Bitcoin transactions, into a format that is easier to analyze and query.
-
-| col_name           | data_type | comment                                                                                   |
-|--------------------|-----------|-------------------------------------------------------------------------------------------|
-| id                 | string    | The unique identifier of the transaction from which the output is derived.                 |
-| block_height       | bigint    | The height of the block in the blockchain that includes the transaction.                   |
-| block_date         | date      | The date when the block containing the transaction was added to the blockchain.            |
-| is_coinbase        | boolean   | Indicates whether the transaction output is from a coinbase transaction, signifying new bitcoins entering circulation as a miner's reward. |
-| address            | string    | The Bitcoin address that is the recipient of this output.                                 |
-| index              | bigint    | The position of this output within the transaction; the first output is indexed as 0.     |
-| required_signatures| bigint    | The number of signatures required to spend this output.                                   |
-| script_asm         | string    | The assembly notation of the script that dictates how this output can be spent.           |
-| script_hex         | string    | The hexadecimal encoding of the output script.                                            |
-| type               | string    | The type of script used in the transaction output (e.g., 'pubkeyhash', 'scripthash').     |
-| value              | bigint    | The value of bitcoins held in this output, represented in Satoshis (the smallest unit of bitcoin). |
-
-### Inputs
-**vw_prod_sl_inputs**
-The `vw_prod_sl_inputs` table is an expanded view of the inputs from the raw transaction data within the Bronze Layer of the Ortege Lakehouse. This table breaks down individual transaction inputs, providing a granular look at the data that constitutes the transactional elements of the Bitcoin network.
-
-| col_name            | data_type | comment                                                                                         |
-|---------------------|-----------|-------------------------------------------------------------------------------------------------|
-| id                  | string    | The unique identifier for the transaction containing this input.                                |
-| block_height        | bigint    | The height of the block in the blockchain that includes this transaction.                       |
-| block_date          | date      | The date when the block was added to the blockchain.                                            |
-| is_coinbase         | boolean   | A flag indicating whether the input is part of a coinbase transaction.                          |
-| address             | string    | The Bitcoin address associated with this input.                                                 |
-| index               | bigint    | The position of this input within the transaction.                                              |
-| required_signatures | bigint    | The number of required signatures for the transaction this input is part of.                    |
-| script_asm          | string    | The assembly notation of the script used in the input.                                          |
-| script_hex          | string    | The hexadecimal encoding of the script used in the input.                                       |
-| sequence            | bigint    | A sequence number associated with this input, used for replacement transactions.                |
-| spent_output_index  | bigint    | The index of the output that this input is spending from.                                       |
-| spent_transaction_hash | string    | The hash of the transaction from which this input spends.                                       |
-| type                | string    | The type of script used in this input (e.g., 'pubkeyhash', 'scripthash').                       |
-| value               | bigint    | The value of bitcoins being input, typically matching the value of the spent output.            |
-
-
-## Wallet transactions 
-**tbl_prod_sl_wallet_transactions**
-The tbl_prod_s1_wallet_transactions table is designed to store transactional data related to Bitcoin wallets. This data helps in monitoring and auditing the balance changes in each wallet associated with the system.
-
-This table is utilized by Ortege to:
-
-* Track incoming and outgoing transactions for each wallet.
-* Calculate the real-time balance of each wallet.
-* Audit transactions for compliance and reporting purposes.
-* Detect patterns and analyze wallet activity.
-
-## Layer 2's
-In the blockchain community, terminology such as "layer-2 solutions," "sidechains," and "rollups" can often lead to confusion due to overlapping features and capabilities. For the sake of clarity and convenience within our documentation, we will refer to these various technologies collectively as "L2 solutions." This encompasses any scalability and extensibility solutions that are built on top of the Bitcoin network to enhance its performance and functionality.
-
-Currently, our data platform focuses exclusively on the Stacks L2 solution, which brings smart contract capabilities and decentralized applications to Bitcoin. As an integral part of our data ecosystem, the Stacks-related tables and views provide users with detailed information about transactions and interactions specific to the Stacks blockchain. Our dedication to thorough data representation ensures users have comprehensive insights into this innovative L2, bolstering their understanding and analysis of its growing impact on the Bitcoin network.
-
-### [Stacks](https://www.stacks.co/)
-**tbl_prod_sl_l2_stacks**
-Tracks and catalogues every transaction on the Bitcoin network that pertains to the Stacks Layer-2 solution. This is achieved by scanning for the distinctive "X2" magic code, which is a unique identifier embedded within the OP_RETURN opcode of Bitcoin transaction outputs. The presence of this magic code signals a transaction that is related to the Stacks ecosystem.
-
-Each transaction captured by our table is then systematically classified and decoded. This process transforms the raw data into a structured and user-friendly format, thereby allowing our users to effortlessly discern the nature and details of Stacks-related activities taking place on the Bitcoin blockchain.
-
-The table serves as a powerful tool for users who are interested in monitoring the interactions between Bitcoin and the Stacks L2 solution. 
-
-| Field              | Description |
-|--------------------|-------------|
-| `id`               | Represents the transaction hash. |
-| `block_height`     | The block height the transaction occurred in. |
-| `block_date`       | The date the transaction occurred. |
-| `address`          | Address of the sender. |
-| `index`            | The sequence number of the output in a transaction, starting at 0. |
-| `script_asm`       | The script of the transaction. An `OP_RETURN` followed by specific codes at index 0 indicates a non-spendable output embedding different types of data. |
-| `value`            | The amount associated with the output, typically zero for `OP_RETURN` outputs as they are not intended for transfer. |
-| `transaction_type` | - `vrf` - VRF key registrations relating to `OP_RETURN 58325e` (`X2^`). - `commit` - Transactions relating to `OP_RETURN 58325b` (`X2[`): Block commit. Every output after the index 0, represents an amount that the Stacks miner commits in Satoshi's to be paid to Stacks stackers. The final transaction is the unspent change to send back to the miner. - `stack-stx` - Transaction relating to `OP_RETURN 583278` (`X2x`). - `transfer-stx` - Transactions relating `OP_RETURN 583224` (`X2$`). - `preSTX` - Transactions relating to `OP_RETURN 583270` (`X2p`). |
-| `commit`           | A boolean reflecting true if the value is an amount of Satoshi's committed to STX miners. |
-| `burnt`            | Highlights transactions that send BTC to the burn address `1111111111111111111114oLvT2`, indicating that miners burn BTC. |
-| `commit_details`  | Contains details related to the proof-of-transfer commitment. The `commit_details` structure includes the following fields: `block_hash`: The hash of the corresponding block in the Bitcoin blockchain. `parent_block`: The hash of the parent Bitcoin block. `parent_txoff`: The transaction offset in the parent block. `key_block`: The hash of the key block for leader election in Stacks. `key_txoff`: The transaction offset in the key block. `burn_modulus`: The modulus for the burn amount.   |
-| `stack_stx_details`| Contains details about the STX tokens locked for Stacks mining. The `stack_stx_details` structure encompasses: `uSTX_to_lock`: The amount of microSTX (uSTX) tokens that are locked. `cycles`: The number of cycles for which the tokens are locked.|
-
-### Stacks Rewards
-**tbl_prod_sl_l2_stacks_rewards**
-Captures the rewards earned by Stacks (STX) token stackers, expressed in satoshis, which is the smallest unit of Bitcoin. It logs the unique identifier of the reward transaction (id), the block height at which the reward was recorded (block_height), the date of the block (block_date), the recipient address (address), and the amount of the reward (input_value).
-
-| Column Name | Type         | Description                                                     |
-|-------------|--------------|-----------------------------------------------------------------|
-| id          | Integer      | The unique identifier for the stacking reward record.           |
-| block_height| Integer      | The height of the block in the Stacks blockchain.               |
-| block_date  | Date         | The date when the block was mined.                              |
-| address     | String       | The Stacks wallet address that received the reward.             |
-| value       | Float        | The reward amount earned for stacking, denominated in satoshis. |
-| commit      | Boolean      | Indicates whether the row is an actual BTC committment          |
-| burnt       | Boolean      | Indicates whether the transaction was sent to the burn address  |
-| cycle       | Integer      | The cycle the transaction occurred in                           |
-| avg_btc_price | Float       | The average of the BTC price for the duration of the Stacks cylce |
-| usd_committed | Float       | The value mulitplied by the average BTC price to determine the amount of USD committed for rewards |
-
-
-## MetaProtocols
-Bitcoin metaprotocols, such as Ordinals and BRC-20 tokens, represent innovative layers or protocols built on top of the Bitcoin blockchain that extend its functionality beyond simple financial transactions. These metaprotocols leverage the security and decentralization of Bitcoin while introducing new capabilities, such as the creation of smart contracts, tokens, and unique digital assets. 
-
-### Ordinals 
-**tbl_prod_sl_ordinals**
-Ordinals introduce the concept of "digital artifacts" to the Bitcoin ecosystem. Unlike traditional Bitcoin transactions that are purely financial, Ordinals allow for the inscription of arbitrary data directly onto individual satoshis (the smallest unit of Bitcoin). This innovation means that any piece of digital content, whether it be text, images, audio, or even small programs, can be inscribed onto the Bitcoin blockchain. Each inscribed satoshi becomes a unique, non-fungible token (NFT) due to its specific ordinal number, making it possible to own, trade, and collect digital artifacts in a way that's secured by the Bitcoin network.
-
-**Key Features:**
-
-* Uniqueness: Each inscription is unique, tied to a specific satoshi.
-* Decentralization: Utilizes the secure and decentralized nature of Bitcoin.
-* Versatility: Allows for a wide range of digital content to be stored directly on the blockchain.
-
-### BRC20's 
-**tbl_prod_sl_brc20**
-BRC-20 tokens represent a standard for issuing fungible tokens on the Bitcoin blockchain, analogous to Ethereum's ERC-20 standard. By utilizing Bitcoin sidechains or layers such as the Liquid Network or smart contract platforms built on top of Bitcoin, BRC-20 tokens enable the creation of custom tokens that can represent various assets, from traditional securities to new forms of digital assets. These tokens can be used for a multitude of purposes, including decentralized finance (DeFi), governance, and digital collectibles, all while benefiting from the security and liquidity of the Bitcoin network.
-
-**Key Features:**
-
-* Fungibility: Tokens conforming to the BRC-20 standard are interchangeable, with each token being identical to another in value and properties.
-* Smart Contracts: Enables complex financial operations and agreements to be executed automatically.
-* Bitcoin Security: Leverages the robust security features of the Bitcoin blockchain.
-
-# Stacks
 **db_stacks**
+
+# Bronze layer
+The Bronze layer contains all the raw data. This data has not been transformed.
+
+## Cycles
+**tbl_prod_br_cycles**
+
+The `tbl_prod_br_cycles` table provides a structured overview of cycles within the Stacks blockchain, starting from the genesis of Stacks 2.0. Each cycle represents a fixed number of blocks, facilitating the organization and analysis of blockchain data over time. This table is essential for understanding the temporal division of blockchain activity and aids in analyzing trends, rewards distributions, and other cycle-based metrics.
+
+| Column       | Description                                       |
+|--------------|---------------------------------------------------|
+| `cycle`      | The sequential number of the cycle, starting from 0. Each cycle represents a group of 2100 blocks within the Stacks blockchain. |
+| `start_block`| The starting block number for the given cycle. This marks the first block in the cycle. |
+| `end_block`  | The ending block number for the given cycle. This marks the last block in the cycle. |
+| `start_date`  | The start date for the given cycle. This marks the start of the cycle. |
+| `end_date`  | The ending date for the given cycle. This marks the end of the cycle. |
+
+
+## Blocks
+**tbl_prod_br_blocks**
+The table archives block data for the Stacks blockchain, detailing block identification, sequencing, and associated Bitcoin blockchain references due to Stacks' unique proof-of-burn consensus mechanism. It records block numbers, hashes, transaction counts, and the execution costs related to transactions, offering essential insights for analysis of network activity and transactional efficiency on the Stacks blockchain.
+
+| col_name                  | data_type | comment                                                                                                                                                                                                                       |
+|---------------------------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| canonical                 | boolean   | Canonical Blocks are the building blocks that contribute to the continuous, unbroken chain of blocks in the blockchain, each linking to its predecessor, forming the indelible ledger that blockchain is celebrated for. You expect this to be true. |
+| number                    | bigint    | stacks block number                                                                                                                                                                                                           |
+| hash                      | string    | A unique identifier for each block, generated by applying a cryptographic hash function to the block's data                                                                                                                   |
+| index_block_hash          | string    | The hash of the index block.                                                                                                                                                                                                  |
+| parent_block_hash         | string    | The hash of the parent block.                                                                                                                                                                                                 |
+| timestamp                 | bigint    | Timestamp of relevant block. If you use `to_timestamp(timestamp)` SQL code, you will get the actual date-time.                                                                                                                |
+| burn_block_hash           | string    | Corresponding Bitcoin block number's hash. The block that is written in Bitcoin block's hash.                                                                                                                                 |
+| burn_block_height         | bigint    | Corresponding Bitcoin block number. The block that is written in a Bitcoin block.                                                                                                                                             |
+| miner_txid                | string    | Corresponding transaction burned on Bitcoin block for the stacks block. Every stacks block is a transaction on Bitcoin. And this is that tx's id. If you remove the `0x` from the beginning, you will get the Bitcoin tx id. |
+| transaction_count         | bigint    | Count of each transaction in the relevant block.                                                                                                                                                                              |
+| execution_cost_read_count | bigint    | Captures the number of independent reads performed on the underlying data store.                                                                                                                                              |
+| execution_cost_read_length| bigint    | The number of bytes read from the underlying data store.                                                                                                                                                                      |
+| execution_cost_runtime    | bigint    | Captures the number of cycles that a single processor would require to process the Clarity block. This is a unitless metric, meant to provide a basis for comparison between different Clarity code blocks.                   |
+| execution_cost_write_count| bigint    | Captures the number of independent writes performed on the underlying data store (see SIP-004).                                                                                                                               |
+| execution_cost_write_length| bigint   | The number of bytes written to the underlying data store.                                                                                                                                                                     |
+
+## Transactions
+**tbl_prod_br_transactions**
+The table is a comprehensive record of transactions on the Stacks blockchain. It includes transaction identifiers, sender information, execution costs, and status details. This table links transactions to blocks, tracks microblock inclusion, and categorizes transaction types, such as token transfers and smart contract executions. It's a key resource for analyzing transactional data within the Stacks ecosystem.
+
+| col_name                  | data_type            | comment                                                                                                                                                 |
+|---------------------------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+| hash                      | string               | Unique identifier for the transaction                                                                                                                   |
+| nonce                     | bigint               | Random number used in mining process                                                                                                                    |
+| fee_rate                  | string               | Fee rate for the transaction                                                                                                                            |
+| sender_address            | string               | Address of the sender                                                                                                                                   |
+| sponsored                 | boolean              | Boolean indicating if the transaction is sponsored                                                                                                      |
+| post_condition_mode       | string               | Mode for post-conditions                                                                                                                                |
+| post_conditions           | array<struct>        | Array of post-conditions                                                                                                                                |
+| anchor_mode               | string               | Mode for anchoring                                                                                                                                      |
+| is_unanchored             | boolean              | Boolean indicating if the transaction is unanchored                                                                                                     |
+| parent_block_hash         | string               | Hash of the parent block                                                                                                                                |
+| block_hash                | string               | Hash of the block containing the transaction                                                                                                            |
+| block_number              | bigint               | Block number containing the transaction                                                                                                                 |
+| block_timestamp           | bigint               | Unix timestamp of the block containing the transaction                                                                                                       |
+| parent_burn_block_time    | bigint               | Timestamp of the parent burn block                                                                                                                      |
+| canonical                 | boolean              | Boolean indicating if the block is canonical                                                                                                            |
+| tx_index                  | bigint               | Index of the transaction within the block                                                                                                               |
+| tx_status                 | string               | Status of the transaction                                                                                                                               |
+| tx_result                 | struct               | Result of the transaction                                                                                                                               |
+| microblock_hash           | string               | Hash of the microblock containing the transaction                                                                                                       |
+| microblock_sequence       | bigint               | Sequence number of the microblock containing the transaction                                                                                            |
+| microblock_canonical      | boolean              | Boolean indicating if the microblock is canonical (Field marked as 'null' suggests missing information or not applicable.)                              |
+| event_count               | bigint               | Count of events (Field marked as 'null' suggests missing information or not applicable.)                                                                |
+| events                    | array<struct>        | Array of events (Field marked as 'null' suggests missing information or not applicable.)                                                                |
+| execution_cost_read_count | bigint               | Number of independent reads performed on the underlying data store (Field marked as 'null' suggests missing information or not applicable.)             |
+| execution_cost_read_length| bigint               | Number of bytes read from the underlying data store (Field marked as 'null' suggests missing information or not applicable.)                            |
+| execution_cost_runtime    | bigint               | Number of cycles for processing (Field marked as 'null' suggests missing information or not applicable.)                                               |
+| execution_cost_write_count| bigint               | Number of independent writes performed on the underlying data store (Field marked as 'null' suggests missing information or not applicable.)           |
+| execution_cost_write_length| bigint             | Number of bytes written to the underlying data store (Field marked as 'null' suggests missing information or not applicable.)                          |
+| tx_type                   | string               | Type of the transaction (Field marked as 'null' suggests missing information or not applicable.)                                                       |
+| token_transfer            | struct               | Details of token transfer if applicable (Field marked as 'null' suggests missing information or not applicable.)                                       |
+| coinbase_payload          | struct               | Data for coinbase transactions (Field marked as 'null' suggests missing information or not applicable.)                                                |
+| smart_contract            | struct               | Details of the smart contract if applicable (Field marked as 'null' suggests missing information or not applicable.)                                   |
+| contract_call             | struct               | Details of the contract call if applicable (Field marked as 'null' suggests missing information or not applicable.)                                    |
+| poison_microblock         | map<string,string>   | Information on poisoned microblock if applicable (Field marked as 'null' suggests missing information or not applicable.)                              |
+
+
+## Contracts
+**tbl_prod_br_contracts**
+The table records details of smart contracts on the Stacks blockchain. It tracks the transaction hash (tx_hash), whether the contract is the main (canonical) version, the contract's address, and the associated block number. Contract-specific data like Clarity language version (clarity_version), source code, and ABI (Application Binary Interface) are also stored. Additionally, flags indicate if the contract pertains to a STX20 token (is_stx20) or a non-fungible token (is_nft), offering insights into the contract's purpose and functionality. This table is vital for developers and analysts interested in smart contract deployment and usage patterns on Stacks.
+
+| col_name         | data_type | comment                                                                                                                                                                                                                     |
+|------------------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| tx_hash          | string    | Transaction hash of the contract. Try searching it in explorer.hiro.so                                                                                                                                                     |
+| canonical        | boolean   | Canonical Blocks are the building blocks that contribute to the continuous, unbroken chain of blocks in the blockchain, each linking to its predecessor, forming the indelible ledger that blockchain is celebrated for. You expect this to be true. |
+| address          | string    | Address of the contract.                                                                                                                                                                                                    |
+| block_number     | bigint    | In which block this contract recorded in.                                                                                                                                                                                   |
+| clarity_version  | bigint    | Clarity version of the contract.                                                                                                                                                                                            |
+| source_code      | string    | The source code of the contract.                                                                                                                                                                                            |
+| abi              | string    | The ABI (Application Binary Interface) of the contract.                                                                                                                                                                     |
+| is_stx20         | boolean   | Indicates whether the contract is a Stacks 2.0 token (STX20).                                                                                                                                                               |
+| is_nft           | boolean   | Indicates whether the contract is a non-fungible token (NFT).                                                                                                     
+
+# Silver layer
 The Silver Layer in the Stacks ecosystem serves as a crucial intermediary layer that enriches raw blockchain data with meaningful metadata, facilitating deeper insights and analysis. This layer particularly focuses on metadata about all tokens compliant with the SIP010 standard, STX20 tokens and individual decentralized application (dApp) activities through smart contract interactions. Below are the details of the views included in the Silver Layer for Stacks, highlighting the comprehensive metadata and activity records.
 
 ## Proof of Transfer
@@ -389,30 +360,74 @@ The vw_dev_sl_stx20 view captures transactions involving STX20 tokens, including
 | total_supply       | Total supply of tokens (varchar)  |
 | limit_per_mint     | Limit per mint operation (varchar)|
 
-# Stellar
-Stellar transactions are encapsulated within structures known as envelopes, which are expressed in XDR (External Data Representation) format. These envelopes contain all the necessary information to submit a transaction to the Stellar network. The tbl_test_sl_tx_envelopes table in Ortege Lakehouse's Silver layer captures this data, structured for easy access and query efficiency.
 
-In the context of Stellar, the envelope includes not only the transaction itself (tx) but also signatures (v1) and other metadata necessary for the transaction to be validated by the Stellar network (fee_bump, envelope_type). Each transaction has operational details (operations) that define what the transaction does, such as payments or account settings adjustments.
+# Gold Layer
+This is the layer where the data is it's most manageable. The data in this layer gives you answers to specific questions you have about Stacks. 
 
-The table schema for tbl_test_sl_tx_envelopes breaks down the envelope into its constituent components, storing details about transaction fees, sequence numbers, and memos, as well as the operations that the transaction performs.
+## Proof of Transfer
+### tbl_prod_gld_pox3_stackers_all
+This table joins all Stacking STX transactions with all BTC reward transactions. 
 
-Below is the schema for the tbl_test_sl_tx_envelopes table with key fields that are extracted from the Stellar transaction envelope:
+It unions the following data sources:
 
-| Field Name                 | Type          | Description                                         |
-|----------------------------|---------------|-----------------------------------------------------|
-| id                         | Integer       | Unique identifier for the transaction envelope      |
-| hash                       | String        | Hash of the transaction                             |
-| ledger                     | Integer       | Ledger in which the transaction is recorded         |
-| created_at                 | Datetime      | Timestamp when the transaction was created          |
-| source_account             | String        | The account from which the transaction originated   |
-| memo_type                  | String        | Type of memo included in the transaction            |
-| envelope_type              | Struct        | Contains type and v1 (version) of the envelope      |
-| tx_source_account          | String        | Transaction-level source account                    |
-| tx_fee                     | Integer       | Fee associated with the transaction                 |
-| tx_seq_num                 | Integer       | Sequence number of the transaction                  |
-| tx_cond                    | Struct        | Conditions for the transaction (v2, time_bounds)    |
-| tx_memo                    | Struct        | Memo details of the transaction                     |
-| operations                 | Array         | List of operations included in the transaction      |
-| operation_detail           | Struct        | Detailed information of each operation              |
-| operation_source_account   | String        | Source account specified for the operation          |
-| operation_body             | Struct        | Body of the operation, includes `operation_body_type` |
+* Stack STX via the Bitcoin chain
+* BTC rewards for Stacking STX 
+* Stack STX via the Stacks chain 
+* Delegate STX via the Stacks chain 
+
+#### Stack STX via the Bitcoin chain
+It is possible to initiate stacking from the Bitcoin chain. We identify these transactions via the X2 magic code for Bitcoin transactions. 
+
+#### BTC rewards for Stacking STX
+To get the rewards we identify every transaction as it flows to the Stacking address. This follows the following path:
+`Stacks Miner commits BTC in a transaction` -> `Track the Input of the Committed BTC` -> `Report on the output from the Input`.
+
+For example if a Stacks miner commits 3 values of 1,2 and 5 BTC in one Bitcoin transaction, we will report all three commits separately as rewards. This is to ensure that we have a full audit trail of the supply chain of the BTC from Miners to Stackers. 
+
+#### Stack STX via the Stacks chain
+Due to the way the [POX3 contract](https://explorer.hiro.so/txid/0xf9e3ab172a3fd18da7a451b67f9ae686af04b8f520586394c597613099efc83e?chain=mainnet) was designed, getting the cycles for the `stack-extend` and `stack-increase` involves a bit of complexity. Stack extend extends an existing stack-stx transaction, so we get the cycle from the stack-extend transactions by looking at the original stack-stx transaction and it's lock cycle and then adding 1. For example if Stacker A stacked 120k STX for 5 cycles starting on cycle 60, then that will be reported as 120k STX cycle 60 and lock period of 5. But if that is then extended by 2 cycles, there will be another record returned with 120k STX for cycle 66 and a lock period of 2.
+
+For stack-increase we use the block height of the transaction to determine the cycle the STX will be locked in. 
+
+#### Delegate STX via the Stacks chain
+The delegate-stx and delegate-stack-stx functions in PoX3 both deal with the delegation of STX tokens for Stacking, but they serve different purposes and operate in distinct contexts. 
+
+**delegate-stx**
+The delegate-stx function is used to delegate the authority to lock STX for Stacking to another address (a delegate). When a user calls delegate-stx, they specify how much STX they want to delegate, the delegate's address, an optional burn height at which the delegation expires, and an optional PoX address where the rewards should be sent. This function does not lock STX tokens itself but grants the specified delegate the permission to lock the user's STX tokens on their behalf.
+
+Key points about delegate-stx:
+
+* It sets up a delegation relationship allowing the delegate to later initiate Stacking on behalf of the delegator.
+* It can specify a PoX address for rewards and an expiration for the delegation.
+It is useful for users who wish to participate in Stacking indirectly through a service or pool.
+
+**delegate-stack-stx**
+The delegate-stack-stx function is utilized by the delegate (an address given permission via delegate-stx) to actually lock the delegated STX tokens for Stacking. This function is called after delegate-stx and is the step where the STX tokens are actually committed to Stacking. When calling delegate-stack-stx, the delegate specifies the amount of STX to lock, the PoX address for rewards, the start burn height, and the lock period (number of reward cycles).
+
+Key points about delegate-stack-stx:
+
+* It is used by a delegate to lock STX tokens for Stacking on behalf of a delegator.
+* It requires prior setup via delegate-stx.
+* It initiates the actual Stacking process using the delegated STX tokens.
+* In summary, delegate-stx is about setting up the delegation relationship and granting permission, while delegate-stack-stx is about the delegate taking action to lock the delegated STX for Stacking. The former is preparatory, and the latter is the execution step in the delegation process for participating in Stacking
+
+**Please note** If you want a true figure for Stacking, you'll need to exclude `delegate-stx` as they are committed but not finalized. We include them in this table here for completeness and an audit trail for users who are looking to debug their delegations. 
+
+### tbl_prod_gld_pox3_stackers_solo_cycles
+Each record in the table represents a unique stacking event by an individual stacker. The table records encompass a broad range of information, from basic transaction details to specific stacking parameters, such as the lock period and eligible cycles for rewards.
+
+| Field Name               | Description                                                  |
+|--------------------------|--------------------------------------------------------------|
+| `hash`                   | Unique hash of the stacking transaction.                     |
+| `sender_address`         | Cryptocurrency address of the stacker.                       |
+| `block_number`           | Block number where the transaction was recorded.             |
+| `tx_date`                | Date and time when the transaction was processed.            |
+| `btc_block_height`       | Bitcoin block height at the time of the transaction.         |
+| `amount`                 | Amount of cryptocurrency stacked.                            |
+| `btc_reward_address_decoded` | Decoded Bitcoin address for reward eligibility.         |
+| `function_name`          | Name of the smart contract function invoked.                 |
+| `lock_period`            | Number of cycles the funds are locked for stacking.          |
+| `start_burn_height`      | Starting burn block height for stacking.                     |
+| `extend_cycle`           | Indicator for extending the lock period.                     |
+| `start_cycle`            | First eligible cycle for rewards.                            |
+| `end_cycle`              | Last eligible cycle for rewards.                             |

@@ -1,0 +1,39 @@
+---
+title: "Address Book"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+**db_address_book**
+Ortege Lakehouse distinguishes itself with a dedicated address book database that consolidates wallet addresses across various blockchains into a single unified repository. This unique design supports ML and AI-driven cross-chain analytics, enabling a comprehensive understanding and deeper insights into the entire crypto ecosystem from one source of truth.
+
+## General
+These tables cover addresses across multiple blockchains and aren't blockchain specific
+
+### tbl_test_br_address_labels
+Classifies blockchain addresses based on their associated activities. Currently, this table includes Bitcoin addresses known for participating in Stacks (STX) token stacking. This table allows users to quickly identify and analyze addresses that are active in specific blockchain operations.
+
+| Column Name | Type    | Description                                              |
+|-------------|---------|----------------------------------------------------------|
+| address     | String  | The unique identifier for a wallet on the blockchain.     |
+| blockchain  | String  | The name of the blockchain network, e.g., 'bitcoin'.      |
+| label       | String  | A descriptive label for the address, e.g., 'STX stacker'. |
+
+## Bitcoin
+**db_btc**
+These tables specifically focus on Bitcoin and interesting wallets in the Bitcoin ecosystem
+
+### Wallet first seen (tbl_test__br_address_bitcoin_first_seen)
+This table returns all wallets on Bitcoin as well as the date the address was first seen
+
+### Wallet size (tbl_test_br_bitcoin_wallet_size)
+This table classifies all Bitcoin addresses by their BTC holdings. We classify wallets as:
+
+* < 1 BTC Shrimp
+* Between 1 BTC and < 10 BTC Crap
+* Between 10 BTC and < 100 BTC Fish
+* Between 100 BTC and < 1K BTC Shark
+* Between 1K BTC and < 10k BTC Whale
+* More than 10k BTC Mega Whale

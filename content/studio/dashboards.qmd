@@ -9,6 +9,16 @@ format:
 # Dashboards in Ortege Studio
 Dashboards are powerful tools within Ortege Studio that allow users to compile and visualize various charts and widgets into a single, cohesive interface. Designed for flexibility and interactivity, dashboards provide a snapshot of key metrics, trends, and insights, enabling data-driven decision-making at a glance. This section of the documentation will guide you through creating, customizing, and sharing dashboards in Ortege Studio.
 
+# Exploring Dashboards
+Explore our curated Dashboards in Ortege Studio to dive deep into blockchain analytics without the need for creating your own. Each dashboard offers unique insights:
+
+* [The Stack Shack](https://app.ortege.ai/superset/dashboard/stacks-shack/): Offers extensive data on Stacks, a Bitcoin layer 2, including Stacking, dApps like liquid stacking, DEXes, and more.
+* [Stacks Training Dashboard](https://app.ortege.ai/superset/dashboard/stacks-training): Complements a guide on creating dashboards with Ortege Studio, demonstrating how to analyze Stacks data.
+* [Stacks Dashboard](https://app.ortege.ai/superset/dashboard/stacks-overview): Provides a network overview and details on smart contract usage within the Stacks ecosystem.
+* [Nakamoto Voting Dashboards](https://app.ortege.ai/superset/dashboard/nakamoto-voting/): Displays voting activities related to the Nakamoto upgrade.
+These dashboards are designed to enrich your blockchain exploration with actionable insights directly within Ortege Studio.
+* [Soroban](https://app.ortege.ai/superset/dashboard/soroban/): Focuses on Stellar’s Soroban, showcasing the capabilities of their smart contract platform.
+
 # Creating a Dashboard
 1. Initiate Dashboard Creation: Navigate to the Dashboard section and click on the “Create” button. You’ll be prompted to choose between starting from scratch or duplicating an existing dashboard.
 2. Add Charts: Once your dashboard shell is created, add charts by clicking the “+ Add Chart” button. You can select from existing charts or create new ones to add to the dashboard.
