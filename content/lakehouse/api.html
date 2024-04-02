@@ -222,12 +222,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#authentication" id="toc-authentication" class="nav-link" data-scroll-target="#authentication">Authentication</a></li>
   </ul></li>
-  <li><a href="#api-reference" id="toc-api-reference" class="nav-link" data-scroll-target="#api-reference">API Reference</a>
-  <ul class="collapse">
-  <li><a href="#query-data" id="toc-query-data" class="nav-link" data-scroll-target="#query-data">Query Data</a></li>
-  </ul></li>
-  <li><a href="#data-management" id="toc-data-management" class="nav-link" data-scroll-target="#data-management">Data Management</a></li>
-  <li><a href="#security-and-permissions" id="toc-security-and-permissions" class="nav-link" data-scroll-target="#security-and-permissions">Security and Permissions</a></li>
   <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices">Best Practices</a></li>
   <li><a href="#support" id="toc-support" class="nav-link" data-scroll-target="#support">Support</a></li>
   </ul>
@@ -272,54 +266,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Getting Started</h1>
 <section id="authentication" class="level2">
 <h2 class="anchored" data-anchor-id="authentication">Authentication</h2>
-<p>To begin using the Ortege Lakehouse APIs, you’ll need an API access key. Please reach out to christos@ortege.io in order to obtain an API key.</p>
+<p>To begin using the Ortege Lakehouse APIs, you’ll need an API access key. Please reach out to adbullah@ortege.io in order to obtain an API key.</p>
 <p>Once you have your access key, you’re ready to make your first API call. Here’s a simple example to get you started:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Copy</span> code</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-X</span> POST <span class="at">-H</span> <span class="st">"Authorization: Bearer YOUR_ACCESS_KEY"</span> <span class="dt">\</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">-H</span> <span class="st">"Content-Type: application/json"</span> <span class="dt">\</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">-d</span> <span class="st">'{"sql": "SELECT * FROM your_dataset LIMIT 10"}'</span> <span class="dt">\</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>     https://api.ortege.ai/lakehouse/query</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">--location</span> <span class="st">'https://adb-6741955360293064.4.azuredatabricks.net/api/2.0/sql/statements/'</span> <span class="dt">\</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>--header <span class="st">'Content-Type: application/json'</span> <span class="dt">\</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>--header <span class="st">'Authorization: Bearer YOUR_ACCESS_KEY'</span> <span class="dt">\</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>--data <span class="st">'{</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="st">  "warehouse_id": "e6dba8cfba439486",</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="st">  "catalog": "external",</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="st">  "statement": "select * FROM db_pricing.tbl_prod_br_prices WHERE symbol = '</span><span class="dt">\'</span><span class="st">'STX'</span><span class="dt">\'</span><span class="st">' LIMIT 10"</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="st">}'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Replace <code>YOUR_ACCESS_KEY</code> with your actual access key and your_dataset with the dataset you wish to query.</p>
+<p><strong>PLEASE NOTE</strong> Currently we don’t rate limit API responses and as such some of the queries could return over a billion rows. Please always include LIMITs in your SQL queries. Our monitoring systems will know if you go over our limits and your API key may be revoked.</p>
 </section>
-</section>
-<section id="api-reference" class="level1">
-<h1>API Reference</h1>
-<section id="query-data" class="level2">
-<h2 class="anchored" data-anchor-id="query-data">Query Data</h2>
-<ul>
-<li>Endpoint: /lakehouse/query</li>
-<li>Method: POST</li>
-<li>Description: Run SQL queries against datasets in the Ortege Lakehouse.</li>
-<li>Request Body:
-<ul>
-<li><code>sql</code>: The SQL query string you wish to execute.</li>
-</ul></li>
-<li>Response: A JSON object containing the query results.</li>
-</ul>
-</section>
-</section>
-<section id="data-management" class="level1">
-<h1>Data Management</h1>
-<ul>
-<li>Endpoint: /lakehouse/data</li>
-<li>Method: POST</li>
-<li>Description: Upload or update datasets within the Ortege Lakehouse.</li>
-<li>Request Body:
-<ul>
-<li><code>data</code>: The data to be uploaded or updated.</li>
-<li><code>metadata</code>: Optional metadata for the dataset.</li>
-</ul></li>
-<li>Response: A JSON object confirming the successful upload or update of data.</li>
-</ul>
-</section>
-<section id="security-and-permissions" class="level1">
-<h1>Security and Permissions</h1>
-<ul>
-<li>Endpoint: /lakehouse/security</li>
-<li>Method: GET</li>
-<li>Description: Retrieve information about the current security settings and permissions for your API key.</li>
-<li>Response: A JSON object detailing the security settings and permissions associated with your API key.</li>
-</ul>
 </section>
 <section id="best-practices" class="level1">
 <h1>Best Practices</h1>
