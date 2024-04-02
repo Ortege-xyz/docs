@@ -16,43 +16,25 @@ Welcome to the Ortege Lakehouse API documentation. Our APIs offer seamless, secu
 
 # Getting Started
 ## Authentication
-To begin using the Ortege Lakehouse APIs, you'll need an API access key. Please reach out to christos@ortege.io in order to obtain an API key.
+To begin using the Ortege Lakehouse APIs, you'll need an API access key. Please reach out to adbullah@ortege.io in order to obtain an API key.
 
 Once you have your access key, you're ready to make your first API call. Here's a simple example to get you started:
 
 ```bash
-Copy code
-curl -X POST -H "Authorization: Bearer YOUR_ACCESS_KEY" \
-     -H "Content-Type: application/json" \
-     -d '{"sql": "SELECT * FROM your_dataset LIMIT 10"}' \
-     https://api.ortege.ai/lakehouse/query
+curl --location 'https://adb-6741955360293064.4.azuredatabricks.net/api/2.0/sql/statements/' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer YOUR_ACCESS_KEY' \
+--data '{
+  "warehouse_id": "e6dba8cfba439486",
+  "catalog": "external",
+  "statement": "select * FROM db_pricing.tbl_prod_br_prices WHERE symbol = '\''STX'\'' LIMIT 10"
+}'
 ```
 
 Replace `YOUR_ACCESS_KEY` with your actual access key and your_dataset with the dataset you wish to query.
 
-# API Reference
-## Query Data
-* Endpoint: /lakehouse/query
-* Method: POST
-* Description: Run SQL queries against datasets in the Ortege Lakehouse.
-* Request Body:
-  * `sql`: The SQL query string you wish to execute.
-* Response: A JSON object containing the query results.
+**PLEASE NOTE** Currently we don't rate limit API responses and as such some of the queries could return over a billion rows. Please always include LIMITs in your SQL queries. Our monitoring systems will know if you go over our limits and your API key may be revoked. 
 
-# Data Management
-* Endpoint: /lakehouse/data
-* Method: POST
-* Description: Upload or update datasets within the Ortege Lakehouse.
-* Request Body:
-  * `data`: The data to be uploaded or updated.
-  * `metadata`: Optional metadata for the dataset.
-* Response: A JSON object confirming the successful upload or update of data.
-
-# Security and Permissions
-* Endpoint: /lakehouse/security
-* Method: GET
-* Description: Retrieve information about the current security settings and permissions for your API key.
-* Response: A JSON object detailing the security settings and permissions associated with your API key.
 
 # Best Practices
 * **Secure Your API Key:** Treat your API key as you would a password. Do not share it or expose it in client-side code.
