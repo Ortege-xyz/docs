@@ -138,20 +138,35 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Medallian Architecture</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../content/lakehouse/bronze.html">
- <span class="dropdown-text">Bronze Layer</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../content/lakehouse/silver.html">
- <span class="dropdown-text">Silver Layer</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../content/lakehouse/gold.html">
- <span class="dropdown-text">Gold Layer</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../../content/lakehouse/api.html">
  <span class="dropdown-text">API</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-datasets" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Datasets</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-datasets">    
+        <li>
+    <a class="dropdown-item" href="../../content/lakehouse/datasets/stacks.html">
+ <span class="dropdown-text">Stacks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../content/lakehouse/datasets/bitcoin.html">
+ <span class="dropdown-text">Bitcoin</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../content/lakehouse/datasets/stellar.html">
+ <span class="dropdown-text">Stellar</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../content/lakehouse/datasets/pricing.html">
+ <span class="dropdown-text">Pricing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../content/lakehouse/datasets/address_book.html">
+ <span class="dropdown-text">Address Book</span></a>
   </li>  
     </ul>
   </li>
@@ -223,16 +238,19 @@ ul.task-list li input[type="checkbox"] {
 <section id="layered-approach" class="level1">
 <h1>Layered Approach</h1>
 <section id="bronze-layer" class="level2">
-<h2 class="anchored" data-anchor-id="bronze-layer"><a href="../../content/lakehouse/bronze.html">Bronze Layer</a>:</h2>
+<h2 class="anchored" data-anchor-id="bronze-layer">Bronze Layer:</h2>
 <p>The foundation of the Medallion Architecture, the Bronze Layer, houses raw data directly ingested from diverse sources. This layer prioritizes the authenticity and completeness of data, serving as the primary repository for unprocessed information.</p>
 </section>
 <section id="silver-layer" class="level2">
-<h2 class="anchored" data-anchor-id="silver-layer"><a href="../../content/lakehouse/silver.html">Silver Layer</a>:</h2>
+<h2 class="anchored" data-anchor-id="silver-layer">Silver Layer:</h2>
 <p>Data transitions to the Silver Layer following initial processing, which includes cleansing, normalization, and structuring. This layer enhances the usability of data, making it more accessible and meaningful for analysis. The Silver Layer acts as a bridge between raw data and advanced analytics, providing a balanced dataset that is both rich in detail and optimized for exploration.</p>
 </section>
 <section id="gold-layer" class="level2">
-<h2 class="anchored" data-anchor-id="gold-layer"><a href="../../content/lakehouse/gold.html">Gold Layer</a>:</h2>
-<p>Representing the pinnacle of data refinement, the Gold Layer contains datasets that are highly curated and performance-optimized for specific analytical use cases. Data in this layer is tailored to deliver actionable insights, supporting decision-making processes with precision and speed. The Gold Layer embodies the ultimate goal of data transformation within Ortege Lakehouse, offering users targeted, ready-to-use datasets for in-depth analysis.</p>
+<h2 class="anchored" data-anchor-id="gold-layer">Gold Layer:</h2>
+<p>The primary purpose of the Gold Layer is to refine, consolidate, and curate datasets that are critical for the development and enhancement of Language Learning Models (LLM), Machine Learning (ML) models, and aggregate data models. In the rapidly evolving landscape of cryptocurrencies, the ability to derive meaningful insights from vast amounts of data is paramount. The Gold Layer is dedicated to providing a structured and enriched dataset that enables accurate modeling, forecasting, and analysis.</p>
+<p>As cryptocurrencies continue to grow in both complexity and volume, the need for an advanced, reliable data foundation becomes increasingly important. The Gold Layer addresses this need by offering a comprehensive dataset solution that encompasses everything from individual decentralized exchange (DEX) volumes to complex, aggregated data models. This layer is not just about data storage; it’s about transforming raw data into a goldmine of insights that power our language and machine learning models, as well as our innovative aggregate data models.</p>
+<p>Our commitment to excellence is reflected in the meticulous design and functionality of the Gold Layer. By leveraging state-of-the-art technologies and methodologies, we ensure that the data within this layer is of the highest quality, accuracy, and reliability. Whether you’re developing advanced ML models or seeking to consolidate numerous DEX volumes into a cohesive aggregation layer, the Gold Layer provides the essential datasets needed to drive your analytics forward.</p>
+<p>In the following sections, we will delve deeper into the architecture and design of the Gold Layer, the types of datasets available, their use cases, and how you can access and integrate these datasets into your analytical tools and models. Join us as we explore the foundational layer that is setting new standards in cryptocurrency analytics.</p>
 </section>
 </section>
 <section id="naming-convention" class="level1">
