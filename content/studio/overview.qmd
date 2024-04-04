@@ -9,17 +9,49 @@ format:
 # Overview of Ortege Studio
 Ortege Studio is a premier analytics platform that empowers users to visualize, explore, and share data insights in a highly interactive and user-friendly environment. Built for versatility and performance, Ortege Studio facilitates the creation of dynamic dashboards and charts, management of extensive datasets, and execution of complex SQL queries. Its seamless integration capabilities with various database connections make it an ideal solution for organizations looking to harness the power of their data. Whether you're a data analyst, business intelligence professional, or data scientist, Ortege Studio provides the tools you need to transform data into actionable insights.
 
-# Dashboards
+# Creating an Account
+**Step 1: Visit the Sign-Up Page**
+To begin using Ortege Studio, navigate to the platform's [sign-up page](https://app.ortege.ai/register/form).
+
+**Step 2: Provide Your Details**
+Fill in the required fields with your details, including your name, email address, and any other requested information. Ensure the email address you provide is active, as it will be used for verification and account recovery purposes.
+
+**Step 3: Set Up Authentication**
+Choose a strong, secure password to protect your account. Depending on the security requirements of Ortege Studio, you may also set up additional authentication methods such as two-factor authentication (2FA) at this stage.
+
+**Step 4: Verify Your Email**
+After submitting your details, check your email for a verification message from Ortege Studio. Click the verification link within the email to activate your account. If you don’t see the email in your inbox, check your spam or junk folders.
+
+**Step 5: Log In to Ortege Studio**
+Once your email is verified, return to Ortege Studio and log in with your new credentials. You should now have access to the full suite of tools and features available on the platform.
+
+## If You Get Stuck
+While we strive to make Ortege Studio intuitive and easy to navigate, we understand that you may occasionally need a helping hand. If you find yourself facing difficulties, our dedicated support community on Discord is ready to assist you.
+
+Visit our Discord server at https://discord.gg/ortege and join a network of fellow Ortege Studio users and experts. This vibrant community is a great place to find answers, share experiences, and collaborate on solutions.
+
+**Open a Support Ticket**
+Once you’re part of our Discord server, you can open a support ticket by navigating to the `#account-support` channel. Here’s how:
+
+* Locate the `#account-support` channel in the channel list.
+* Click the `Create ticket` button to create a new ticket.
+* Provide a clear and concise description of the issue you're facing.
+
+After submitting your ticket, a member of our support team will reach out to you. Response times may vary, but we’re committed to helping you resolve your issue as quickly as possible.
+
+# Features
+
+## Dashboards
 [Dashboards](dashboards.qmd) in Ortege Studio serve as a centralized space where users can create, view, and interact with a collection of related charts and visualizations. These dashboards are customizable, allowing users to tailor the layout and appearance to meet their specific reporting needs. Users can easily share dashboards with stakeholders, providing a snapshot of key metrics and trends at a glance.
 
-# Charts
+## Charts
 The [Charts](charts.qmd) section of Ortege Studio is where data comes to life. Users can choose from an extensive library of chart types to best represent their data, from simple line charts to complex scatter plots. This section guides users through the process of creating, customizing, and refining charts, including selecting data sources, applying filters, and adjusting visual aesthetics to highlight critical insights.
 
-# Datasets
+## Datasets
 [Datasets](datasets.qmd) are the foundation of any analysis in Ortege Studio. This section explains how to manage and prepare datasets for analysis, including importing data from various sources, creating custom metrics and dimensions, and optimizing data for performance. Users will learn how to leverage datasets to fuel their charts and dashboards, ensuring accurate and up-to-date information is always at their fingertips.
 
-# SQL Lab
+## SQL Lab
 [SQL Lab](sqllab.qmd) is Ortege Studio's interactive environment for crafting and executing SQL queries. It's designed for users who prefer direct manipulation of their data through SQL. This powerful tool supports query creation, visualization, and sharing, enabling users to explore their data in-depth. The documentation will cover SQL Lab's features, such as query history, saved queries, and the ability to preview and export results.
 
-# Database Connections
+## Database Connections
 The [Database Connections](dbconnections.qmd) section details how to connect Ortege Studio to a variety of data sources, ensuring users can access and analyze data stored in different databases and platforms. It includes step-by-step instructions for establishing connections, managing database credentials securely, and troubleshooting common connection issues. This section is crucial for organizations looking to integrate Ortege Studio into their existing data infrastructure seamlessly.
