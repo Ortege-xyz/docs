@@ -88,7 +88,49 @@
     "href": "content/studio/overview.html",
     "title": "Ortege Studio Overview",
     "section": "",
-    "text": "Overview of Ortege Studio\nOrtege Studio is a premier analytics platform that empowers users to visualize, explore, and share data insights in a highly interactive and user-friendly environment. Built for versatility and performance, Ortege Studio facilitates the creation of dynamic dashboards and charts, management of extensive datasets, and execution of complex SQL queries. Its seamless integration capabilities with various database connections make it an ideal solution for organizations looking to harness the power of their data. Whether you’re a data analyst, business intelligence professional, or data scientist, Ortege Studio provides the tools you need to transform data into actionable insights.\n\n\nDashboards\nDashboards in Ortege Studio serve as a centralized space where users can create, view, and interact with a collection of related charts and visualizations. These dashboards are customizable, allowing users to tailor the layout and appearance to meet their specific reporting needs. Users can easily share dashboards with stakeholders, providing a snapshot of key metrics and trends at a glance.\n\n\nCharts\nThe Charts section of Ortege Studio is where data comes to life. Users can choose from an extensive library of chart types to best represent their data, from simple line charts to complex scatter plots. This section guides users through the process of creating, customizing, and refining charts, including selecting data sources, applying filters, and adjusting visual aesthetics to highlight critical insights.\n\n\nDatasets\nDatasets are the foundation of any analysis in Ortege Studio. This section explains how to manage and prepare datasets for analysis, including importing data from various sources, creating custom metrics and dimensions, and optimizing data for performance. Users will learn how to leverage datasets to fuel their charts and dashboards, ensuring accurate and up-to-date information is always at their fingertips.\n\n\nSQL Lab\nSQL Lab is Ortege Studio’s interactive environment for crafting and executing SQL queries. It’s designed for users who prefer direct manipulation of their data through SQL. This powerful tool supports query creation, visualization, and sharing, enabling users to explore their data in-depth. The documentation will cover SQL Lab’s features, such as query history, saved queries, and the ability to preview and export results.\n\n\nDatabase Connections\nThe Database Connections section details how to connect Ortege Studio to a variety of data sources, ensuring users can access and analyze data stored in different databases and platforms. It includes step-by-step instructions for establishing connections, managing database credentials securely, and troubleshooting common connection issues. This section is crucial for organizations looking to integrate Ortege Studio into their existing data infrastructure seamlessly."
+    "text": "Ortege Studio is a premier analytics platform that empowers users to visualize, explore, and share data insights in a highly interactive and user-friendly environment. Built for versatility and performance, Ortege Studio facilitates the creation of dynamic dashboards and charts, management of extensive datasets, and execution of complex SQL queries. Its seamless integration capabilities with various database connections make it an ideal solution for organizations looking to harness the power of their data. Whether you’re a data analyst, business intelligence professional, or data scientist, Ortege Studio provides the tools you need to transform data into actionable insights."
+  },
+  {
+    "objectID": "content/studio/overview.html#if-you-get-stuck",
+    "href": "content/studio/overview.html#if-you-get-stuck",
+    "title": "Ortege Studio Overview",
+    "section": "If You Get Stuck",
+    "text": "If You Get Stuck\nWhile we strive to make Ortege Studio intuitive and easy to navigate, we understand that you may occasionally need a helping hand. If you find yourself facing difficulties, our dedicated support community on Discord is ready to assist you.\nVisit our Discord server at https://discord.gg/ortege and join a network of fellow Ortege Studio users and experts. This vibrant community is a great place to find answers, share experiences, and collaborate on solutions.\nOpen a Support Ticket Once you’re part of our Discord server, you can open a support ticket by navigating to the #account-support channel. Here’s how:\n\nLocate the #account-support channel in the channel list.\nClick the Create ticket button to create a new ticket.\nProvide a clear and concise description of the issue you’re facing.\n\nAfter submitting your ticket, a member of our support team will reach out to you. Response times may vary, but we’re committed to helping you resolve your issue as quickly as possible."
+  },
+  {
+    "objectID": "content/studio/overview.html#dashboards",
+    "href": "content/studio/overview.html#dashboards",
+    "title": "Ortege Studio Overview",
+    "section": "Dashboards",
+    "text": "Dashboards\nDashboards in Ortege Studio serve as a centralized space where users can create, view, and interact with a collection of related charts and visualizations. These dashboards are customizable, allowing users to tailor the layout and appearance to meet their specific reporting needs. Users can easily share dashboards with stakeholders, providing a snapshot of key metrics and trends at a glance."
+  },
+  {
+    "objectID": "content/studio/overview.html#charts",
+    "href": "content/studio/overview.html#charts",
+    "title": "Ortege Studio Overview",
+    "section": "Charts",
+    "text": "Charts\nThe Charts section of Ortege Studio is where data comes to life. Users can choose from an extensive library of chart types to best represent their data, from simple line charts to complex scatter plots. This section guides users through the process of creating, customizing, and refining charts, including selecting data sources, applying filters, and adjusting visual aesthetics to highlight critical insights."
+  },
+  {
+    "objectID": "content/studio/overview.html#datasets",
+    "href": "content/studio/overview.html#datasets",
+    "title": "Ortege Studio Overview",
+    "section": "Datasets",
+    "text": "Datasets\nDatasets are the foundation of any analysis in Ortege Studio. This section explains how to manage and prepare datasets for analysis, including importing data from various sources, creating custom metrics and dimensions, and optimizing data for performance. Users will learn how to leverage datasets to fuel their charts and dashboards, ensuring accurate and up-to-date information is always at their fingertips."
+  },
+  {
+    "objectID": "content/studio/overview.html#sql-lab",
+    "href": "content/studio/overview.html#sql-lab",
+    "title": "Ortege Studio Overview",
+    "section": "SQL Lab",
+    "text": "SQL Lab\nSQL Lab is Ortege Studio’s interactive environment for crafting and executing SQL queries. It’s designed for users who prefer direct manipulation of their data through SQL. This powerful tool supports query creation, visualization, and sharing, enabling users to explore their data in-depth. The documentation will cover SQL Lab’s features, such as query history, saved queries, and the ability to preview and export results."
+  },
+  {
+    "objectID": "content/studio/overview.html#database-connections",
+    "href": "content/studio/overview.html#database-connections",
+    "title": "Ortege Studio Overview",
+    "section": "Database Connections",
+    "text": "Database Connections\nThe Database Connections section details how to connect Ortege Studio to a variety of data sources, ensuring users can access and analyze data stored in different databases and platforms. It includes step-by-step instructions for establishing connections, managing database credentials securely, and troubleshooting common connection issues. This section is crucial for organizations looking to integrate Ortege Studio into their existing data infrastructure seamlessly."
   },
   {
     "objectID": "content/lakehouse/datasets/stacks.html",
