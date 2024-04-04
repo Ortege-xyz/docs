@@ -16,24 +16,19 @@ Ortege equips diverse blockchain audiences with deep, actionable insights. Wheth
 
 * For **Companies exploring integrations**: Discover how our robust API infrastructure can revolutionize your data integration strategy. Ortege offers seamless access to extensive blockchain datasets, enabling companies to enrich their applications and services with high-quality, reliable blockchain data. From startups to established enterprises, our API facilitates efficient, cost-effective integration, ensuring you stay ahead in the fast-evolving blockchain space.
 
-# Getting started guides
-## Blockchain enthusiast
-Explore the ins and outs of blockchain technologies through Ortege Studio's dashboards. Delve into tokens, NFTs, and market dynamics in the [Ortege Studio Overview](/content/studio/dashboards.qmd). 
-
-## Crypto investors
-Utilize the specialized [Dashboards](/content/studio/dashboards.qmd) within Ortege Studio for deep ecosystem analyses. Navigate market trends and blockchain comparisons in the Dashboards Section.
-
-## Blockchain analysts
-Harness [SQL Lab](content/studio/sqllab.qmd) for advanced data queries within Ortege Studio and Lakehouse. Access a broad range of datasets for in-depth analysis detailed in Ortege Studio and Ortege Lakehouse.
-
-## Companies exploring integrations
-Discover how to integrate vast blockchain datasets via Ortege's [API](content/lakehouse/api.qmd). Efficiency and cost-effective solutions are highlighted in the API Integration Guide.
-
 # Products
-## Ortege Studio
+
+| User                               | Studio                                      | Lakehouse                                      | OrtegeGPT |
+|------------------------------------|---------------------------------------------|------------------------------------------------|-----------|
+| **Blockchain Enthusiasts**         | Dashboards, SQL Lab                         | API, All Datasets                              | Yes       |
+| **Crypto Investors**               | Dashboards, SQL Lab                         | Pricing, DEX Datasets                          | Yes       |
+| **Data Analysts**                  | SQL Lab                                     | All Datasets                                   | Yes       |
+| **Companies Seeking Integrations** | SQL Lab                                     | API                                            | Yes       |
+
+## Studio
 [Ortege Studio](content/studio/overview.qmd): Ortege Studio is a cutting-edge analytics platform designed to empower users with unparalleled insights into their data through an extensive array of visualization options, with over 30 types of charts available to cater to a wide range of analytical needs. At its core, Ortege Studio harnesses the power of predictive analytics, enabling businesses to forecast trends and make data-driven decisions with greater accuracy. The platform stands out by offering the flexibility to connect to a multitude of data sources, allowing users to seamlessly integrate and harmonize disparate data sets. Thanks to its sophisticated Data Manipulation Language (DML) capabilities, users can effortlessly join, query, and analyze their data across various sources, all within a user-friendly interface. Ortege Studio is the ultimate tool for organizations looking to unlock the full potential of their data, offering a comprehensive solution that blends advanced analytics with intuitive data integration and exploration features.
 
-## Ortege Lakehouse
+## Lakehouse
 [Ortege Lakehouse](content/lakehouse/overview.qmd): Ortege Lakehouse is an innovative data management platform engineered for the era of big data, embodying cutting-edge technology to meet the demands of extensive datasets and complex analytics. Designed to effortlessly integrate with MLOps frameworks and Large Language Models (LLMs), it provides a robust foundation for advanced machine learning projects and predictive analytics. A standout feature of Ortege Lakehouse is its comprehensive datasets for a wide array of the market's most popular blockchains. With these datasets, users gain immediate access to a wealth of blockchain data, streamlined for analysis. Moreover, our platform introduces "silver and gold layers" – a feature that simplifies the querying of complex blockchain datasets, ensuring that even the most intricate data becomes easily navigable. This makes Ortege Lakehouse an indispensable tool for organizations looking to leverage blockchain data for insightful analysis, predictive modeling, and strategic decision-making, all while ensuring seamless workflow integration and operational efficiency.
 
 ## OrtegeGPT
