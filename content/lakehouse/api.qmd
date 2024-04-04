@@ -16,7 +16,7 @@ Welcome to the Ortege Lakehouse API documentation. Our APIs offer seamless, secu
 
 # Getting Started
 ## Authentication
-To begin using the Ortege Lakehouse APIs, you'll need an API access key. Please reach out to adbullah@ortege.io in order to obtain an API key.
+To begin using the Ortege Lakehouse APIs, you'll need an API access key. Please reach out to [Support](mailto:abdullah@ortege.io) in order to obtain an API key.
 
 Once you have your access key, you're ready to make your first API call. Here's a simple example to get you started:
 
@@ -41,5 +41,16 @@ Replace `YOUR_ACCESS_KEY` with your actual access key and your_dataset with the 
 * **Optimize Queries:** To ensure efficient use of resources, optimize your SQL queries before execution.
 * **Monitor Usage**: Keep an eye on your API usage to ensure it aligns with your project's needs and adjust as necessary.
 
-# Support
-Should you require assistance or have any questions, please visit our [Discord](https://discord.gg/ortege) or [contact our support team](mailto:christos@ortege.io). We're here to help you make the most of the Ortege Lakehouse.
+# If You Get Stuck
+While we strive to make Ortege Studio intuitive and easy to navigate, we understand that you may occasionally need a helping hand. If you find yourself facing difficulties, our dedicated support community on Discord is ready to assist you.
+
+Visit our Discord server at https://discord.gg/ortege and join a network of fellow Ortege Studio users and experts. This vibrant community is a great place to find answers, share experiences, and collaborate on solutions.
+
+**Open a Support Ticket**
+Once you’re part of our Discord server, you can open a support ticket by navigating to the `#account-support` channel. Here’s how:
+
+* Locate the `#account-support` channel in the channel list.
+* Click the `Create ticket` button to create a new ticket.
+* Provide a clear and concise description of the issue you're facing.
+
+After submitting your ticket, a member of our support team will reach out to you. Response times may vary, but we’re committed to helping you resolve your issue as quickly as possible.
