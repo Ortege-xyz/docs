@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Ortege - Stellar</title>
+<title>Ortege - Movement Labs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -201,13 +201,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#bronze-layer" id="toc-bronze-layer" class="nav-link active" data-scroll-target="#bronze-layer">Bronze Layer</a>
+  <li><a href="#bronze-layer" id="toc-bronze-layer" class="nav-link active" data-scroll-target="#bronze-layer">Bronze layer</a>
   <ul class="collapse">
-  <li><a href="#ledger" id="toc-ledger" class="nav-link" data-scroll-target="#ledger">Ledger</a></li>
+  <li><a href="#blocks" id="toc-blocks" class="nav-link" data-scroll-target="#blocks">Blocks</a></li>
   <li><a href="#transactions" id="toc-transactions" class="nav-link" data-scroll-target="#transactions">Transactions</a></li>
-  <li><a href="#events" id="toc-events" class="nav-link" data-scroll-target="#events">Events</a></li>
   </ul></li>
-  <li><a href="#silver-layer" id="toc-silver-layer" class="nav-link" data-scroll-target="#silver-layer">Silver layer</a></li>
   </ul>
 </nav>
     </div>
@@ -216,7 +214,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Stellar</h1>
+<h1 class="title">Movement Labs</h1>
 </div>
 
 
@@ -233,353 +231,18 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>db_soroban</strong></p>
+<p><strong>db_m1_devnet</strong></p>
 <section id="bronze-layer" class="level1">
-<h1>Bronze Layer</h1>
-<section id="ledger" class="level2">
-<h2 class="anchored" data-anchor-id="ledger">Ledger</h2>
-<p><strong>tbl_test_br_ledgers</strong></p>
-<p>The <code>tbl_test_br_ledgers</code> table holds essential data for each ledger within the Stellar blockchain. It contains ledger identifiers, hash information, timestamps, and detailed transaction metrics. This data is crucial for understanding ledger changes, transaction dynamics, and overall blockchain activity on the Stellar network.</p>
+<h1>Bronze layer</h1>
+<p>The Bronze layer encapsulates the most fundamental form of blockchain data, presenting it in an untransformed, raw state. Here we explore two primary tables within this layer: <code>tbl_dev_br_blocks</code> and <code>tbl_dev_br_transactions</code>.</p>
+<section id="blocks" class="level2">
+<h2 class="anchored" data-anchor-id="blocks">Blocks</h2>
+<p><strong>tbl_dev_br_blocks</strong> This table archives the immutable records of blocks within the blockchain, serving as the source of truth for all subsequent operations and transformations.</p>
 <table class="table">
 <colgroup>
-<col style="width: 17%">
-<col style="width: 6%">
-<col style="width: 75%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Column Name</th>
-<th>Data Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>id</code></td>
-<td>Integer</td>
-<td>The unique identifier for the ledger.</td>
-</tr>
-<tr class="even">
-<td><code>sequence</code></td>
-<td>Integer</td>
-<td>The sequence number of the ledger, indicating its position in the Stellar blockchain.</td>
-</tr>
-<tr class="odd">
-<td><code>hash</code></td>
-<td>String</td>
-<td>The hash of the ledger, serving as a cryptographic signature.</td>
-</tr>
-<tr class="even">
-<td><code>prev_hash</code></td>
-<td>String</td>
-<td>The hash of the previous ledger, linking the current ledger to its predecessor.</td>
-</tr>
-<tr class="odd">
-<td><code>timestamp</code></td>
-<td>Timestamp</td>
-<td>The timestamp of when the ledger was created.</td>
-</tr>
-<tr class="even">
-<td><code>closed_at</code></td>
-<td>Timestamp</td>
-<td>The time when the ledger was closed and finalized.</td>
-</tr>
-<tr class="odd">
-<td><code>total_coins</code></td>
-<td>String</td>
-<td>The total number of coins within the ledger.</td>
-</tr>
-<tr class="even">
-<td><code>fee_pool</code></td>
-<td>String</td>
-<td>The pool of fees accumulated from transaction costs within the ledger.</td>
-</tr>
-<tr class="odd">
-<td><code>base_fee_in_stroops</code></td>
-<td>Integer</td>
-<td>The base fee (in stroops, the smallest unit of the Stellar cryptocurrency) for transactions within the ledger.</td>
-</tr>
-<tr class="even">
-<td><code>base_reserve_in_stroops</code></td>
-<td>Integer</td>
-<td>The base reserve (in stroops) required to be held in each account on the Stellar network.</td>
-</tr>
-<tr class="odd">
-<td><code>max_tx_set_size</code></td>
-<td>Integer</td>
-<td>The maximum number of transactions that can be included in a transaction set for this ledger.</td>
-</tr>
-<tr class="even">
-<td><code>protocol_version</code></td>
-<td>Integer</td>
-<td>The version of the Stellar protocol with which the ledger complies.</td>
-</tr>
-<tr class="odd">
-<td><code>header_xdr</code></td>
-<td>String</td>
-<td>The XDR (External Data Representation) format of the ledger header.</td>
-</tr>
-<tr class="even">
-<td><code>paging_token</code></td>
-<td>String</td>
-<td>A token used for paging through results.</td>
-</tr>
-<tr class="odd">
-<td><code>successful_transaction_count</code></td>
-<td>Integer</td>
-<td>The number of transactions that were successfully processed in the ledger.</td>
-</tr>
-<tr class="even">
-<td><code>failed_transaction_count</code></td>
-<td>Integer</td>
-<td>The number of transactions that failed processing in the ledger.</td>
-</tr>
-<tr class="odd">
-<td><code>operation_count</code></td>
-<td>Integer</td>
-<td>The total number of operations within all transactions in the ledger.</td>
-</tr>
-<tr class="even">
-<td><code>tx_set_operation_count</code></td>
-<td>Integer</td>
-<td>The total number of operations within the transaction set for this ledger.</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="transactions" class="level2">
-<h2 class="anchored" data-anchor-id="transactions">Transactions</h2>
-<p><strong>tbl_test_br_transactions</strong></p>
-<p>This table catalogs the individual transactions on the Stellar blockchain, capturing the essence of each financial event. Each entry includes the transaction’s unique identifier, its status, the associated ledger number, and precise timing information. It details the transaction fee, operation count, and the XDR (External Data Representation) information for envelopes, results, and fee meta, which encapsulates the transaction in a standardized format for interoperability. Furthermore, the table stores memo-related data, crucial for transaction annotation, along with a count and array of signatures verifying the transaction. This dataset is invaluable for tracing Stellar transactions, understanding fee structures, and examining transactional metadata for analysis and verification.</p>
-<table class="table">
-<colgroup>
-<col style="width: 22%">
-<col style="width: 12%">
-<col style="width: 65%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Column Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>id</td>
-<td>Integer</td>
-<td>Unique identifier for the transaction.</td>
-</tr>
-<tr class="even">
-<td>paging_token</td>
-<td>String</td>
-<td>A cursor value used for paginating through transaction records.</td>
-</tr>
-<tr class="odd">
-<td>successful</td>
-<td>Boolean</td>
-<td>Indicates whether the transaction was successful.</td>
-</tr>
-<tr class="even">
-<td>hash</td>
-<td>String</td>
-<td>The unique hash of the transaction.</td>
-</tr>
-<tr class="odd">
-<td>ledger</td>
-<td>Integer</td>
-<td>The ledger number that the transaction was included in.</td>
-</tr>
-<tr class="even">
-<td>timestamp</td>
-<td>Timestamp</td>
-<td>The date and time at which the transaction occurred.</td>
-</tr>
-<tr class="odd">
-<td>created_at</td>
-<td>Timestamp</td>
-<td>The date and time when the transaction was created.</td>
-</tr>
-<tr class="even">
-<td>source_account</td>
-<td>String</td>
-<td>The initiating account of the transaction.</td>
-</tr>
-<tr class="odd">
-<td>source_account_sequence</td>
-<td>Long</td>
-<td>The sequence number of the source account.</td>
-</tr>
-<tr class="even">
-<td>fee_account</td>
-<td>String</td>
-<td>The account charged for the transaction fee.</td>
-</tr>
-<tr class="odd">
-<td>fee_charged</td>
-<td>Long</td>
-<td>The fee amount charged for the transaction.</td>
-</tr>
-<tr class="even">
-<td>max_fee</td>
-<td>Long</td>
-<td>The maximum fee the source account is willing to pay.</td>
-</tr>
-<tr class="odd">
-<td>operation_count</td>
-<td>Integer</td>
-<td>The number of operations included in the transaction.</td>
-</tr>
-<tr class="even">
-<td>envelope_xdr</td>
-<td>String</td>
-<td>The transaction envelope in XDR format.</td>
-</tr>
-<tr class="odd">
-<td>result_xdr</td>
-<td>String</td>
-<td>The result of the transaction in XDR format.</td>
-</tr>
-<tr class="even">
-<td>result_meta_xdr</td>
-<td>String</td>
-<td>Additional result details in XDR format.</td>
-</tr>
-<tr class="odd">
-<td>fee_meta_xdr</td>
-<td>String</td>
-<td>Fee-related metadata in XDR format.</td>
-</tr>
-<tr class="even">
-<td>memo_type</td>
-<td>String</td>
-<td>Type of memo included with the transaction.</td>
-</tr>
-<tr class="odd">
-<td>memo</td>
-<td>String</td>
-<td>Memo value included with the transaction.</td>
-</tr>
-<tr class="even">
-<td>memo_bytes</td>
-<td>Blob</td>
-<td>Memo value in bytes, for binary memos.</td>
-</tr>
-<tr class="odd">
-<td>signatures</td>
-<td>Struct</td>
-<td>Struct of signatures confirming the transaction’s validity.</td>
-</tr>
-<tr class="even">
-<td>valid_after</td>
-<td>Timestamp</td>
-<td>The time after which the transaction is valid.</td>
-</tr>
-<tr class="odd">
-<td>valid_before</td>
-<td>Timestamp</td>
-<td>The time before which the transaction is valid.</td>
-</tr>
-<tr class="even">
-<td>preconditions</td>
-<td>Struct</td>
-<td>Details of preconditions necessary for the transaction. Includes <code>timebounds</code>, <code>ledgerbounds</code>, <code>min_account_sequence</code>, <code>min_account_sequence_age</code>, <code>min_account_sequence_ledger_gap</code>, and <code>extra_signers</code>.</td>
-</tr>
-<tr class="odd">
-<td>fee_meta</td>
-<td>Struct</td>
-<td>Metadata related to the transaction fee structure. Includes <code>fee_source</code>, <code>fee</code>, <code>inner_tx</code>, and <code>ext</code>.</td>
-</tr>
-<tr class="even">
-<td>result</td>
-<td>Struct</td>
-<td>Outcome details of the transaction processing. Includes <code>fee_charged</code>, <code>result</code>, and <code>ext</code>.</td>
-</tr>
-<tr class="odd">
-<td>envelope</td>
-<td>Struct</td>
-<td>Contains the transaction payload and authorization data. Includes <code>type</code>, <code>v1</code>, <code>fee_bump</code>, <code>tx</code>, and <code>signatures</code>.</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="events" class="level2">
-<h2 class="anchored" data-anchor-id="events">Events</h2>
-<p><strong>tbl_test_br_events</strong> The <code>tbl_test_br_events</code> table captures key event data within the Stellar blockchain. Each event is tied to a ledger and transaction, providing a detailed account of contract calls and operations. It includes event types, ledger closure times, contract identifiers, and transaction hashes. Notable is the inclusion of a ‘paging_token’ which allows for consistent querying within paginated results. The table is pivotal for tracking the execution and outcomes of contract calls, offering a granular view of the events that occur within the Stellar ecosystem.</p>
-<table class="table">
-<colgroup>
-<col style="width: 49%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Column Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>event_type</td>
-<td>String</td>
-<td>The type of event, such as a contract call or operation executed within the ledger.</td>
-</tr>
-<tr class="even">
-<td>ledger</td>
-<td>Integer</td>
-<td>The sequence number of the ledger where the event occurred.</td>
-</tr>
-<tr class="odd">
-<td>ledger_closed_at</td>
-<td>Timestamp</td>
-<td>The time when the ledger containing the event was closed and finalized.</td>
-</tr>
-<tr class="even">
-<td>contract_id</td>
-<td>String</td>
-<td>The unique identifier for the contract involved in the event.</td>
-</tr>
-<tr class="odd">
-<td>tx_hash</td>
-<td>String</td>
-<td>The hash of the transaction associated with the event.</td>
-</tr>
-<tr class="even">
-<td>id</td>
-<td>String</td>
-<td>The unique identifier for the event.</td>
-</tr>
-<tr class="odd">
-<td>paging_token</td>
-<td>String</td>
-<td>A token used for paginating through a set of results.</td>
-</tr>
-<tr class="even">
-<td>in_successful_contract_call</td>
-<td>Boolean</td>
-<td>Indicates whether the event was part of a successful contract call.</td>
-</tr>
-<tr class="odd">
-<td>topic</td>
-<td>Array</td>
-<td>Contains <code>items</code> with event-specific information, and <code>value</code> to describe the event details.</td>
-</tr>
-</tbody>
-</table>
-</section>
-</section>
-<section id="silver-layer" class="level1">
-<h1>Silver layer</h1>
-<p>Stellar transactions are encapsulated within structures known as envelopes, which are expressed in XDR (External Data Representation) format. These envelopes contain all the necessary information to submit a transaction to the Stellar network. The tbl_test_sl_tx_envelopes table in Ortege Lakehouse’s Silver layer captures this data, structured for easy access and query efficiency.</p>
-<p>In the context of Stellar, the envelope includes not only the transaction itself (tx) but also signatures (v1) and other metadata necessary for the transaction to be validated by the Stellar network (fee_bump, envelope_type). Each transaction has operational details (operations) that define what the transaction does, such as payments or account settings adjustments.</p>
-<p>The table schema for tbl_test_sl_tx_envelopes breaks down the envelope into its constituent components, storing details about transaction fees, sequence numbers, and memos, as well as the operations that the transaction performs.</p>
-<p>Below is the schema for the tbl_test_sl_tx_envelopes table with key fields that are extracted from the Stellar transaction envelope:</p>
-<table class="table">
-<colgroup>
-<col style="width: 29%">
-<col style="width: 15%">
-<col style="width: 55%">
+<col style="width: 20%">
+<col style="width: 11%">
+<col style="width: 68%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -590,89 +253,150 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>id</td>
+<td><code>number</code></td>
 <td>Integer</td>
-<td>Unique identifier for the transaction envelope</td>
+<td>The unique sequential identifier of the block.</td>
 </tr>
 <tr class="even">
-<td>hash</td>
+<td><code>hash</code></td>
 <td>String</td>
-<td>Hash of the transaction</td>
+<td>The cryptographic hash that uniquely identifies the block.</td>
 </tr>
 <tr class="odd">
-<td>ledger</td>
+<td><code>timestamp</code></td>
 <td>Integer</td>
-<td>Ledger in which the transaction is recorded</td>
+<td>The Unix epoch time at which the block was mined.</td>
 </tr>
 <tr class="even">
-<td>created_at</td>
-<td>Datetime</td>
-<td>Timestamp when the transaction was created</td>
-</tr>
-<tr class="odd">
-<td>source_account</td>
-<td>String</td>
-<td>The account from which the transaction originated</td>
-</tr>
-<tr class="even">
-<td>memo_type</td>
-<td>String</td>
-<td>Type of memo included in the transaction</td>
-</tr>
-<tr class="odd">
-<td>envelope_type</td>
-<td>Struct</td>
-<td>Contains type and v1 (version) of the envelope</td>
-</tr>
-<tr class="even">
-<td>tx_source_account</td>
-<td>String</td>
-<td>Transaction-level source account</td>
-</tr>
-<tr class="odd">
-<td>tx_fee</td>
+<td><code>first_version</code></td>
 <td>Integer</td>
-<td>Fee associated with the transaction</td>
+<td>The initial protocol version of the block.</td>
 </tr>
-<tr class="even">
-<td>tx_seq_num</td>
+<tr class="odd">
+<td><code>last_version</code></td>
 <td>Integer</td>
-<td>Sequence number of the transaction</td>
+<td>The final protocol version after any amendments.</td>
 </tr>
+</tbody>
+</table>
+</section>
+<section id="transactions" class="level2">
+<h2 class="anchored" data-anchor-id="transactions">Transactions</h2>
+<p><strong>tbl_dev_br_transactions</strong> This table records all transactions within each block, capturing the essence of blockchain activity and state transitions.</p>
+<table class="table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 7%">
+<col style="width: 69%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr class="odd">
-<td>tx_cond</td>
-<td>Struct</td>
-<td>Conditions for the transaction (v2, time_bounds)</td>
+<td><code>hash</code></td>
+<td>String</td>
+<td>The unique hash identifying the transaction.</td>
 </tr>
 <tr class="even">
-<td>tx_memo</td>
-<td>Struct</td>
-<td>Memo details of the transaction</td>
+<td><code>block_number</code></td>
+<td>Integer</td>
+<td>The block number in which the transaction is included.</td>
 </tr>
 <tr class="odd">
-<td>operations</td>
+<td><code>state_change_hash</code></td>
+<td>String</td>
+<td>Hash representing the state change due to the transaction.</td>
+</tr>
+<tr class="even">
+<td><code>event_root_hash</code></td>
+<td>String</td>
+<td>Root hash of the event trie, encapsulating transaction-related events.</td>
+</tr>
+<tr class="odd">
+<td><code>version</code></td>
+<td>Integer</td>
+<td>Version of the transaction protocol.</td>
+</tr>
+<tr class="even">
+<td><code>gas_used</code></td>
+<td>Integer</td>
+<td>The amount of computational gas used to execute the transaction.</td>
+</tr>
+<tr class="odd">
+<td><code>success</code></td>
+<td>Boolean</td>
+<td>Indicator of whether the transaction was successful.</td>
+</tr>
+<tr class="even">
+<td><code>vm_status</code></td>
+<td>String</td>
+<td>Status returned by the virtual machine after transaction execution.</td>
+</tr>
+<tr class="odd">
+<td><code>accumulator_root_hash</code></td>
+<td>String</td>
+<td>The root hash of the accumulator after applying the transaction.</td>
+</tr>
+<tr class="even">
+<td><code>changes</code></td>
 <td>Array</td>
-<td>List of operations included in the transaction</td>
-</tr>
-<tr class="even">
-<td>operation_detail</td>
-<td>Struct</td>
-<td>Detailed information of each operation</td>
+<td>List of state changes caused by the transaction.</td>
 </tr>
 <tr class="odd">
-<td>operation_source_account</td>
-<td>String</td>
-<td>Source account specified for the operation</td>
+<td><code>previous_block_votes_bitvec</code></td>
+<td>Array</td>
+<td>Bit vector representing the votes for the previous block.</td>
 </tr>
 <tr class="even">
-<td>operation_body</td>
-<td>Struct</td>
-<td>Body of the operation, includes <code>operation_body_type</code></td>
+<td><code>failed_proposer_indices</code></td>
+<td>Array</td>
+<td>Indices of proposers who failed to propose a block when expected.</td>
+</tr>
+<tr class="odd">
+<td><code>timestamp</code></td>
+<td>Integer</td>
+<td>Timestamp for when the transaction was included in a block.</td>
+</tr>
+<tr class="even">
+<td><code>max_gas_amount</code></td>
+<td>Integer</td>
+<td>Maximum amount of gas that can be consumed by the transaction.</td>
+</tr>
+<tr class="odd">
+<td><code>gas_unit_price</code></td>
+<td>Integer</td>
+<td>The unit price of gas that the sender is willing to pay.</td>
+</tr>
+<tr class="even">
+<td><code>expiration_timestamp_secs</code></td>
+<td>Integer</td>
+<td>Timestamp in seconds after which the transaction will be discarded if not included.</td>
+</tr>
+<tr class="odd">
+<td><code>payload</code></td>
+<td>Object</td>
+<td>Object containing the details of the transaction’s payload.</td>
+</tr>
+<tr class="even">
+<td><code>events</code></td>
+<td>Array</td>
+<td>Array of events generated by the transaction.</td>
+</tr>
+<tr class="odd">
+<td><code>signature</code></td>
+<td>Object</td>
+<td>Object containing the cryptographic signature verifying the transaction.</td>
 </tr>
 </tbody>
 </table>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
