@@ -46,6 +46,8 @@ website:
             file: content/lakehouse/datasets/bitcoin.qmd
           - text: "Stellar"
             file: content/lakehouse/datasets/stellar.qmd
+          - text: "Movement Labs"
+            file: content/lakehouse/datasets/movement.qmd
           - text: "Pricing"
             file: content/lakehouse/datasets/pricing.qmd
           - text: "Address Book"
