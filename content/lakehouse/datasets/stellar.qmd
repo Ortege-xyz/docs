@@ -88,34 +88,6 @@ The `tbl_test_br_events` table captures key event data within the Stellar blockc
 | topic                   | Array       | Contains `items` with event-specific information, and `value` to describe the event details. |
 
 # Silver layer
-Stellar transactions are encapsulated within structures known as envelopes, which are expressed in XDR (External Data Representation) format. These envelopes contain all the necessary information to submit a transaction to the Stellar network. The tbl_test_sl_tx_envelopes table in Ortege Lakehouse's Silver layer captures this data, structured for easy access and query efficiency.
-
-In the context of Stellar, the envelope includes not only the transaction itself (tx) but also signatures (v1) and other metadata necessary for the transaction to be validated by the Stellar network (fee_bump, envelope_type). Each transaction has operational details (operations) that define what the transaction does, such as payments or account settings adjustments.
-
-The table schema for tbl_test_sl_tx_envelopes breaks down the envelope into its constituent components, storing details about transaction fees, sequence numbers, and memos, as well as the operations that the transaction performs.
-
-Below is the schema for the tbl_test_sl_tx_envelopes table with key fields that are extracted from the Stellar transaction envelope:
-
-| Field Name                 | Type          | Description                                         |
-|----------------------------|---------------|-----------------------------------------------------|
-| id                         | Integer       | Unique identifier for the transaction envelope      |
-| hash                       | String        | Hash of the transaction                             |
-| ledger                     | Integer       | Ledger in which the transaction is recorded         |
-| created_at                 | Datetime      | Timestamp when the transaction was created          |
-| source_account             | String        | The account from which the transaction originated   |
-| memo_type                  | String        | Type of memo included in the transaction            |
-| envelope_type              | Struct        | Contains type and v1 (version) of the envelope      |
-| tx_source_account          | String        | Transaction-level source account                    |
-| tx_fee                     | Integer       | Fee associated with the transaction                 |
-| tx_seq_num                 | Integer       | Sequence number of the transaction                  |
-| tx_cond                    | Struct        | Conditions for the transaction (v2, time_bounds)    |
-| tx_memo                    | Struct        | Memo details of the transaction                     |
-| operations                 | Array         | List of operations included in the transaction      |
-| operation_detail           | Struct        | Detailed information of each operation              |
-| operation_source_account   | String        | Source account specified for the operation          |
-| operation_body             | Struct        | Body of the operation, includes `operation_body_type` |
-
-# Silver layer
 
 ## Soroban transactions
 **tbl_test_sl_soroban_transactions**
