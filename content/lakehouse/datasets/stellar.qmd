@@ -6,7 +6,7 @@ format:
     html-math-method: katex
 ---
 
-**db_soroban**
+**db_stellar**
 
 # Bronze Layer
 ## Ledger
@@ -114,3 +114,30 @@ Below is the schema for the tbl_test_sl_tx_envelopes table with key fields that 
 | operation_detail           | Struct        | Detailed information of each operation              |
 | operation_source_account   | String        | Source account specified for the operation          |
 | operation_body             | Struct        | Body of the operation, includes `operation_body_type` |
+
+# Silver layer
+
+## Soroban transactions
+**tbl_test_sl_soroban_transactions**
+Currently we filter all the records from the transactions table where the Soroban metadata is not empty. 
+
+| Field Name             | Description |
+|------------------------|-------------|
+| `operation_count`      | The number of operations included in the transaction. |
+| `hash`                 | The unique identifier of the transaction on the blockchain. |
+| `ledger`               | The ledger number in which the transaction was recorded. |
+| `tx_date`              | The timestamp of the transaction, converted to a human-readable date. |
+| `source_account`       | The account from which the transaction originated. |
+| `soroban_version`      | The version of the Soroban smart contract. |
+| `soroban_data_extracted` | Extracted data related to the Soroban smart contract. |
+| `fee_account`          | The account charged for the transaction fee. |
+| `envelope_fee`         | The fee specified in the transaction envelope. |
+| `envelope_fee_bump`    | Any additional fee applied to the transaction outside the standard fee. |
+| `fee_charged`          | The actual fee charged for processing the transaction. |
+| `envelope_type`        | The type of envelope used for the transaction. |
+| `tx_type`              | The type of operation within the transaction (e.g., payment, offer creation). |
+| `function_type`        | The type of function invoked in a Soroban smart contract. |
+| `contract_address`     | The address of the invoked smart contract. |
+| `function_name`        | The name of the function called in the smart contract. |
+| `function_args`        | The arguments passed to the smart contract function during invocation. |
+
