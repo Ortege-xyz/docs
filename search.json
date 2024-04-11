@@ -312,7 +312,7 @@
     "href": "content/lakehouse/datasets/stellar.html",
     "title": "Stellar",
     "section": "",
-    "text": "db_soroban"
+    "text": "db_stellar"
   },
   {
     "objectID": "content/lakehouse/datasets/stellar.html#ledger",
@@ -334,6 +334,13 @@
     "title": "Stellar",
     "section": "Events",
     "text": "Events\ntbl_test_br_events The tbl_test_br_events table captures key event data within the Stellar blockchain. Each event is tied to a ledger and transaction, providing a detailed account of contract calls and operations. It includes event types, ledger closure times, contract identifiers, and transaction hashes. Notable is the inclusion of a ‘paging_token’ which allows for consistent querying within paginated results. The table is pivotal for tracking the execution and outcomes of contract calls, offering a granular view of the events that occur within the Stellar ecosystem.\n\n\n\n\n\n\n\n\nColumn Name\nType\nDescription\n\n\n\n\nevent_type\nString\nThe type of event, such as a contract call or operation executed within the ledger.\n\n\nledger\nInteger\nThe sequence number of the ledger where the event occurred.\n\n\nledger_closed_at\nTimestamp\nThe time when the ledger containing the event was closed and finalized.\n\n\ncontract_id\nString\nThe unique identifier for the contract involved in the event.\n\n\ntx_hash\nString\nThe hash of the transaction associated with the event.\n\n\nid\nString\nThe unique identifier for the event.\n\n\npaging_token\nString\nA token used for paginating through a set of results.\n\n\nin_successful_contract_call\nBoolean\nIndicates whether the event was part of a successful contract call.\n\n\ntopic\nArray\nContains items with event-specific information, and value to describe the event details."
+  },
+  {
+    "objectID": "content/lakehouse/datasets/stellar.html#soroban-transactions",
+    "href": "content/lakehouse/datasets/stellar.html#soroban-transactions",
+    "title": "Stellar",
+    "section": "Soroban transactions",
+    "text": "Soroban transactions\ntbl_test_sl_soroban_transactions Currently we filter all the records from the transactions table where the Soroban metadata is not empty.\n\n\n\n\n\n\n\nField Name\nDescription\n\n\n\n\noperation_count\nThe number of operations included in the transaction.\n\n\nhash\nThe unique identifier of the transaction on the blockchain.\n\n\nledger\nThe ledger number in which the transaction was recorded.\n\n\ntx_date\nThe timestamp of the transaction, converted to a human-readable date.\n\n\nsource_account\nThe account from which the transaction originated.\n\n\nsoroban_version\nThe version of the Soroban smart contract.\n\n\nsoroban_data_extracted\nExtracted data related to the Soroban smart contract.\n\n\nfee_account\nThe account charged for the transaction fee.\n\n\nenvelope_fee\nThe fee specified in the transaction envelope.\n\n\nenvelope_fee_bump\nAny additional fee applied to the transaction outside the standard fee.\n\n\nfee_charged\nThe actual fee charged for processing the transaction.\n\n\nenvelope_type\nThe type of envelope used for the transaction.\n\n\ntx_type\nThe type of operation within the transaction (e.g., payment, offer creation).\n\n\nfunction_type\nThe type of function invoked in a Soroban smart contract.\n\n\ncontract_address\nThe address of the invoked smart contract.\n\n\nfunction_name\nThe name of the function called in the smart contract.\n\n\nfunction_args\nThe arguments passed to the smart contract function during invocation."
   },
   {
     "objectID": "content/lakehouse/datasets/movement.html",

@@ -208,6 +208,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#events" id="toc-events" class="nav-link" data-scroll-target="#events">Events</a></li>
   </ul></li>
   <li><a href="#silver-layer" id="toc-silver-layer" class="nav-link" data-scroll-target="#silver-layer">Silver layer</a></li>
+  <li><a href="#silver-layer-1" id="toc-silver-layer-1" class="nav-link" data-scroll-target="#silver-layer-1">Silver layer</a>
+  <ul class="collapse">
+  <li><a href="#soroban-transactions" id="toc-soroban-transactions" class="nav-link" data-scroll-target="#soroban-transactions">Soroban transactions</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -233,7 +237,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>db_soroban</strong></p>
+<p><strong>db_stellar</strong></p>
 <section id="bronze-layer" class="level1">
 <h1>Bronze Layer</h1>
 <section id="ledger" class="level2">
@@ -671,8 +675,97 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+</section>
+<section id="silver-layer-1" class="level1">
+<h1>Silver layer</h1>
+<section id="soroban-transactions" class="level2">
+<h2 class="anchored" data-anchor-id="soroban-transactions">Soroban transactions</h2>
+<p><strong>tbl_test_sl_soroban_transactions</strong> Currently we filter all the records from the transactions table where the Soroban metadata is not empty.</p>
+<table class="table">
+<colgroup>
+<col style="width: 64%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>operation_count</code></td>
+<td>The number of operations included in the transaction.</td>
+</tr>
+<tr class="even">
+<td><code>hash</code></td>
+<td>The unique identifier of the transaction on the blockchain.</td>
+</tr>
+<tr class="odd">
+<td><code>ledger</code></td>
+<td>The ledger number in which the transaction was recorded.</td>
+</tr>
+<tr class="even">
+<td><code>tx_date</code></td>
+<td>The timestamp of the transaction, converted to a human-readable date.</td>
+</tr>
+<tr class="odd">
+<td><code>source_account</code></td>
+<td>The account from which the transaction originated.</td>
+</tr>
+<tr class="even">
+<td><code>soroban_version</code></td>
+<td>The version of the Soroban smart contract.</td>
+</tr>
+<tr class="odd">
+<td><code>soroban_data_extracted</code></td>
+<td>Extracted data related to the Soroban smart contract.</td>
+</tr>
+<tr class="even">
+<td><code>fee_account</code></td>
+<td>The account charged for the transaction fee.</td>
+</tr>
+<tr class="odd">
+<td><code>envelope_fee</code></td>
+<td>The fee specified in the transaction envelope.</td>
+</tr>
+<tr class="even">
+<td><code>envelope_fee_bump</code></td>
+<td>Any additional fee applied to the transaction outside the standard fee.</td>
+</tr>
+<tr class="odd">
+<td><code>fee_charged</code></td>
+<td>The actual fee charged for processing the transaction.</td>
+</tr>
+<tr class="even">
+<td><code>envelope_type</code></td>
+<td>The type of envelope used for the transaction.</td>
+</tr>
+<tr class="odd">
+<td><code>tx_type</code></td>
+<td>The type of operation within the transaction (e.g., payment, offer creation).</td>
+</tr>
+<tr class="even">
+<td><code>function_type</code></td>
+<td>The type of function invoked in a Soroban smart contract.</td>
+</tr>
+<tr class="odd">
+<td><code>contract_address</code></td>
+<td>The address of the invoked smart contract.</td>
+</tr>
+<tr class="even">
+<td><code>function_name</code></td>
+<td>The name of the function called in the smart contract.</td>
+</tr>
+<tr class="odd">
+<td><code>function_args</code></td>
+<td>The arguments passed to the smart contract function during invocation.</td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
