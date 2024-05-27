@@ -52,6 +52,10 @@ website:
             file: content/lakehouse/datasets/pricing.qmd
           - text: "Address Book"
             file: content/lakehouse/datasets/address_book.qmd
+      - text: "Ortege Notebooks"
+        menu: 
+          - text: "Overview"
+            file: content/notebooks/overview.qmd
       - text: "OrtegeGPT"
         menu: 
           - text: "Overview"
